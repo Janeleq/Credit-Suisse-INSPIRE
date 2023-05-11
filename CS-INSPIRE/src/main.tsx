@@ -5,6 +5,7 @@ import HomePage from './pages/Homepage.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
 import './index.css'
+import 'bootstrap/dist/css/bootstrap.css';
 
 import {
   createBrowserRouter,
