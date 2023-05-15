@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Navbar from '../components/NavBar'
 
 function RoleplayPage() {
@@ -10,4 +10,4 @@ function RoleplayPage() {
     )
 }
 
-export default RoleplayPage
+export default RoleplayPage;

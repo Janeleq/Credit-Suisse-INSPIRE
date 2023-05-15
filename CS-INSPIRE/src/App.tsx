@@ -1,17 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import 'bootstrap/dist/css/bootstrap.css';
 import viteLogo from '/vite.svg'
 import Logo from './assets/PerceptionPause_logo.png'
 import './App.css'
 import './components/Footer.tsx'
-import './components/NavBar.tsx'
+import NavBar from './components/NavBar.tsx'
+import Footer from './components/Footer.tsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      <div className='container-fluid'>
+        <NavBar/>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -31,6 +33,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <Footer/>
     </>
   )
 }

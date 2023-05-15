@@ -4,6 +4,7 @@ import App from './App.tsx'
 import HomePage from './pages/Homepage.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
+import RegisterPage from './pages/RegisterPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -23,11 +24,15 @@ const router = createBrowserRouter([
     element: <HomePage/>
   },
   {
+    path:"/register",
+    element: <RegisterPage/>
+  },
+  {
     path:"/roleplay",
     element: <RoleplayPage/>
   },
   {
-    path: "/explore",
+    path: "/articles",
     element: <ArticlesPage/>
   }
 ])
