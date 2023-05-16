@@ -5,11 +5,8 @@ export default () => {
     const [isNewName, setNewName] = useState(false)
     const [name, setName] = useState('');
     const [gender, setGender] = useState("");
-    const [probability, setProbability] = useState(0);
+    const [probability, setProbability] = useState("");
 
-    const URL = `https://api.genderize.io?name=${name}`
-    console.log(URL)
-    
     function handleChange (event) {
         // alert("change detected")
         event.preventDefault();
@@ -17,7 +14,12 @@ export default () => {
     }
 
     const fetchData = async() => {
+        
+        name.replace(/ /g, "")
+        console.log(name)
+        const URL = `https://api.genderize.io?name=${name}`
         console.log(URL)
+
         const result = await fetch(URL)
         console.log(result)
         result.json().then(json => {
@@ -29,9 +31,9 @@ export default () => {
     
     return (
         <div className=''>
-            Name: &nbsp;<input type="text" id="name" onChange={handleChange}></input>
+            Enter a name that comes to your mind and the gender you associate it with (engilsh names only please!): &nbsp;<input type="text" id="name" onChange={handleChange}></input>
             <br/>
-            {name}
+            Name: {name} <br/>
             Gender: {gender} <br/>
             Probability: {probability} <br/>
             <button type="submit" onClick={fetchData}>See Results</button>
