@@ -5,6 +5,7 @@ import HomePage from './pages/Homepage.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
+import GenderBiasPage from './pages/GenderBiasPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/articles",
     element: <ArticlesPage/>
+  },
+  {
+    path: "/bias/gender",
+    element: <GenderBiasPage/>
   }
 ])
 
