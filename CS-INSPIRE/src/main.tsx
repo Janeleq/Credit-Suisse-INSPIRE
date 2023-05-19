@@ -4,8 +4,10 @@ import App from './App.tsx'
 import HomePage from './pages/Homepage.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
-import RegisterPage from './pages/RegisterPage.tsx'
 import GenderBiasPage from './pages/GenderBiasPage.tsx'
+import LoginPage from './pages/SignInPage.tsx'
+import RegisterPage from './pages/RegisterPage.tsx'
+import ProfilePage from './pages/ProfilePage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
     element: <RegisterPage/>
   },
   {
-    path:"/roleplay",
+    path:"/explore",
     element: <RoleplayPage/>
   },
   {
@@ -39,11 +41,23 @@ const router = createBrowserRouter([
   {
     path: "/bias/gender",
     element: <GenderBiasPage/>
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>
+  },
+  {
+    path: "/register",
+    element: <RegisterPage/>
+  },
+  {
+    path: "/profile",
+    element: <ProfilePage/>
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

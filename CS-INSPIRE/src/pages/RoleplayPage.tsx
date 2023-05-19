@@ -5,7 +5,7 @@ function RoleplayPage() {
     return (
         <div>
             <Navbar></Navbar>
-            <div>Roleplay Page</div>
+            <div>Rp Page</div>
         </div>
     )
 }
