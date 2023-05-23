@@ -1,24 +1,37 @@
-// import React from 'react'
-import Navbar from '../components/NavBar'
-import Logo from '../assets/PerceptionPause_logo.png'
-import BiasLogo from '../assets/BreakBias.png'
-
-
-function HomePage() {
-    return (
-        <div>
-            <Navbar/>
-
-            <img src={Logo} className="logo" alt="logo" />
-            <div className="row">
-                <div className='col'>
-                    <img src={BiasLogo} className="logo w-75 h-100" alt="biasLogo" />
-                </div>
-            </div>
-            
-        </div>
-            
+import React from 'react';
+import {  signOut } from "firebase/auth";
+import {auth} from '../firebase/firebase.js';
+import { useNavigate } from 'react-router-dom';
+ 
+const HomePage = () => {
+    const navigate = useNavigate();
+ 
+    const handleLogout = () => {               
+        signOut(auth).then(() => {
+        // Sign-out successful.
+            navigate("/login");
+            console.log("Signed out successfully")
+        }).catch((error) => {
+        // An error happened.
+            console.log("error in signing out.")
+        });
+    }
+   
+    return(
+        <>
+            <nav>
+                <p>
+                    Welcome Home {username}
+                </p>
+ 
+                <div>
+        			<button onClick={handleLogout}>
+                        Logout
+                    </button>
+        		</div>
+            </nav>
+        </>
     )
 }
-
-export default HomePage
+ 
+export default HomePage;
