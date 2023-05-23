@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} from 'firebase/auth'
-import { getFirestore, addDoc, collection} from 'firebase/firestore';
+// import { getFirestore, addDoc, collection} from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -17,53 +17,8 @@ const firebaseConfig = {
   measurementId: "G-CBH6066GBD"
 };
 
-// const db = getFirestore();
-
-
-
-const signUp = async (email, password) => {
-      try {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        const user = userCredential.user;
-        await addDoc(collection(db, "users"), {
-          uid: user.uid,
-          email: user.email,
-        });
-        return true
-      } catch (error) {
-        return {error: error.message}
-      }
-    };
-    
-    const signIn = async (email, password) => {
-          try {
-            const userCredential = await signInWithEmailAndPassword(
-              auth,
-              email,
-              password
-            );
-            const user = userCredential.user;
-            return true
-          } catch (error) {
-            return {error: error.message}
-          }
-        };
-
-    const signOut = async() => {
-          try {
-            await signOut(auth)
-            return true
-          } catch (error) {
-            return false
-          }
-        };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
- 
+export const auth = getAuth(app);
 export default app;

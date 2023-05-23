@@ -1,29 +1,90 @@
+import React, {useState} from 'react';
+import {  signInWithEmailAndPassword   } from 'firebase/auth';
+import { auth } from '../firebase/firebase.js';
+import { NavLink, useNavigate } from 'react-router-dom'
+import {useLocation} from 'react-router-dom';
+ 
+const LoginPage = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const location = useLocation();
 
-// import React from 'react'
-import Navbar from '../components/NavBar'
-import Logo from '../assets/PerceptionPause_logo.png'
+    const onLogin = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            navigate("/home")
+            
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage)
+        });
+       
+    }
+ 
+    return(
+        <>
+            <main >        
+                <section>
+                    <div>                                            
+                        <p> FocusApp </p>                       
+                            {location.state.name}        
+                        <form>                                              
+                            <div>
+                                <label htmlFor="email-address">
+                                    Email address
+                                </label>
+                                <input
+                                    id="email-address"
+                                    name="email"
+                                    type="email"                                    
+                                    required                                                                                
+                                    placeholder="Email address"
+                                    onChange={(e)=>setEmail(e.target.value)}
+                                />
+                            </div>
 
-function LoginPage() {
-    return (
-        <div className="container-fluid">
-            <Navbar></Navbar>
-            <div className="form-signin">
-            <img className="mb-4" src={Logo} alt="logo"/>
-            <h1 className="h3 mb-3 font-weight-normal">Sign in</h1><br/>
-            <label for="inputEmail" className="sr-only text-muted">Email address</label>
-            <input type="email" id="inputEmail" className="shadow form-control" placeholder="Email address" required="" autofocus=""/>
-            <br/>
-            <label for="inputPassword" className="text-muted sr-only">Password</label>
-            <input type="password" id="inputPassword" className="shadow form-control" placeholder="Password" required=""/>
-            <div className="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"/> Remember me
-                </label>
-            </div>
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </div>
-        </div>
+                            <div>
+                                <label htmlFor="password">
+                                    Password
+                                </label>
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"                                    
+                                    required                                                                                
+                                    placeholder="Password"
+                                    onChange={(e)=>setPassword(e.target.value)}
+                                />
+                            </div>
+                                                
+                            <div>
+                                <button                                    
+                                    onClick={onLogin}                                        
+                                >      
+                                    Login                                                                  
+                                </button>
+                            </div>                               
+                        </form>
+                       
+                        <p className="text-sm text-white text-center">
+                            No account yet? {' '}
+                            <NavLink to="/register">
+                                Sign up
+                            </NavLink>
+                        </p>
+                                                   
+                    </div>
+                </section>
+            </main>
+        </>
     )
 }
-
+ 
 export default LoginPage;

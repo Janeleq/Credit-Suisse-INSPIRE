@@ -1,41 +1,109 @@
+import React, {useState} from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import {  createUserWithEmailAndPassword  } from 'firebase/auth';
+import { auth } from '../firebase/firebase.js';
+ 
+const SignupPage = () => {
+    const navigate = useNavigate();
+ 
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [error, setError] = useState('')
+ 
+    const onSubmit = async (e) => {
+      e.preventDefault()
+     
+      await createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            console.log(user);
+            navigate("/login", {state:{name:username}})
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+            setError(errorMessage)
 
-// import React from 'react'
-import Navbar from '../components/NavBar'
-import Logo from '../assets/PerceptionPause_logo.png'
+            // ..
+        });
+ 
+   
+    }
+ 
+  return (
+    <main >        
+        <section>
+            <div>
+                <div>                  
+                    <h1> FocusApp </h1>   
+                    <p style={{color:"red"}}>{error}    </p>                                                                        
+                    <form>                                                                                            
+                        <div>
+                            <label htmlFor="email-address">
+                                Email address
+                            </label>
+                            <input
+                                type="email"
+                                label="Email address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}  
+                                required                                    
+                                placeholder="Email address"                                
+                            />
+                        </div>
 
-function SignUpPage() {
-  // const [error, setError] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [comfirmPassword, setError] = useState("");
+                        <div>
+                            <label htmlFor="username">
+                                Username
+                            </label>
+                            <input
+                                type="email"
+                                label="Username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}  
+                                required                                    
+                                placeholder="Username"                                
+                            />
+                        </div>
 
-    return (
-        <div className="container-fluid">
-            <Navbar></Navbar>
-            <div className="form-signin" name="registration_form">
-            <img className="mb-4" src={Logo} alt="logo"/>
-            <h1 className="h3 mb-3 font-weight-normal">Sign Up</h1><br/>
-            <label for="inputEmail" className="sr-only text-muted">Name</label>
-            <input type="email" id="inputEmail" className="shadow form-control" placeholder="Name" required="" autofocus=""/>
-            <br/>
-            <label for="inputEmail" className="sr-only text-muted">Email address</label>
-            <input type="email" id="inputEmail" className="shadow form-control" placeholder="Email address" required="" autofocus=""/>
-            <br/>
-            <label for="inputPassword" className="text-muted sr-only">Password</label>
-            <input type="password" id="inputPassword" className="shadow form-control" placeholder="Password" required=""/>
-            <br/>
-            <label for="inputPassword" className="text-muted sr-only">Confirm Password</label>
-            <input type="password" id="inputPassword" className="shadow form-control" placeholder="Confirm Password" required=""/>
-            <div className="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"/> Remember me
-                </label>
+                        <div>
+                            <label htmlFor="password">
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                label="Create password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} 
+                                required                                 
+                                placeholder="Password"              
+                            />
+                        </div>                                             
+                        
+                        <button
+                            type="submit" 
+                            onClick={onSubmit}                        
+                        >  
+                            Sign up                                
+                        </button>
+                                                                     
+                    </form>
+                   
+                    <p>
+                        Already have an account?{' '}
+                        <NavLink to="/login" >
+                            Sign in
+                        </NavLink>
+                    </p>                   
+                </div>
             </div>
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </div>
-        </div>
-    )
+        </section>
+    </main>
+  )
 }
-
-
-
-export default SignUpPage;
+ 
+export default SignupPage;
