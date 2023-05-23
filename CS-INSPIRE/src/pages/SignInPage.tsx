@@ -8,7 +8,13 @@ const LoginPage = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const location = useLocation();
+    // const location = useLocation();
+
+    // const [name, setName] = useState('');
+
+    // if (location.state.name != null) {
+    //     setName(location.state.name)
+    // }
 
     const onLogin = (e) => {
         e.preventDefault();
@@ -16,7 +22,7 @@ const LoginPage = () => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/home")
+            navigate("/home", {state:{email: email}})
             
             console.log(user);
         })
@@ -34,7 +40,7 @@ const LoginPage = () => {
                 <section>
                     <div>                                            
                         <p> FocusApp </p>                       
-                            {location.state.name}        
+                            
                         <form>                                              
                             <div>
                                 <label htmlFor="email-address">

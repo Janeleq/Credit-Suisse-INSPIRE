@@ -2,10 +2,18 @@ import React from 'react';
 import {  signOut } from "firebase/auth";
 import {auth} from '../firebase/firebase.js';
 import { useNavigate } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
  
 const HomePage = () => {
     const navigate = useNavigate();
  
+    const location = useLocation();
+
+    // const [name, setName] = useState('');
+
+    
+    
+
     const handleLogout = () => {               
         signOut(auth).then(() => {
         // Sign-out successful.
@@ -21,7 +29,7 @@ const HomePage = () => {
         <>
             <nav>
                 <p>
-                    Welcome Home {username}
+                    Welcome Home {location.state.email}
                 </p>
  
                 <div>
