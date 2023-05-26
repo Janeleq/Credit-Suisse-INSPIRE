@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../firebase/firebase.js';
 import { NavLink, useNavigate } from 'react-router-dom'
-import {useLocation} from 'react-router-dom';
- 
+import logo from '../assets/PerceptionPause_newlogo.png'
+import Footer from '../components/Footer.tsx';
+
 const LoginPage = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
+    
     // const location = useLocation();
 
     // const [name, setName] = useState('');
@@ -16,9 +19,10 @@ const LoginPage = () => {
     //     setName(location.state.name)
     // }
 
-    const onLogin = (e) => {
+    const onLogin = async (e) => {
+        console.log("Login clicked")
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
@@ -30,66 +34,93 @@ const LoginPage = () => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorCode, errorMessage)
+            setError(errorMessage)
         });
        
     }
  
     return(
-        <>
-            <main >        
-                <section>
-                    <div>                                            
-                        <p> FocusApp </p>                       
-                            
-                        <form>                                              
-                            <div>
-                                <label htmlFor="email-address">
-                                    Email address
-                                </label>
-                                <input
-                                    id="email-address"
-                                    name="email"
-                                    type="email"                                    
-                                    required                                                                                
-                                    placeholder="Email address"
-                                    onChange={(e)=>setEmail(e.target.value)}
-                                />
+        <main className='m-0' style={{alignSelf: 'center'}}>                
+                    {/* <h1> Perception Pause </h1>    */}
+                                                                                            
+                    <form className='m-0 card shadow p-5 text-center' style={{alignSelf:'center'}}>                                                                                            
+                    <div className="row">
+                        <div className='col'>
+                            <img src={logo} className='w-75 m-0' style={{ alignSelf:'center'}}/>
+                        </div>
+                        
+                    </div>
+                    
+                    <br/>
+                    <div className='row' style={{fontSize:"28px"}}>
+                            <div className="col">
+                                <strong>Login</strong>  
                             </div>
+                            <div className='col'>
+                            | 
+                            </div>
+                            <div className='col'>
+                            <a href="/register">Register</a> 
+                            </div>
+                        </div>          
+                        <br/> 
+                        <div className="row">
+                            <label htmlFor="email-address"  className='lead'>
+                                Email address
+                            </label>
+                        </div>
+                        <div className='row'>
+                                <input
+                                    type="email"
+                                    // label="Email address"
+                                    value={email}
+                                    
+                                    onChange={(e) => setEmail(e.target.value)}  
+                                    required                                    
+                                    placeholder="" 
+                                    style={{height: '5%'}}   
+                                    className='text-center lead small'                                
+                                />
+                        </div>
+                    
+                        <br/>
+                        <div className='row'>
+                            <label htmlFor="password"  className='lead'>
+                                Password
+                            </label>
+                            <input
+                                type="password"
+                                // label="Create password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} 
+                                required                                 
+                                placeholder="" 
+                                style={{height: '5%'}}  
+                                className='text-center lead small'               
+                            />
+                        </div>                                             
+                        
+                        <br/><br/>
+                            <button
+                                type="submit" 
+                                onClick={onLogin}
+                                className=''
+                                style={{width: '200px', height:'auto', alignSelf:'center'}}   
+                            >  
+                                Sign In                            
+                            </button>
 
-                            <div>
-                                <label htmlFor="password">
-                                    Password
-                                </label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"                                    
-                                    required                                                                                
-                                    placeholder="Password"
-                                    onChange={(e)=>setPassword(e.target.value)}
-                                />
-                            </div>
-                                                
-                            <div>
-                                <button                                    
-                                    onClick={onLogin}                                        
-                                >      
-                                    Login                                                                  
-                                </button>
-                            </div>                               
-                        </form>
-                       
-                        <p className="text-sm text-white text-center">
+                   <br/>
+                   <p className="text-sm text-center">
                             No account yet? {' '}
                             <NavLink to="/register">
                                 Sign up
                             </NavLink>
                         </p>
-                                                   
-                    </div>
-                </section>
-            </main>
-        </>
+                    <p style={{color:"red"}}>{error}</p>     
+                </form>     
+            <Footer></Footer>   
+        </main>
     )
 }
  

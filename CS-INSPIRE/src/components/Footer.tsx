@@ -2,10 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Footer() {
     return (
-            <footer className="bg-light text-center footer-expand">
+            <footer className="bg-light text-center w-100 container-fluid">
             {/* <!-- Grid container --> */}
-            <div className="container p-3">
-            
+
                 {/* <!-- Section: Social media --> */}
                 <section className="mb-4">
                 {/* <!-- Facebook --> */}
@@ -28,49 +27,12 @@ function Footer() {
                 {/* <!-- Section: Social media --> */}
             
             
-                {/* <!-- Section: Form --> */}
-                <section className="">
-                <form action="">
-                    {/* <!--Grid row--> */}
-                    <div className="row d-flex justify-content-center">
-                    {/* <!--Grid column--> */}
-                    <div className="col-auto">
-                        <p className="pt-2">
-                        <strong>Sign up for our newsletter</strong>
-                        </p>
-                    </div>
-                    {/* <!--Grid column--> */}
-            
-                    {/* <!--Grid column--> */}
-                    <div className="col-md-5 col-12">
-                        {/* <!-- Email input --> */}
-                        <div className="form-outline mb-4">
-                        <input type="email" id="form5Example2" className="form-control" />
-                        <label className="form-label">Email address</label>
-                        </div>
-                    </div>
-                    {/* <!--Grid column--> */}
-            
-                    {/* <!--Grid column--> */}
-                    <div className="col-auto">
-            
-                        {/* <!-- Submit button --> */}
-                        <button type="submit" className="btn btn-primary mb-4">
-                        Subscribe
-                        </button>
-                    </div>
-                    {/* <!--Grid column--> */}
-                    </div>
-                    {/* <!--Grid row--> */}
-                </form>
-                </section>
-                {/* <!-- Section: Form --> */}
-            
+
             
                 {/* <!-- Section: Text --> */}
                 <section className="mb-4">
                 <p>
-                    Look through the lens to undiscover your very own unconscious biases. 
+                    Look through the lens to discover your very own unconscious biases. 
                 </p>
                 </section>
                 {/* <!-- Section: Text --> */}
@@ -167,10 +129,8 @@ function Footer() {
                 {/* <!--Grid row--> */}
                 </section>
                 {/* <!-- Section: Links --> */}
-            
-            </div>
             &copy;&nbsp;2023 Perception Pause. All rights reserved.
-            </footer>
+        </footer>
         
             
     )

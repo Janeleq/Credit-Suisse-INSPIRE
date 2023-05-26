@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import HomePage from './pages/Homepage.tsx'
+import HomePageLogin from './pages/HomepageLogin.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
 import GenderBiasPage from './pages/GenderBiasPage.tsx'
@@ -20,11 +21,11 @@ import {
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <App/>,
+    element: <HomePage/>,
   }, 
   {
     path:"/home",
-    element: <HomePage/>
+    element: <HomePageLogin/>
   },
   {
     path:"/register",
@@ -45,10 +46,6 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage/>
-  },
-  {
-    path: "/register",
-    element: <RegisterPage/>
   },
   {
     path: "/profile",
