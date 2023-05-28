@@ -5,8 +5,22 @@ import ageism from '../assets/ageism.jpg'
 import haloeffect from '../assets/haloeffect.jpg'
 import sexism from '../assets/sexism.jpg'
 import beautybias from '../assets/beauty-bias.jpg'
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function RoleplayPage() {
+  const navigate = useNavigate();
+
+  const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    if (status == 'True'){
+      console.log("navigating")
+      navigate('/bias/gender')
+      setStatus('False')
+    }
+  })
+
     return (
         <div>
             <Navbar></Navbar>
@@ -31,7 +45,7 @@ function RoleplayPage() {
         <div className="icon">
           <img src={sexism} alt="sexism" />
         </div>
-        <div className="hover-image one">
+        <div className="hover-image one" onClick ={() => setStatus('True')}>
           <div className="img">
             <img src={sexism} alt="sexism" />
           </div>

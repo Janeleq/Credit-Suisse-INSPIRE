@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Footer() {
     return (
-            <footer className="bg-light text-center w-100 container-fluid">
+            <footer className="bg-light text-center w-100 mt-5 p-0 bottom container-fluid">
             {/* <!-- Grid container --> */}
 
                 {/* <!-- Section: Social media --> */}
@@ -43,7 +43,7 @@ function Footer() {
                 {/* <!--Grid row--> */}
                 <div className="row">
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Links</h5>
             
                     <ul className="list-unstyled mb-0">
@@ -64,7 +64,7 @@ function Footer() {
                     {/* <!--Grid column--> */}
             
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Links</h5>
             
                     <ul className="list-unstyled mb-0">
@@ -85,7 +85,7 @@ function Footer() {
                     {/* <!--Grid column--> */}
             
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Links</h5>
             
                     <ul className="list-unstyled mb-0">
@@ -106,7 +106,7 @@ function Footer() {
                     {/* <!--Grid column--> */}
             
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Links</h5>
             
                     <ul className="list-unstyled mb-0">

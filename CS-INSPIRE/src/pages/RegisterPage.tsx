@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../firebase/firebase.js';
 import logo from '../assets/PerceptionPause_newlogo.png'
-
+import Footer from '../components/Footer.tsx'
 
 
 const SignupPage = () => {
@@ -39,27 +39,30 @@ const SignupPage = () => {
 
 
   return (
-    <div className="container-fluid bg-light" style={{width: ''}}>        
-        <div className="row">
+    <div className="container-fluid bg-light">   
+        <div className='mb-2'> 
+        <img src={logo} style={{width: '10%'}}/>
+        <div className="row mt-5">
+            <h1 className='text-center font-weight-light'>Discover your unconscious biases today</h1>
             <div className='col'>
                 <div className='text-center' style={{}}>                  
                     {/* <h1> Perception Pause </h1>    */}
                                                                                             
                     <form className='card shadow p-5 text-center bg-light' style={{backgroundColor: 'grey'}}>
                         <div className="row">
-                            <div className='col'>
-                            <img src={logo} className='w-75 m-0' style={{ alignSelf:'center'}}/>
+                            <div className='col p-0'>
+                
                             </div> 
                         </div> 
                         <br/>
                         <div className='row' style={{fontSize:"28px"}}>
-                            <div className="col">
+                            <div className="col p-0">
                                <a href="/login">Login</a>
                             </div>
-                            <div className='col'>
+                            <div className='col p-0'>
                             | 
                             </div>
-                            <div className='col'>
+                            <div className='col p-0'>
                             <strong>Register</strong>  
                             </div>
                         </div>          
@@ -78,7 +81,7 @@ const SignupPage = () => {
                                     required                                    
                                     placeholder="" 
                                     style={{height: '5%'}}   
-                                    className='text-center lead small'                                
+                                    className='p-0 text-center lead small'                                
                                 />
                         </div>
                     
@@ -95,7 +98,7 @@ const SignupPage = () => {
                                 required                                    
                                 placeholder="" 
                                 style={{height: '5%'}}  
-                                className='text-center lead small'                             
+                                className='p-0 text-center lead small'                             
                             />
                         </div>
                         <br/>
@@ -111,7 +114,7 @@ const SignupPage = () => {
                                 required                                 
                                 placeholder="" 
                                 style={{height: '5%'}}  
-                                className='text-center lead small'               
+                                className='p-0 text-center lead small'               
                             />
                         </div>                                             
                         
@@ -137,7 +140,9 @@ const SignupPage = () => {
                              
                 </div>
             </div>
+            </div>
         </div>
+        <Footer></Footer>   
     </div>
   )
 }
