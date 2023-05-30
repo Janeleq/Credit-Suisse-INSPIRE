@@ -1,9 +1,9 @@
 // import React from 'react'
 import React, {useState} from 'react';
-import Navbar from '../components/NavBar'
+import Navbar from '../components/NavBarLogin.tsx'
 import Logo from '../assets/PerceptionPause_logo.png'
 import { getAuth, updateEmail } from "firebase/auth";
-import { text } from 'stream/consumers';
+
 
 
 function Profile() {
@@ -22,7 +22,7 @@ function Profile() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar></Navbar>
             <a href="https://react.dev" target="_blank">
             <img src={Logo} className="logo" alt="logo" />
             </a>

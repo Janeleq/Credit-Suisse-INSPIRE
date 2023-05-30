@@ -4,6 +4,7 @@ import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../firebase/firebase.js';
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx'
+import background from '../assets/background.png'
 
 
 const SignupPage = () => {
@@ -39,16 +40,24 @@ const SignupPage = () => {
 
 
   return (
-    <div className="container-fluid bg-light">   
+    <div style={{
+    
+    }} className="container-fluid bg-light">   
         <div className='mb-2'> 
-        <img src={logo} style={{width: '10%'}}/>
+        <div className='row m-2' style={{height: '10%'}}>
+            <img src={logo} style={{width: '12%'}}/>
+        </div> 
         <div className="row mt-5">
-            <h1 className='text-center font-weight-light'>Discover your unconscious biases today</h1>
+            <div className='m-2 col text-center'>
+                <p className='text-center display-6 font-weight-light p-3'>You're one click away from discovering your unconscious biases</p>
+                <img src={background} className='img-fluid'/>
+            </div>
+           
             <div className='col'>
                 <div className='text-center' style={{}}>                  
                     {/* <h1> Perception Pause </h1>    */}
                                                                                             
-                    <form className='card shadow p-5 text-center bg-light' style={{backgroundColor: 'grey'}}>
+                    <form className='p-3 text-center bg-light' style={{backgroundColor: 'grey'}}>
                         <div className="row">
                             <div className='col p-0'>
                 
@@ -56,12 +65,7 @@ const SignupPage = () => {
                         </div> 
                         <br/>
                         <div className='row' style={{fontSize:"28px"}}>
-                            <div className="col p-0">
-                               <a href="/login">Login</a>
-                            </div>
-                            <div className='col p-0'>
-                            | 
-                            </div>
+                            
                             <div className='col p-0'>
                             <strong>Register</strong>  
                             </div>
@@ -71,8 +75,8 @@ const SignupPage = () => {
                             <label htmlFor="email-address"  className='lead'>
                                 Email address
                             </label>
-                        </div>
-                        <div className='row'>
+                        
+                        <div className='col text-center' style={{}}>
                                 <input
                                     type="email"
                                     label="Email address"
@@ -80,9 +84,10 @@ const SignupPage = () => {
                                     onChange={(e) => setEmail(e.target.value)}  
                                     required                                    
                                     placeholder="" 
-                                    style={{height: '5%'}}   
-                                    className='p-0 text-center lead small'                                
+                                    style={{height: ''}}   
+                                    className='w-50 p-0 text-center lead small'                                
                                 />
+                        </div>
                         </div>
                     
                         <br/>
@@ -90,32 +95,36 @@ const SignupPage = () => {
                             <label htmlFor="username" className='lead'>
                                 Username
                             </label>
-                            <input
-                                type="email"
-                                label="Username"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}  
-                                required                                    
-                                placeholder="" 
-                                style={{height: '5%'}}  
-                                className='p-0 text-center lead small'                             
-                            />
+                            <div className='col'>
+                                <input
+                                    type="email"
+                                    label="Username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}  
+                                    required                                    
+                                    placeholder="" 
+                                    style={{height: ''}}  
+                                    className='w-50 p-0 text-center lead small'                             
+                                />
+                            </div> 
                         </div>
                         <br/>
                         <div className='row'>
                             <label htmlFor="password"  className='lead'>
                                 Password
                             </label>
-                            <input
-                                type="password"
-                                label="Create password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)} 
-                                required                                 
-                                placeholder="" 
-                                style={{height: '5%'}}  
-                                className='p-0 text-center lead small'               
-                            />
+                        <div className='col'>
+                                <input
+                                    type="password"
+                                    label="Create password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)} 
+                                    required                                 
+                                    placeholder="" 
+                                    style={{height: ''}}  
+                                    className='w-50 p-0 text-center lead small'               
+                                />
+                            </div>
                         </div>                                             
                         
                         <br/><br/>
@@ -127,8 +136,7 @@ const SignupPage = () => {
                             >  
                                 Sign up                                
                             </button>
-
-                   <br/>
+                        <br/><br/>
                     <p>
                         Already have an account?{' '}
                         <NavLink to="/login" >
@@ -140,7 +148,7 @@ const SignupPage = () => {
                              
                 </div>
             </div>
-            </div>
+        </div>
         </div>
         <Footer></Footer>   
     </div>

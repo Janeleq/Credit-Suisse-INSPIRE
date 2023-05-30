@@ -21,6 +21,12 @@ body{
   margin-top: -55px;
 }
 
+.blockquote {
+  position: relative;
+  justify-content: flex-start;
+
+ 
+}
 .icon-image{
   position: relative;
   height: 70px;

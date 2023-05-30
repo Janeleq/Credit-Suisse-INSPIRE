@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import Navbar from '../components/NavBar'
+import Navbar from '../components/NavBarLogin.tsx'
 import axios from 'axios'
 
 function ArticlesPage() {
@@ -11,7 +11,7 @@ function ArticlesPage() {
     const [output, showArticles] = useState('');
     const url = 'https://newsapi.org/v2/everything?' +
     'q=biases&' +
-    'from=2023-04-25&' +
+    'from=2023-05-10&' +
     'sortBy=popularity&' +
     'apiKey=01d127c2f33a483c939e689920e7bab9';
 
@@ -41,7 +41,7 @@ function ArticlesPage() {
             <Navbar></Navbar>
             <div>Articles Page</div>
             <div className="container-fluid">
-                <div className='row' dangerouslySetInnerHTML={{ __html: output }}>
+                <div style={{overflow: 'hidden'}} className='row p-0' dangerouslySetInnerHTML={{ __html: output }}>
                     
                     
                 </div>

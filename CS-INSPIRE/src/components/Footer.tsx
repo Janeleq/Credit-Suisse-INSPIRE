@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
             <footer className="bg-light text-center w-100 mt-5 p-0 bottom container-fluid">
@@ -31,33 +31,48 @@ function Footer() {
             
                 {/* <!-- Section: Text --> */}
                 <section className="mb-4">
-                <p>
+                <p className='text-center'>
+                    <img src={logo} className='text-center' style={{width: '8%'}}/>&nbsp;&nbsp;
                     Look through the lens to discover your very own unconscious biases. 
+                   
+
                 </p>
                 </section>
                 {/* <!-- Section: Text --> */}
             
-            
+                
                 {/* <!-- Section: Links --> */}
                 <section className="">
                 {/* <!--Grid row--> */}
                 <div className="row">
                     {/* <!--Grid column--> */}
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Links</h5>
+                    <h5 className="text-uppercase">Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Link 1</a>
+                        <a href="#!" className="text-dark">Contact Us</a>
+                        </li>
+                        <li>
+                        <a href="#!" className="text-dark">FAQs</a>
+                        </li>
+                    </ul>
+                    </div>
+                    {/* <!--Grid column--> */}
+            
+                    {/* <!--Grid column--> */}
+                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
+                    <h5 className="text-uppercase">Privacy</h5>
+            
+                    <ul className="list-unstyled mb-0">
+                        <li>
+                        <a href="#!" className="text-dark">Policy</a>
                         </li>
                         <li>
                         <a href="#!" className="text-dark">Link 2</a>
                         </li>
                         <li>
                         <a href="#!" className="text-dark">Link 3</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 4</a>
                         </li>
                     </ul>
                     </div>
@@ -69,16 +84,13 @@ function Footer() {
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Link 1</a>
+                        <a href="#!" className="text-dark">About Us</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">Link 2</a>
+                        <a href="#!" className="text-dark">News Room</a>
                         </li>
                         <li>
                         <a href="#!" className="text-dark">Link 3</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 4</a>
                         </li>
                     </ul>
                     </div>
@@ -86,41 +98,17 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Links</h5>
+                    <h5 className="text-uppercase">Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Link 1</a>
+                        <a href="#!" className="text-dark">Github</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">Link 2</a>
+                        <a href="#!" className="text-dark">LinkedIn</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">Link 3</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 4</a>
-                        </li>
-                    </ul>
-                    </div>
-                    {/* <!--Grid column--> */}
-            
-                    {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Links</h5>
-            
-                    <ul className="list-unstyled mb-0">
-                        <li>
-                        <a href="#!" className="text-dark">Link 1</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 2</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 3</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 4</a>
+                        <a href="#!" className="text-dark">Instagram</a>
                         </li>
                     </ul>
                     </div>
@@ -129,6 +117,7 @@ function Footer() {
                 {/* <!--Grid row--> */}
                 </section>
                 {/* <!-- Section: Links --> */}
+                
             &copy;&nbsp;2023 Perception Pause. All rights reserved.
         </footer>
         
