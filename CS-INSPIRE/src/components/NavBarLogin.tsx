@@ -21,10 +21,11 @@ function NavigationBarLogin() {
             <Navbar.Collapse className=""id="basic-navbar-nav">
               <Nav className="me-auto text-dark" style={{right:'0px'}}>
                 <Nav.Link className="m-3" href="/explore">Explore</Nav.Link>
+                <Nav.Link className="m-3" href="/community">Community</Nav.Link>
                 <Nav.Link className="m-3" href="/articles">Articles</Nav.Link>
                 <Nav.Link className="m-3" href="/resources">Resources</Nav.Link>
                 <NavDropdown className="m-3 float-end" title="Profile" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/profile">Details</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/login">Log Out</NavDropdown.Item>
                 </NavDropdown>

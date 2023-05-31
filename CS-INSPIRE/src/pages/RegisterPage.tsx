@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase.js';
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx'
 import background from '../assets/background.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const SignupPage = () => {
@@ -88,6 +89,7 @@ const SignupPage = () => {
                         </div>          
                         <br/>                                                                                 
                         <div className="row">
+                            
                             <label htmlFor="email-address"  className='lead'>
                                 Email address
                             </label>
@@ -105,8 +107,29 @@ const SignupPage = () => {
                                 />
                         </div>
                         </div>
-                    
+        
                         <br/>
+                        {/* <div className='row'> */}
+                        <label htmlFor='gender' className='lead'>
+                            Gender
+                        </label>
+                        <br/>
+
+                            
+                            <FontAwesomeIcon icon={['fa', 'female']} />
+
+                            <input type="radio" id="female" name="gender" value="female"/>
+                            <label for="female" style={{display: 'inline'}}>&nbsp;&nbsp;Female</label> 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" id="male" name="gender" value="male"/>
+                            <label for="male">&nbsp;&nbsp;Male</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" id="unknown" name="gender" value="unknown"/>
+                            <label for="unknown">&nbsp;&nbsp;Prefer not to disclose</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {/* </div> */}
                         <div className='row'>
                             <label htmlFor="username" className='lead'>
                                 Username

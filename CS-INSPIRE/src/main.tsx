@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import HomePage from './pages/Homepage.tsx'
 import HomePageLogin from './pages/HomepageLogin.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'

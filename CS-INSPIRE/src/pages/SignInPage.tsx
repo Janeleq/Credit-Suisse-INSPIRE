@@ -10,7 +10,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
+
     
     // const location = useLocation();
 
@@ -45,7 +45,7 @@ const LoginPage = () => {
         await signInWithPopup(auth,googleProvider);
             // const user = userCredential.user;
             navigate("/home", {state:{email: email}})
-            console.log(user);  
+            // console.log(user);  
         } catch (err){
           console.error(err);
           
@@ -66,12 +66,11 @@ const LoginPage = () => {
                
         }
         catch(error)  {
-            const errorCode = error.code;
             const errorMessage = error.message;
             console.log(errorMessage)
             setError(`Error in password reset ${errorMessage}`)
             // ..
-        };
+        }
         
     }
     
@@ -79,7 +78,7 @@ const LoginPage = () => {
   
   
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-      return new Promise(resolve => setTimeout(() => resolve(), 0));
+      return new Promise(resolve => setTimeout(() => resolve(), 1000));
     } 
 
     useEffect(() => {
@@ -93,12 +92,14 @@ const LoginPage = () => {
     });
  
     return(
-        <div data-aos="fade-up"  className='bg-light' style={{overflow: 'hidden', backgroundColor: ''}}>    
+        <div data-aos=""  className='bg-light' style={{overflow: 'hidden', backgroundColor: ''}}>    
             <div className='mb-2 text-center' style={{}}>          
                     {/* <h1> Perception Pause </h1>    */}
                     <div className="row m-2" style={{height: '10%'}}>
                         {/* <div className='col' style={{ alignSelf:'start'}} > */}
-                            <img src={logo} style={{width: '12%'}}/>
+                        <NavLink to="/" style={{textAlign: 'left'}}>
+                            <img src={logo} style={{width: '12%'}} className=''/>
+                        </NavLink>
                         {/* </div> */}
                         
                     </div>      
@@ -212,7 +213,7 @@ const LoginPage = () => {
                             </NavLink>
                         </p>
                     <p className="text-center" style={{color:"red"}}>{error}</p>
-                    <p className="text-center" style={{color:"green"}}>{success}</p>          
+                    {/* <p className="text-center" style={{color:"green"}}>{success}</p>           */}
                 </div>  
             <Footer></Footer>   
         </div>
