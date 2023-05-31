@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../firebase/firebase.js';
@@ -15,6 +15,22 @@ const SignupPage = () => {
     const [username, setUsername] = useState('');
     const [error, setError] = useState('')
  
+    const [isLoading, setLoading] = useState(true);
+  
+    function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
+      return new Promise(resolve => setTimeout(() => resolve(), 0));
+    } 
+  
+    useEffect(() => {
+      someRequest().then(() => {
+        const loaderElement = document.querySelector(".loader-container");
+        if (loaderElement) {
+          loaderElement.remove();
+          setLoading(!isLoading);
+        }
+      });
+    });
+
     const onSubmit = async (e) => {
       e.preventDefault()
      
@@ -49,7 +65,7 @@ const SignupPage = () => {
         </div> 
         <div className="row mt-5">
             <div className='m-2 col text-center'>
-                <p className='text-center display-6 font-weight-light p-3'>You're one click away from discovering your unconscious biases</p>
+                <p className='text-center display-6 font-weight-light p-3'>You're one click away from discovering your potentially hidden side</p>
                 <img src={background} className='img-fluid'/>
             </div>
            

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import HomePage from './pages/Homepage.tsx'
@@ -9,8 +9,10 @@ import GenderBiasPage from './pages/GenderBiasPage.tsx'
 import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
+import ResourcePage from './pages/ResourcesPage.tsx'
 import './index.css'
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import ''
 
 import {
   createBrowserRouter,
@@ -50,11 +52,17 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <ProfilePage/>
+  },
+  {
+    path: "/resources",
+    element: <ResourcePage/>
   }
 ])
 
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
+  
     <RouterProvider router={router}/>
   // </React.StrictMode>,
 )

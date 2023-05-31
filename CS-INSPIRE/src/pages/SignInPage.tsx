@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import {  sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup  } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase/firebase.js';
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -75,7 +75,22 @@ const LoginPage = () => {
         
     }
     
+    const [isLoading, setLoading] = useState(true);
+  
+  
+    function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
+      return new Promise(resolve => setTimeout(() => resolve(), 0));
+    } 
 
+    useEffect(() => {
+      someRequest().then(() => {
+        const loaderElement = document.querySelector(".loader-container");
+        if (loaderElement) {
+          loaderElement.remove();
+          setLoading(!isLoading);
+        }
+      });
+    });
  
     return(
         <div data-aos="fade-up"  className='bg-light' style={{overflow: 'hidden', backgroundColor: ''}}>    

@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
-            <footer className="bg-light text-center w-100 mt-5 p-0 bottom container-fluid">
+            <footer className="bg-light text-center w-100 mt-5 p-0 bottom container-fluid" style={{backgroundColor  : 'grey', minHeight: '15%'}}>
             {/* <!-- Grid container --> */}
 
                 {/* <!-- Section: Social media --> */}
