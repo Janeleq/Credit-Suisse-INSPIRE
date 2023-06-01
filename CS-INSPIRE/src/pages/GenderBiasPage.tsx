@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-
+import Chatbot from '../components/Chatbot.tsx'
 
 export default () => {
     const [isNewName, setNewName] = useState(false)
@@ -31,6 +31,7 @@ export default () => {
     
     return (
         <div className=''>
+            <Chatbot/>
             Enter a name that comes to your mind and the gender you associate it with (engilsh names only please!): &nbsp;<input type="text" id="name" onChange={handleChange}></input>
             <br/>
             Name: {name} <br/>

@@ -6,6 +6,7 @@ import ageism from '../assets/BreakBias.png'
 import podcast from '../assets/podcast.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Chatbot from '../components/Chatbot.tsx'
 
 export default () => {
     const [isNewName, setNewName] = useState(false)
@@ -55,6 +56,7 @@ export default () => {
     
     return (
         <div className='h-100 w-100 container-fluid'>
+            <Chatbot/>
             <NavigationBar/>
         
             {/* <a href="https://anchor.fm/s/8555dcc0/podcast/play/70412616/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2023-4-15%2F329618118-44100-2-bfe128b41ba35.m4a">

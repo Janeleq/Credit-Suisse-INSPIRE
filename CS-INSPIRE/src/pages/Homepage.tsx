@@ -2,6 +2,7 @@ import NavigationBar from '../components/NavBar.tsx';
 import { NavLink, useNavigate } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import Footer from '../components/Footer.tsx';
+import Chatbot from '../components/Chatbot.tsx'
 import affinityBias from '../assets/affinityBias.png'
 import haloBias from '../assets/haloBias.png'
 import ageismBias from '../assets/ageism.jpg'
@@ -30,6 +31,7 @@ const HomePage = () => {
 
     return(
         <div className='container-fluid bg-light'>
+           <Chatbot/>
            <NavigationBar/>
            <h3 className="text-center" style={{marginTop: '10%'}}>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!</h3>
            <button>Sign Up</button>

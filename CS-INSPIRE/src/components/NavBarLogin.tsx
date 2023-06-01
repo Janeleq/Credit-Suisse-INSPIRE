@@ -24,6 +24,7 @@ function NavigationBarLogin() {
                 <Nav.Link className="m-3" href="/community">Community</Nav.Link>
                 <Nav.Link className="m-3" href="/articles">Articles</Nav.Link>
                 <Nav.Link className="m-3" href="/resources">Resources</Nav.Link>
+                <Nav.Link className="m-3" href="/help">Help</Nav.Link>
                 <NavDropdown className="m-3 float-end" title="Profile" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/profile">Details</NavDropdown.Item>
                   <NavDropdown.Divider />

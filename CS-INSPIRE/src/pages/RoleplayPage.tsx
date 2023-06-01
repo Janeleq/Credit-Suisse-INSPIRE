@@ -5,6 +5,8 @@ import ageism from '../assets/ageism.jpg'
 import haloeffect from '../assets/haloeffect.jpg'
 import sexism from '../assets/sexism.jpg'
 import beautybias from '../assets/beauty-bias.jpg'
+import Chatbot from '../components/Chatbot.tsx'
+import Footer from '../components/Footer.tsx'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -45,12 +47,36 @@ function RoleplayPage() {
     }
 
   }
+
+  function haloEffectGo() {
+    if (confirm("Embark on the path to discover the unconscious bias: Halo Effect?"))
+    {
+      navigate('/bias/halo')
+    }
+
+  }
+
+  function sexismGo() {
+    if (confirm("Embark on the path to discover the unconscious bias: Sexism / Gender bias?"))
+    {
+      navigate('/bias/gender')
+    }
+
+  }
+
+  function beautyGo() {
+    if (confirm("Embark on the path to discover the unconscious bias: Beauty bias?"))
+    {
+      navigate('/bias/beauty')
+    }
+
+  }
   
 
-    return (
-        <>
-        <Navbar></Navbar>
-    <div className="container-fluid" style={{marginTop: '12%'}}>
+    return (        
+    <div className="container-fluid" style={{marginTop: '10%'}}>
+      <Chatbot/>
+      <Navbar></Navbar>
         <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Look on the different pathways of unconscious biases</blockquote>
       <br/>
       <div className='container'>
@@ -72,11 +98,11 @@ function RoleplayPage() {
           </div>
         
         </div>
-        <div className="icon-image">
+        <div className="icon-image" onClick = {sexismGo}>
           <div className="icon">
             <img src={sexism} alt="sexism" />
           </div>
-          <div className="hover-image one" onClick ={() => setStatus('True')}>
+          <div className="hover-image one">
             <div className="img">
               <img src={sexism} alt="sexism" />
             </div>
@@ -88,7 +114,7 @@ function RoleplayPage() {
             </div>
           </div>
         </div>
-        <div className="icon-image">
+        <div className="icon-image" onClick={haloEffectGo}>
           <div className="icon">
             <img src={haloeffect} alt="haloeffect" />
           </div>
@@ -104,7 +130,7 @@ function RoleplayPage() {
             </div>
           </div>
         </div>
-        <div className="icon-image">
+        <div className="icon-image" onClick={beautyGo}>
           <div className="icon">
             <img src={beautybias} alt="beautybias" />
           </div>
@@ -121,8 +147,8 @@ function RoleplayPage() {
           </div>
         </div>
         </div>
+        <Footer/>
     </div>
-    </>
     )
 }
 

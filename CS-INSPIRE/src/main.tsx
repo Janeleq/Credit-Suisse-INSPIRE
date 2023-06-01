@@ -8,6 +8,7 @@ import GenderBiasPage from './pages/GenderBiasPage.tsx'
 import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
+import HelpPage  from './pages/HelpPage.tsx'
 import ResourcePage from './pages/ResourcesPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
   {
     path: "/resources",
     element: <ResourcePage/>
+  },
+  {
+    path: "/help",
+    element: <HelpPage/>
   }
 ])
 

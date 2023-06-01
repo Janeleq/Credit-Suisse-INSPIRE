@@ -2,14 +2,19 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/NavBarLogin.tsx'
 import Logo from '../assets/PerceptionPause_logo.png'
-import { getAuth, updateEmail } from "firebase/auth";
-
+import { getAuth, updateEmail, signOut } from "firebase/auth";
 
 
 function Profile() {
     const auth = getAuth();
+    const user = auth.currentUser;
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+    const [name, setName] = useState('')
+    const [photo, setPhoto] = useState('')
+    
+    console.log(user)
+
     updateEmail(auth.currentUser, email).then(() => {
     // Email updated!
     // ...
@@ -34,24 +39,41 @@ function Profile() {
           setLoading(!isLoading);
         }
       });
-    });
+    },
+    );
+
+    useEffect(() => {
+        if (user !== null) {
+            user.providerData.forEach((profile) => {
+              console.log("Sign-in provider: " + profile.providerId);
+              console.log("  Provider-specific UID: " + profile.uid);
+              console.log("  Name: " + profile.displayName);
+              setName(profile.displayName)
+              console.log("  Email: " + profile.email);
+              setEmail(profile.email)
+              console.log("  Photo URL: " + profile.photoURL);
+              setPhoto(profile.photoURL)
+            });
+          }
+    })
+
+    
+    useEffect(() => {
+        function signout (){
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                alert("Sign out sucessful!")
+              }).catch((error) => {
+                // An error happened.
+              });
+        }
+    })
+
 
     return (
-        <div>
-            <Navbar></Navbar>
-            <div className='mt-5 container-fluid'>
-              <a href="https://react.dev" target="_blank">
-              <img src={Logo} className="logo" alt="logo" />
-              </a>
-                  <div>Profile Page</div>    
-              <label for="newemail">New Email:</label>
-              <input type="text"/>
-              <button onClick={updateEmail}>Update </button>
-              { error }
-            </div>
-
-            <section className="section about-section gray-bg" id="about">
-            <div className="container">
+        <div className='container-fluid'>
+            <Navbar></Navbar>           
+            <section className="section about-section gray-bg" id="about" style={{marginTop: '10%'}}>
                 <div className="row align-items-center flex-row-reverse">
                     <div className="col-lg-6">
                         <div className="about-text go-to">
@@ -61,16 +83,13 @@ function Profile() {
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
-                                        <label>Birthday</label>
-                                        <p>4th april 1998</p>
+                                        <label>Name</label>
+                                        <p>{ name }</p>
                                     </div>
                                     <div className="media">
-                                        <label>Age</label>
-                                        <p>22 Yr</p>
-                                    </div>
-                                    <div className="media">
-                                        <label>Residence</label>
-                                        <p>Canada</p>
+                                        <label>Email</label>
+                                        <p>{ email }</p>
+                                        <button onClick={updateEmail}>Update</button>
                                     </div>
                                     <div className="media">
                                         <label>Address</label>
@@ -98,6 +117,7 @@ function Profile() {
                             </div>
                         </div>
                     </div>
+                    <button className='' onClick={signOut}>Log out</button>
                     <div className="col-lg-6">
                         <div className="about-avatar">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt=""/>
@@ -132,10 +152,11 @@ function Profile() {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </section>
          
-        </div>
+       
+    </div>
             
     )
 }
