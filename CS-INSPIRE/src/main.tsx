@@ -10,6 +10,7 @@ import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
 import ResourcePage from './pages/ResourcesPage.tsx'
+import CommunityPage from './pages/CommunityPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import ''
@@ -19,6 +20,7 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
+import Community from './pages/CommunityPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
   {
     path: "/help",
     element: <HelpPage/>
+  },
+  {
+    path: "/community",
+    element: <CommunityPage/>
   }
 ])
 
