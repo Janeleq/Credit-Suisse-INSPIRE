@@ -55,7 +55,7 @@ export default () => {
     });
     
     return (
-        <div className='h-100 w-100 container-fluid'>
+        <div className='h-100 w-100 container-fluid p-0'>
             <Chatbot/>
             <NavigationBar/>
         

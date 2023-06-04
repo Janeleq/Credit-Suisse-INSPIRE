@@ -98,7 +98,7 @@ const LoginPage = () => {
                     <div className="row m-2" style={{height: '10%'}}>
                         {/* <div className='col' style={{ alignSelf:'start'}} > */}
                         <NavLink to="/" style={{textAlign: 'left'}}>
-                            <img src={logo} style={{width: '12%'}} className=''/>
+                            <img src={logo} style={{width: '8%'}} className=''/>
                         </NavLink>
                         {/* </div> */}
                         

@@ -58,11 +58,11 @@ const SignupPage = () => {
 
   return (
     <div style={{
-    
+        overflow: 'hidden'
     }} className="container-fluid bg-light">   
-        <div className='mb-2'> 
-        <div className='row m-2' style={{height: '10%'}}>
-            <img src={logo} style={{width: '12%'}}/>
+        <div className='mb-2 p-0'> 
+        <div className='row p-0' style={{height: '10%'}}>
+            <img src={logo} style={{width: '8%'}}/>
         </div> 
         <div className="row mt-5">
             <div className='m-2 col text-center'>

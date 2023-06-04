@@ -51,7 +51,7 @@ function RoleplayPage() {
   function haloEffectGo() {
     if (confirm("Embark on the path to discover the unconscious bias: Halo Effect?"))
     {
-      navigate('/bias/halo')
+      navigate('/bias/haloeffect')
     }
 
   }
@@ -77,7 +77,8 @@ function RoleplayPage() {
     <div className="container-fluid" style={{marginTop: '10%'}}>
       <Chatbot/>
       <Navbar></Navbar>
-        <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Look on the different pathways of unconscious biases</blockquote>
+        <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Explore the different pathways of unconscious biases </blockquote>
+        <p className='text-center'>See how you fare in the various paths</p>
       <br/>
       <div className='container'>
         <div className="icon-image" onClick={ageismGo}>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NavigationBar from "../components/NavBarLogin";
@@ -49,7 +49,7 @@ function HelpPage() {
             <section style={{marginTop: '10%'}} className="section">
         
             <div className="row">
-                 <div className="col-lx-12">
+                 <div className="col-lx-12 p-0">
                     <div className="card" style={{border: 'none'}}>
                         <div className="card-body">
                             <div className="row justify-content-center mt-4">
@@ -75,12 +75,6 @@ function HelpPage() {
                             <li className="nav-item" role="presentation">
                                 <button className="nav-link" id="pills-privacy_policy-tab" data-bs-toggle="pill" data-bs-target="#pills-privacy_policy" type="button" role="tab" aria-controls="pills-privacy_policy" aria-selected="false">
                                     <span className="font-size-16">Privacy Policy</span>
-                                </button>
-                              </li>
-                              <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="pills-teachers-tab" data-bs-toggle="pill" data-bs-target="#pills-pricing_plan" type="button" role="tab" aria-controls="pills-pricing_plan" aria-selected="false">
-                                    
-                                    <span className="font-size-16">Pricing &amp; Plans</span>
                                 </button>
                               </li>
                           </ul>
@@ -143,34 +137,7 @@ function HelpPage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="tab-pane fade" id="pills-pricing_plan" role="tabpanel">
-                                <div className="row g-4 mt-4">
-                                    <div className="col-lg-6">
-                                        <h5>Where does it come from ?</h5>
-                                    <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                        and regular than that of the individual languages. The new common language will be more
-                                        simple and regular than the existing</p>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <h5>Why do we use it ?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                            and regular than that of the individual languages. The new common language will be more
-                                            simple and regular than the existing</p>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <h5>What is Lorem Ipsum ?</h5>
-                                    <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple 
-                                        and regular than that of the individual languages. The new common language will be more 
-                                        simple and regular than the existing</p>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <h5>What is Lorem Ipsum?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple 
-                                            and regular than that of the individual languages. The new common language will be more 
-                                            simple and regular than the existing</p>
-                                    </div>
-                                </div>
-                            </div>
+
                           </div>
                     </div>
                 </div>
