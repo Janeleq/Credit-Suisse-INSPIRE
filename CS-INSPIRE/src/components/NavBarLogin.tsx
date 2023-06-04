@@ -14,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function NavigationBarLogin() {
     return ( 
       <>
-        <Navbar className="p-0 mb-5" style={{height: 'auto'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
+        <Navbar className="p-0 mb-5" style={{height: 'auto', overflow: 'hidden'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
           {/* <Container className="m-0 p-0 h-25"> */}
             <Navbar.Brand href="/"><img className='w-50' src={logo} style={{marginLeft: '8px'}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{height: '15%'}} />

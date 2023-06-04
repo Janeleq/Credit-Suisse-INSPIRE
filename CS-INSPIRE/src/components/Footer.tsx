@@ -33,7 +33,10 @@ function Footer() {
                 <section className="mb-4">
                 <p className='text-center'>
                     <img src={logo} className='text-center' style={{width: '8%'}}/>&nbsp;&nbsp;
-                    Look through the lens to discover your very own unconscious biases. 
+                    <br/>
+                    <p style={{fontSize: 'small'}}>
+                    Thank you for being part of the Perception Pause movement, and we encourage you to explore the resources and engage in meaningful discussions that will help us dismantle bias and create a brighter future for all.
+                    </p>
                    
 
                 </p>
@@ -46,22 +49,22 @@ function Footer() {
                 {/* <!--Grid row--> */}
                 <div className="row">
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
+                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Contact Us</a>
+                        <a href="#!" className="text-dark">FAQs</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">FAQs</a>
+                        <a href="#!" className="text-dark">Contact Us</a>
                         </li>
                     </ul>
                     </div>
                     {/* <!--Grid column--> */}
             
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
+                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Privacy</h5>
             
                     <ul className="list-unstyled mb-0">
@@ -71,44 +74,21 @@ function Footer() {
                         <li>
                         <a href="#!" className="text-dark">Link 2</a>
                         </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 3</a>
-                        </li>
+                
                     </ul>
                     </div>
                     {/* <!--Grid column--> */}
             
                     {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Links</h5>
-            
-                    <ul className="list-unstyled mb-0">
-                        <li>
-                        <a href="#!" className="text-dark">About Us</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">News Room</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Link 3</a>
-                        </li>
-                    </ul>
-                    </div>
-                    {/* <!--Grid column--> */}
-            
-                    {/* <!--Grid column--> */}
-                    <div className="col-lg-3 col-md-6 mb-4 mb-md-0 p-0">
+                    <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
                     <h5 className="text-uppercase">Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Github</a>
+                        <a href="#!" className="text-dark">Community</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">LinkedIn</a>
-                        </li>
-                        <li>
-                        <a href="#!" className="text-dark">Instagram</a>
+                        <a href="#!" className="text-dark">News Room</a>
                         </li>
                     </ul>
                     </div>
@@ -118,7 +98,9 @@ function Footer() {
                 </section>
                 {/* <!-- Section: Links --> */}
                 
-            &copy;&nbsp;2023 Perception Pause. All rights reserved.
+            <p style={{marginTop: '5px', fontSize: 'small'}}>
+                 &copy;&nbsp;2023 Perception Pause. All rights reserved.
+            </p>
         </footer>
         
             
