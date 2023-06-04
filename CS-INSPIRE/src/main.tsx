@@ -5,12 +5,17 @@ import HomePageLogin from './pages/HomepageLogin.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
 import GenderBiasPage from './pages/GenderBiasPage.tsx'
+import GenderRoleplayPage from './pages/GenderRoleplayPage.tsx'
+import GenderFactsPage from './pages/GenderFactsPage.tsx'
 import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
 import ResourcePage from './pages/ResourcesPage.tsx'
 import CommunityPage from './pages/CommunityPage.tsx'
+import AgeismBiasPage from './pages/AgeismBiasPage.tsx'
+import HaloEffectPage from './pages/HaloEffectPage.tsx'
+import BeautyBiasPage from './pages/BeautyBiasPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import ''
@@ -21,6 +26,7 @@ import {
   Route,
 } from "react-router-dom";
 import Community from './pages/CommunityPage.tsx'
+import HaloEffect from './pages/HaloEffectPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -48,6 +54,19 @@ const router = createBrowserRouter([
     element: <GenderBiasPage/>
   },
   {
+    path: "/bias/ageism",
+    element: <AgeismBiasPage/>
+  },
+  {
+    path: "/bias/haloeffect",
+    element: <HaloEffectPage/>
+  },
+  
+  {
+    path: "/bias/beauty",
+    element: <BeautyBiasPage/>
+  },
+  {
     path: "/login",
     element: <LoginPage/>
   },
@@ -66,6 +85,14 @@ const router = createBrowserRouter([
   {
     path: "/community",
     element: <CommunityPage/>
+  },
+  {
+    path: "/bias/gender/facts",
+    element: <GenderFactsPage/>
+  },
+  {
+    path: "/bias/gender/roleplay",
+    element: <GenderRoleplayPage/>
   }
 ])
 
