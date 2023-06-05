@@ -23,7 +23,7 @@ function Beautybias() {
     return (
         <div className="container-fluid bootdey">
             <NavigationBar/>
-        <div className="row" style={{marginTop: '10%'}}>
+        <div className="row" style={{marginTop: '18vh'}}>
             <div className="col-12 text-center">
                 <div className="section-title mb-4 pb-2">
                     <h4 className="title mb-4">Unconscious Bias: <mark>Beauty Bias</mark></h4>

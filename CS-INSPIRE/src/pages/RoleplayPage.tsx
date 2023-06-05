@@ -74,7 +74,7 @@ function RoleplayPage() {
   
 
     return (        
-    <div className="container-fluid" style={{marginTop: '10%'}}>
+    <div className="container-fluid p-0" style={{marginTop: '18vh'}}>
       <Chatbot/>
       <Navbar></Navbar>
         <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Explore the different pathways of unconscious biases </blockquote>

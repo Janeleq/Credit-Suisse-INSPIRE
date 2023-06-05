@@ -48,9 +48,10 @@ export const HomePageLogin = () => {
     }
    
     return(
-        <>
+        <div className='container-fluid'>
            <NavigationBarLogin/>
            <Chatbot/>
+           <div className='content' style={{marginTop: '18vh'}}>
                 <p>
                     Welcome Home {email}
                 </p>
@@ -60,7 +61,9 @@ export const HomePageLogin = () => {
                         Logout
                     </button>
         		</div>
-        </>
+           </div>
+               
+        </div>
     )
 }
  

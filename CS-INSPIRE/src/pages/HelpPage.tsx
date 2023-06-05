@@ -46,7 +46,7 @@ function HelpPage() {
         <div className="container-fluid">
             <Chatbot/>  
             <NavigationBar/>
-            <section style={{marginTop: '10%'}} className="section">
+            <section style={{marginTop: '18vh'}} className="section">
         
             <div className="row">
                  <div className="col-lx-12 p-0">

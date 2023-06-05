@@ -23,7 +23,7 @@ function HaloEffect() {
     return (
         <div className="container-fluid bootdey">
             <NavigationBar/>
-        <div className="row" style={{marginTop: '10%'}}>
+        <div className="row" style={{marginTop: '18vh'}}>
             <div className="col-12 text-center">
                 <div className="section-title mb-4 pb-2">Unconscious Bias: <mark>Halo Effect</mark>
                     <h4 className="title mb-4"></h4>

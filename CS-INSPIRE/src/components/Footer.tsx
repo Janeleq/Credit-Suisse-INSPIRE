@@ -2,9 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
-            <footer className="bg-light text-center w-100 mt-5 p-0 bottom container-fluid" style={{backgroundColor: 'grey', minHeight: '15%'}}>
+            
+            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto'}}>
             {/* <!-- Grid container --> */}
-
+                <hr style={{color: 'grey', height: '1px'}}/>
                 {/* <!-- Section: Social media --> */}
                 <section className="mb-4">
                 {/* <!-- Facebook --> */}
@@ -30,31 +31,29 @@ function Footer() {
 
             
                 {/* <!-- Section: Text --> */}
-                <section className="mb-4">
+                <section className="mb-2">
                 <p className='text-center'>
                     <img src={logo} className='text-center' style={{width: '8%'}}/>&nbsp;&nbsp;
                     <br/>
-                    <p style={{fontSize: 'small'}}>
+                    <p style={{fontSize: 'small'}} className='w-75 mx-auto'>
                     Thank you for being part of the Perception Pause movement, and we encourage you to explore the resources and engage in meaningful discussions that will help us dismantle bias and create a brighter future for all.
                     </p>
-                   
-
                 </p>
                 </section>
                 {/* <!-- Section: Text --> */}
             
                 
                 {/* <!-- Section: Links --> */}
-                <section className="">
+                <section className="" style={{fontSize: '0.85rem'}}>
                 {/* <!--Grid row--> */}
                 <div className="row">
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Help</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">FAQs</a>
+                        <a href="#!" className="text-dark" >FAQs</a>
                         </li>
                         <li>
                         <a href="#!" className="text-dark">Contact Us</a>
@@ -65,7 +64,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Privacy</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Privacy</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -81,7 +80,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase">Media</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -98,7 +97,7 @@ function Footer() {
                 </section>
                 {/* <!-- Section: Links --> */}
                 
-            <p style={{marginTop: '5px', fontSize: 'small'}}>
+            <p className='mt-3 p-3 text-light' style={{backgroundColor: '#404041', fontSize: 'small'}}>
                  &copy;&nbsp;2023 Perception Pause. All rights reserved.
             </p>
         </footer>

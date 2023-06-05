@@ -56,7 +56,7 @@ const HomePage = () => {
                                   <blockquote className="blockquote" style={{}}>
                                     <p className="pb-3">
                                       <i className="fas fa-quote-left fa-xs text-primary"></i>
-                                      <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey'}}>50,000 - 70,000</b> pieces of information per day. <br/> But how many of them are we actually conscious of?</span>
+                                      <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey', fontSize: '2.5rem'}}>50,000 - 70,000</b> pieces of information per day. <br/><br/> But how many of them are we actually <strong style={{textDecoration: 'underline'}}>conscious</strong> of?</span>
                                       <i className="fas fa-quote-right fa-xs text-primary"></i>
                                     </p>
                                   </blockquote>
@@ -85,7 +85,7 @@ const HomePage = () => {
             </div>
               <div className='desc-one row text-center' data-aos="fade-right" data-aos-delay="500">
                 <div className='col'>
-                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>What is Unconscious Bias?</h4>
+                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '18vh'}}>What is Unconscious Bias?</h4>
                     <iframe width="500" height="315" 
                             src="https://www.youtube.com/embed/rbe5D3Yh43o" 
                             title="What is Unconscious Bias" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
@@ -98,9 +98,29 @@ const HomePage = () => {
               <div className='row'>
                 <div className='col'>
                   <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The nature of unconscious bias</h4>
+                    <p className='text-center w-50 mx-auto'>
+                      Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
+                    </p>
+                </div>
+              </div>
+
+              <div className='row'>
+                <div className='col'>
+                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The 3 truths about unconscious bias</h4>
                   <p className='text-center w-50 mx-auto'>
-                    Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
+                    Truth No. 1: We All Have Unconscious Bias
+                  </p><br/>
+                  the brain provides this shortcut in all of us. Sometimes we see it. Sometimes we don’t.
+                  <p className='text-center w-50 mx-auto'>
+                    Truth No. 2: Biases Come In Different Forms
+                  </p><br/> 
+                  Biases come in many forms. There are more than 150 identified unconscious biases, some of which will be covered later on.
+                  <p className='text-center w-50 mx-auto'>
+                    Truth No. 3: Unconscious Biases Can Be Recognized And Addressed
                   </p>
+                  One way to bring those unconscious biases to light is by taking the Implicit Association Test (IAT) by Harvard University. This short, free, anonymous test helps you to see where an unconscious bias may be held. You can test for bias in areas such as gender, ethnicity and sexual orientation to discover whether you have a slight, moderate or strong bias in those areas and others.
+
+Be aware: The results may surprise you with indications of biases of which you were oblivious. Remember also that the lesson isn’t that having an unconscious bias is bad — it’s not recognizing the bias — yet still making decisions based on it that can cause trouble.
                 </div>
               </div>
 
@@ -114,39 +134,40 @@ const HomePage = () => {
                   <br/>
                   <div className='row text-center mx-auto' data-aos="fade-right" data-aos-delay="600">
                     <div className='col-sm-6 col-lg-4'>
-                      <div className='w-75 h-75 text-center'>
-                      Affinity bias
+                    Affinity bias
+                      <div className=''>
+                      
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>
                     </div>
-                    <div className='col-sm-6 col-lg-4 mx-auto'>
-                      <div className='w-75 h-75 text-center'>
-                      Confirmation bias 
+                    <div className='col-sm-6 col-lg-4 text-center mx-auto'>
+                    Confirmation bias 
+                      <div className=''>
+                      
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to cherry-pick information that confirms our existing beliefs or ideas</p>
                       </div>
                     </div>
                     <div className='col-sm-6 col-lg-4'>
-                      <div className='w-75 h-75 text-center'>
                       The Halo Effect
+                      <div className=''>
+                      
                         <img src = {haloBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency for positive impressions of a person, company, country, brand, or product in one area to positively or negatively influence one's opinion or feelings in other areas</p>
                       </div>
                     </div>
-                  </div>
-                  <br/>
-                  <div className='row text-center' data-aos="fade-right" data-aos-delay="600">
+                
                     <div className='col col-sm-6 col-lg-4 text-center'>
-                      Gender bias <br/>
-                      <div className='w-75 h-75 text-center'>
+                      Gender bias
+                      <div className=''>
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>
                     </div>
                     <div className='col col-sm-6 col-lg-4'>
                       Ageism  
-                      <div className='w-75 h-75 text-center'>
+                      <div className=''>
                         <img src = {ageismBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>                   

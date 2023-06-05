@@ -73,7 +73,7 @@ function Profile() {
     return (
         <div className='container-fluid'>
             <Navbar></Navbar>           
-            <section className="section about-section gray-bg" id="about" style={{marginTop: '10%'}}>
+            <section className="section about-section gray-bg" id="about" style={{marginTop: '18vh'}}>
                 <div className="row align-items-center ">
                 <div className="col-lg-4">
                         <div className="about-avatar">
@@ -88,17 +88,13 @@ function Profile() {
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
-                                        <label>Name</label>
+                                        <label>Name: &nbsp;</label>
                                         <p>{ name }</p>
                                     </div>
                                     <div className="media">
-                                        <label className=''>Email</label>
+                                        <label className=''>Email: &nbsp;</label>
                                         <p>{ email }</p>
                                         <button onClick={updateEmail}>Update</button>
-                                    </div>
-                                    <div className="media">
-                                        <label>Address</label>
-                                        <p>California, USA</p>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
@@ -109,14 +105,6 @@ function Profile() {
                                     <div className="media">
                                         <label>-</label>
                                         <p>-</p>
-                                    </div>
-                                    <div className="media">
-                                        <label>Skype</label>
-                                        <p>skype.0404</p>
-                                    </div>
-                                    <div className="media">
-                                        <label>Freelance</label>
-                                        <p>Available</p>
                                     </div>
                                 </div>
                             </div>

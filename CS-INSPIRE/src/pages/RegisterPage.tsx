@@ -61,7 +61,7 @@ const SignupPage = () => {
         overflow: 'hidden'
     }} className="container-fluid bg-light">   
         <div className='mb-2 p-0'> 
-        <div className='row p-0' style={{height: '10%'}}>
+        <div className='row p-0' style={{marginTop: '18vh'}}>
             <img src={logo} style={{width: '8%'}}/>
         </div> 
         <div className="row mt-5">

@@ -30,11 +30,11 @@ function Genderbias () {
         <div className='container-fluid p-0 w-100'>
             <NavigationBar/>
             <Chatbot/>
-			<div className='row text-center mb-2' style={{marginTop: "10%"}}>
+			<div className='row text-center mb-2 w-100' style={{marginTop: '18vh'}}>
 				<h3>Unconscious Bias: <mark>Halo Effect</mark></h3>
 				<h5 className='lead'>Choose between exploring some fun facts or roleplaying!</h5>
 			</div>
-			<div className='row text-center'>
+			<div className='row text-center m-0'>
 				<div className='col-12 col-lg-6 text-center' style={{}}>
 					<div className="card" style={{width:'25rem', height: '100%', display: 'block', marginLeft: 'auto', marginRight: 'auto', float: 'right'}}>
 						<h5 className="card-title mt-2">Fun Facts</h5>
