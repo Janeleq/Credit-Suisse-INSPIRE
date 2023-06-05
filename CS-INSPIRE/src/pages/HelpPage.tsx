@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 // import emailjs from '@emailjs/browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from "../components/Footer";
 import NavigationBar from "../components/NavBarLogin";
 import Chatbot from "../components/Chatbot"
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -43,7 +44,7 @@ function HelpPage() {
 
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid p-0" style={{backgroundColor: '#808080'}}>
             <Chatbot/>  
             <NavigationBar/>
             <section style={{marginTop: '18vh'}} className="section">
@@ -145,7 +146,8 @@ function HelpPage() {
           </div>
       </div>
   </div>
-</section>
+            </section>
+            <Footer/>
         </div>
 
     )

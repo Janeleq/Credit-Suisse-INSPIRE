@@ -9,6 +9,7 @@ import ageismBias from '../assets/ageism.jpg'
 import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HomePage = () => {
 
@@ -34,58 +35,84 @@ const HomePage = () => {
         <div className='container-fluid bg-light p-0 h-100 w-100' style={{}}>
            <NavigationBar/>
            <Chatbot/>
-           <div className='register text-center bg-light' style={{marginTop: '8%', overflow:' hidden'}}>
+           <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
+           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+              <ol className="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img className="d-block w-100" src={sheryl} alt="First slide"/>
+                </div>
+                <div className="carousel-item">
+                  <img className="d-block w-100" src={haloBias} alt="Second slide"/>
+                </div>
+                <div className="carousel-item">
+                  <img className="d-block w-100" src={ageismBias} alt="Third slide"/>
+                </div>
+              </div>
+              <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
               <h4 className="text-center p-3" style={{textAlign: 'center'}}>
                 Unravel the intricate workings of our minds and fostering a deeper understanding of the biases that shape our perceptions and actions.
               </h4>
               <button>Sign Up</button>
           
 
-            <div className='intro row mt-3'>
-              <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!
+              <div className='intro row mt-3'>
+                <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!
 
-              </p>
-                <section className="col" style={{backgroundColor: "#eee;"}}>
-                    <div className="row d-flex justify-content-center align-items-center">
-                      <div className="col col-lg-9 col-xl-7">
-                        <div className="" style={{border: 'none', borderRadius: "15px;"}} data-aos="zoom-in" data-aos-delay="500">
-                          <div className="card-body p-5">
-                            <figure className="text-center mb-0" style={{display: 'inline', backgroundColor: ''}}>
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
-                                  alt="Bulb" width="100" style={{display: 'inline'}}/>                          
-                                  <blockquote className="blockquote" style={{}}>
-                                    <p className="pb-3">
-                                      <i className="fas fa-quote-left fa-xs text-primary"></i>
-                                      <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey', fontSize: '2.5rem'}}>50,000 - 70,000</b> pieces of information per day. <br/><br/> But how many of them are we actually <strong style={{textDecoration: 'underline'}}>conscious</strong> of?</span>
-                                      <i className="fas fa-quote-right fa-xs text-primary"></i>
-                                    </p>
-                                  </blockquote>
-                            </figure>
-                            <br/><br/>
-                            <figure className="text-center mb-0">
-                              <blockquote className="blockquote">
-                                <img className='img-fluid w-50 h-50' style={{borderRadius: '50%'}} src={sheryl} alt="sheryl"/>
-                                <p className="pb-2">
-                                  <i className="fas fa-quote-left fa-xs text-primary"></i>
-                                  <span className="lead font-italic"> "None of us is immune to biases, whether conscious or unconscious. But by acknowledging them, we can work to overcome them."</span>
-                                  <i className="fas fa-quote-right fa-xs text-primary"></i>
-                                </p>
-                              </blockquote>
-                              <figcaption className="blockquote-footer mb-0">
-                             Sheryl Sandberg
-                              </figcaption>
-                            </figure>
-                           
+                </p>
+                  <section className="col" style={{backgroundColor: "#eee;"}}>
+                      <div className="row d-flex justify-content-center align-items-center">
+                        <div className="col col-lg-9 col-xl-7">
+                          <div className="" style={{border: 'none', borderRadius: "15px;"}} data-aos="zoom-in" data-aos-delay="500">
+                            <div className="card-body p-5">
+                              <figure className="text-center mb-0" style={{display: 'inline', backgroundColor: ''}}>
+                                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                                    alt="Bulb" width="100" style={{display: 'inline'}}/>                          
+                                    <blockquote className="blockquote" style={{}}>
+                                      <p className="pb-3">
+                                        <i className="fas fa-quote-left fa-xs text-primary"></i>
+                                        <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey'}}>50,000 - 70,000</b> pieces of information per day. <br/> But how many of them are we actually conscious of?</span>
+                                        <i className="fas fa-quote-right fa-xs text-primary"></i>
+                                      </p>
+                                    </blockquote>
+                              </figure>
+                              <br/><br/>
+                              <figure className="text-center mb-0">
+                                <blockquote className="blockquote">
+                                  <img className='img-fluid w-50 h-50' style={{borderRadius: '50%'}} src={sheryl} alt="sheryl"/>
+                                  <p className="pb-2">
+                                    <i className="fas fa-quote-left fa-xs text-primary"></i>
+                                    <span className="lead font-italic"> "None of us is immune to biases, whether conscious or unconscious. But by acknowledging them, we can work to overcome them."</span>
+                                    <i className="fas fa-quote-right fa-xs text-primary"></i>
+                                  </p>
+                                </blockquote>
+                                <figcaption className="blockquote-footer mb-0">
+                              Sheryl Sandberg
+                                </figcaption>
+                              </figure>
+                            
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  
-                </section>
-            </div>
+                    
+                  </section>
+              </div>
               <div className='desc-one row text-center' data-aos="fade-right" data-aos-delay="500">
                 <div className='col'>
-                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '18vh'}}>What is Unconscious Bias?</h4>
+                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>What is Unconscious Bias?</h4>
                     <iframe width="500" height="315" 
                             src="https://www.youtube.com/embed/rbe5D3Yh43o" 
                             title="What is Unconscious Bias" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
@@ -98,29 +125,9 @@ const HomePage = () => {
               <div className='row'>
                 <div className='col'>
                   <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The nature of unconscious bias</h4>
-                    <p className='text-center w-50 mx-auto'>
-                      Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
-                    </p>
-                </div>
-              </div>
-
-              <div className='row'>
-                <div className='col'>
-                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The 3 truths about unconscious bias</h4>
                   <p className='text-center w-50 mx-auto'>
-                    Truth No. 1: We All Have Unconscious Bias
-                  </p><br/>
-                  the brain provides this shortcut in all of us. Sometimes we see it. Sometimes we don’t.
-                  <p className='text-center w-50 mx-auto'>
-                    Truth No. 2: Biases Come In Different Forms
-                  </p><br/> 
-                  Biases come in many forms. There are more than 150 identified unconscious biases, some of which will be covered later on.
-                  <p className='text-center w-50 mx-auto'>
-                    Truth No. 3: Unconscious Biases Can Be Recognized And Addressed
+                    Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
                   </p>
-                  One way to bring those unconscious biases to light is by taking the Implicit Association Test (IAT) by Harvard University. This short, free, anonymous test helps you to see where an unconscious bias may be held. You can test for bias in areas such as gender, ethnicity and sexual orientation to discover whether you have a slight, moderate or strong bias in those areas and others.
-
-Be aware: The results may surprise you with indications of biases of which you were oblivious. Remember also that the lesson isn’t that having an unconscious bias is bad — it’s not recognizing the bias — yet still making decisions based on it that can cause trouble.
                 </div>
               </div>
 
@@ -134,40 +141,39 @@ Be aware: The results may surprise you with indications of biases of which you w
                   <br/>
                   <div className='row text-center mx-auto' data-aos="fade-right" data-aos-delay="600">
                     <div className='col-sm-6 col-lg-4'>
-                    Affinity bias
-                      <div className=''>
-                      
+                      <div className='w-75 h-75 text-center'>
+                      Affinity bias
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>
                     </div>
-                    <div className='col-sm-6 col-lg-4 text-center mx-auto'>
-                    Confirmation bias 
-                      <div className=''>
-                      
+                    <div className='col-sm-6 col-lg-4 mx-auto'>
+                      <div className='w-75 h-75 text-center'>
+                      Confirmation bias 
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to cherry-pick information that confirms our existing beliefs or ideas</p>
                       </div>
                     </div>
                     <div className='col-sm-6 col-lg-4'>
+                      <div className='w-75 h-75 text-center'>
                       The Halo Effect
-                      <div className=''>
-                      
                         <img src = {haloBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency for positive impressions of a person, company, country, brand, or product in one area to positively or negatively influence one's opinion or feelings in other areas</p>
                       </div>
                     </div>
-                
+                  </div>
+                  <br/>
+                  <div className='row text-center' data-aos="fade-right" data-aos-delay="600">
                     <div className='col col-sm-6 col-lg-4 text-center'>
-                      Gender bias
-                      <div className=''>
+                      Gender bias <br/>
+                      <div className='w-75 h-75 text-center'>
                         <img src = {affinityBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>
                     </div>
                     <div className='col col-sm-6 col-lg-4'>
                       Ageism  
-                      <div className=''>
+                      <div className='w-75 h-75 text-center'>
                         <img src = {ageismBias} className='w-75 h-75'/>
                         <p className='w-75' style={{marginLeft: '12%'}}>The tendency to favor people who share similar interests, backgrounds, and experiences with us</p>
                       </div>                   
@@ -214,9 +220,8 @@ A substantial amount of research has been published demonstrating impact of unco
             </p>
         </div>
       </div>
-      </div>
-      <Footer/>
-      
+           </div>
+           <Footer/>
       </div>
     )
 }

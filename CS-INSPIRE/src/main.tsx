@@ -18,6 +18,7 @@ import HaloEffectPage from './pages/HaloEffectPage.tsx'
 import BeautyBiasPage from './pages/BeautyBiasPage.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.min.js"
 // import ''
 
 import {

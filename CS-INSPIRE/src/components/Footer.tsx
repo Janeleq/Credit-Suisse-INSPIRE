@@ -3,42 +3,28 @@ import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
             
-            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto'}}>
+            <footer className="bg-light text-center w-100 p-0 bottom mt-5" style={{height: 'auto'}}>
             {/* <!-- Grid container --> */}
-                <hr style={{color: 'grey', height: '1px'}}/>
+                <hr style={{color: 'grey', height: '', margin: '0', marginBottom: '5p'}}/>
                 {/* <!-- Section: Social media --> */}
-                <section className="mb-4">
-                {/* <!-- Facebook --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#3b5998"}} href="#!" role="button"><i className="fab fa-facebook-f"></i></a>
-            
-                {/* <!-- Twitter --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#55acee"}} href="#!" role="button"><i className="fab fa-twitter"></i></a>
-            
-                {/* <!-- Google --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#dd4b39"}} href="#!" role="button"><i className="fab fa-google"></i></a>
-            
-                {/* <!-- Instagram --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#ac2bac"}} href="#!" role="button"><i className="fab fa-instagram"></i></a>
-            
-                {/* <!-- Linkedin --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#0082ca"}} href="#!" role="button"><i className="fab fa-linkedin-in"></i></a>
-                {/* <!-- Github --> */}
-                <a className="btn btn-primary btn-floating m-1" style={{backgroundColor: "#333333"}} href="#!" role="button"><i className="fab fa-github"></i></a>
-                </section>
-                {/* <!-- Section: Social media --> */}
-            
+              
             
 
             
                 {/* <!-- Section: Text --> */}
                 <section className="mb-2">
-                <p className='text-center'>
-                    <img src={logo} className='text-center' style={{width: '8%'}}/>&nbsp;&nbsp;
-                    <br/>
-                    <p style={{fontSize: 'small'}} className='w-75 mx-auto'>
-                    Thank you for being part of the Perception Pause movement, and we encourage you to explore the resources and engage in meaningful discussions that will help us dismantle bias and create a brighter future for all.
-                    </p>
-                </p>
+                    <div className='row'>
+                        <div className='col p-0 m-0'>
+                            <p className='text-center m-0'>
+                                <img src={logo} className='' style={{display: 'inline-block', width: '8%'}}/>&nbsp;&nbsp;
+                           
+                                <p style={{fontSize: 'small'}} className='w-75 mx-auto'>
+                                Thank you for being part of the Perception Pause movement, and we encourage you to explore the resources and engage in meaningful discussions that will help dismantle bias and create a brighter future for all.
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+         
                 </section>
                 {/* <!-- Section: Text --> */}
             
@@ -49,14 +35,14 @@ function Footer() {
                 <div className="row">
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Help</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark" >FAQs</a>
+                        <a href="#!" className="" style={{color: '#888888'}} >FAQs</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">Contact Us</a>
+                        <a href="#!" className="" style={{color: '#888888'}}>Contact Us</a>
                         </li>
                     </ul>
                     </div>
@@ -64,14 +50,14 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Privacy</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Privacy</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Policy</a>
+                        <a href="#!" className="" style={{color: '#888888'}}>Policy</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">Link 2</a>
+                        <a href="#!" className="" style={{color: '#888888'}}>Link 2</a>
                         </li>
                 
                     </ul>
@@ -80,14 +66,14 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: 'grey'}}>Media</h5>
+                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
-                        <a href="#!" className="text-dark">Community</a>
+                        <a href="#!" className="" style={{color: '#888888'}}>Community</a>
                         </li>
                         <li>
-                        <a href="#!" className="text-dark">News Room</a>
+                        <a href="#!" className="" style={{color: '#888888'}}>News Room</a>
                         </li>
                     </ul>
                     </div>
