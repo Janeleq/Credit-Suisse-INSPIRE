@@ -16,12 +16,10 @@ function NavigationBar() {
       <>
         <Navbar className="p-0 mb-0" style={{height: 'auto', overflow: 'hidden'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
           {/* <Container className="m-0 p-0 h-25"> */}
-          <Navbar.Brand href="/"><img className='w-50' src={logo} style={{marginLeft: '8px'}}/></Navbar.Brand>
+          <Navbar.Brand href="/"><img className='' src={logo} style={{width: '40%', marginLeft: '8px'}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{height: '15%'}}/>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto text-dark" style={{right:'0px'}}>
-
-                <Nav.Link className="m-3" href="/articles">Articles</Nav.Link>
                 <Nav.Link className="m-3" href="/login">Login</Nav.Link>
                 <Nav.Link className="m-3" href="/register">Sign Up</Nav.Link>
               </Nav>

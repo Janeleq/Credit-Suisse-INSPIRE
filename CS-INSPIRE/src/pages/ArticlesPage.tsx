@@ -12,11 +12,11 @@ function ArticlesPage() {
 
     // useEffect runs twice if we on strictmode
     const [articles, fixArticles] = useState("");
-    const [output, showArticles] = useState([]);
+    const [output, showArticles] = useState("");
     const url = 'https://newsapi.org/v2/everything?' +
-    'q=biases&' +
-    'from=2023-05-27&' +
-    'sortBy=popularity&' +
+    'q=bias&' +
+    'from=2023-05-28&' +
+    'sortBy=publishedAt&' +
     'apiKey=01d127c2f33a483c939e689920e7bab9&' +
     'pageSize=25';
 
@@ -40,7 +40,8 @@ function ArticlesPage() {
     useEffect(() => {
       fetchArticles(); 
     }, [])
-
+ 
+   let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
    let articleList = [];
    function fetchArticles() {
       axios.get(url)
@@ -52,25 +53,25 @@ function ArticlesPage() {
               if (articles[i].urlToImage !== null)
               {
                 console.log(articles[i].urlToImage)
-                  articleList.push(
-                  `<div className="col-md-6">
-                  <div className="media blog-media">
-                      <a href="#"><img src=${articles[i].urlToImage} className='d-flex w-50 img-fluid' style={{}}/></a>
-                      <div className="circle">
-                          <h5 className="day"><strong>${articles[i].title}</strong></h5>
-                          <span className="month">sep</span>
+                  articleList += 
+                  `<div class="col-md-6" style="display: grid; column-gap: 20px; row-gap: 20px">
+                  <div class="media blog-media" style="width:""">
+                      <a href="#" style="width: 15vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex;"/></a>
+                      <div class="circle">
+                          <h5 class="day"><strong></strong></h5>
+                          <span class="month">${[parseInt(articles[i].publishedAt.substring(8,10))]} ${months[parseInt(articles[i].publishedAt.substring(5,7))-1]} <br/>${articles[i].publishedAt.substring(0,4)}</span>
                       </div>
-                      <div className="media-body">
-                          <a href=""><h5 className="mt-0">Standard Blog Post</h5></a> Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                          <a href="#" className="post-link">Read More</a>
+                      <div class="media-body" style="overflow: hidden">
+                          <a href=""><h5 class="mt-0" style="margin-top: 0">${articles[i].title}</h5></a> ${articles[i].description}
+                          <a href="#" class="post-link">Read More</a>
                           <ul>
                               <li>by: ${articles[i].author}</li>
-                              <li className="text-right"><a href="#">${articles[i].description}</a></li>
-                          </ul>${articles[i].author}
+                              <li class="" style="text-align: right"><a href="#">2</a></li>
+                          </ul>
                       </div>
                   </div>
               </div>
-                  `)
+                  `
               }
             showArticles(articleList);
           }
@@ -82,7 +83,7 @@ function ArticlesPage() {
    }
    
    console.log(output)
-        
+    console.log(articles)
     return (
         // <div className='container-fluid bg-light p-0'>
         //     <Chatbot/>
@@ -101,13 +102,11 @@ function ArticlesPage() {
         <div className="container-fluid p-0">
           <Navbar/>
           <Chatbot/>
-          <div style={{marginTop: '18vh'}}> 
+          <div style={{marginTop: '18vh'}} className=''> 
              <blockquote className='lead text-center'>Some interesting articles relating to all sorts of biases, for your knowledge and reading.</blockquote>
-             <div className="row" style={{}}> 
-                { output.map((article) => (
-                    <div key={article.id}>{article}</div>
-                )) }
-              {/* <div className="col-md-6">
+             <div className="row" style={{boxShadow: '2px', overflow: 'hidden'}} dangerouslySetInnerHTML={{__html: output}}/> 
+              
+              <div className="col-md-6">
                   <div className="media blog-media">
                       <a href="#"><img className="d-flex" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Generic placeholder image"/></a>
                       <div className="circle">
@@ -157,10 +156,8 @@ function ArticlesPage() {
                           </ul>
                       </div>
                   </div>
-              </div> */}
+              </div> 
             </div>
-          </div>
-    
         <Footer/>
         </div>
     )

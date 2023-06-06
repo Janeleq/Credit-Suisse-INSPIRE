@@ -80,7 +80,7 @@ function RoleplayPage() {
         <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Explore the different pathways of unconscious biases </blockquote>
         <p className='text-center'>See how you fare in the various paths</p>
       <br/>
-      <div className='container'>
+      <div className='container mb-5'>
         <div className="icon-image" onClick={ageismGo}>
           <div className="icon">
             <img src={ageism} alt="ageism" />

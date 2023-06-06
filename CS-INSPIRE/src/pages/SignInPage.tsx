@@ -5,6 +5,8 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx';
 import NavigationBar from '../components/NavBar.tsx';
+import background  from '../assets/login_bg.png'
+import { url } from 'inspector';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -79,7 +81,7 @@ const LoginPage = () => {
   
   
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-      return new Promise(resolve => setTimeout(() => resolve(), 1000));
+      return new Promise(resolve => setTimeout(() => resolve(), 0));
     } 
 
     useEffect(() => {
@@ -93,21 +95,22 @@ const LoginPage = () => {
     });
  
     return(
-        <div data-aos=""  className='bg-light' style={{overflow: 'hidden', backgroundColor: ''}}>    
-            <div className='mb-2 text-center' style={{}}>          
+        <div data-aos=""  className='bg-light container-fluid' style={{overflow: 'hidden', backgroundImage: 'url(../assets/login_bg.png)'}}>    
+            <NavigationBar/>
+            <div className='mb-5 text-center' style={{}}>          
                     {/* <h1> Perception Pause </h1>    */}
-                    <div className="row m-2" style={{height: '10%'}}>
+                    {/* <div className="row m-2" style={{height: '10%'}}> */}
                         {/* <div className='col' style={{ alignSelf:'start'}} > */}
-                        <NavigationBar/>
+                        
                         {/* <NavLink to="/" style={{textAlign: 'left'}}>
                             <img src={logo} style={{width: '8%'}} className=''/>
                         </NavLink> */}
                         {/* </div> */}
                         
-                    </div>      
+                    {/* </div>       */}
                     
-                     <div className='desc text-center'>
-                        <h3>Welcome to Perception Pause</h3>
+                     <div className='desc text-center' style={{marginTop: '18vh'}}>
+                        <h3 className='text-dark'>Welcome to Perception Pause</h3>
                          <text className='lead'>To get started, please sign in</text>         
                      </div>
                      

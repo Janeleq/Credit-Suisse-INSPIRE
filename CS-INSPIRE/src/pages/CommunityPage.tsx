@@ -69,7 +69,7 @@ function Community() {
                                             <div className="title">
                                                 <img src={valerie} alt="Valerie Alexandar   "/>
                                                 <h5>Valerie Alexandar</h5>
-                                                <p>Author, spaker & CEO</p>
+                                                <p>Author, speaker & CEO</p>
                                             </div>
                                         </div>
                                     </div>

@@ -60,20 +60,20 @@ const SignupPage = () => {
   return (
     <div style={{
         overflow: 'hidden'
-    }} className="container-fluid bg-light">   
+    }} className="container-fluid bg-light p-0">   
+
         <NavigationBar/>
-        <div className='mb-2 p-0'> 
+        <div className='mb-5 p-0'> 
         <div className='row p-0' style={{marginTop: '18vh'}}>
-            {/* <img src={logo} style={{width: '8%'}}/> */}
+            <p className='text-center display-6 font-weight-light p-3'>Discover your potentially hidden side today.</p>
         </div> 
-        <div className="row mt-5">
+
+        <div className="row">   
             <div className='m-2 col text-center'>
-                <p className='text-center display-6 font-weight-light p-3'>You're one click away from discovering your potentially hidden side</p>
                 <img src={background} className='img-fluid'/>
-            </div>
-           
-            <div className='col'>
-                <div className='text-center' style={{}}>                  
+            </div>    
+
+                <div className='col' style={{float: 'left'}}>                  
                     {/* <h1> Perception Pause </h1>    */}
                                                                                             
                     <form className='p-3 text-center bg-light' style={{backgroundColor: 'grey'}}>
@@ -188,8 +188,9 @@ const SignupPage = () => {
                     </form>  
                              
                 </div>
-            </div>
-        </div>
+            
+        </div> 
+    
         </div>
         <Footer></Footer>   
     </div>

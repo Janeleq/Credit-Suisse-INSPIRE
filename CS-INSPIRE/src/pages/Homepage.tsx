@@ -10,6 +10,7 @@ import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/_heroslider.css'
 
 const HomePage = () => {
 
@@ -33,103 +34,252 @@ const HomePage = () => {
 
     return(
         <div className='container-fluid bg-light p-0 h-100 w-100' style={{}}>
+
            <NavigationBar/>
            <Chatbot/>
+
+           <section className="cd-hero">
+             <ul className="cd-hero-slider autoplay">  
+ 
+            <ul className="cd-hero-slider autoplay"> for slider auto play 
+            <ul className="cd-hero-slider"> for disabled auto play
+    
+            <li className="selected first-slide">
+                <div className="cd-full-width">
+                    <div className="tm-slide-content-div slide-caption">
+                        {/* <span>Introduction to</span>   */}
+                        <h2>Perception Pause</h2>
+                        <p className='lead'>Discover the potential unconscious bias you might have today</p>
+                        <div className="primary-button">
+                            <a href="#" className="text-dark scroll-link" data-id="about">Discover More</a>
+                        </div>                           
+                    </div>                   
+                </div> 
+            </li>
+
+            <li className="second-slide">
+                <div className="cd-full-width">
+                    <div className="tm-slide-content-div slide-caption">
+                        <span>We Are Perfect Staffs</span>
+                        <h2>Our Team Members</h2>
+                        <p>Unravel the intricate workings of our minds and fostering a deeper understanding of the biases that shape our perceptions and actions.</p>
+                        <div className="primary-button">
+                            <a href="#">Read More</a>
+                        </div>                        
+                    </div>                     
+                </div>
+            </li>
+
+            <li className="third-slide">
+                <div className="cd-full-width">
+                    <div className="tm-slide-content-div slide-caption">
+                        <span>Design is a hobby</span>
+                        <h2>Responsive Layout</h2>
+                        <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!</p>
+                        <div className="primary-button">
+                            <a href="#">
+                              <button>Sign Up</button>
+                            </a>
+                        </div>                           
+                    </div>                         
+                </div>
+            </li>
+        </ul> 
+
+        <div className="cd-slider-nav">
+            <nav>
+                <span className="cd-marker item-1"></span>
+                
+                <ul>
+                    <li className="selected"><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>
+                    <li><a href="#0"></a></li>                        
+                </ul>
+            </nav> 
+        </div> 
+        
+     </ul>
+              </ul>
+           </section>
+
            <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
-           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-              <ol className="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img className="d-block w-100" src={sheryl} alt="First slide"/>
-                </div>
-                <div className="carousel-item">
-                  <img className="d-block w-100" src={haloBias} alt="Second slide"/>
-                </div>
-                <div className="carousel-item">
-                  <img className="d-block w-100" src={ageismBias} alt="Third slide"/>
-                </div>
-              </div>
-              <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="sr-only">Previous</span>
-              </a>
-              <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="sr-only">Next</span>
-              </a>
-            </div>
-              <h4 className="text-center p-3" style={{textAlign: 'center'}}>
-                Unravel the intricate workings of our minds and fostering a deeper understanding of the biases that shape our perceptions and actions.
-              </h4>
-              <button>Sign Up</button>
           
 
-              <div className='intro row mt-3'>
-                <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!
-
-                </p>
-                  <section className="col" style={{backgroundColor: "#eee;"}}>
-                      <div className="row d-flex justify-content-center align-items-center">
-                        <div className="col col-lg-9 col-xl-7">
-                          <div className="" style={{border: 'none', borderRadius: "15px;"}} data-aos="zoom-in" data-aos-delay="500">
-                            <div className="card-body p-5">
-                              <figure className="text-center mb-0" style={{display: 'inline', backgroundColor: ''}}>
-                                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
-                                    alt="Bulb" width="100" style={{display: 'inline'}}/>                          
-                                    <blockquote className="blockquote" style={{}}>
-                                      <p className="pb-3">
-                                        <i className="fas fa-quote-left fa-xs text-primary"></i>
-                                        <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey'}}>50,000 - 70,000</b> pieces of information per day. <br/> But how many of them are we actually conscious of?</span>
-                                        <i className="fas fa-quote-right fa-xs text-primary"></i>
-                                      </p>
-                                    </blockquote>
-                              </figure>
-                              <br/><br/>
-                              <figure className="text-center mb-0">
-                                <blockquote className="blockquote">
-                                  <img className='img-fluid w-50 h-50' style={{borderRadius: '50%'}} src={sheryl} alt="sheryl"/>
-                                  <p className="pb-2">
-                                    <i className="fas fa-quote-left fa-xs text-primary"></i>
-                                    <span className="lead font-italic"> "None of us is immune to biases, whether conscious or unconscious. But by acknowledging them, we can work to overcome them."</span>
-                                    <i className="fas fa-quote-right fa-xs text-primary"></i>
-                                  </p>
-                                </blockquote>
-                                <figcaption className="blockquote-footer mb-0">
-                              Sheryl Sandberg
-                                </figcaption>
-                              </figure>
-                            
-                            </div>
+            <div className='intro row mt-3'>
+                <section className="col" style={{backgroundColor: "#eee;"}}>
+                    <div className="row d-flex justify-content-center align-items-center">
+                      <div className="col col-lg-9 col-xl-7">
+                        <div className="" style={{border: 'none', borderRadius: "15px;"}} data-aos="zoom-in" data-aos-delay="500">
+                          <div className="card-body p-5">
+                            <figure className="text-center mb-0" style={{display: 'inline', backgroundColor: ''}}>
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                                  alt="Bulb" width="100" style={{display: 'inline'}}/>                          
+                                  <blockquote className="blockquote" style={{}}>
+                                    <p className="pb-3">
+                                      <i className="fas fa-quote-left fa-xs text-primary"></i>
+                                      <span className="lead font-italic" style={{fontSize: '30px'}}>Our brain processes <b style={{color: 'grey'}}>50,000 - 70,000</b> pieces of information per day. <br/> But how many of them are we actually conscious of?</span>
+                                      <i className="fas fa-quote-right fa-xs text-primary"></i>
+                                    </p>
+                                  </blockquote>
+                            </figure>
+                            <br/><br/>
+                            <figure className="text-center mb-0">
+                              <blockquote className="blockquote">
+                                <img className='img-fluid w-50 h-50' style={{borderRadius: '50%'}} src={sheryl} alt="sheryl"/>
+                                <p className="pb-2">
+                                  <i className="fas fa-quote-left fa-xs text-primary"></i>
+                                  <span className="lead font-italic"> "None of us is immune to biases, whether conscious or unconscious. But by acknowledging them, we can work to overcome them."</span>
+                                  <i className="fas fa-quote-right fa-xs text-primary"></i>
+                                </p>
+                              </blockquote>
+                              <figcaption className="blockquote-footer mb-0">
+                            Sheryl Sandberg
+                              </figcaption>
+                            </figure>
+                          
                           </div>
                         </div>
                       </div>
-                    
-                  </section>
-              </div>
-              <div className='desc-one row text-center' data-aos="fade-right" data-aos-delay="500">
-                <div className='col'>
-                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>What is Unconscious Bias?</h4>
-                    <iframe width="500" height="315" 
-                            src="https://www.youtube.com/embed/rbe5D3Yh43o" 
-                            title="What is Unconscious Bias" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
-                            className="text-center">
-                    </iframe>
+                    </div>
+                  
+                </section>
+            </div>
+            
+            <div id="about" className="page-section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="section-heading">
+                                <h4>What We Do</h4>
+                                <div className="line-dec"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item first-service">
+                                <div className="icon"></div>
+                                <h4>Easy Customizations</h4>
+                                <p>Meteor is free HTML website template by Tooplate. Feel free to use this layout for your project.</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item second-service">
+                                <div className="icon"></div>
+                                <h4>Creative Ideas</h4>
+                                <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item third-service">
+                                <div className="icon"></div>
+                                <h4>Good Profit</h4>
+                                <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
+                            </div>
+                        </div>
+                        <div className="col-md-3 col-sm-6 col-xs-12">
+                            <div className="service-item fourth-service">
+                                <div className="icon"></div>
+                                <h4>Open To Public</h4>
+                                <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-         
-              </div>
+            </div>
 
-              <div className='row'>
-                <div className='col'>
-                  <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The nature of unconscious bias</h4>
-                  <p className='text-center w-50 mx-auto'>
-                    Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
-                  </p>
+            <div id="what-we-do">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6">
+                    <div className="left-text">
+                        <h4>New offers just arrived,<br/>Get it now and take profit.</h4>
+                        <p>Gochujang pitchfork post-ironic hammock kombucha fanny pack cronut. Raw denim chicharrones semiotics af truffaut pinterest. Distillery letterpress authentic adaptogen. Meditation schlitz humblebrag photo booth celiac cliche chartreuse.<br/><br/>Pinterest 90's wolf celiac dreamcatcher listicle deep v semiotics. Intelligentsia literally meggings trust fund put a bird on it. Shoreditch crucifix artisan pug shaman twee. Health goth bicycle rights retro iPhone.</p>
+                        <ul>
+                            <li>
+                                <div className="white-button">
+                                    <a href="#" className="scroll-link" data-id="portfolio">Discover More</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="primary-button">
+                                    <a href="#">Purchase Now</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                <div className="col-md-6">
+                    <div className="right-image">
+                        <img src="../assets/what-we-do-right-image.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+
+            {/* <div id="contact" className="page-section">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="section-heading">
+                                <h4>Contact Us</h4>
+                                <div className="line-dec"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="map">
+                                <img src="img/map.jpg" alt=""/>
+                            </div>
+                        </div>
+                        <form className="col-md-6">
+                            <div className="row">
+                              <div id="contact">
+                                <div className="col-md-6">
+                                    <input name="name" type="text" className="form-control" id="name" placeholder="Your name..."/>
+                                </div>
+
+                                <div className="col-md-6">
+                                    <input name="email" type="email" className="form-control" id="email" placeholder="Your email..."/>
+                                </div>
+
+                                <div className="col-md-12">
+                                    <textarea name="message" rows="6" className="form-control" id="message" placeholder="Your message..."></textarea>
+                                </div>
+                        
+                                <div className="col-md-12">  
+                                    <button type="submit" id="form-submit" className="btn">Send Message</button>           
+                                </div>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+
+  
+      
+            <div className='desc-one row text-center' data-aos="fade-right" data-aos-delay="500">
+              <div className='col'>
+                <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>What is Unconscious Bias?</h4>
+                  <iframe width="500" height="315" 
+                          src="https://www.youtube.com/embed/rbe5D3Yh43o" 
+                          title="What is Unconscious Bias" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+                          className="text-center">
+                  </iframe>
               </div>
+        
+            </div>
+
+            <div className='row'>
+              <div className='col'>
+                <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>The nature of unconscious bias</h4>
+                <p className='text-center w-50 mx-auto'>
+                  Unconscious bias, often referred to as implicit bias, is a natural and inherent tendency of the human mind. It operates beyond our conscious awareness, shaping our perceptions, judgments, and decision-making processes. These biases are deeply rooted in societal influences, experiences, cultural conditioning, and media portrayals. They can manifest across various domains, including race, gender, age, physical appearance, socio-economic status, and more.
+                </p>
+              </div>
+            </div>
 
 
           
@@ -214,14 +364,16 @@ A substantial amount of research has been published demonstrating impact of unco
         <div className='col w-50 text-center' data-aos="fade-down"
                     data-aos-easing="linear"
                     data-aos-duration="1000">
-        <h4 className='text-uppercase' style={{fontWeight: 'bolder', marginTop: '10%'}}>Food for thought</h4>
-            <p className='w-50 text-center mx-auto'>
+        <h4 className='text-uppercase text-dark' style={{fontWeight: 'bolder', marginTop: '10%'}}>Food for thought</h4>
+        <div className='line' style={{width:  '8%', height: '3px', backgroundColor: '#121212', margin: 'auto'}}></div>
+            <p className='w-50 text-center mx-auto mt-2'>
               As we embark on this journey of uncovering unconscious bias, let us remember that awareness is the catalyst for transformation. By acknowledging our biases, engaging in self-reflection, and embracing diversity, we can cultivate an environment that values the worth and contributions of every individual. Let us work together to challenge unconscious bias, foster inclusivity, and build a world where fairness and equity thrive.
             </p>
         </div>
       </div>
-           </div>
+         {/* </div> */} 
            <Footer/>
+      </div>
       </div>
     )
 }

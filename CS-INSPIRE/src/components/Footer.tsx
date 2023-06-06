@@ -16,10 +16,10 @@ function Footer() {
                     <div className='row'>
                         <div className='col p-0 m-0'>
                             <p className='text-center m-0'>
-                                <img src={logo} className='' style={{display: 'inline-block', width: '8%'}}/>&nbsp;&nbsp;
+                                <img src={logo} className='' style={{display: 'inline-block', width: '5%'}}/>&nbsp;&nbsp;
                            
-                                <p style={{fontSize: 'small'}} className='w-75 mx-auto'>
-                                Thank you for being part of the Perception Pause movement, and we encourage you to explore the resources and engage in meaningful discussions that will help dismantle bias and create a brighter future for all.
+                                <p style={{fontSize: 'small'}} className='mb-0 w-75 mx-auto'>
+                               Explore and engage in meaningful discussions that will help dismantle bias and create a brighter future for all.
                                 </p>
                             </p>
                         </div>
@@ -35,7 +35,7 @@ function Footer() {
                 <div className="row">
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Help</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '0.8rem', color: ''}}>Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -50,7 +50,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Privacy</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '0.8rem', color: ''}}>Privacy</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -66,7 +66,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Media</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '0.8rem', color: ''}}>Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
