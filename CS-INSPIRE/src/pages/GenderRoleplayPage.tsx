@@ -31,6 +31,8 @@ function GenderRoleplay() {
                             You will be given a set of role and you are to play it through describing the set of actions you will carry out.
                             <br/><br/><br/>
                             <span className='mx-auto text-dark' style={{lineHeight: '2px'}}>In this roleplaying exercise, we aim to raise awareness about unconscious biases and their impact on our thoughts, actions, and decision-making processes. By simulating real-life scenarios, we can better understand and challenge our own biases while fostering empathy and promoting inclusivity.</span>
+                            <br/><br/>
+                            <button className=''>Start</button>
                         </p>
                 </div>
                 </div>

@@ -3,9 +3,9 @@ import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
             
-            <footer className="bg-light text-center w-100 p-0 bottom mt-5" style={{height: 'auto'}}>
+            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto'}}>
             {/* <!-- Grid container --> */}
-                <hr style={{color: 'grey', height: '', margin: '0', marginBottom: '5p'}}/>
+                <hr style={{color: 'grey', height: '', margin: '0', marginBottom: '5px'}}/>
                 {/* <!-- Section: Social media --> */}
               
             
@@ -35,7 +35,7 @@ function Footer() {
                 <div className="row">
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Help</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Help</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -50,7 +50,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Privacy</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Privacy</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -66,7 +66,7 @@ function Footer() {
             
                     {/* <!--Grid column--> */}
                     <div className="col-lg-4 col-md-4 mb-4 mb-md-0 p-0">
-                    <h5 className="text-uppercase" style={{fontSize: '1.1rem', color: ''}}>Media</h5>
+                    <h5 className="text-uppercase text-dark" style={{fontSize: '1.1rem', color: ''}}>Media</h5>
             
                     <ul className="list-unstyled mb-0">
                         <li>
@@ -83,7 +83,7 @@ function Footer() {
                 </section>
                 {/* <!-- Section: Links --> */}
                 
-            <p className='mt-3 p-3 text-light' style={{backgroundColor: '#404041', fontSize: 'small'}}>
+            <p className='mt-3 p-3 text-light' style={{backgroundColor: '#404041', fontSize: 'small', margin: '0'}}>
                  &copy;&nbsp;2023 Perception Pause. All rights reserved.
             </p>
         </footer>

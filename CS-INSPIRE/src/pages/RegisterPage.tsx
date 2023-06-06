@@ -5,6 +5,7 @@ import { auth } from '../firebase/firebase.js';
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx'
 import background from '../assets/background.png'
+import NavigationBar from '../components/NavBar.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -60,9 +61,10 @@ const SignupPage = () => {
     <div style={{
         overflow: 'hidden'
     }} className="container-fluid bg-light">   
+        <NavigationBar/>
         <div className='mb-2 p-0'> 
         <div className='row p-0' style={{marginTop: '18vh'}}>
-            <img src={logo} style={{width: '8%'}}/>
+            {/* <img src={logo} style={{width: '8%'}}/> */}
         </div> 
         <div className="row mt-5">
             <div className='m-2 col text-center'>

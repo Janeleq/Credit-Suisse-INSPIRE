@@ -52,11 +52,11 @@ function HelpPage() {
             <div className="row">
                  <div className="col-lx-12 p-0">
                     <div className="card" style={{border: 'none'}}>
-                        <div className="card-body">
+                        <div className="card-body mb-5">
                             <div className="row justify-content-center mt-4">
                                 <div className="col-xl-5 col-lg-8">
                                     <div className="text-center">
-                                        <h3>Frequently Asked Questions?</h3>
+                                        <h3 className="text-dark">Frequently Asked Questions?</h3>
                                         <p className="text-muted">Check out some of the FAQs below that are commonly answered</p>
                                         <div>
                                             <button type="button" className="btn btn-primary me-2" onClick={sendEmail}>Email Us</button>
@@ -85,25 +85,22 @@ function HelpPage() {
                             <div className="tab-pane fade active show" id="pills-genarel" role="tabpanel" aria-labelledby="pills-genarel-tab">
                                 <div className="row g-4 mt-2">
                                     <div className="col-lg-6">
-                                        <h5>What is this platform about?</h5>
-                                    <p className="text-muted">If several languages coalesce, the grammar of the resulting language is more simple 
-                                        and regular than that of the individual languages. The new common language will be more simple and 
-                                        regular than the existing</p>
+                                        <h5 className="text-dark">What is this platform about?</h5>
+                                    <p className="text-dark text-muted">Perception Pause is a platform that spreads awareness regarding to unconscious bias.</p>
                                     </div>
                                     <div className="col-lg-6">
-                                        <h5>Why do we use it ?</h5>
-                                        <p className="text-muted">Their separate existence is a myth. For science, music, sport, etc, 
-                                            Europe uses the same vocabulary.</p>
+                                        <h5 className="text-dark">Why do we use it ?</h5>
+                                        <p className="text-dark text-muted">Utilise the provided resources so gain insights towards today's various unconscious bias and potentially counter them.</p>
                                     </div>
                                     <div className="col-lg-6">
-                                        <h5>Where does it come from ?</h5>
-                                    <p className="text-muted">If several languages coalesce, the grammar of the resulting language is more simple 
+                                        <h5 className="text-dark">Where does it come from ?</h5>
+                                    <p className="text-dark text-muted">If several languages coalesce, the grammar of the resulting language is more simple 
                                         and regular than that of the individual languages. The new common language will be more simple and 
                                         regular than the existing
                                     </p>
                                     </div>
                                     <div className="col-lg-6">
-                                        <h5>Where can I get some?</h5>
+                                        <h5 className="text-dark">Where can I get some?</h5>
                                         <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more 
                                             simple and regular than that of the individual languages. </p>
                                     </div>
@@ -113,28 +110,14 @@ function HelpPage() {
                             <div className="tab-pane fade" id="pills-privacy_policy" role="tabpanel" aria-labelledby="pills-privacy_policy-tab">
                                 <div className="row g-4 mt-2">
                                     <div className="col-lg-6">
-                                        <h5>Where can I get some ?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                            and regular than that of the individual languages. The new common language will be more
-                                            simple and regular than the existing</p>
-                                    </div>
-                                    <div className="col-lg-6">
                                         <h5>Where does it come from ?</h5>
                                         <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
                                             and regular than that of the individual languages. The new common language will be more
                                             simple and regular than the existing</p>
-                                    </div>
+                                    </div>                                      
                                     <div className="col-lg-6">
-                                        <h5>Why do we use it ?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                            and regular than that of the individual languages. The new common language will be more
-                                            simple and regular than the existing</p>
-                                    </div>
-                                    <div className="col-lg-6">
-                                        <h5>What is Genius privacy policy</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                            and regular than that of the individual languages. The new common language will be more
-                                            simple and regular than the existing</p>
+                                        <h5>What is Perception Pause privacy policy</h5>
+                                        <p className="lg-base">Perception Pause do not hold any data and all user records remains strictly confidential.</p>
                                     </div>
                                 </div>
                             </div>

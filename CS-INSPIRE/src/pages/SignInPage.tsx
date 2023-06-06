@@ -4,6 +4,7 @@ import { auth, googleProvider } from '../firebase/firebase.js';
 import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx';
+import NavigationBar from '../components/NavBar.tsx';
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -97,9 +98,10 @@ const LoginPage = () => {
                     {/* <h1> Perception Pause </h1>    */}
                     <div className="row m-2" style={{height: '10%'}}>
                         {/* <div className='col' style={{ alignSelf:'start'}} > */}
-                        <NavLink to="/" style={{textAlign: 'left'}}>
+                        <NavigationBar/>
+                        {/* <NavLink to="/" style={{textAlign: 'left'}}>
                             <img src={logo} style={{width: '8%'}} className=''/>
-                        </NavLink>
+                        </NavLink> */}
                         {/* </div> */}
                         
                     </div>      
@@ -188,7 +190,9 @@ const LoginPage = () => {
                         
                         <div className='row text-center'>
                             <div className='col' onClick={resetPassword}>
+                                <NavLink to="">
                                 Forgot password?
+                                </NavLink>
                             </div>
                         </div>
                         <br/><br/>
