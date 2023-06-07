@@ -69,16 +69,23 @@ function RoleplayPage() {
     {
       navigate('/bias/beauty')
     }
-
   }
+
+    function quizGo() {
+        navigate('/quiz')
+      }
+
+  
   
 
     return (        
     <div className="container-fluid p-0" style={{marginTop: '18vh'}}>
-      <Chatbot/>
+      
       <Navbar></Navbar>
+      <Chatbot/>
         <blockquote className='display-6 text-center' style={{marginTop: '100px'}}>Explore the different pathways of unconscious biases </blockquote>
         <p className='text-center'>See how you fare in the various paths</p>
+        <button className='mx-auto' onClick={quizGo}>Take a quiz on unconscious bias!</button>
       <br/>
       <div className='container mb-5'>
         <div className="icon-image" onClick={ageismGo}>

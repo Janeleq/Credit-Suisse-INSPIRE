@@ -4,3 +4,7 @@ $secondary: purple;
 h1 {
     color: $secondary;
 }
+
+#launcher-svg-container {
+    z-index: 10000
+}

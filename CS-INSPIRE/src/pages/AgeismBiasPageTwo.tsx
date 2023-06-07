@@ -25,6 +25,26 @@ function AgeismTwo() {
         <div className="container-fluid bootdey">
             <NavigationBar/>
 
+        <div style={{marginTop: '18vh'}}>
+            <div className="card my-4">
+                <div className="card-body">
+                    <h5 className="card-title">Question 1:</h5>
+                    <p className="card-text">What is the capital of France?</p>
+                    <div className="form-check">
+                    <input className="form-check-input" type="radio" name="question1" id="q1Option1" value="option1"/>
+                    <label className="form-check-label" for="q1Option1">a) London</label>
+                    </div>
+                    <div className="form-check">
+                    <input className="form-check-input" type="radio" name="question1" id="q1Option2" value="option2"/>
+                    <label className="form-check-label" for="q1Option2">b) Paris</label>
+                    </div>
+                    <div className="form-check">
+                    <input className="form-check-input" type="radio" name="question1" id="q1Option3" value="option3"/>
+                    <label className="form-check-label" for="q1Option3">c) Rome</label>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div className="row">
             <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2">
                 <div className="team text-center rounded p-3 py-4">

@@ -76,41 +76,38 @@ function Profile() {
 
 
     return (
-        <div className='container-fluid'>
+        <div className='container-fluid p-0'>
             <Navbar></Navbar>           
             <section className="section about-section gray-bg" id="about" style={{marginTop: '18vh'}}>
                 <div className="row align-items-center ">
-                <div className="col-lg-4">
-                        <div className="about-avatar">
-                            <img src="" title="" alt="Profile Pic"/>
+                    <div className="col-lg-4">
+                        <div className="about-avatar text-center">
+                            <img src={photo} title="" style={{width: '200px', height: '200px'}} alt="Profile Pic"/><br/><br/>
+                            <button className=' text-center' onClick={signout}>Log out</button>
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="about-text go-to">
-                            <h3 className="dark-color">Name</h3>
+                            <h3 className="text-dark">Name</h3>
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
                                         {/* <label>Name: &nbsp;</label> */}
                                         <p>{ name }</p>
-                                    </div>
-                                    <h3 className="dark-color">Email</h3>
+                                    </div><br/>
+                                    <h3 className="text-dark">Email <button className = "m-1 p-1" style={{fontSize: '16px'}} onClick={updateEmail}>Update</button></h3>
                                     <div className="media">
                                         {/* <label className=''>Email:&nbsp;</label> */}
                                         <p>{ email }</p>
-                                        &nbsp;
-                                        <button onClick={updateEmail}>Update</button>
+                                
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><br/> 
-               
-                       
-                    
+                
                 
                 </div>
-                <button className='w-25 text-center' onClick={signout}>Log out</button>
                 <div className="counter">
                     <div className="row mt-4">
                         <div className="col-6 col-lg-3">

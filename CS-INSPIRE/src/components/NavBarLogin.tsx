@@ -18,6 +18,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 function NavigationBarLogin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('')
+  
 
   
   useEffect (() => {
@@ -78,21 +79,21 @@ function NavigationBarLogin() {
 
     return ( 
       <>
-        <Navbar className="p-0 mb-5" style={{zIndex: '111111', height: 'auto', overflow: 'hidden'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
+        <Navbar className="p-0 mb-5" style={{zIndex: '', height: 'auto'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
           {/* <Container className="m-0 p-0 h-25"> */}
             <Navbar.Brand onClick = {goHome}><img className='' src={logo} style={{width: '40%', marginLeft: '8px'}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{height: '15%'}} />
             <Navbar.Collapse className=""id="basic-navbar-nav" style={{zIndex: 'auto  '}} >
               <Nav className="me-auto text-dark" style={{right:'0px'}}>
-                <Nav.Link className="m-3" onClick = {goExplore}>Explore</Nav.Link>
-                <Nav.Link className="m-3" onClick={goCommunity}>Community</Nav.Link>
-                <Nav.Link className="m-3" onClick={goArticles}>Articles</Nav.Link>
-                <Nav.Link className="m-3" onClick={goResources}>Resources</Nav.Link>
-                <Nav.Link className="m-3" onClick={goHelp}>Help</Nav.Link>
-                <NavDropdown className="m-3 float-end" title={email} id="basic-nav-dropdown">
+                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick = {goExplore}>Explore</Nav.Link>
+                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goCommunity}>Community</Nav.Link>
+                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goArticles}>Articles</Nav.Link>
+                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goResources}>Resources</Nav.Link>
+                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goHelp}>Help</Nav.Link>
+                <NavDropdown className="m-3 float-end" style={{display: 'block'}} title={email} id="basic-nav-dropdown">
                   <NavDropdown.Item onClick={goProfile}>Details</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/login">Log Out</NavDropdown.Item>
+                  <NavDropdown.Item href="/login">Edit Profile</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>

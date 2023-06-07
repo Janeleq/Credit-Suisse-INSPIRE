@@ -65,7 +65,7 @@ function HelpPage() {
                                     </div>
                                 </div>     
                             </div>
-               <div className="row justify-content-center mt-5">
+               <div className="bg-light m-3 row justify-content-center mt-5">
                     <div className="col-9">
                         <ul className="nav nav-tabs  nav-tabs-custom nav-justified justify-content-center faq-tab-box" id="pills-tab" role="tablist">
                             <li className="nav-item" role="presentation">

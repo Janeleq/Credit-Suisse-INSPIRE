@@ -3,7 +3,7 @@ import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
             
-            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto', backgroundColor: 'grey'}}>
+            <footer className="bg-light text-center w-100 p-0 bottom" style={{bottom: '0px', height: 'auto', backgroundColor: 'grey'}}>
             {/* <!-- Grid container --> */}
                 <hr style={{color: 'grey', height: '', margin: '0', marginBottom: '5px'}}/>
                 {/* <!-- Section: Social media --> */}
