@@ -16,6 +16,7 @@ import CommunityPage from './pages/CommunityPage.tsx'
 import AgeismBiasPage from './pages/AgeismBiasPage.tsx'
 import HaloEffectPage from './pages/HaloEffectPage.tsx'
 import BeautyBiasPage from './pages/BeautyBiasPage.tsx'
+import AgeismBiasPageTwo from './pages/AgeismBiasPageTwo.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
@@ -94,6 +95,9 @@ const router = createBrowserRouter([
   {
     path: "/bias/gender/roleplay",
     element: <GenderRoleplayPage/>
+  },
+  { path: "/bias/ageismRoleplay",
+    element: <AgeismBiasPageTwo/>
   }
 ])
 

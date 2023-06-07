@@ -9,24 +9,88 @@ import logo from '../assets/PerceptionPause_newlogo.png'
 // import {Helmet} from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+import {useState, useEffect} from 'react'
+import { getAuth } from "firebase/auth";
+import { NavLink, useNavigate } from 'react-router-dom'
+
 
 
 function NavigationBarLogin() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('')
+
+  
+  useEffect (() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    
+    if (user !== null) {
+      user.providerData.forEach((profile) => {
+        console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Provider-specific UID: " + profile.uid);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Email: " + profile.email);
+        setEmail(profile.email)
+        console.log("  Photo URL: " + profile.photoURL);
+      });
+    }
+  })
+
+  function goHome () {
+    console.log("Heading to home page!")
+    navigate("/home", {state: {email: email}})
+  }
+
+  function goExplore () {
+    console.log("Heading to explore page!")
+    navigate("/explore", {state: {email: email}})
+  }
+
+  function goCommunity () {
+    console.log("Heading to community page!")
+    navigate("/community", {state: {email: email}})
+  }
+
+  function goArticles () {
+    console.log("Heading to articles page!")
+    navigate("/articles", {state: {email: email}})
+  }
+
+  
+  function goResources () {
+    console.log("Heading to resources page!")
+    navigate("/resources", {state: {email: email}})
+  }
+
+  
+  function goHelp () {
+    console.log("Heading to help page!")
+    navigate("/help", {state: {email: email}})
+  }
+
+  function goProfile () {
+    console.log("Heading to profile page!")
+    navigate("/profile", {state: {email: email}})
+  }
+
+  console.log(email)
+ 
+
     return ( 
       <>
-        <Navbar className="p-0 mb-5" style={{height: 'auto', overflow: 'hidden'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
+        <Navbar className="p-0 mb-5" style={{zIndex: '111111', height: 'auto', overflow: 'hidden'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
           {/* <Container className="m-0 p-0 h-25"> */}
-            <Navbar.Brand href="/"><img className='' src={logo} style={{width: '40%', marginLeft: '8px'}}/></Navbar.Brand>
+            <Navbar.Brand onClick = {goHome}><img className='' src={logo} style={{width: '40%', marginLeft: '8px'}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{height: '15%'}} />
-            <Navbar.Collapse className=""id="basic-navbar-nav">
+            <Navbar.Collapse className=""id="basic-navbar-nav" style={{zIndex: 'auto  '}} >
               <Nav className="me-auto text-dark" style={{right:'0px'}}>
-                <Nav.Link className="m-3" href="/explore">Explore</Nav.Link>
-                <Nav.Link className="m-3" href="/community">Community</Nav.Link>
-                <Nav.Link className="m-3" href="/articles">Articles</Nav.Link>
-                <Nav.Link className="m-3" href="/resources">Resources</Nav.Link>
-                <Nav.Link className="m-3" href="/help">Help</Nav.Link>
-                <NavDropdown className="m-3 float-end" title="Profile" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="/profile">Details</NavDropdown.Item>
+                <Nav.Link className="m-3" onClick = {goExplore}>Explore</Nav.Link>
+                <Nav.Link className="m-3" onClick={goCommunity}>Community</Nav.Link>
+                <Nav.Link className="m-3" onClick={goArticles}>Articles</Nav.Link>
+                <Nav.Link className="m-3" onClick={goResources}>Resources</Nav.Link>
+                <Nav.Link className="m-3" onClick={goHelp}>Help</Nav.Link>
+                <NavDropdown className="m-3 float-end" title={email} id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={goProfile}>Details</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/login">Log Out</NavDropdown.Item>
                 </NavDropdown>

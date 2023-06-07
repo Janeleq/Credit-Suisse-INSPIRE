@@ -95,7 +95,7 @@ const LoginPage = () => {
     });
  
     return(
-        <div data-aos=""  className='bg-light container-fluid' style={{overflow: 'hidden', backgroundImage: 'url(../assets/login_bg.png)'}}>    
+        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden'}}>    
             <NavigationBar/>
             <div className='mb-5 text-center' style={{}}>          
                     {/* <h1> Perception Pause </h1>    */}

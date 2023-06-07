@@ -13,6 +13,12 @@ import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import music from '../assets/bg_music.mp3'
+// import useSound from "use-sound"
+import background1 from '../assets/homeBackground.jpg'
+import background2 from '../assets/homeBackground2.jpg'
+import background3 from '../assets/homeBackground3.png'
+import { NavLink } from 'react-router-dom'
 
 export const HomePageLogin = () => {
     console.log("rendering lifecycle")
@@ -20,8 +26,15 @@ export const HomePageLogin = () => {
  
     const location = useLocation();
     const [email, setEmail] = useState('');
+    // const [sound] = useSound(music);
+
+    // useEffect(() => {
+    //   sound()
+    // }, [sound]);
 
     useEffect (() => {
+
+      AOS.init()
         if (location.state != null) {
             setEmail(location.state.email)
         }
@@ -38,7 +51,7 @@ export const HomePageLogin = () => {
   
   
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-      return new Promise(resolve => setTimeout(() => resolve(), 1500));
+      return new Promise(resolve => setTimeout(() => resolve(), 0));
     } 
 
     const handleLogout = () => {    
@@ -60,43 +73,85 @@ export const HomePageLogin = () => {
            <NavigationBarLogin/>
            <Chatbot/>
            <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
-           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-              <ol className="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img className="d-block w-100" src={sheryl} alt="First slide"/>
+         
+
+                       {/* <!-- Start Banner Hero --> */}
+    <div id="template-mo-zay-hero-carousel" className="carousel slide" data-bs-ride="carousel">
+        <ol className="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" className="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div className="carousel-inner">
+            <div className="carousel-item active" style={{height: '80vh', backgroundImage: `url(${background1})`}}>
+                <div className="container">
+                    <div className="row p-5">
+                        <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img className="img-fluid w-100" src='' alt=""/>
+                        </div>
+                        <div className="w-100 col-lg-6 mb-0 d-flex align-items-center">
+                            <div className="text-align-left align-self-center">
+                                <h1 className="h1 text-dark"><b>Perception</b> Pause</h1>
+                                <h3 className="h2"></h3>
+                                <p className='' style={{fontWeight: 'bolder'}}>
+                                    Breaking Barriers. Unveiling Biases. Dismantling Prejudice.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="carousel-item">
-                  <img className="d-block w-100" src={haloBias} alt="Second slide"/>
-                </div>
-                <div className="carousel-item">
-                  <img className="d-block w-100" src={ageismBias} alt="Third slide"/>
-                </div>
-              </div>
-              <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span className="sr-only">Previous</span>
-              </a>
-              <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="sr-only">Next</span>
-              </a>
             </div>
-            welcome home {email}
-              <h4 className="text-center p-3" style={{textAlign: 'center'}}>
-                Unravel the intricate workings of our minds and fostering a deeper understanding of the biases that shape our perceptions and actions.
-              </h4>
-              <button>Sign Up</button>
+            <div className="carousel-item" style={{height: '80vh', backgroundImage: `url(${background2})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                <div className="container">
+                    <div className="row p-5">
+                        <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img className="img-fluid" src="./assets/img/banner_img_02.jpg" alt=""/>
+                        </div>
+                        <div className="col-lg-6 mb-0 d-flex align-items-center">
+                            <div className="text-align-left">
+                                <h1 className="h1">Unravel the intricate workings of our minds</h1>
+                                <h3 className="h2">Aliquip ex ea commodo consequat</h3>
+                                <p>
+                                    You are permitted to use this Zay CSS template for your commercial websites. 
+                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="carousel-item" style={{height: '80vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+                <div className="container">
+                    <div className="row p-5">
+                        <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img className="img-fluid" src="./assets/img/banner_img_03.jpg" alt=""/>
+                        </div>
+                        <div className="col-lg-6 mb-0 d-flex align-items-center">
+                            <div className="text-align-right">
+                                <h1 className="h1">Explore and engage in meaningful discussions that will help dismantle bias and create a brighter future for all.</h1>
+                                <p>
+                                 Foster a deeper understanding of the biases that shape our perceptions and actions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a className="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i className="fas fa-chevron-left"></i>
+        </a>
+        <a className="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i className="fas fa-chevron-right"></i>
+        </a>
+    </div>
+    {/* <!-- End Banner Hero --> */}
+    
+           
+        
           
 
               <div className='intro row mt-3'>
-                <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!
-
-                </p>
                   <section className="col" style={{backgroundColor: "#eee;"}}>
                       <div className="row d-flex justify-content-center align-items-center">
                         <div className="col col-lg-9 col-xl-7">

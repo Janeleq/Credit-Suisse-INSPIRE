@@ -10,7 +10,7 @@ import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/_heroslider.css'
+import '../styles/_homepagelogin.css'
 
 const HomePage = () => {
 
@@ -101,6 +101,9 @@ const HomePage = () => {
      </ul>
               </ul>
            </section>
+           
+
+
 
            <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
           
@@ -159,28 +162,28 @@ const HomePage = () => {
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item first-service">
                                 <div className="icon"></div>
-                                <h4>Easy Customizations</h4>
+                                <h4>Bring to light and Spread Awareness of Unconscious Bias</h4>
                                 <p>Meteor is free HTML website template by Tooplate. Feel free to use this layout for your project.</p>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item second-service">
                                 <div className="icon"></div>
-                                <h4>Creative Ideas</h4>
+                                <h4>Engage in-depth with the various Unconscious Biases through a series of resources</h4>
                                 <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item third-service">
                                 <div className="icon"></div>
-                                <h4>Good Profit</h4>
+                                <h4>Bond the community together with talks</h4>
                                 <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
                             </div>
                         </div>
                         <div className="col-md-3 col-sm-6 col-xs-12">
                             <div className="service-item fourth-service">
                                 <div className="icon"></div>
-                                <h4>Open To Public</h4>
+                                <h4>Help people understand and work towards challenge and eliminating unconscious biases</h4>
                                 <p>Biodiesel schltz suculents phone cliche ramps snackwave coloring book tumeric poke, typewriter.</p>
                             </div>
                         </div>

@@ -3,10 +3,11 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/NavBarLogin.tsx'
 import Logo from '../assets/PerceptionPause_logo.png'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
-
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
     const auth = getAuth();
+    const navigate = useNavigate();
     const user = auth.currentUser;
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
@@ -58,16 +59,20 @@ function Profile() {
     })
 
     
-    useEffect(() => {
-        function signout (){
-            signOut(auth).then(() => {
-                // Sign-out successful.
-                alert("Sign out sucessful!")
-              }).catch((error) => {
-                // An error happened.
-              });
-        }
-    })
+    // Sign out the user if log out button is clicked
+    function signout (){
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            if (confirm ('Are you sure you want to sign out?')) {
+                alert("Sign out successful!")  
+                navigate('/')  
+            }
+            
+          }).catch((error) => {
+            // An error happened.
+            alert("Error in signing out!")
+          });
+    }
 
 
     return (
@@ -77,45 +82,35 @@ function Profile() {
                 <div className="row align-items-center ">
                 <div className="col-lg-4">
                         <div className="about-avatar">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt=""/>
+                            <img src="" title="" alt="Profile Pic"/>
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="about-text go-to">
-                            <h3 className="dark-color">About Me</h3>
-                            <h6 className="theme-color lead">A Lead UX &amp; UI designer based in </h6>
-                            <p>I <mark>design and develop</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
+                            <h3 className="dark-color">Name</h3>
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
-                                        <label>Name: &nbsp;</label>
+                                        {/* <label>Name: &nbsp;</label> */}
                                         <p>{ name }</p>
                                     </div>
+                                    <h3 className="dark-color">Email</h3>
                                     <div className="media">
-                                        <label className=''>Email: &nbsp;</label>
+                                        {/* <label className=''>Email:&nbsp;</label> */}
                                         <p>{ email }</p>
+                                        &nbsp;
                                         <button onClick={updateEmail}>Update</button>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <div className="media">
-                                        <label>-</label>
-                                        <p>-</p>
-                                    </div>
-                                    <div className="media">
-                                        <label>-</label>
-                                        <p>-</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className='col'>
-                        <button className='w-100 text-center' onClick={signOut}>Log out</button>
-                    </div>
+                    </div><br/> 
+               
+                       
                     
                 
                 </div>
+                <button className='w-25 text-center' onClick={signout}>Log out</button>
                 <div className="counter">
                     <div className="row mt-4">
                         <div className="col-6 col-lg-3">
@@ -130,7 +125,7 @@ function Profile() {
                                 <p className="m-0px font-w-600">Paths Encountered</p>
                             </div>
                         </div>
-                        <div className="col-6 col-lg-3">
+                        {/* <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="850" data-speed="850">850</h6>
                                 <p className="m-0px font-w-600">Photo Capture</p>
@@ -141,7 +136,7 @@ function Profile() {
                                 <h6 className="count h2" data-to="190" data-speed="190">190</h6>
                                 <p className="m-0px font-w-600">Telephonic Talk</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             

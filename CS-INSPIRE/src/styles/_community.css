@@ -12,14 +12,14 @@ body {
 }
 
 .event .btn {
-    background: #ff007a;
+    background: #e3d4db;
 }
 
 .event .nav-content strong {
     display: block;
     font-family: Montserrat;
     font-size: 20px;
-    color: #002691;
+    color: #2a2b2c;
 }
 
 .event nav > div a.nav-item.nav-link.active .event .spicel-features {
@@ -58,7 +58,7 @@ body {
 }
 
 .event a.nav-item.nav-link.active {
-    background: #ff007a !important;
+    background: #545553 !important;
     color: #fff !important;
 }
 
@@ -70,11 +70,11 @@ body {
 .event nav > div a.nav-item.nav-link.active {
     border: none;
     padding: 18px 25px;
-    color: #47759d;
+    color: #545553;
     border-radius: 0;
     background: #fff;
     position: relative;
-    background: #f5faff;
+    background: #b4b5b5;
 }
 
 .event nav > div a.nav-item.nav-link.active:after {
@@ -82,7 +82,7 @@ body {
     height: 0;
     border-style: solid;
     border-width: 0 15px 15px 0;
-    border-color: transparent #e7015e transparent transparent;
+    border-color: transparent #dae0c4 transparent transparent;
     position: absolute;
     left: 0;
     bottom: -15px;
@@ -92,7 +92,7 @@ body {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
-    border-color: transparent #ff007a transparent transparent;
+    border-color: transparent #7a7b77 transparent transparent;
 }
 
 .event .tab-content {
@@ -105,7 +105,7 @@ body {
 
 .event .user p {
     font-weight: bold;
-    color: #ff007a;
+    color: #746c70;
 }
 
 .event .user ul {
@@ -126,17 +126,17 @@ body {
     margin-right: 20px;
     padding: 50px;
     position: relative;
-    border: 10px solid #edf5ff;
+    border: 10px solid #f2f4f6;
     transition: all 0.3s ease 0s;
 }
 
 .event-list-content:hover {
-    border: 10px solid #ff007a;
+    border: 10px solid #6c5761;
 }
 
 .event-list-content .crical {
     position: absolute;
-    background: #ff007a;
+    background: #75676e;
     right: -66px;
     bottom: -73px;
     font-size: 30px;
@@ -161,13 +161,13 @@ body {
 }
 
 .event-list-content .btn:hover {
-    background: #ff007a;
+    background: #cbd8b0;
     border: 2px solid #ff007a;
     color: #fff;
     font-weight: bold;
     font-size: 14px;
     margin-right: 10px;
-    box-shadow: 0px 10px 19px 0px #ff007a66 !important;
+    box-shadow: 0px 10px 19px 0px #90938c66 !important;
 }
 
 .event-list-content ul li {
@@ -175,7 +175,7 @@ body {
     font-size: 16px;
     margin-right: 20px;
     margin-bottom: 20px;
-    color: #ff007a;
+    color: #8f898c;
 }
 
 .event-list-content ul li i {
@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .event .user p {
     font-weight: bold;
-    color: #ff007a;
+    color: #171717;
 }
 .event .user ul {
     padding-top: 10px;
@@ -236,7 +236,7 @@ ul {
 
 .event-list-content .crical {
     position: absolute;
-    background: #ff007a;
+    background: #b5a4ac;
     right: -66px;
     bottom: -73px;
     font-size: 30px;
@@ -255,7 +255,7 @@ ul {
     height: 0;
     border-style: solid;
     border-width: 0 15px 15px 0;
-    border-color: transparent #e7015e transparent transparent;
+    border-color: transparent #7b6970 transparent transparent;
     position: absolute;
     left: 0;
     bottom: -15px;
@@ -265,5 +265,5 @@ ul {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
-    border-color: transparent #ff007a transparent transparent;
+    border-color: transparent #bf9dad transparent transparent;
 }

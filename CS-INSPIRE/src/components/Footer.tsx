@@ -3,7 +3,7 @@ import logo from '../assets/PerceptionPause_newlogo.png'
 function Footer() {
     return (
             
-            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto'}}>
+            <footer className="bg-light text-center w-100 p-0 bottom" style={{height: 'auto', backgroundColor: 'grey'}}>
             {/* <!-- Grid container --> */}
                 <hr style={{color: 'grey', height: '', margin: '0', marginBottom: '5px'}}/>
                 {/* <!-- Section: Social media --> */}
@@ -16,11 +16,11 @@ function Footer() {
                     <div className='row'>
                         <div className='col p-0 m-0'>
                             <p className='text-center m-0'>
-                                <img src={logo} className='' style={{display: 'inline-block', width: '5%'}}/>&nbsp;&nbsp;
+                                {/* <img src={logo} className='' style={{display: 'inline-block', width: '5%'}}/>&nbsp;&nbsp; */}
                            
-                                <p style={{fontSize: 'small'}} className='mb-0 w-75 mx-auto'>
-                               Explore and engage in meaningful discussions that will help dismantle bias and create a brighter future for all.
-                                </p>
+                                {/* <p style={{fontSize: 'small'}} className='mb-0 w-75 mx-auto'>
+                               
+                                </p> */}
                             </p>
                         </div>
                     </div>

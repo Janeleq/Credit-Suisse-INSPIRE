@@ -32,6 +32,8 @@ function Ageism() {
                     <br/><br/>
                     We recognize that ageism can have far-reaching consequences in society, affecting employment opportunities, healthcare access, and interpersonal relationships.
                     </p>
+                    <br/><br/>
+                    <button type="">Start</button>
                 </div>
             </div>
         </div>
