@@ -73,8 +73,6 @@ function NavigationBarLogin() {
     console.log("Heading to profile page!")
     navigate("/profile", {state: {email: email}})
   }
-
-  console.log(email)
  
 
     return ( 

@@ -83,7 +83,7 @@ export const HomePageLogin = () => {
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
         </ol>
         <div className="carousel-inner">
-            <div className="carousel-item active" style={{height: '80vh', backgroundImage: `url(${background1})`}}>
+            <div className="carousel-item active" style={{height: '100vh', backgroundImage: `url(${background1})`, backgroundRepeat: '', backgroundSize: 'cover'}}>
                 <div className="container">
                     <div className="row p-5">
                         <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
@@ -101,7 +101,7 @@ export const HomePageLogin = () => {
                     </div>
                 </div>
             </div>
-            <div className="carousel-item" style={{height: '80vh', backgroundImage: `url(${background2})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <div className="carousel-item" style={{height: '100vh', backgroundImage: `url(${background2})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                 <div className="container">
                     <div className="row p-5">
                         <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
@@ -120,7 +120,7 @@ export const HomePageLogin = () => {
                     </div>
                 </div>
             </div>
-            <div className="carousel-item" style={{height: '80vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <div className="carousel-item" style={{height: '100vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                 <div className="container">
                     <div className="row p-5">
                         <div className="mx-auto col-md-8 col-lg-6 order-lg-last">

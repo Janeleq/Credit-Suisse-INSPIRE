@@ -108,11 +108,11 @@ body{
 }
 
 .media.blog-media:hover .media-body h5 {
-    color: #0cc652
+    color: #898d8b
 }
 
 .media.blog-media:hover .media-body a.post-link {
-    color: #0cc652;
+    color: #848986;
     text-decoration: underline
 }
 
@@ -121,7 +121,8 @@ body{
     padding: 30px 30px 10px;
     font-size: 14px;
     background: #fff;
-    border-top: none
+    border-top: none;
+    
 }
 
 @media (min-width:992px) {

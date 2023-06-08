@@ -13,7 +13,7 @@ function ArticlesPage() {
     // useEffect runs twice if we on strictmode
     const [articles, fixArticles] = useState("");
     const [output, showArticles] = useState("");
-    const [status, isarticleFixed] = useState(false)
+    const [status, setStatus] = useState(false)
     const url = 'https://newsapi.org/v2/everything?' +
     'q=bias&' +
     'from=2023-05-29&' +
@@ -38,30 +38,32 @@ function ArticlesPage() {
       })
     })
 
-    useEffect(() => {
-        
-        if (status == false) {
-            console.log('Trying to fetch articles...')
-            isarticleFixed(true)
-        }
 
-        if (status) {
-            fetchArticles(); 
-            console.log("Fetching articles...")
-            isarticleFixed(false)
-            // console.log("Error in fetching articles...")
-        }
+    if (status == false) {
+        setStatus(true)
+     }
+
+    useEffect(() => {
+        if (status == true) {
+            console.log("Reached useEffect..")
+        fetchArticles() 
+        setStatus(false) }
     }, [])
  
 
-   const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
+
+    // if (status == true) {
+
+    // }
+   const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+   
    async function fetchArticles() {
+    console.log("I am inside axios!")
     let articleList = [];
-    const response = await fetch(url);
-    const jsonData = await response.json();
-    console.log(jsonData);
-    fixArticles(jsonData.articles)
+    const response = await axios.get(url);
+    fixArticles(response.data.articles)
+
     for(let i=0; i<articles.length; i++) {
         // console.log(articles[i].urlToImage)
         if (articles[i].urlToImage !== null)
@@ -69,11 +71,10 @@ function ArticlesPage() {
           if (articles[i].author == null) {
               articles[i].author = "unknown"
           }
-          console.log(articles[i].urlToImage)
             articleList += 
-            `<div class="col-md-6" style="display: grid; column-gap: 20px; row-gap: 20px">
-            <div class="media blog-media" style="width:""">
-                <a href="#" style="width: 15vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex;"/></a>
+            `<div class="" style="display: grid; column-gap: 20px; row-gap: 20px; width: 100vw;">
+            <div class="media blog-media">
+                <a href="#" style="width: 15vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex"/></a>
                 <div class="circle">
                     <h5 class="day"><strong></strong></h5>
                     <span class="month">${[parseInt(articles[i].publishedAt.substring(8,10))]} ${months[parseInt(articles[i].publishedAt.substring(5,7))-1]} <br/>${articles[i].publishedAt.substring(0,4)}</span>
@@ -92,54 +93,9 @@ function ArticlesPage() {
         }
       
     }
+    console.log("I am outside axios!")
     showArticles(articleList);  
-    console.log(output)
-  }
-
-//    function fetchArticles() {
-//     let articleList = [];
-
-    
-//       axios.get(url)
-//       .then(response => {
-//           fixArticles(response.data.articles)
-          
-//           for(let i=0; i<articles.length; i++) {
-//               // console.log(articles[i].urlToImage)
-//               if (articles[i].urlToImage !== null)
-//               {
-//                 if (articles[i].author == null) {
-//                     articles[i].author = "unknown"
-//                 }
-//                 console.log(articles[i].urlToImage)
-//                   articleList += 
-//                   `<div class="col-md-6" style="display: grid; column-gap: 20px; row-gap: 20px">
-//                   <div class="media blog-media" style="width:""">
-//                       <a href="#" style="width: 15vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex;"/></a>
-//                       <div class="circle">
-//                           <h5 class="day"><strong></strong></h5>
-//                           <span class="month">${[parseInt(articles[i].publishedAt.substring(8,10))]} ${months[parseInt(articles[i].publishedAt.substring(5,7))-1]} <br/>${articles[i].publishedAt.substring(0,4)}</span>
-//                       </div>
-//                       <div class="media-body" style="overflow: hidden">
-//                           <a href=""><h5 class="mt-0" style="margin-top: 0">${articles[i].title}</h5></a> ${articles[i].description}
-//                           <a href="#" class="post-link">Read More</a>
-//                           <ul>
-//                               <li>by: ${articles[i].author}</li>
-//                               <li class="" style="text-align: right"><a href="#">2</a></li>
-//                           </ul>
-//                       </div>
-//                   </div>
-//               </div>
-//                   `
-//               }
-            
-//           }
-//           showArticles(articleList);
-//           console.log(output)
-//         //   console.log(articles)
-//         })
-    
-//    }
+   }
     return (
         // <div className='container-fluid bg-light p-0'>
         //     <Chatbot/>
@@ -160,8 +116,8 @@ function ArticlesPage() {
           <Chatbot/>
           <div style={{marginTop: '18vh'}} className=''> 
              <blockquote className='lead text-center'>Some interesting articles relating to all sorts of biases, for your knowledge and reading.</blockquote>
-             <div className="   row" style={{boxShadow: '2px', overflow: 'hidden'}} dangerouslySetInnerHTML={{__html: output}}/> 
-                {}
+             <div className="row mb-3" style={{boxShadow: '2px', overflow: 'hidden'}} dangerouslySetInnerHTML={{__html: output}}/> 
+              
               {/* <div className="col-md-6">
                   <div className="media blog-media">
                       <a href="#"><img className="d-flex" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Generic placeholder image"/></a>
