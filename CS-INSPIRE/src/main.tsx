@@ -13,11 +13,15 @@ import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
 import ResourcePage from './pages/ResourcesPage.tsx'
 import CommunityPage from './pages/CommunityPage.tsx'
-import AgeismBiasPage from './pages/AgeismBiasPage.tsx'
+import AgeismBiasPage from './pages/AgeismRoleplayPage.tsx'
 import HaloEffectPage from './pages/HaloEffectPage.tsx'
 import BeautyBiasPage from './pages/BeautyBiasPage.tsx'
 import AgeismBiasPageTwo from './pages/AgeismBiasPageTwo.tsx'
 import QuizPage from './pages/QuizPage.tsx'
+import AgeismRoleplayContOne from './pages/AgeismBiasPageThree.tsx'
+import AgeismFactsPage from './pages/AgeismFactsPage.tsx'
+import AgeismRoleplayContTwo from './pages/AgeismBiasPageFour.tsx'
+import AgeismRoleplayContThree from './pages/AgeismBiasPageFive.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
@@ -99,6 +103,22 @@ const router = createBrowserRouter([
   },
   { path: "/bias/ageismRoleplay",
     element: <AgeismBiasPageTwo/>
+  },
+  {
+    path: "/bias/ageismFacts",
+    element: <AgeismFactsPage/>
+  },
+  {
+    path: "/bias/ageismRoleplayContOne",
+    element: <AgeismRoleplayContOne/>
+  },
+  {
+    path: "/bias/ageismRoleplayContTwo",
+    element: <AgeismRoleplayContTwo/>
+  },
+  {
+    path: "/bias/ageismRoleplayContThree",
+    element: <AgeismRoleplayContThree/>
   },
   {
     path: "/quiz",

@@ -1,119 +1,59 @@
 import'../styles/_ageism.css'
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, ChangeEvent} from 'react';
 import NavigationBar from '../components/NavBarLogin'
+import Footer from '../components/Footer';
 import useSound from "use-sound"
+import exp from '../assets/experience.jpg'
+import respected from '../assets/respected.jpg'
+import energetic from '../assets/energetic.png'
+import trackRecord from '../assets/trackRecord.png'
+import perspective from '../assets/perspective.png'
+import action from '../assets/action.png'
+import workplaceDynamics from '../assets/workplaceDynamics.jpg'
+import reflectionIcon from '../assets/reflectionIcon.png'
+import backArrow from '../assets/arrowBack.png'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function AgeismTwo() {
     const [isLoading, setLoading] = useState(true);
-  
-  
+    const navigate = useNavigate();
+    const [showReflection, setShowReflection] = useState(false)
+    
+
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
       return new Promise(resolve => setTimeout(() => resolve(), 1000));
     } 
 
-    useEffect(() => {
-      someRequest().then(() => {
-        const loaderElement = document.querySelector(".loader-container");
-        if (loaderElement) {
-          loaderElement.remove();
-          setLoading(!isLoading);
-        }
-      });
-    });
+    function goNext() {
+        navigate("/bias/ageismRoleplayCont", {state: {reflection: showReflection}})
+    }
+
+
+
+
 
     return (
-        <div className="container-fluid bootdey">
+        <div className="container-fluid bootdey p-0 bg-light" style={{overflow: 'hidden'}}>
             <NavigationBar/>
 
-        <div style={{marginTop: '18vh'}}>
-            <div className="card my-4">
-                <div className="card-body">
-                    <h5 className="card-title">Question 1:</h5>
-                    <p className="card-text">What is the capital of France?</p>
-                    <div className="form-check">
-                    <input className="form-check-input" type="radio" name="question1" id="q1Option1" value="option1"/>
-                    <label className="form-check-label" for="q1Option1">a) London</label>
-                    </div>
-                    <div className="form-check">
-                    <input className="form-check-input" type="radio" name="question1" id="q1Option2" value="option2"/>
-                    <label className="form-check-label" for="q1Option2">b) Paris</label>
-                    </div>
-                    <div className="form-check">
-                    <input className="form-check-input" type="radio" name="question1" id="q1Option3" value="option3"/>
-                    <label className="form-check-label" for="q1Option3">c) Rome</label>
-                    </div>
-                </div>
+        <div style={{marginTop: '9vh', height: '100vh', backgroundImage: `url(${workplaceDynamics})`, backgroundSize: 'cover'}}>
+            <NavLink to="/bias/ageism"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink><br/>
+            <div className='p-5 roleplayDesc text-center w-75 mx-auto'>
+
+                <h2 className='text-center mt-5'>Scenario: Workplace Dynamics</h2>
+                <p className='w-50 mx-auto' style={{borderRadius: '5px', padding: '10px'}}>You will assume the role of Sarah, a mid-level manager in a large corporation. The goal is to navigate various workplace scenarios and address unconscious bias related to ageism. Your actions will shape the outcome of the simulation.</p>
+                <br/><br/>
+                <h4>Act 1: Team Assignment</h4>
+                <p className='w-50 text-center mx-auto' style={{borderRadius: '5px', padding: '10px'}}> You are tasked with building a new project team 
+                   and you required a leader to lead the project. You have a few available candidates for choosing:<br/><br/>     
+                </p><br/>
+                    <NavLink to= "/bias/ageismRoleplayContOne">Proceed</NavLink>
             </div>
         </div>
-        <div className="row">
-            <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-                <div className="team text-center rounded p-3 py-4">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                    <div className="content mt-3">
-                        <h4 className="title mb-0">Lisa Martin</h4>
-                        <small className="text-muted">Founder</small>
-                        <ul className="list-unstyled mt-3 social-icon social mb-0">
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-facebook" title="Facebook"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-instagram" title="Instagram"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-twitter" title="Twitter"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-google-plus" title="Google +"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-linkedin" title="Linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-                <div className="team text-center rounded p-3 py-4">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                    <div className="content mt-3">
-                        <h4 className="title mb-0">Calvin Carlo</h4>
-                        <small className="text-muted">C.E.O.</small>
-                        <ul className="list-unstyled mt-3 social-icon social mb-0">
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-facebook" title="Facebook"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-instagram" title="Instagram"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-twitter" title="Twitter"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-google-plus" title="Google +"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-linkedin" title="Linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-                <div className="team text-center rounded p-3 py-4">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                    <div className="content mt-3">
-                        <h4 className="title mb-0">Richha Jotchi</h4>
-                        <small className="text-muted">Manager</small>
-                        <ul className="list-unstyled mt-3 social-icon social mb-0">
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-facebook" title="Facebook"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-instagram" title="Instagram"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-twitter" title="Twitter"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-google-plus" title="Google +"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-linkedin" title="Linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div className="col-lg-3 col-md-6 col-12 mt-4 pt-2">
-                <div className="team text-center rounded p-3 py-4">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                    <div className="content mt-3">
-                        <h4 className="title mb-0">Cristino Murfy</h4>
-                        <small className="text-muted">Accountant</small>
-                        <ul className="list-unstyled mt-3 social-icon social mb-0">
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-facebook" title="Facebook"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-instagram" title="Instagram"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-twitter" title="Twitter"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-google-plus" title="Google +"></i></a></li>
-                            <li className="list-inline-item"><a href="javascript:void(0)" className="rounded"><i className="mdi mdi-linkedin" title="Linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+           
+           
+      
+        <Footer/>
     </div>
         
     )

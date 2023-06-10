@@ -74,6 +74,11 @@ function NavigationBarLogin() {
     navigate("/profile", {state: {email: email}})
   }
  
+  function goQuizzes () {
+    console.log("Heading to quizzes page!")
+    navigate("/quiz", {state: {email: email}})
+  }
+ 
 
     return ( 
       <>
@@ -85,9 +90,15 @@ function NavigationBarLogin() {
               <Nav className="me-auto text-dark" style={{right:'0px'}}>
                 <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick = {goExplore}>Explore</Nav.Link>
                 <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goCommunity}>Community</Nav.Link>
-                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goArticles}>Articles</Nav.Link>
-                <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goResources}>Resources</Nav.Link>
+
                 <Nav.Link className="m-3" style={{fontWeight: '500'}} onClick={goHelp}>Help</Nav.Link>
+                <NavDropdown className="m-3 float-end" style={{display: 'block', fontWeight: '500'}} title="Resources" id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={goArticles}>Articles</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={goResources}>Podcasts</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={goQuizzes}>Quizzes</NavDropdown.Item>
+                </NavDropdown>
                 <NavDropdown className="m-3 float-end" style={{display: 'block'}} title={email} id="basic-nav-dropdown">
                   <NavDropdown.Item onClick={goProfile}>Details</NavDropdown.Item>
                   <NavDropdown.Divider />

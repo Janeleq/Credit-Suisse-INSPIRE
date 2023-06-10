@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import "../styles/_quiz.css";
+import "../styles/_quiz.css";
 import questions from '../Javascript/questions.js'
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Chatbot from "../components/Chatbot.tsx"
@@ -55,15 +55,14 @@ function Quiz() {
       <NavigationBar/>
       <Chatbot/>
   
-      <div className="Quiz" style={{marginTop: '18vh'}}>
-
-      
-        <h1>Unconscious Bias Quiz</h1>
-
-     
-        <h2>Score: {score}</h2>
-
-        {/* Show results or show the question game  */}
+      <div className="Quiz text-center" style={{marginTop: '18vh'}}>
+      <h1>Unconscious Bias Quiz</h1>
+      <button className='mx-auto' onClick="">Bias Reality Check!</button>
+      <button className="">Start</button>
+      <h2 id="score">Score: {score}</h2>
+      <div className="card my-4">
+                <div className="card-body">
+                   {/* Show results or show the question game  */}
         {showResults ? (
           /* 4. Final Results */
           <div className="final-results">
@@ -72,7 +71,7 @@ function Quiz() {
               {score} out of {questions.length} correct - (
               {(score / questions.length) * 100}%)
             </h2>
-            <button onClick={() => restartGame()}>Restart game</button>
+            <button onClick={() => restartGame()}>Restart Quiz</button>
           </div>
         ) : (
         /* Question Card  */
@@ -88,6 +87,8 @@ function Quiz() {
               {questions[currentQuestion].options.map((option) => {
                 return (
                   <li
+                    className="card-text m-2 w-50 mx-auto border-dark"
+                    style={{listStyleType: 'none', backgroundColor: ''}}
                     key={option.id}
                     onClick={() => optionClicked(option.isCorrect)}
                   >
@@ -98,6 +99,15 @@ function Quiz() {
             </ul>
           </div>
           )}
+        </div>
+      </div>
+      
+  
+
+     
+      
+
+       
       </div>
     </div>
   );

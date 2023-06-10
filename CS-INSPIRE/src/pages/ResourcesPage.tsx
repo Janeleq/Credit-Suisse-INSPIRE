@@ -95,8 +95,8 @@ export default () => {
           <div className="image" style={{backgroundImage: "url('images/img_1.jpg');"}}></div>
           <div className="text">
 
-            <h3 className="font-weight-light"><a href="single-post.html">Episode 08: How To Create Web Page Using Bootstrap 4</a></h3>
-            <div className="text-white mb-3"><span className="text-black-opacity-05"><small>By Mike Smith <span className="sep">/</span> 16 September 2017 <span className="sep">/</span> 1:30:20</small></span></div>
+            <h3 className="font-weight-light"><a href="single-post.html">Episode 08:</a></h3>
+            <div className="text-white mb-3"><span className="text-black-opacity-05"><small>By null <span className="sep">/</span> 16 September 2017 <span className="sep">/</span> 1:30:20</small></span></div>
             <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti repellat mollitia consequatur, optio nesciunt placeat. Iste voluptates excepturi tenetur, nesciunt.</p>
 
             <div className="player" style={{visibility: "visible"}}>

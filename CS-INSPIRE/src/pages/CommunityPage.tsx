@@ -45,19 +45,20 @@ function Community() {
                                 <a className="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#two" role="tab" aria-selected="false">
                                     <div className="nav-content">
                                         <strong>Second Day</strong>
-                                        <span>{new Date().getDate().toString().substring(0,10)+1}</span>
+                                        {/* <span>{new Date().getDate().toString().substring(0,10)+1}</span> */}
+                                        <span>-</span>
                                     </div>
                                 </a>
                                 <a className="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#three" role="tab" aria-selected="false">
                                     <div className="nav-content">
                                         <strong>Third Day</strong>
-                                        <span>10th January 2019</span>
+                                        <span>-</span>
                                     </div>
                                 </a>
                                 <a className="nav-item nav-link" id="nav-contact-tab2" data-toggle="tab" href="#four" role="tab" aria-selected="false">
                                     <div className="nav-content">
                                         <strong>Fourth Day</strong>
-                                        <span>10th January 2019</span>
+                                        <span>-</span>
                                     </div>
                                 </a>
                             </div>

@@ -56,7 +56,7 @@ function HelpPage() {
                             <div className="row justify-content-center mt-4">
                                 <div className="col-xl-5 col-lg-8">
                                     <div className="text-center">
-                                        <h3 className="text-dark">Frequently Asked Questions?</h3>
+                                        <h3 className="text-dark">Frequently Asked Questions</h3>
                                         <p className="text-muted">Check out some of the FAQs below that are commonly answered</p>
                                         <div>
                                             <button type="button" className="btn btn-primary me-2" onClick={sendEmail}>Email Us</button>
@@ -94,15 +94,12 @@ function HelpPage() {
                                     </div>
                                     <div className="col-lg-6">
                                         <h5 className="text-dark">Where does it come from ?</h5>
-                                    <p className="text-dark text-muted">If several languages coalesce, the grammar of the resulting language is more simple 
-                                        and regular than that of the individual languages. The new common language will be more simple and 
-                                        regular than the existing
+                                    <p className="text-dark text-muted">-
                                     </p>
                                     </div>
                                     <div className="col-lg-6">
                                         <h5 className="text-dark">Where can I get some?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more 
-                                            simple and regular than that of the individual languages. </p>
+                                        <p className="lg-base">- </p>
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +108,7 @@ function HelpPage() {
                                 <div className="row g-4 mt-2">
                                     <div className="col-lg-6">
                                         <h5>Where does it come from ?</h5>
-                                        <p className="lg-base">If several languages coalesce, the grammar of the resulting language is more simple
-                                            and regular than that of the individual languages. The new common language will be more
-                                            simple and regular than the existing</p>
+                                        <p className="lg-base">-</p>
                                     </div>                                      
                                     <div className="col-lg-6">
                                         <h5>What is Perception Pause privacy policy</h5>

@@ -16,7 +16,7 @@ function ArticlesPage() {
     const [status, setStatus] = useState(false)
     const url = 'https://newsapi.org/v2/everything?' +
     'q=bias&' +
-    'from=2023-05-29&' +
+    'from=2023-05-28&' +
     'sortBy=publishedAt&' +
     'apiKey=01d127c2f33a483c939e689920e7bab9&' +
     'pageSize=25';

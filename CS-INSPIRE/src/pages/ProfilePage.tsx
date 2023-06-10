@@ -13,7 +13,8 @@ function Profile() {
     const [error, setError] = useState('')
     const [name, setName] = useState('')
     const [photo, setPhoto] = useState('')
-    
+    const [id, setId] = useState('')
+    const [login, setLoginTime] = useState('')
     console.log(user)
 
     updateEmail(auth.currentUser, email).then(() => {
@@ -46,6 +47,8 @@ function Profile() {
     useEffect(() => {
         if (user !== null) {
             user.providerData.forEach((profile) => {
+                console.log(user)
+
               console.log("Sign-in provider: " + profile.providerId);
               console.log("  Provider-specific UID: " + profile.uid);
               console.log("  Name: " + profile.displayName);
@@ -54,7 +57,11 @@ function Profile() {
               setEmail(profile.email)
               console.log("  Photo URL: " + profile.photoURL);
               setPhoto(profile.photoURL)
+              setId(profile.uid)
+            
             });
+            setLoginTime(user.metadata.lastSignInTime)
+            setId(user.uid)
           }
     })
 
@@ -79,6 +86,11 @@ function Profile() {
         <div className='container-fluid p-0'>
             <Navbar></Navbar>           
             <section className="section about-section gray-bg" id="about" style={{marginTop: '18vh'}}>
+                <div className='row text-center'>
+                    <div className='col lead'>
+                     Last Login: {login}
+                    </div>
+                </div>
                 <div className="row align-items-center ">
                     <div className="col-lg-4">
                         <div className="about-avatar text-center">
@@ -86,7 +98,9 @@ function Profile() {
                             <button className=' text-center' onClick={signout}>Log out</button>
                         </div>
                     </div>
+                    
                     <div className="col-lg-6">
+                        
                         <div className="about-text go-to">
                             <h3 className="text-dark">Name</h3>
                             <div className="row about-list">
@@ -100,6 +114,13 @@ function Profile() {
                                         {/* <label className=''>Email:&nbsp;</label> */}
                                         <p>{ email }</p>
                                 
+                                    </div>
+                                </div>
+                                <div className="col-md-6">
+                                    <h3 className="text-dark">User ID</h3>
+                                    <div className="media">
+                                            {/* <label className=''>Email:&nbsp;</label> */}
+                                            <p>{ id }</p>
                                     </div>
                                 </div>
                             </div>
