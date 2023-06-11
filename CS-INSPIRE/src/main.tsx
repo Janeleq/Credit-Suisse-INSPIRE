@@ -13,15 +13,38 @@ import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
 import ResourcePage from './pages/ResourcesPage.tsx'
 import CommunityPage from './pages/CommunityPage.tsx'
-import AgeismBiasPage from './pages/AgeismRoleplayPage.tsx'
-import HaloEffectPage from './pages/HaloEffectPage.tsx'
+
+
+// Halo Effect Pages
+import HaloEffectPage from './pages/HaloEffect/HaloEffectPage.tsx'
+import HaloEffectRoleplayPage from './pages/HaloEffect/HaloEffectRoleplay.tsx'
+import HaloEffectRoleplayContOne from './pages/HaloEffect/HaloEffectPageTwo.tsx'
+import HaloEffectRoleplayContTwo from './pages/HaloEffect/HaloEffectPageThree.tsx'
+import HaloEffectRoleplayContThree from './pages/HaloEffect/HaloEffectPageFour.tsx'
+import HaloEffectRoleplayContFour from './pages/HaloEffect/HaloEffectPageFive.tsx'
+import HaloEffectRoleplayContFive from './pages/HaloEffect/HaloEffectPageSix.tsx'
+import HaloEffectRoleplayContSix from './pages/HaloEffect/HaloEffectPageSix.tsx'
+import HaloEffectRoleplayContSeven from './pages/HaloEffect/HaloEffectPageSeven.tsx'
+
+
+
+// Beauty Pages
 import BeautyBiasPage from './pages/BeautyBiasPage.tsx'
+import BeautyBiasRoleplayPage from './pages/BeautyBiasRoleplayPage.tsx'
+import BeautyBiasFactsPage from './pages/BeautyBiasFactsPage.tsx'
 import AgeismBiasPageTwo from './pages/AgeismBiasPageTwo.tsx'
 import QuizPage from './pages/QuizPage.tsx'
+
+
+// Ageism Pages
+import AgeismBiasPage from './pages/AgeismRoleplayPage.tsx'
 import AgeismRoleplayContOne from './pages/AgeismBiasPageThree.tsx'
 import AgeismFactsPage from './pages/AgeismFactsPage.tsx'
 import AgeismRoleplayContTwo from './pages/AgeismBiasPageFour.tsx'
 import AgeismRoleplayContThree from './pages/AgeismBiasPageFive.tsx'
+import AgeismRoleplayContFour from './pages/AgeismBiasPageSix.tsx'
+import AgeismRoleplayContFive from './pages/AgeismBiasPageSeven.tsx'
+import AgeismRoleplayContSix from './pages/AgeismBiasPageEight.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
@@ -66,12 +89,51 @@ const router = createBrowserRouter([
   },
   {
     path: "/bias/haloeffect",
-    element: <HaloEffectPage/>
+    element: <HaloEffectPage/>  
   },
-  
+  {
+    path: "/bias/haloEffectRoleplay",
+    element: <HaloEffectRoleplayPage/>  
+  },  
+  {
+    path: "/bias/haloEffectRoleplayContOne",
+    element: <HaloEffectRoleplayContOne/>  
+  },  
+  {
+    path: "/bias/HaloEffectRoleplayContTwo",
+    element: <HaloEffectRoleplayContTwo/>
+  },
+  {
+    path: "/bias/HaloEffectRoleplayContThree",
+    element: <HaloEffectRoleplayContThree/>
+  },
+  {
+    path: "/bias/HaloEffectRoleplayContFour",
+    element: <HaloEffectRoleplayContFour/>
+  },
+  {
+    path: "/bias/HaloEffectRoleplayContFive",
+    element: <HaloEffectRoleplayContFive/>
+  },
+  {
+    path: "/bias/HaloEffectRoleplayContSix",
+    element: <HaloEffectRoleplayContSix/>
+  },
+  {
+    path: "/bias/HaloEffectRoleplayContSeven",
+    element: <HaloEffectRoleplayContSeven/>
+  },
   {
     path: "/bias/beauty",
     element: <BeautyBiasPage/>
+  },
+  {
+    path: "/bias/beautyBiasRoleplay",
+    element: <BeautyBiasRoleplayPage/>
+  },
+  {
+    path: "/bias/beautyBiasFacts",
+    element: <BeautyBiasFactsPage/>
   },
   {
     path: "/login",
@@ -119,6 +181,18 @@ const router = createBrowserRouter([
   {
     path: "/bias/ageismRoleplayContThree",
     element: <AgeismRoleplayContThree/>
+  },
+  {
+    path: "/bias/ageismRoleplayContFour",
+    element: <AgeismRoleplayContFour/>
+  },
+  {
+    path: "/bias/ageismRoleplayContFive",
+    element: <AgeismRoleplayContFive/>
+  },
+  {
+    path: "/bias/ageismRoleplayContSix",
+    element: <AgeismRoleplayContSix/>
   },
   {
     path: "/quiz",

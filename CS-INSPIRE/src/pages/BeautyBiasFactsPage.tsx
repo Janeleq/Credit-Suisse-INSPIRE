@@ -4,7 +4,7 @@ import NavigationBar from '../components/NavBarLogin'
 import Footer from '../components/Footer.tsx';
 import background from '../assets/genderBackground.png'
 
-function GenderFacts() {
+function BeautyBiasFacts() {
     const [isLoading, setLoading] = useState(true)
     const [isNewName, setNewName] = useState(false)
     const [name, setName] = useState('');
@@ -121,4 +121,4 @@ function GenderFacts() {
     )
 }
 
-export default GenderFacts
+export default BeautyBiasFacts

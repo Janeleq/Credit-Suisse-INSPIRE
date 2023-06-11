@@ -3,7 +3,7 @@ import'../styles/_ageism.css'
 import React, {useState, useEffect} from 'react';
 import NavigationBar from '../components/NavBarLogin'
 import Footer from '../components/Footer.tsx';
-
+import statisticOne from '../assets/ageismStats.png'
 
 function AgeismFacts () {
     const [isLoading, setLoading] = useState(true)
@@ -50,7 +50,7 @@ function AgeismFacts () {
     });
 
     return (
-        <div className="container-fluid bootdey p-0">
+        <div className="container-fluid bootdey p-0" style={{overflow: 'hidden'}}>
             <NavigationBar/>
 
             <div className='row' style={{marginTop: '18vh'}}>
@@ -68,6 +68,12 @@ function AgeismFacts () {
                       World Bank (2018)
                   </figcaption>
                 </figure>
+            </div>
+            <div className='row'>              
+                <div className='col'>
+                  <img src={statisticOne} alt="Statistic One"/>
+
+                </div>
             </div>
         
             <Footer/>

@@ -1,23 +1,13 @@
-import'../styles/_ageism.css'
+import'../../styles/_ageism.css'
 import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
-import useSound from "use-sound"
-import exp from '../assets/experience.jpg'
-import respected from '../assets/respected.jpg'
-import energetic from '../assets/energetic.png'
-import trackRecord from '../assets/trackRecord.png'
-import perspective from '../assets/perspective.png'
-import action from '../assets/action.png'
-import workplaceDynamics from '../assets/workplaceDynamics.jpg'
-import reflectionIcon from '../assets/reflectionIcon.png'
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
-import outcomeIcon from "../assets/outcomeIcon.png"
-import projectBg from "../assets/projectProgress.jpg"
-import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
+import outcomeIcon from "../../assets/outcomeIcon.png"
+import projectBg from "../../assets/projectProgress.jpg"
+import mediateIcon from "../../assets/mediate.jpg"
+import sideIcon from "../../assets/sideIcon.png"
+import actionIcon from "../../assets/action.png"
 
 function AgeismFour() {
     const {state} = useLocation();
@@ -44,7 +34,7 @@ function AgeismFour() {
         // console.log(reflection)
        }
        
-        setCandidate(state.candidate)
+        setCandidate(state.chosenDesc)
         someRequest().then(() => {
           const loaderElement = document.querySelector(".loader-container");
           if (loaderElement) {
@@ -56,17 +46,14 @@ function AgeismFour() {
 
 
     useEffect(() => {
-        if (candidate == 'Alex') {
-            setOutcome('Selecting Alex solely based on experience may perpetuate age-related biases.')
+ 
+        if (state.action == 'Action 1') {
+            setOutcome('Reading each application thoroughly and considering academic achievements and extracurricular activities ensures fair evaluation based on merit.')
         }
-        else if (candidate == 'Emma') {
-            setOutcome('Selecting Emma solely based on youth may overlook the value of experience.')
+        else if (state.action == 'Action 2') {
+            setOutcome('Glancing at the names and making quick judgments based on reputation or popularity reinforces the halo effect bias and can lead to unfair evaluations.')
         }
-        else {
-            setOutcome('Selecting John for their diverse perspectives ensures a balanced and inclusive team.')
-            setEmoji("FaBeer")
-          
-        }
+        console.log(outcome)
       });
 
 
@@ -80,7 +67,7 @@ function AgeismFour() {
 
 
     const Proceed = () => {
-      navigate("/bias/ageismRoleplayContThree", {state: {reflection: reflection, outcome: outcome, action: action, candidate: candidate}})
+      navigate("/bias/HaloEffectRoleplayContThree", {state: {reflection: reflection, outcome: chosenDesc, action: action, candidate: candidate}})
   }
 
 
@@ -90,7 +77,7 @@ function AgeismFour() {
             
             <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
                 {/* <NavLink to="/bias/ageismRoleplayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-                <p>You have choosen {candidate} </p>
+                <p> {candidate} </p>
                 {/* {reflection} */}
 
                <h2 className='lead'>
@@ -99,46 +86,35 @@ function AgeismFour() {
                 <p>{outcome}</p>
                 
               <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${projectBg})`, backgroundSize: 'cover'}}>
-                  <h4>Act 2: Team Dynamics</h4>
-                  <p className='w-50 mx-auto'>Now that the team leader has been chosen for the project, the project progresses.
-                    However as time passes, conflicts arise within the team. </p>
-              
-                <p className='mt-5'>Emma and John have differing approaches due to their generational differences.</p>
-                <p className='mb-5'>As the manager, what would you do?</p>
+                  <h4>Act 2: Interviewing Applicants</h4>
+                  <p className='w-50 mx-auto'>After reviewing the stack of applications, you selected a few of them and have the opportunity to interview the selected applicants to learn more about them. </p>
+                  <br/> 
+
+                  <p className='mb-5'><img src={actionIcon} alt="action" style={{width: '3%'}}/>&nbsp;What would you do?</p>
               </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [1, "You have chosen to mediate between Emma and John, encouraging open dialogue between them, and getting rid of potential bias"])}>
+                <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [1, "You have chosen to make the effort to ask open-ended questions that allow applicants to showcase their interests, values, and experiences provides a holistic view of their character and potential."])}>
                     <div className="team text-center rounded p-3 py-4">
                         <img src={mediateIcon} style={{borderRadius: '50%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 1</h4>
-                            <small className="text-muted">Mediate between Emma and John, encouraging open dialogue<br/>
+                            <small className="text-muted">Asking open-ended questions that allow applicants to showcase their interests, values, and experiences provides a holistic view of their character and potential.<br/>
                             </small>
                             <br/><br/>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to side with one team member based on personal bias."])}>
+                <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to merely side with one team member based on personal bias."])}>
                     <div className="team text-center rounded p-3 py-4">
                         <img src={sideIcon} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 2</h4>
-                            <small className="text-muted">Side with one team member based on personal bias.<br/>
+                            <small className="text-muted">Asking questions that solely focus on academic achievements or standardized test scores perpetuates the halo effect bias, as it emphasizes a single aspect of an applicant's profile and overlooks other valuable qualities.<br/>
                             </small>
                             <br/><br/>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [3, "You have chosen to ignore the conflict between both Emma and John, and hope it resolves itself."])}>
-                    <div className="team text-center rounded p-3 py-4">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                        <div className="content mt-3">
-                            <h4 className="title mb-0">Action 3</h4>
-                            <small className="text-muted">Ignore the conflict and hope it resolves itself.<br/>
-                            </small>
-                            <br/><br/>
-                        </div>
-                    </div>
-                </div>
+
                 <p>{chosenDesc}</p>
                 <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
 

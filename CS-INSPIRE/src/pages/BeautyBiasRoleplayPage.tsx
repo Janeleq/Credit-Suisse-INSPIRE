@@ -14,7 +14,7 @@ import reflectionIcon from '../assets/reflectionIcon.png'
 import backArrow from '../assets/arrowBack.png'
 import { NavLink, useNavigate } from 'react-router-dom'
 
-function AgeismTwo() {
+function BeautyBiasRoleplay() {
     const [isLoading, setLoading] = useState(true);
     const navigate = useNavigate();
     const [showReflection, setShowReflection] = useState(false)
@@ -59,4 +59,4 @@ function AgeismTwo() {
     )
 }
 
-export default AgeismTwo
+export default BeautyBiasRoleplay

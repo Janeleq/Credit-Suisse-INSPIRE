@@ -5,7 +5,7 @@ import roleplaying from '../assets/roleplaying.jpg'
 import funfacts from '../assets/funfacts.jpg'
 import genderBackground from '../assets/gender'
 import Footer from '../components/Footer.tsx';
-import sexismBackground from '../assets/sexism.jpg'
+import sexismBackground from '../assets/sexismBg.jpg'
 
 function Genderbias () {
 
@@ -30,12 +30,12 @@ function Genderbias () {
         <div className='container-fluid p-0 w-100'>
             <NavigationBar/>
             <Chatbot/>
-			<div className='row text-center mb-2 w-100' style={{marginTop: '9vh', height: '80vh'}}>
-				<div className='col-4' style={{backgroundImage: `url(${sexismBackground})`, backgroundSize: 'cover'}}>
+			<div className='row text-center mb-2 w-100' style={{marginTop: '9vh', height: '90vh'}}>
+				<div className='col-6' style={{backgroundImage: `url(${sexismBackground})`, backgroundSize: 'cover'}}>
 
 					
 				</div>
-				<div className='col-8'>
+				<div className='col-6'>
 					<h3>Unconscious Bias: <mark>Halo Effect</mark></h3>
 					<h5 className='lead'>Choose between exploring some fun facts or roleplaying!</h5>
 					

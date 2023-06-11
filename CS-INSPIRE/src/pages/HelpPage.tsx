@@ -62,10 +62,11 @@ function HelpPage() {
                                             <button type="button" className="btn btn-primary me-2" onClick={sendEmail}>Email Us</button>
                                             {/* <button type="button" className="btn btn-success">Send us a tweet</button> */}
                                         </div>
+                                        <small className="mt-2 text-muted">You can utilise the chatbot on the bottom right of the page to ask some questions as well.</small>
                                     </div>
                                 </div>     
                             </div>
-               <div className="bg-light m-3 row justify-content-center mt-5">
+               <div className="m-3 row justify-content-center mt-5">
                     <div className="col-9">
                         <ul className="nav nav-tabs  nav-tabs-custom nav-justified justify-content-center faq-tab-box" id="pills-tab" role="tablist">
                             <li className="nav-item" role="presentation">

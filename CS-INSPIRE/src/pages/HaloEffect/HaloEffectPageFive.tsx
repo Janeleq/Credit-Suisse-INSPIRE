@@ -1,16 +1,15 @@
-import'../styles/_ageism.css'
+import'../../styles/_ageism.css'
 import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
-import outcomeIcon from "../assets/outcomeIcon.png"
-import projectBg from "../assets/projectProgress.jpg"
-import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
+import outcomeIcon from "../../assets/outcomeIcon.png"
+import projectBg from "../../assets/projectProgress.jpg"
+import mediateIcon from "../../assets/mediate.jpg"
+import sideIcon from "../../assets/sideIcon.png"
 
-function AgeismFive() {
+function HaloEffectFive() {
     const {state} = useLocation();
     // const {reflection} = state.reflection;
     
@@ -28,6 +27,7 @@ function AgeismFive() {
       } 
 
     useEffect(() => {
+
         setCandidate(state.candidate)
         setReflection(state.reflection)
         someRequest().then(() => {
@@ -42,13 +42,10 @@ function AgeismFive() {
 
     useEffect(() => {
         if (action == 1) {
-            setDescOutcome('Mediating and encouraging open dialogue fosters understanding and collaboration.')
+            setDescOutcome('Evaluating each applicant holistically, considering multiple aspects of their profile, helps overcome the halo effect bias and ensures a fair and comprehensive evaluation.')
         }
         else if (action == 2) {
-            setDescOutcome('Siding with one team member based on personal bias exacerbates age-related conflicts.')
-        }
-        else {
-            setDescOutcome('Ignoring the conflict allows it to escalate and negatively impact team dynamics.')
+            setDescOutcome('Relying heavily on GPA and standardized test scores as the primary factors for admission perpetuates the halo effect bias, as it prioritizes quantifiable measures and may overlook other valuable qualities and potential.')
         }
       });
 
@@ -90,16 +87,16 @@ function AgeismFive() {
                 {/* <NavLink to="/bias/ageismRolePlayContThree"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
                <h2 className='lead'>
+                {state.outcome}
                   <img src={outcomeIcon} alt="outcome" style={{width: '3%'}}/> &nbsp;
                    Outcome / Consequence of your action</h2>
                 <p>{descOutcome}</p>
         
               <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${projectBg})`, backgroundSize: 'cover'}}>
-                  <h4>Act 3: Training and Development</h4>
-                  <p className='w-50 mx-auto'>It is now weeks past the project and you feel like the team could have some further training and development 
-                   to further their skillsets to excel in the project. As such, you look to the various training programs offered by the company to enhance employee skills. </p>
+                  <h4>Act 4: Building a Diverse Class</h4>
+                  <p className='w-50 mx-auto'>Creating a diverse and inclusive student body is important to the college. </p>
               
-                <p className='mt-5 w-50 mx-auto'>After looking through quite some time, you found a unique training program that you think would suit the employees well. However, there is only two opportunity slot for this training program, but you realise you have 3 employees at hand.</p>
+                <p className='mt-5 w-50 mx-auto'>Action 4: Considering Diversity</p>
                 <br/>
                 <p className='mb-5'>As the manager, what would you do?</p>
               </div>
@@ -147,4 +144,4 @@ function AgeismFive() {
     )
 }
 
-export default AgeismFive; 
+export default HaloEffectFive; 

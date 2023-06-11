@@ -22,7 +22,7 @@ function AgeismThree() {
     const [chosenDesc, setChosenDesc] = useState('')
     let isValid = React.useMemo(() => reflection.length <= 20, [reflection]);
 
-    const ref = useRef('null');
+    const ref = useRef('');
     const navigate = useNavigate();
 
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -89,13 +89,13 @@ function AgeismThree() {
             
             
             <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
-            <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink>
+            {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
                 <h3 className='text-center mt-3'>Available Candidates</h3>
                 <p className=''>Below are 3 candidates in the company with different traits.</p>
                 <br/>
                 <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;Choose the candidate of your choosing.</p>
                 
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['John', 'You have chosen John for his diverse perspectives.']), Reflection)}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['John', 'You have chosen John for his diverse perspectives.']))}>
                     <div className="team text-center rounded p-3 py-4">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
@@ -118,7 +118,7 @@ function AgeismThree() {
                     </div>
                 </div>
             
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Emma', 'You have chosen Emma for her innovative thinking and energy.']), Reflection)}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Emma', 'You have chosen Emma for her innovative thinking and energy.']))}>
                     <div className="team text-center rounded p-3 py-4">
                         <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
