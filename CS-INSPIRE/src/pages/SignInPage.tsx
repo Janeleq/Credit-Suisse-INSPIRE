@@ -13,15 +13,22 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('')
+    const [isLoading, setLoading] = useState(true);
 
+
+    function someRequest() { 
+        return new Promise(resolve => setTimeout(() => resolve(), 0));
+      } 
     
-    // const location = useLocation();
-
-    // const [name, setName] = useState('');
-
-    // if (location.state.name != null) {
-    //     setName(location.state.name)
-    // }
+      useEffect(() => {
+        someRequest().then(() => {
+          const loaderElement = document.querySelector(".loader-container");
+          if (loaderElement) {
+            loaderElement.remove();
+            setLoading(!isLoading);
+          }
+        });
+      });
 
     const onLogin = async (e) => {
         console.log("Login clicked")
@@ -77,22 +84,6 @@ const LoginPage = () => {
         
     }
     
-    const [isLoading, setLoading] = useState(true);
-  
-  
-    function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-      return new Promise(resolve => setTimeout(() => resolve(), 0));
-    } 
-
-    useEffect(() => {
-      someRequest().then(() => {
-        const loaderElement = document.querySelector(".loader-container");
-        if (loaderElement) {
-          loaderElement.remove();
-          setLoading(!isLoading);
-        }
-      });
-    });
  
     return(
         <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden'}}>    

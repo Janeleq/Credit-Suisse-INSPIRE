@@ -8,8 +8,10 @@ import Chatbot from "../components/Chatbot"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
+import { useNavigate } from "react-router-dom";
 
 function HelpPage() {
+    const navigate = useNavigate()
     const [isLoading, setLoading] = useState(true);
   
   
@@ -32,19 +34,12 @@ function HelpPage() {
     const form = useRef();
     
     const sendEmail = (e) => {
-        e.preventDefault(); // prevents the page from reloading when you hit “Send”
-    
-        emailjs.sendForm('service_jrq7mcs', 'template_ecaf8aq', form.current, 'YOUR_PUBLIC_KEY')
-        .then((result) => {
-            // show the user a success message
-        }, (error) => {
-            // show the user an error
-        });
+        navigate("/contact")
     };  
 
 
     return (
-        <div className="container-fluid p-0" style={{backgroundColor: '#808080'}}>
+        <div className="container-fluid p-0" style={{}}>
             <Chatbot/>  
             <NavigationBar/>
             <section style={{marginTop: '18vh'}} className="section">
@@ -87,15 +82,15 @@ function HelpPage() {
                                 <div className="row g-4 mt-2">
                                     <div className="col-lg-6">
                                         <h5 className="text-dark">What is this platform about?</h5>
-                                    <p className="text-dark text-muted">Perception Pause is a platform that spreads awareness regarding to unconscious bias.</p>
+                                    <p className="text-muted">Perception Pause is a platform that spreads awareness regarding to unconscious bias.</p>
                                     </div>
                                     <div className="col-lg-6">
                                         <h5 className="text-dark">Why do we use it ?</h5>
-                                        <p className="text-dark text-muted">Utilise the provided resources so gain insights towards today's various unconscious bias and potentially counter them.</p>
+                                        <p className="text-muted">Utilise the provided resources so gain insights towards today's various unconscious bias and potentially counter them.</p>
                                     </div>
                                     <div className="col-lg-6">
                                         <h5 className="text-dark">Where does it come from ?</h5>
-                                    <p className="text-dark text-muted">-
+                                    <p className="text-muted">-
                                     </p>
                                     </div>
                                     <div className="col-lg-6">

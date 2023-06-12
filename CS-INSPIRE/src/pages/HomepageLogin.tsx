@@ -13,12 +13,10 @@ import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import music from '../assets/bg_music.mp3'
-// import useSound from "use-sound"
 import background1 from '../assets/homeBackground.jpg'
 import background2 from '../assets/homeBackground2.jpg'
 import background3 from '../assets/homeBackground3.png'
-import { NavLink } from 'react-router-dom'
+
 
 export const HomePageLogin = () => {
     console.log("rendering lifecycle")
@@ -33,7 +31,6 @@ export const HomePageLogin = () => {
     // }, [sound]);
 
     useEffect (() => {
-
       AOS.init()
         if (location.state != null) {
             setEmail(location.state.email)
@@ -46,6 +43,7 @@ export const HomePageLogin = () => {
             }
           });
     }, [])
+
 
     const [isLoading, setLoading] = useState(true);
   
@@ -67,12 +65,15 @@ export const HomePageLogin = () => {
             alert("ERROR! Something went wrong when signing out.")
         });
     }
+
+    
+
    
     return(
-        <div className='container-fluid bg-light p-0 h-100 w-100' style={{}}>
+        <div className={`container-fluid p-0 h-100 w-100`} style={{}}>
            <NavigationBarLogin/>
            <Chatbot/>
-           <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
+           <div className='register text-center' style={{ overflow:' hidden'}}>
          
 
                        {/* <!-- Start Banner Hero --> */}
@@ -82,6 +83,7 @@ export const HomePageLogin = () => {
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
             <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
         </ol>
+      
         <div className="carousel-inner">
             <div className="carousel-item active" style={{height: '80vh', backgroundImage: `url(${background1})`, backgroundRepeat: '', backgroundSize: 'cover'}}>
                 <div className="container">

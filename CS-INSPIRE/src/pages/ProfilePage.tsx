@@ -1,7 +1,10 @@
 // import React from 'react'
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/NavBarLogin.tsx'
+import Footer from '../components/Footer.tsx';
 import Logo from '../assets/PerceptionPause_logo.png'
+import Chatbot from '../components/Chatbot.tsx'
+import footerBg from '../assets/footerBg.jpg'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
@@ -83,9 +86,10 @@ function Profile() {
 
 
     return (
-        <div className='container-fluid p-0'>
-            <Navbar></Navbar>           
-            <section className="section about-section gray-bg" id="about" style={{marginTop: '18vh'}}>
+        <div className='container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${footerBg})`}}>
+            <Navbar></Navbar>       
+            <Chatbot></Chatbot>    
+            <section className="section" id="about" style={{marginTop: '18vh', height: '80vh'}}>
                 <div className='row text-center'>
                     <div className='col lead'>
                      Last Login: {login}
@@ -102,14 +106,14 @@ function Profile() {
                     <div className="col-lg-6">
                         
                         <div className="about-text go-to">
-                            <h3 className="text-dark">Name</h3>
+                            <h3 className="">Name</h3>
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
                                         {/* <label>Name: &nbsp;</label> */}
                                         <p>{ name }</p>
                                     </div><br/>
-                                    <h3 className="text-dark">Email <button className = "m-1 p-1" style={{fontSize: '16px'}} onClick={updateEmail}>Update</button></h3>
+                                    <h3 className="">Email <button className = "m-1 p-1" style={{fontSize: '16px'}} onClick={updateEmail}>Update</button></h3>
                                     <div className="media">
                                         {/* <label className=''>Email:&nbsp;</label> */}
                                         <p>{ email }</p>
@@ -117,7 +121,7 @@ function Profile() {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h3 className="text-dark">User ID</h3>
+                                    <h3 className="">User ID</h3>
                                     <div className="media">
                                             {/* <label className=''>Email:&nbsp;</label> */}
                                             <p>{ id }</p>
@@ -133,8 +137,8 @@ function Profile() {
                     <div className="row mt-4">
                         <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
-                                <h6 className="count h2" data-to="500" data-speed="500">500</h6>
-                                <p className="m-0px font-w-600">Quizzes Completed</p>
+                                <h6 className="count h2" data-to="500" data-speed="500">incomplete</h6>
+                                <p className="m-0px font-w-600">Bias Reality Check</p>
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">
@@ -143,22 +147,23 @@ function Profile() {
                                 <p className="m-0px font-w-600">Paths Encountered</p>
                             </div>
                         </div>
-                        {/* <div className="col-6 col-lg-3">
+                        <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="850" data-speed="850">850</h6>
-                                <p className="m-0px font-w-600">Photo Capture</p>
+                                <p className="m-0px font-w-600">No of Quizzes Completed</p>
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="190" data-speed="190">190</h6>
-                                <p className="m-0px font-w-600">Telephonic Talk</p>
+                                <p className="m-0px font-w-600">Talk Participated</p>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             
-        </section>
+            </section>
+            <Footer/>
          
        
     </div>

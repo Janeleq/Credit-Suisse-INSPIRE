@@ -8,7 +8,7 @@ import { NavLink, useNavigate, Link } from 'react-router-dom'
 import backArrow from '../assets/arrowBack.png'
 import readingIcon from '../../assets/haloEffect/meticulouslyRead.png'
 
-function HaloEffectTwo() {
+function BeautyBiasTwo() {
     const [showReflection, setShowReflection] = useState(false)
     const [reflection, setReflection] = useState('')
     const [isLoading, setLoading] = useState(true);
@@ -129,4 +129,4 @@ function HaloEffectTwo() {
     )
 }
 
-export default HaloEffectTwo; 
+export default BeautyBiasTwo; 

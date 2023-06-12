@@ -7,12 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import logo from '../assets/PerceptionPause_newlogo.png'
 // import '../styles/_navbar.css'
 // import {Helmet} from 'react-helmet'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 import {useState, useEffect} from 'react'
 import { getAuth } from "firebase/auth";
 import { NavLink, useNavigate } from 'react-router-dom'
-
+import '../styles/lightDark.css'
 
 
 function NavigationBarLogin() {
@@ -78,7 +77,7 @@ function NavigationBarLogin() {
     console.log("Heading to quizzes page!")
     navigate("/quiz", {state: {email: email}})
   }
- 
+
 
     return ( 
       <>

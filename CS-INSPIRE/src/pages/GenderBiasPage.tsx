@@ -5,7 +5,7 @@ import roleplaying from '../assets/roleplaying.jpg'
 import funfacts from '../assets/funfacts.jpg'
 import genderBackground from '../assets/gender'
 import Footer from '../components/Footer.tsx';
-import sexismBackground from '../assets/sexismBg.jpg'
+import sexismBackground from '../assets/genderBackground.png'
 
 function Genderbias () {
 

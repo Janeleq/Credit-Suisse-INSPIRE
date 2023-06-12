@@ -1,8 +1,8 @@
-import'../styles/_ageism.css'
+import'../../styles/_ageism.css'
 import React, {useState, useEffect} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer.tsx';
-import background from '../assets/genderBackground.png'
+import NavigationBar from '../../components/NavBarLogin.tsx'
+import Footer from '../../components/Footer.tsx';
+import background from '../../assets/genderBackground.png'
 
 function BeautyBiasFacts() {
     const [isLoading, setLoading] = useState(true)

@@ -12,7 +12,7 @@ import resumeIcon from "../../assets/resumeIcon.jpg"
 import openEndedIcon from "../../assets/openEndedQuesIcoon.png"
 import interviewingBg from "../../assets/interviewingBg.jpeg"
 
-function AgeismFour() {
+function BeautyBiasThree() {
     const {state} = useLocation();
     // const {reflection} = state.reflection;
     const [outcome, setOutcome] = useState('')
@@ -129,4 +129,4 @@ function AgeismFour() {
     )
 }
 
-export default AgeismFour; 
+export default BeautyBiasThree; 

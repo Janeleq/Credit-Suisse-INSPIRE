@@ -25,7 +25,7 @@ function ArticlesPage() {
   
   
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-      return new Promise(resolve => setTimeout(() => resolve(), 2500));
+      return new Promise(resolve => setTimeout(() => resolve(), 1500));
     } 
 
     useEffect(() => {
@@ -38,16 +38,10 @@ function ArticlesPage() {
       })
     })
 
-
-    if (status == false) {
-        setStatus(true)
-     }
-
     useEffect(() => {
-        if (status == true) {
-            console.log("Reached useEffect..")
+        console.log("fetching articles")
         fetchArticles() 
-        setStatus(false) }
+       
     }, [])
  
 
@@ -58,12 +52,23 @@ function ArticlesPage() {
     // }
    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
    
-   async function fetchArticles() {
-    console.log("I am inside axios!")
-    let articleList = [];
-    const response = await axios.get(url);
-    fixArticles(response.data.articles)
+   function fetchArticles() {
 
+    axios
+    .get(
+        url
+    )
+    .then((response) => {
+        console.log(response.data);
+        fixArticles(response.data.articles)
+        goShow()
+    });
+   }
+   
+    
+   function goShow() {
+    console.log('trying to display articles')
+    let articleList = "";
     for(let i=0; i<articles.length; i++) {
         // console.log(articles[i].urlToImage)
         if (articles[i].urlToImage !== null)
@@ -93,7 +98,7 @@ function ArticlesPage() {
         }
       
     }
-    console.log("I am outside axios!")
+  
     showArticles(articleList);  
    }
     return (

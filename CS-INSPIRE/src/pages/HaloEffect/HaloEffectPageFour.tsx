@@ -9,6 +9,7 @@ import projectBg from "../../assets/projectProgress.jpg"
 import mediateIcon from "../../assets/mediate.jpg"
 import sideIcon from "../../assets/sideIcon.png"
 import actionIcon from "../../assets/action.png"
+import holisticBg from "../../assets/holisticBg.jpg"
 
 function HaloEffectFour() {
     const {state} = useLocation();
@@ -85,7 +86,7 @@ function HaloEffectFour() {
                    Outcome / Consequence of your action</h2>
                 <p>{outcome}</p>
                 
-              <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${projectBg})`, backgroundSize: 'cover'}}>
+              <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${holisticBg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                   <h4>Act 3: Holistic Evaluation</h4>
                   <p className='w-50 mx-auto'>Now that you have interviewed the selected applications, It's time to make decisions on which applicants to admit. </p>
 
@@ -119,12 +120,9 @@ function HaloEffectFour() {
               
                 <p>{chosenDesc}</p>
                 <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
-
-       
-          </div>
+              </div>
             <Footer/>
         </div>
-    
     )
 }
 
