@@ -89,7 +89,7 @@ function Profile() {
         <div className='container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${footerBg})`}}>
             <Navbar></Navbar>       
             <Chatbot></Chatbot>    
-            <section className="section" id="about" style={{marginTop: '18vh', height: '80vh'}}>
+            <section className="section" id="about" style={{marginTop: '18vh', height: '80vh', backgroundImage: `url(${footerBg})`}}>
                 <div className='row text-center'>
                     <div className='col lead'>
                      Last Login: {login}
