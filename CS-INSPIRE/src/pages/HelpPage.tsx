@@ -9,6 +9,7 @@ import Chatbot from "../components/Chatbot"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useNavigate } from "react-router-dom";
+import background from "../assets/footerBg.jpg"
 
 function HelpPage() {
     const navigate = useNavigate()
@@ -39,7 +40,7 @@ function HelpPage() {
 
 
     return (
-        <div className="container-fluid p-0" style={{}}>
+        <div className="container-fluid p-0" style={{backgroundImage: `url(${background})`}}>
             <Chatbot/>  
             <NavigationBar/>
             <section style={{marginTop: '18vh'}} className="section">

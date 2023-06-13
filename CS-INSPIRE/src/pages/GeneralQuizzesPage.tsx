@@ -77,17 +77,17 @@ function GeneralQuiz() {
           /* Question Card  */
             <div className="question-card">
               {/* Current Question  */}
-              <h2>
+              <small style={{float: 'left', marginBottom: '5px'}}>
                 Question: {currentQuestion + 1} out of {questions.length}
-              </h2>
-              <h3 className="question-text">{questions[currentQuestion].text}</h3>
+              </small><hr/>
+              <b className="question-text">{questions[currentQuestion].text}</b>
 
               {/* List of possible answers  */}
               <ul>
                 {questions[currentQuestion].options.map((option) => {
                   return (
                     <li
-                      className="card-text m-2 w-50 mx-auto border-dark"
+                      className="card-text m-2 w-50 mx-auto border"
                       style={{listStyleType: 'none', backgroundColor: ''}}
                       key={option.id}
                       onClick={() => optionClicked(option.isCorrect)}

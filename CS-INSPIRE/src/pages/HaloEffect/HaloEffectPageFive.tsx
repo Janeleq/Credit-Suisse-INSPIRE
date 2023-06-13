@@ -6,8 +6,7 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import backArrow from '../assets/arrowBack.png'
 import outcomeIcon from "../../assets/outcomeIcon.png"
 import projectBg from "../../assets/projectProgress.jpg"
-import mediateIcon from "../../assets/mediate.jpg"
-import sideIcon from "../../assets/sideIcon.png"
+import mediateIcon from "../../assets/mediate.jpg"          
 
 function HaloEffectFive() {
     const {state} = useLocation();

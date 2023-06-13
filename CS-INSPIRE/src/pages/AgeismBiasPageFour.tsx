@@ -2,22 +2,11 @@ import'../styles/_ageism.css'
 import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
 import NavigationBar from '../components/NavBarLogin'
 import Footer from '../components/Footer';
-import useSound from "use-sound"
-import exp from '../assets/experience.jpg'
-import respected from '../assets/respected.jpg'
-import energetic from '../assets/energetic.png'
-import trackRecord from '../assets/trackRecord.png'
-import perspective from '../assets/perspective.png'
-import action from '../assets/action.png'
-import workplaceDynamics from '../assets/workplaceDynamics.jpg'
-import reflectionIcon from '../assets/reflectionIcon.png'
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
 import outcomeIcon from "../assets/outcomeIcon.png"
 import projectBg from "../assets/projectProgress.jpg"
 import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
+import sideIcon from "../assets/biasIcon.png"
 
 function AgeismFour() {
     const {state} = useLocation();

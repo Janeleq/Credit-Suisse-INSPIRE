@@ -85,16 +85,16 @@ function HaloEffect() {
                     
        
                     <div className='guide mx-auto text-muted mt-3'>
-                      <div className='row'>
-                        <div className='col'>
+                      <div className='row w-100'>
+                        <div className='col w-50'>
                           <img src={actionIcon} alt="action" style={{width: '20%'}}/><br/>
                           <small className=''>carry out an action</small>
                         </div>
-                        <div className='col'>
+                        <div className='col w-50'>
                           <img src={reflectionIcon} alt="reflection" style={{width: '20%'}}/><br/>
                           <small className=''>write down your thoughts</small>
                         </div>
-                        <div className='col'>
+                        <div className='col w-50'>
                           <img src={outcomeIcon} alt="outcome" style={{width: '20%'}}/><br/>
                           <small className=''>view the consequence of your action</small>
                         </div>

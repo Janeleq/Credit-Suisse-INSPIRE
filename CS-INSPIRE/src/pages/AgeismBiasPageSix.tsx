@@ -6,9 +6,9 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import backArrow from '../assets/arrowBack.png'
 import {IconContext} from "react-icons"
 import outcomeIcon from "../assets/outcomeIcon.png"
-import projectBg from "../assets/projectProgress.jpg"
 import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
+
+import evaluationBg from '../assets/evaluationBg.png'
 
 function AgeismSix() {
     const {state} = useLocation();
@@ -60,7 +60,7 @@ function AgeismSix() {
                    Outcome / Consequence of your action</h2>
                 <p>{descOutcome[1]}</p>
         
-              <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${projectBg})`, backgroundSize: 'cover'}}>
+              <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${evaluationBg})`, backgroundSize: 'cover'}}>
                   <h4>Act 4: Performance Evaluation</h4>
                   <p className='w-50 mx-auto'>It's time for the annual performance evaluations. You must assess each team member objectively. </p>
               

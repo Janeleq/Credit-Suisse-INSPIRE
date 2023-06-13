@@ -7,6 +7,7 @@ import valerie from '../assets/valerie.jpg'
 import anurag from '../assets/anurag.jpg'
 import jennifer from '../assets/jennifer.jpg'
 import tim from '../assets/tim.jfif'
+import communityBg from '../assets/communityBg.png'
 
 function Community() {
     const [isLoading, setLoading] = useState(true);
@@ -31,7 +32,10 @@ function Community() {
     return (
         <div className="event container-fluid p-0" style={{overflow: 'hidden'}}>
             <NavigationBar/>
-            <div className="mb-5 bg-white" style={{marginTop: '18vh'}}>
+            <div className="mb-5 bg-white" style={{marginTop: '9vh'}}>
+                <div className='' style={{height: '75vh', width: '100vw', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(${communityBg})`}}>
+                    {/* <h4 style={{display: 'absolute', marginTop: '5vh'}}> See what is happening in the community!</h4> */}
+                    </div>
                 <div className="row">
                     <div className="col-lg-12 ">
                         <nav className="wow fadeInDown  animated" data-animation="fadeInDown animated" data-delay=".2s" style={{visibility: 'visible', animationName: 'fadeInDown'}}>

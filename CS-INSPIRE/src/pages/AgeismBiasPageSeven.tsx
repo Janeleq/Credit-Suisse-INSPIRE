@@ -62,7 +62,7 @@ function AgeismSix() {
 
 
     const Proceed = () => {
-      navigate("/bias/ageismRoleplayContSix", {state: {outcome: outcome, candidate: candidate, reflection: reflection}})
+      navigate("/bias/ageismRoleplayContSix", {state: {outcome: descOutcome, candidate: candidate, reflection: reflection}})
   }
 
 
@@ -88,7 +88,7 @@ function AgeismSix() {
              
               </div>
    
-                <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
+                <button className='w-25 mx-auto' onClick={Proceed}>Finish</button>
 
        
           </div>

@@ -6,19 +6,21 @@ import Logo from '../assets/PerceptionPause_logo.png'
 import Chatbot from '../components/Chatbot.tsx'
 import footerBg from '../assets/footerBg.jpg'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Profile() {
     const auth = getAuth();
     const navigate = useNavigate();
     const user = auth.currentUser;
+    const [ageismStatus, setAgeismStatus] = useState('')
     const [email, setEmail] = useState('')
-    const [error, setError] = useState('')
+    const [output, setOutput] = useState('')
     const [name, setName] = useState('')
     const [photo, setPhoto] = useState('')
     const [id, setId] = useState('')
     const [login, setLoginTime] = useState('')
     console.log(user)
+    const {state} = useLocation()
 
     updateEmail(auth.currentUser, email).then(() => {
     // Email updated!
@@ -48,6 +50,14 @@ function Profile() {
     );
 
     useEffect(() => {
+        setAgeismStatus(window.ageismStatus)
+        if (ageismStatus == 'complete') {
+            setOutput(`<div style=color: green>complete</div>`)
+        }
+        else {
+            setOutput(`<div style={{color: red}}>incomplete</div>`)
+        }
+        console.log(ageismStatus)
         if (user !== null) {
             user.providerData.forEach((profile) => {
                 console.log(user)
@@ -89,7 +99,7 @@ function Profile() {
         <div className='container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${footerBg})`}}>
             <Navbar></Navbar>       
             <Chatbot></Chatbot>    
-            <section className="section" id="about" style={{marginTop: '18vh', height: '80vh', backgroundImage: `url(${footerBg})`}}>
+            <section className="section" id="about" style={{marginTop: '9vh', height: '80vh', backgroundImage: `url(${footerBg})`}}>
                 <div className='row text-center'>
                     <div className='col lead'>
                      Last Login: {login}
@@ -107,6 +117,8 @@ function Profile() {
                         
                         <div className="about-text go-to">
                             <h3 className="">Name</h3>
+                            <div className='' dangerouslySetInnerHTML={{'__html': output}   }></div>
+                
                             <div className="row about-list">
                                 <div className="col-md-6">
                                     <div className="media">
@@ -145,6 +157,7 @@ function Profile() {
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="150" data-speed="150">0/4</h6>
                                 <p className="m-0px font-w-600">Paths Encountered</p>
+                                {ageismStatus}
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">

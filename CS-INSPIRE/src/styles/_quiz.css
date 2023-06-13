@@ -7,11 +7,11 @@
     margin: 0 auto;
   
     /* Dimensions  */
-    width: 80%; /* Can be in percentage also. */
-    height: auto;
+    width: 50vw; /* Can be in percentage also. */
+    height: 50vh;
   
     /* Visual  */
-    background-color: gray;
+    background-color: rgb(221, 218, 218);
     padding: 16px;
     border-radius: 16px;
 
@@ -48,7 +48,7 @@
     margin-top: 64px;
   
     /* Visual  */
-    background-color: gray;
+    background-color: rgb(225, 225, 225);
     padding: 16px;
     border-radius: 16px;
     color: white;

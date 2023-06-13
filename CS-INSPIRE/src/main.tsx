@@ -11,7 +11,7 @@ import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
-import ResourcePage from './pages/ResourcesPage.tsx'
+import PodcastPage from './pages/PodcastPage.tsx'
 import CommunityPage from './pages/CommunityPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
 
@@ -66,6 +66,8 @@ import {
   Route,
 } from "react-router-dom";
 
+window.ageismStatus = "Incomplete"
+window.articles = ""
 
 const router = createBrowserRouter([
   {
@@ -173,8 +175,8 @@ const router = createBrowserRouter([
     element: <ProfilePage/>
   },
   {
-    path: "/resources",
-    element: <ResourcePage/>
+    path: "/podcasts",
+    element: <PodcastPage/>
   },
   {
     path: "/help",

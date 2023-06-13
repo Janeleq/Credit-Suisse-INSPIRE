@@ -39,7 +39,7 @@ const ContactForm = () => {
   return (
     <div className="container-fluid mt-5 p-0" style={{overflow: 'hidden'}}>
         <NavigationBar/>
-        <div className='row' style={{marginTop: '5vh'}}>
+        <div className='row' style={{marginTop: '3vh'}}>
             <div className='col' style={{backgroundImage: `url(${footerBackground})`, backgroundSize: 'cover'}}>
                 <div className='contact-form'>
                 <h2 style={{marginTop: '100px'}} className="mb-3 text-center">Contact Us</h2>

@@ -7,7 +7,7 @@ import backArrow from '../assets/arrowBack.png'
 import outcomeIcon from "../../assets/outcomeIcon.png"
 import projectBg from "../../assets/projectProgress.jpg"
 import mediateIcon from "../../assets/mediate.jpg"
-import sideIcon from "../../assets/sideIcon.png"
+
 
 function beautyBiasFive() {
     const {state} = useLocation();

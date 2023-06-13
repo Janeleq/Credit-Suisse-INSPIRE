@@ -7,6 +7,7 @@ import podcast from '../assets/podcast.svg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Chatbot from '../components/Chatbot.tsx'
+import Footer from '../components/Footer.tsx';
 
 export default () => {
     const [isNewName, setNewName] = useState(false)
@@ -55,7 +56,7 @@ export default () => {
     });
     
     return (
-        <div className='h-100 w-100 container-fluid p-0'>
+        <div className='h-100 w-100 container-fluid p-0' style={{}}>
             <Chatbot/>
             <NavigationBar/>
         
@@ -81,9 +82,7 @@ export default () => {
 
             </div>
         </div>
-  
 
-    <div className="container">
 
         <div className="row mb-5 aos-init aos-animate" data-aos="fade-up">
           <div className="col-md-12 text-center">
@@ -107,7 +106,7 @@ export default () => {
 
           </div>
         </div>
-      </div>
+      
     </div>
     )
 };

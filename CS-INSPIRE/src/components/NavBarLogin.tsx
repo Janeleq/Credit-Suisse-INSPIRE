@@ -57,9 +57,9 @@ function NavigationBarLogin() {
   }
 
   
-  function goResources () {
-    console.log("Heading to resources page!")
-    navigate("/resources", {state: {email: email}})
+  function goPodcasts () {
+    console.log("Heading to podcasts page!")
+    navigate("/podcasts", {state: {email: email}})
   }
 
   
@@ -94,7 +94,7 @@ function NavigationBarLogin() {
                 <NavDropdown className="m-3 float-end" style={{display: 'block', fontWeight: '500'}} title="Resources" id="basic-nav-dropdown">
                   <NavDropdown.Item onClick={goArticles}>Articles</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={goResources}>Podcasts</NavDropdown.Item>
+                  <NavDropdown.Item onClick={goPodcasts}>Podcasts</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={goQuizzes}>Quizzes</NavDropdown.Item>
                 </NavDropdown>

@@ -5,15 +5,16 @@ import axios from 'axios'
 import Chatbot from '../components/Chatbot.tsx'
 import DOMPurify from 'dompurify';
 import '../styles/_articles.css'
+import background from '../assets/articlesBg.png'
 
 function ArticlesPage() {
 
     // let articles = await promise;
 
     // useEffect runs twice if we on strictmode
-    const [articles, fixArticles] = useState("");
+    const [articles, fixArticles] = useState([]);
     const [output, showArticles] = useState("");
-    const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState(false);
     const url = 'https://newsapi.org/v2/everything?' +
     'q=bias&' +
     'from=2023-06-01&' +
@@ -39,68 +40,69 @@ function ArticlesPage() {
     })
 
     useEffect(() => {
-        console.log("fetching articles")
-        fetchArticles() 
+      goShow() 
        
     }, [])
- 
+    
 
-
-
-    // if (status == true) {
-
-    // }
    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
    
-   function fetchArticles() {
-
-    axios
-    .get(
-        url
-    )
-    .then((response) => {
-        console.log(response.data);
-        fixArticles(response.data.articles)
-        goShow()
-    });
-   }
-   
-    
    function goShow() {
-    console.log('trying to display articles')
-    let articleList = "";
-    for(let i=0; i<articles.length; i++) {
-        // console.log(articles[i].urlToImage)
-        if (articles[i].urlToImage !== null)
-        {
-          if (articles[i].author == null) {
-              articles[i].author = "unknown"
-          }
-            articleList += 
-            `<div class="" style="display: grid; column-gap: 20px; row-gap: 20px; width: 100vw;">
-            <div class="media blog-media">
-                <a href="#" style="width: 15vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex"/></a>
-                <div class="circle">
-                    <h5 class="day"><strong></strong></h5>
-                    <span class="month">${[parseInt(articles[i].publishedAt.substring(8,10))]} ${months[parseInt(articles[i].publishedAt.substring(5,7))-1]} <br/>${articles[i].publishedAt.substring(0,4)}</span>
-                </div>
-                <div class="media-body" style="overflow: hidden">
-                    <a href=""><h5 class="mt-0" style="margin-top: 0">${articles[i].title}</h5></a> ${articles[i].description}
-                    <a href="#" class="post-link">Read More</a>
-                    <ul>
-                        <li>by: ${articles[i].author}</li>
-                        <li class="" style="text-align: right"><a href="#">2</a></li>
-                    </ul>
+    const [apiResponse, setApiResponse] = useState("***now loading***")
+    useEffect(() => {
+        fetchArticles().then (
+            result => fixArticles(result)
+           
+        ),
+        console.log(articles)
+        console.log('trying to display articles')
+        var articleList = "";
+        for(let i=0; i<articles.length; i++) {
+            // console.log(articles[i].urlToImage)
+            if (articles[i].urlToImage != null)
+            {
+              if (articles[i].author == null) {
+                  articles[i].author = "unknown"
+              }
+              console.log("setting articles list")
+                articleList += 
+                `<div class="" style="display: grid; column-gap: 20px; row-gap: 20px; width: 100vw;">
+                <div class="media blog-media">
+                    <a href="" style="width: 28vw; height: 30vh"><img src=${articles[i].urlToImage} class='' style="width: 100%; height: 100%; display: flex"/></a>
+                    <div class="circle">
+                        <h5 class="day"><strong></strong></h5>
+                        <span class="month">${[parseInt(articles[i].publishedAt.substring(8,10))]} ${months[parseInt(articles[i].publishedAt.substring(5,7))-1]} <br/>${articles[i].publishedAt.substring(0,4)}</span>
+                    </div>
+                    <div class="media-body" style="overflow: hidden">
+                        <a href=""><h5 class="mt-0" style="margin-top: 0">${articles[i].title}</h5></a> ${articles[i].description}
+                        <a href=${articles[i].url} target=_blank class="post-link">Read More</a>
+                        <ul>
+                            <li>by: ${articles[i].author}</li>
+                            <li class="" style="text-align: right"><a href="#">${i + 1}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-            `
+                `
+            }
+          
         }
-      
-    }
-  
-    showArticles(articleList);  
+        console.log(articleList)
+        showArticles(articleList);  
+    },[]);
+
    }
+
+   const fetchArticles = async () => {
+    const response = await fetch(url)
+    const jsonResponse = await response.json()
+    console.log(jsonResponse)
+
+    return jsonResponse.articles
+
+   }
+    
+  
     return (
         // <div className='container-fluid bg-light p-0'>
         //     <Chatbot/>
@@ -116,66 +118,17 @@ function ArticlesPage() {
         //       <Footer/>
         //     </div>
         // </div>
-        <div className="container-fluid p-0">
+        <div className="container-fluid p-0 bg-light" style={{}}>
           <Navbar/>
           <Chatbot/>
-          <div style={{marginTop: '18vh'}} className=''> 
-             <blockquote className='lead text-center'>Some interesting articles relating to all sorts of biases, for your knowledge and reading.</blockquote>
-             <div className="row mb-3" style={{boxShadow: '2px', overflow: 'hidden'}} dangerouslySetInnerHTML={{__html: output}}/> 
-              
-              {/* <div className="col-md-6">
-                  <div className="media blog-media">
-                      <a href="#"><img className="d-flex" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Generic placeholder image"/></a>
-                      <div className="circle">
-                          <h5 className="day">12</h5>
-                          <span className="month">sep</span>
-                      </div>
-                      <div className="media-body">
-                          <a href=""><h5 className="mt-0">perferendis labore</h5></a> Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                          <a href="#" className="post-link">Read More</a>
-                          <ul>
-                              <li>by: Admin</li>
-                              <li className="text-right"><a href="#">04 comments</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div className="col-md-6">
-                  <div className="media blog-media">
-                      <a href="#"><img className="d-flex" src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="Generic placeholder image"/></a>
-                      <div className="circle">
-                          <h5 className="day">09</h5>
-                          <span className="month">sep</span>
-                      </div>
-                      <div className="media-body">
-                          <a href=""><h5 className="mt-0">deleniti incdunt magni</h5></a> Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                          <a href="#" className="post-link">Read More</a>
-                          <ul>
-                              <li>by: Admin</li>
-                              <li className="text-right"><a href="#">10 comments</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div className="col-md-6">
-                  <div className="media blog-media">
-                      <a href="#"><img className="d-flex" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Generic placeholder image"/></a>
-                      <div className="circle">
-                          <h5 className="day">04</h5>
-                          <span className="month">sep</span>
-                      </div>
-                      <div className="media-body">
-                          <a href=""><h5 className="mt-0">Explicabo magnam </h5></a> Sodales aliquid, in eget ac cupidatat velit autem numquam ullam ducimus occaecati placeat error.
-                          <a href="#" className="post-link">Read More</a>
-                          <ul>
-                              <li>by: Admin</li>
-                              <li className="text-right"><a href="#">06 comments</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>  */}
+          <div style={{marginTop: '9vh', height: '55vh', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(${background})`}} className=''>
+             <blockquote className='mt-5 lead text-center'style={{marginTop: '100px'}}>Some interesting articles relating to all sorts of biases, for your knowledge and reading.</blockquote>
             </div>
-        <Footer/>
+             <div className="row bg-light" style={{boxShadow: '2px'}} dangerouslySetInnerHTML={{__html: output}}>
+            </div>
+            <Footer/>
+          
+        
         </div>
     )
 }

@@ -5,9 +5,7 @@ import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import backArrow from '../../assets/arrowBack.png'
 import outcomeIcon from "../../assets/outcomeIcon.png"
-import projectBg from "../../assets/projectProgress.jpg"
 import mediateIcon from "../../assets/mediate.jpg"
-import sideIcon from "../../assets/sideIcon.png"
 import actionIcon from "../../assets/action.png"
 import holisticBg from "../../assets/holisticBg.jpg"
 
