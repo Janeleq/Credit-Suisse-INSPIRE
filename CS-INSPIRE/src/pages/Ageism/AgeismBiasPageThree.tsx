@@ -1,18 +1,17 @@
-import'../styles/_ageism.css'
-import React, {useRef, useState, useEffect, useMemo, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
-import useSound from "use-sound"
-import exp from '../assets/experience.jpg'
-import respected from '../assets/respected.jpg'
-import energetic from '../assets/energetic.png'
-import trackRecord from '../assets/trackRecord.png'
-import perspective from '../assets/perspective.png'
-import action from '../assets/action.png'
-import workplaceDynamics from '../assets/workplaceDynamics.jpg'
-import reflectionIcon from '../assets/reflectionIcon.png'
-import { NavLink, useNavigate, Link } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
+import'../../styles/_ageism.css'
+import React, {useRef, useState, useEffect} from 'react';
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
+import exp from '../../assets/experience.jpg'
+import respected from '../../assets/respected.jpg'
+import energetic from '../../assets/energetic.png'
+import trackRecord from '../../assets/trackRecord.png'
+import perspective from '../../assets/perspective.png'
+import action from '../../assets/action.png'
+import reflectionIcon from '../../assets/reflectionIcon.png'
+import { useNavigate, Link } from 'react-router-dom'
+import candidateBg from '../../assets/ageism/candidatesBg.jpg'
+
 
 function AgeismThree() {
     const [showReflection, setShowReflection] = useState(false)
@@ -78,7 +77,14 @@ function AgeismThree() {
 
     const handleReflectionChange = () => {
         setReflection(ref.current.value)
-        navigate("/bias/ageismRoleplayContTwo", {state: {reflection: reflection, candidate: candidate}})
+        if (candidate) {
+            navigate("/bias/ageismRoleplayContTwo", {state: {reflection: reflection, candidate: candidate}})
+        }
+
+        else {
+            alert('Please select an candidate!')
+        }
+        
     }
 
 
@@ -86,15 +92,20 @@ function AgeismThree() {
     return (
         <div className='container-fluid p-0'>
             <NavigationBar/>
-            
+           
             
             <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
             {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-                <h3 className='text-center mt-3'>Available Candidates</h3>
+                <div style={{backgroundImage: `url(${candidateBg})`, height: '60vh', backgroundPositionY: '-100px'}}>
+                    <div style={{paddingTop: '25vh'}}>
+                        <h2 className='bg-light mx-auto' style={{width: 'fit-content', opacity: 0.7}}>It is time for you to choose the candidate</h2>
+                    </div>
+                </div>
+                <h3 className='text-center mt-5'>Available Candidates</h3>
                 <p className=''>Below are 3 candidates in the company with different traits.</p>
                 <br/>
                 <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;Choose the candidate of your choosing.</p>
-                
+                <hr/>
                 <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['John', 'You have chosen John for his diverse perspectives.']))}>
                     <div className="team text-center rounded p-3 py-4">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>

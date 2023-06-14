@@ -1,17 +1,17 @@
-import'../styles/_ageism.css'
+import '../../styles/_ageism.css'
 import React, {useState, useEffect} from 'react';
-import NavigationBar from '../components/NavBarLogin'
+import NavigationBar from '../../components/NavBarLogin'
 import { NavLink, useNavigate } from 'react-router-dom'
-import Footer from '../components/Footer';
-import actionIcon from '../assets/action.png'
-import reflectionIcon from '../assets/reflectionIcon.png'
-import background from '../assets/ageism.svg'
-import roleplay from '../assets/roleplaying.jpg'
-import funfacts from '../assets/funfacts.jpg'
+import Footer from '../../components/Footer';
+import actionIcon from '../../assets/action.png'
+import reflectionIcon from '../../assets/reflectionIcon.png'
+import background from '../../assets/ageism.jpg'
+import roleplay from '../../assets/roleplaying.jpg'
+import funfacts from '../../assets/funfacts.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import AgeismFacts from './AgeismFactsPage';
-import outcomeIcon from '../assets/outcomeIcon.png'
+import outcomeIcon from '../../assets/outcomeIcon.png'
 // import { FaPerson } from 'react-icons/fa';
 
 function Ageism() {
@@ -46,8 +46,9 @@ function Ageism() {
     return (
         <div className="container-fluid bootdey p-0" style={{overflow: 'hidden'}}>
             <NavigationBar/>
+            
             <div className="row" style={{marginTop: '9vh'}}>
-                <div className='col-sm-12 col-md-4 col-lg-6' style={{backgroundImage:`url(${background})`, backgroundSize: 'cover', height: '120vh'}}>
+                <div className='col-sm-12 col-md-4 col-lg-6' style={{backgroundImage:`url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '120vh'}}>
 
                 </div>
                 <div className="col-sm-12 col-md-8 col-lg-6 text-center bg-white" style={{height: '120vh'}}>

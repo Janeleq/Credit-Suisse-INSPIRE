@@ -5,6 +5,8 @@ import quizzesBg from "../assets/quizzesBg.png"
 import biasRealityCheckBg from "../assets/biasRealityCheckBg.png"
 import Footer from "../components/Footer.tsx";
 import { useNavigate } from 'react-router-dom';
+import '../styles/_quiz.css'
+
 
 function Quiz() {
 
@@ -47,21 +49,23 @@ function Quiz() {
       <NavigationBar/>
       <Chatbot/>
   
-      <div className="Quiz text-center" style={{marginTop: '9vh'}}>
+      <div className="text-center" style={{marginTop: '9vh'}}>
         <h3></h3>
         <div className="row">
-          <div className="col" style={{height: '100vh', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${biasRealityCheckBg})`}}>
-            <button className='mx-auto' onClick={startBiasCheck}>Bias Reality Check!</button>
+          <div className="col bias" style={{height: '100vh', opacity: '', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${biasRealityCheckBg})`}}>
+            <button className='mx-auto p-3' style={{marginTop: '50vh'}} onClick={startBiasCheck}>Bias Reality Check!</button>
           </div>
           
-          <div className="col" style={{height: '100vh', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${quizzesBg})`}}>
-            <button className="" onClick={startQuiz}>General Quiz</button>  
+          <div className="col quiz" style={{height: '100vh', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${quizzesBg})`}}>
+            <button className="p-3"  style={{marginTop: '50vh'}} onClick={startQuiz}>General Quiz</button>  
           </div>
           
         </div>  
       </div>
       <Footer/>
     </div>
+
+    
   );
 }
 

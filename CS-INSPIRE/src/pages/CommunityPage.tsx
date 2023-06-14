@@ -33,8 +33,8 @@ function Community() {
         <div className="event container-fluid p-0" style={{overflow: 'hidden'}}>
             <NavigationBar/>
             <div className="mb-5 bg-white" style={{marginTop: '9vh'}}>
-                <div className='' style={{height: '75vh', width: '100vw', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(${communityBg})`}}>
-                    {/* <h4 style={{display: 'absolute', marginTop: '5vh'}}> See what is happening in the community!</h4> */}
+                <div className='' style={{height: '75vh', width: '100vw', opacity: 0.8, backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url(${communityBg})`}}>
+                    <h4 className="text-center text-white lead" style={{paddingTop: '200px'}}> See what is happening in the community!</h4>
                     </div>
                 <div className="row">
                     <div className="col-lg-12 ">

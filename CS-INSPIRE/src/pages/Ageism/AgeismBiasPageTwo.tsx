@@ -1,18 +1,11 @@
-import'../styles/_ageism.css'
+import'../../styles/_ageism.css'
 import React, {useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
-import useSound from "use-sound"
-import exp from '../assets/experience.jpg'
-import respected from '../assets/respected.jpg'
-import energetic from '../assets/energetic.png'
-import trackRecord from '../assets/trackRecord.png'
-import perspective from '../assets/perspective.png'
-import action from '../assets/action.png'
-import workplaceDynamics from '../assets/workplaceDynamics.jpg'
-import reflectionIcon from '../assets/reflectionIcon.png'
-import backArrow from '../assets/arrowBack.png'
-import { NavLink, useNavigate } from 'react-router-dom'
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
+import workplaceDynamics from '../../assets/workplaceDynamics.jpg'
+import { useNavigate, NavLink } from 'react-router-dom';
+import reflectionIcon from '../../assets/reflectionIcon.png'
+
 
 function AgeismTwo() {
     const [isLoading, setLoading] = useState(true);

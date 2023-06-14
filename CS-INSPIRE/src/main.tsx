@@ -45,15 +45,15 @@ import BiasRealityCheckPage from './pages/BiasRealityCheckPage.tsx'
 
 
 // Ageism Pages
-import AgeismBiasPage from './pages/AgeismRoleplayPage.tsx'
-import AgeismRoleplayContOne from './pages/AgeismBiasPageThree.tsx'
-import AgeismFactsPage from './pages/AgeismFactsPage.tsx'
-import AgeismBiasPageTwo from './pages/AgeismBiasPageTwo.tsx'
-import AgeismRoleplayContTwo from './pages/AgeismBiasPageFour.tsx'
-import AgeismRoleplayContThree from './pages/AgeismBiasPageFive.tsx'
-import AgeismRoleplayContFour from './pages/AgeismBiasPageSix.tsx'
-import AgeismRoleplayContFive from './pages/AgeismBiasPageSeven.tsx'
-import AgeismRoleplayContSix from './pages/AgeismBiasPageEight.tsx'
+import AgeismBiasPage from './pages/Ageism/AgeismRoleplayPage.tsx'
+import AgeismRoleplayContOne from './pages/Ageism/AgeismBiasPageThree.tsx'
+import AgeismFactsPage from './pages/Ageism/AgeismFactsPage.tsx'
+import AgeismBiasPageTwo from './pages/Ageism/AgeismBiasPageTwo.tsx'
+import AgeismRoleplayContTwo from './pages/Ageism/AgeismBiasPageFour.tsx'
+import AgeismRoleplayContThree from './pages/Ageism/AgeismBiasPageFive.tsx'
+import AgeismRoleplayContFour from './pages/Ageism/AgeismBiasPageSix.tsx'
+import AgeismRoleplayContFive from './pages/Ageism/AgeismBiasPageSeven.tsx'
+import AgeismRoleplayContSix from './pages/Ageism/AgeismBiasPageEight.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"

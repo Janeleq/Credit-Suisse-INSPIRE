@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import backArrow from '../../assets/arrowBack.png'
 import outcomeIcon from "../../assets/outcomeIcon.png"
-import projectBg from "../../assets/projectProgress.jpg"
+import projectBg from "../../assets/workplaceDynamics.jpg"
 import mediateIcon from "../../assets/mediate.jpg"
 
 function HaloEffectSix() {

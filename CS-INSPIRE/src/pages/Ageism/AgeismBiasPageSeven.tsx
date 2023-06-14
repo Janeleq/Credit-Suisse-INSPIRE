@@ -1,14 +1,10 @@
-import'../styles/_ageism.css'
-import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
-import outcomeIcon from "../assets/outcomeIcon.png"
-import projectBg from "../assets/projectProgress.jpg"
-import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
+import'../../styles/_ageism.css'
+import { useState, useEffect } from 'react';
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
+import { useNavigate, useLocation } from 'react-router-dom'
+import outcomeIcon from "../../assets/outcomeIcon.png"
+import projectBg from "../../assets/workplaceDynamics.jpg"
 
 function AgeismSix() {
     const {state} = useLocation();

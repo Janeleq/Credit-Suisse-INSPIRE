@@ -1,7 +1,21 @@
 .App {
     text-align: center;
   }
+
+  .quiz:hover {
+    opacity: 0.8
+  }
+
+  .bias:hover {
+    opacity: 0.8
+  }
   
+  button {
+    transition: 0.3s;
+  }
+  button:hover {
+    transform: translateY(5px); 
+  }
   .question-card {
     /* Center the div  */
     margin: 0 auto;

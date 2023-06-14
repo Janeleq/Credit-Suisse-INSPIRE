@@ -4,7 +4,7 @@ import NavigationBar from '../../components/NavBarLogin'
 import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import outcomeIcon from "../../assets/outcomeIcon.png"
-import projectBg from "../../assets/projectProgress.jpg"
+import projectBg from "../../assets/workplaceDynamics.jpg"
 
 
 function HaloEffectSix() {

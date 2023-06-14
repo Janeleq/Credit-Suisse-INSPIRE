@@ -1,14 +1,9 @@
-import'../styles/_ageism.css'
+import'../../styles/_ageism.css'
 import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
-import outcomeIcon from "../assets/outcomeIcon.png"
-import mediateIcon from "../assets/mediate.jpg"
-import sideIcon from "../assets/sideIcon.png"
-import endBg from "../assets/ageismEnd.png"
+import endBg from "../../assets/ageismEnd.png"
 
 function AgeismSeven() {
     const {state} = useLocation();

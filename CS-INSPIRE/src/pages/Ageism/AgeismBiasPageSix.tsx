@@ -1,14 +1,13 @@
-import'../styles/_ageism.css'
-import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import backArrow from '../assets/arrowBack.png'
-import {IconContext} from "react-icons"
-import outcomeIcon from "../assets/outcomeIcon.png"
-import mediateIcon from "../assets/mediate.jpg"
-
-import evaluationBg from '../assets/evaluationBg.png'
+import'../../styles/_ageism.css'
+import { useState, useEffect } from 'react';
+import NavigationBar from '../../components/NavBarLogin'
+import Footer from '../../components/Footer';
+import { useNavigate, useLocation } from 'react-router-dom'
+import outcomeIcon from "../../assets/outcomeIcon.png"
+import evaluationBg from '../../assets/evaluationBg.png'
+import contributionIcon from "../../assets/ageism/contributionIcon.png"
+import evaluationIcon from "../../assets/ageism/evaluationIcon.png"
+import energeticIcon from "../../assets/ageism/energeticIcon.png"
 
 function AgeismSix() {
     const {state} = useLocation();
@@ -45,7 +44,12 @@ function AgeismSix() {
 
 
     const Proceed = () => {
+      if (nextDesc) {
       navigate("/bias/ageismRoleplayContFive", {state: {outcome: nextDesc, candidate: candidate, reflection: reflection}})
+      }
+      else {
+        alert("Please pick an action for the current scenario!")
+      }
   }
 
 
@@ -69,8 +73,8 @@ function AgeismSix() {
                 <p className='mb-5'>As the manager, what would you do?</p>
               </div>
                 <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ['You have chosen to evaulate each team member equally, based on their individual contributions and achievements.', 'Evaluating each team member objectively based on their individual contributions is fair.'])}>
-                    <div className="team text-center rounded p-3 py-4">
-                        <img src={mediateIcon} style={{borderRadius: '50%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                    <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
+                      <img src={evaluationIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 1</h4>
                             <small className="text-muted"> Evaluate each team member based on individual contributions and achievements.<br/>
@@ -80,8 +84,8 @@ function AgeismSix() {
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ["You have chosen to downplay Alex's contributions due to assumption of his age", "Downplaying Alex's contributions due to assumptions about age is essentially encouraging ageism."])}>
-                    <div className="team text-center rounded p-3 py-4">
-                        <img src={sideIcon} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                    <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
+                        <img src={contributionIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 2</h4>
                             <small className="text-muted">Downplay Alex's contributions due to assumptions about age.<br/>
@@ -91,8 +95,8 @@ function AgeismSix() {
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ['You have chosen to give Emma higher ratings based on assumptions about youth and energy.', "Giving Emma higher ratings based solely based on assumptions about youth and energy is unfair."])}>
-                    <div className="team text-center rounded p-3 py-4">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                    <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
+                        <img src={energeticIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 3</h4>
                             <small className="text-muted">Give Emma higher ratings based on assumptions about youth and energy.<br/>

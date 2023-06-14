@@ -1,9 +1,9 @@
-import stats1 from '../assets/ageismStats.png'
-import'../styles/_ageism.css'
-import React, {useState, useEffect} from 'react';
-import NavigationBar from '../components/NavBarLogin'
-import Footer from '../components/Footer.tsx';
-import statisticOne from '../assets/ageismStats.png'
+import stats1 from '../../assets/ageismStats.png'
+import'../../styles/_ageism.css'
+import {useState, useEffect} from 'react';
+import NavigationBar from '../../components/NavBarLogin.tsx'
+import Footer from '../../components/Footer.tsx';
+import statisticOne from '../../assets/ageismStats.png'
 
 function AgeismFacts () {
     const [isLoading, setLoading] = useState(true)

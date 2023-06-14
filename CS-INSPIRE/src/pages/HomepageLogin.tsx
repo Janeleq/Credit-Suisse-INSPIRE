@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import background1 from '../assets/homeBackground.jpg'
 import background2 from '../assets/homeBackground2.jpg'
 import background3 from '../assets/homeBackground3.png'
-
+import infographic from '../assets/thinkingStylesInfo.png'
 
 export const HomePageLogin = () => {
     console.log("rendering lifecycle")
@@ -122,6 +122,7 @@ export const HomePageLogin = () => {
                     </div>
                 </div>
             </div>
+            
             <div className="carousel-item" style={{height: '8 0vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                 <div className="container">
                     <div className="row p-5">
