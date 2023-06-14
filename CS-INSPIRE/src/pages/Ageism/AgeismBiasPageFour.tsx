@@ -145,7 +145,7 @@ function AgeismFour() {
                     </div>
                 </div>
                 <p>{chosenDesc}</p>
-                <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
+                <button className='w-25 mx-auto mb-5' onClick={Proceed}>Proceed</button>
 
        
           </div>

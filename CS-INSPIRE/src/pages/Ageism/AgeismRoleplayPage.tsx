@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer';
 import actionIcon from '../../assets/action.png'
 import reflectionIcon from '../../assets/reflectionIcon.png'
-import background from '../../assets/ageism.jpg'
+import background from '../../assets/ageism/ageism.jpg'
 import roleplay from '../../assets/roleplaying.jpg'
 import funfacts from '../../assets/funfacts.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -103,22 +103,6 @@ function Ageism() {
                       </div> 
                     </div>
                 </div>
-                <br/><br/>
-                <div className='row'>
-                  <div className='col'>
-                      <p className='lead bg-light w-25 mx-auto' style={{fontWeight: 'bold'}}>Quizzes</p>
-                      
-                      <div className='guide w-50 mx-auto'>
-                        <p>Take some quizzes regarding Ageism!</p>
-                      
-                          
-                        
-                          <i className="fa fa-male" aria-hidden="true"></i>
-                          <button type="" onClick="">View quizzes</button>
-                      </div> 
-                    </div>
-                </div>
-                 
                       
                     </div>
                 </div>

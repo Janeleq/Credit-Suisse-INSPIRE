@@ -17,6 +17,7 @@ function AgeismSix() {
     const [reflection, setReflection] = useState('')
     const [descOutcome, setDescOutcome] = useState('')
     const [isLoading, setLoading] = useState(true);
+    const [favorable, setFavorable] = useState('')
     const navigate = useNavigate();
     
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -24,7 +25,24 @@ function AgeismSix() {
       } 
 
     useEffect(() => {
+  
+
         setDescOutcome(state.outcome)
+        console.log(descOutcome[0])
+        if (descOutcome[0] == 1) {
+       
+          setFavorable("✔️ Favorable")
+        }
+        else if (descOutcome[0] == 2) {
+          
+            setFavorable("❌ Not favorable")
+        }
+        else {
+           
+            setFavorable("❌ Not favorable")
+        }
+
+
         setCandidate(state.candidate)
         setReflection(state.reflection)
         someRequest().then(() => {
@@ -54,15 +72,18 @@ function AgeismSix() {
 
 
     return (
-        <div className='container-fluid p-0' style={{overflow: 'hidden'}}>
+        <div className='container-fluid p-0 bg-light' style={{overflow: 'hidden'}}>
             <NavigationBar/>
             
-            <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
+            <div className="row bg-light mx-auto text-center" style={{marginTop: '15vh'}}>
                <h2 className='lead'>
-               <p>{descOutcome[0]}</p>
+               <p>{descOutcome[1]}</p>
                   <img src={outcomeIcon} alt="outcome" style={{width: '3%'}}/> &nbsp;
-                   Outcome / Consequence of your action</h2>
-                <p>{descOutcome[1]}</p>
+                   Outcome / Consequence of your action
+                   <br/>
+                   <span className='text-muted' style={{marginLeft: '-2%'}}>{favorable}</span>
+                   </h2>
+                <p>{descOutcome[2]}</p>
         
               <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${evaluationBg})`, backgroundSize: 'cover'}}>
                   <h4>Act 4: Performance Evaluation</h4>
@@ -72,7 +93,7 @@ function AgeismSix() {
                 <br/>
                 <p className='mb-5'>As the manager, what would you do?</p>
               </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ['You have chosen to evaulate each team member equally, based on their individual contributions and achievements.', 'Evaluating each team member objectively based on their individual contributions is fair.'])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [1, 'You have chosen to evaulate each team member equally, based on their individual contributions and achievements.', 'Evaluating each team member objectively based on their individual contributions is fair.'])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                       <img src={evaluationIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
@@ -83,7 +104,7 @@ function AgeismSix() {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ["You have chosen to downplay Alex's contributions due to assumption of his age", "Downplaying Alex's contributions due to assumptions about age is essentially encouraging ageism."])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to downplay Alex's contributions due to assumption of his age.", "Downplaying Alex's contributions due to assumptions about age is essentially encouraging ageism."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                         <img src={contributionIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
@@ -94,7 +115,7 @@ function AgeismSix() {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ['You have chosen to give Emma higher ratings based on assumptions about youth and energy.', "Giving Emma higher ratings based solely based on assumptions about youth and energy is unfair."])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [3, 'You have chosen to give Emma higher ratings based on assumptions about youth and energy.', "Giving Emma higher ratings based solely based on assumptions about youth and energy is unfair."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                         <img src={energeticIcon}  style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
@@ -105,8 +126,8 @@ function AgeismSix() {
                         </div>
                     </div>
                 </div>
-                <p>{nextDesc[0]}</p>
-                <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
+                <p>{nextDesc[1]}</p>
+                <button className='w-25 mx-auto mb-5' onClick={Proceed}>Proceed</button>
 
        
           </div>

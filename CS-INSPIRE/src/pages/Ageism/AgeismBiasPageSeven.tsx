@@ -14,6 +14,7 @@ function AgeismSix() {
     const [reflection, setReflection] = useState('')
     const [descOutcome, setDescOutcome] = useState('')
     const [isLoading, setLoading] = useState(true);
+    const [favorable, setFavorable] = useState('')
     const navigate = useNavigate();
     
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -22,6 +23,19 @@ function AgeismSix() {
 
     useEffect(() => {
         setDescOutcome(state.outcome)
+        if (descOutcome[0] == 1) {
+       
+          setFavorable("✔️ Favorable")
+        }
+        else if (descOutcome[0] == 2) {
+          
+            setFavorable("❌ Not favorable")
+        }
+        else {
+           
+            setFavorable("❌ Not favorable")
+        }
+
         setCandidate(state.candidate)
         setReflection(state.reflection)
         someRequest().then(() => {
@@ -34,21 +48,6 @@ function AgeismSix() {
       });
 
       console.log(descOutcome)
-    console.log(useLocation().state.reflection)
-    console.log(useLocation().state.outcome)
-    // function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-    //     return new Promise(resolve => setTimeout(() => resolve(), 0 ));
-    //   } 
-
-    // useEffect(() => {
-    //     someRequest().then(() => {
-    //       const loaderElement = document.querySelector(".loader-container");
-    //       if (loaderElement) {
-    //         loaderElement.remove();
-    //         setLoading(!isLoading);
-    //       }
-    //     });
-    //   });
 
     const handleChoice = (event, param) => {
       console.log(event);
@@ -63,17 +62,20 @@ function AgeismSix() {
 
 
     return (
-        <div className='container-fluid p-0' style={{overflow: 'hidden'}}>
+        <div className='container-fluid p-0 bg-light' style={{overflow: 'hidden'}}>
             <NavigationBar/>
             
-            <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
+            <div className="row bg-light mx-auto text-center" style={{marginTop: '15vh'}}>
                 {/* <NavLink to="/bias/ageismRolePlayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
                <h2 className='lead'>
-               <p>{descOutcome[0]}</p>
+               {/* <p>{descOutcome[1]}</p> */}
                   <img src={outcomeIcon} alt="outcome" style={{width: '3%'}}/> &nbsp;
-                   Outcome / Consequence of your action</h2>
-                <p>{descOutcome[1]}</p>
+                   Outcome / Consequence of your action
+                   <br/>
+                   <span className='text-muted' style={{marginLeft: '-2%'}}>{favorable}</span>
+                  </h2>
+                <p>{descOutcome[2]}</p>
         
               <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${projectBg})`, backgroundSize: 'cover'}}>
                   <h4>The end</h4>
@@ -84,7 +86,7 @@ function AgeismSix() {
              
               </div>
    
-                <button className='w-25 mx-auto' onClick={Proceed}>Finish</button>
+                <button className='w-25 mx-auto mb-5' onClick={Proceed}>Finish</button>
 
        
           </div>

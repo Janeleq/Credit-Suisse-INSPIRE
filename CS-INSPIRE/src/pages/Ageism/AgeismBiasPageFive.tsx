@@ -100,6 +100,7 @@ function AgeismFive() {
                 {/* <NavLink to="/bias/ageismRolePlayContThree"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
                <h2 className='lead'>
+                
                   <img src={outcomeIcon} alt="outcome" style={{width: '3%'}}/> &nbsp;
                    Outcome / Consequence of your action<br/> 
                       <span className='text-muted' style={{marginLeft: '-2%'}}>{favorable}</span>
@@ -116,7 +117,7 @@ function AgeismFive() {
                 <p className='mb-5'>As the manager, what would you do?</p>
               </div>
               
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ["You have chosen to made the effort to liase with the top management to open more slots for the training program and encourage all team members to attend the training sessions.", "Encouraging all team members to attend training promotes equality and growth."])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [1, "You have chosen to made the effort to liase with the top management to open more slots for the training program and encourage all team members to attend the training sessions.", "Encouraging all team members to attend training promotes equality and growth."])}>
                     <div className="team text-center rounded p-3 py-4 py-4 w-75 h-75 mx-auto">
                         <img src={liaseIcon} style={{width: '279px', height: '279px'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt="liase with top management"/>
                         <div className="content mt-3">
@@ -127,7 +128,7 @@ function AgeismFive() {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ["You have chosen to suggest training only to the younger team members.", "Suggesting training only to younger team members perpetuates age-related biases."])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to suggest training only to the younger team members.", "Suggesting training only to younger team members perpetuates age-related biases."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                         <img src={trainingIcon} style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt="dismiss importance" style={{width: '279px', height: '279px'}}/>
                         <div className="content mt-3">
@@ -138,7 +139,7 @@ function AgeismFive() {
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, ["You have chosen to take the easy way out and dismiss the importance of training for the team.", "Dismissing the importance of training hinders personal and professional development."])}>
+                <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [3, "You have chosen to take the easy way out and dismiss the importance of training for the team.", "Dismissing the importance of training hinders personal and professional development."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                         <img src={importanceIcon} style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
@@ -149,8 +150,8 @@ function AgeismFive() {
                         </div>
                     </div>
                 </div>
-                <p>{nextDesc[0]}</p>
-                <button className='w-25 mx-auto' onClick={Proceed}>Proceed</button>
+                <p>{nextDesc[1]}</p>
+                <button className='w-25 mx-auto mb-5' onClick={Proceed}>Proceed</button>
 
        
           </div>

@@ -1,8 +1,8 @@
 import'../../styles/_ageism.css'
-import React, {useRef, useState, useEffect, ChangeEvent} from 'react';
+import {useRef, useState, useEffect, ChangeEvent} from 'react';
 import NavigationBar from '../../components/NavBarLogin'
 import Footer from '../../components/Footer';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import endBg from "../../assets/ageismEnd.png"
 
 function AgeismSeven() {
@@ -68,10 +68,10 @@ function AgeismSeven() {
 
 
     return (
-        <div className='container-fluid p-0' style={{overflow: 'hidden'}}>
+        <div className='container-fluid p-0 bg-light' style={{overflow: 'hidden'}}>
             <NavigationBar/>
             
-            <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
+            <div className="row bg-light mx-auto text-center" style={{marginTop: '15vh'}}>
                 {/* <NavLink to="/bias/ageismRolePlayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
         
