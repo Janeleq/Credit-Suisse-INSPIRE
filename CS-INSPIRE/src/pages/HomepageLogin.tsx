@@ -123,7 +123,7 @@ export const HomePageLogin = () => {
                 </div>
             </div>
             
-            <div className="carousel-item" style={{height: '8 0vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+            <div className="carousel-item" style={{height: '80vh', backgroundImage: `url(${background3})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
                 <div className="container">
                     <div className="row p-5">
                         <div className="mx-auto col-md-8 col-lg-6 order-lg-last">

@@ -9,6 +9,8 @@ import Chatbot from '../components/Chatbot.tsx'
 import Footer from '../components/Footer.tsx'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function RoleplayPage() {
   const navigate = useNavigate();
@@ -31,6 +33,7 @@ function RoleplayPage() {
   } 
 
   useEffect(() => {
+    AOS.init()
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -82,7 +85,7 @@ function RoleplayPage() {
         <p className='text-center'>See how you fare in the various paths</p>
         
       <br/>
-        <div className='container mb-5' style={{marginTop: '25vh'}}>
+        <div className='container mb-5' style={{marginTop: '25vh'}} data-aos="fade-up" data-aos-delay="400">
           <div className="icon-image" onClick={ageismGo}>
             <div className="icon">
               <img src={ageism} alt="ageism" />
