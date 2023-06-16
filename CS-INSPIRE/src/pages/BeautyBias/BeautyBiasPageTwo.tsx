@@ -87,21 +87,9 @@ function BeautyBiasTwo() {
                 <h3 className='text-center mt-3'>Action 1: Initial Impressions</h3>
                 <p className=''>Below are 2 actions you can carry out.</p>
                 <br/>
-                <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;Choose what you want to do with the stack of application at hand.</p>
+                <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;View and choose which candidate you would like to pick.</p>
                 
-                <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Action 1', "You have chosen to take some time out to read through each application meticulously by considering each applicant's external achievements."]))}>
-                    <div className="team text-center rounded p-3 py-4">
-                        <img src={readingIcon} className="h-50 w-50 img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
-                        <div className="content mt-3">
-                            <h4 className="title mb-0">Read each application thoroughly, considering academic achievements and extracurricular activities.</h4>
-                            <small className="text-muted">Employee 1<br/>
-                            Age: 35 years old
-                            </small>
-                            <br/><br/>
-            
-                        </div>
-                    </div>
-                </div>
+                
             
                 <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Action 2', 'You have chosen to make do with the applications, by glancing at the names and making quick judgements.']))}>
                     <div className="team text-center rounded p-3 py-4">

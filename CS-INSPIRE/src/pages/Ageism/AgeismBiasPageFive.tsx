@@ -130,7 +130,7 @@ function AgeismFive() {
                 </div>
                 <div className="col-lg-4 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to suggest training only to the younger team members.", "Suggesting training only to younger team members perpetuates age-related biases."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
-                        <img src={trainingIcon} style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt="dismiss importance" style={{width: '279px', height: '279px'}}/>
+                        <img src={trainingIcon} style={{width: '279px', height: '279px', borderRadius: '45%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt="dismiss importance"/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 2</h4>
                             <small className="text-muted">Suggest training only to younger team members.<br/>

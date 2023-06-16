@@ -10,7 +10,8 @@ import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/_homepagelogin.css'
+// import '../styles/_homepagelogin.css'
+import '../styles/_parallax.css'
 
 const HomePage = () => {
 
@@ -33,82 +34,54 @@ const HomePage = () => {
     });
 
     return(
-        <div className='container-fluid bg-light p-0 h-100 w-100' style={{}}>
+        <div className='container-fluid bg-light p-0 h-100 w-100' style={{overflow: 'hidden'}}>
+          <div className='' style={{marginTop: '9vh', width: '100vw'}}>
+            <NavigationBar/>
+            <Chatbot/>
+            <div className="parallaxContainer m-0 parallax" style={{}}>
+                <h1 style={{marginTop: '-15px'}}>Perception Pause</h1>
+                <p>Discover your unconscious biases today.</p>
+                <a href="/register">Learn more</a>
+            </div>
 
-           <NavigationBar/>
-           <Chatbot/>
 
-           <section className="cd-hero">
-             <ul className="cd-hero-slider autoplay">  
- 
-            <ul className="cd-hero-slider autoplay"> for slider auto play 
-            <ul className="cd-hero-slider"> for disabled auto play
-    
-            <li className="selected first-slide">
-                <div className="cd-full-width">
-                    <div className="tm-slide-content-div slide-caption">
-                        {/* <span>Introduction to</span>   */}
-                        <h2>Perception Pause</h2>
-                        <p className='lead'>Discover the potential unconscious bias you might have today</p>
-                        <div className="primary-button">
-                            <a href="#" className="text-dark scroll-link" data-id="about">Discover More</a>
-                        </div>                           
-                    </div>                   
-                </div> 
-            </li>
+          <div className="parallaxContainer m-0">
+            <p className='text-white bg-black'>Heylo</p>
+            <div className="item bg-light">
+              <div className="img img-first"></div>
+              <div className="card">
+                <h3>Rock climbing</h3>
+                <p>The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+            <div className="item bg-light">
+              <div className="img img-second"></div>
+              <div className="card">
+                <h3>Caving</h3>
+                <p>Exploring underground through networks of tunnels and passageways, which can be natural or artificial.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+            <div className="item">
+              <div className="img img-third"></div>
+              <div className="card">
+                <h3>Parachuting</h3>
+                <p>Jumping from an aeroplane and falling through the air before opening your parachute.</p>
+                <a href="#">Learn more</a>
+              </div>
+            </div>
+          </div>
 
-            <li className="second-slide">
-                <div className="cd-full-width">
-                    <div className="tm-slide-content-div slide-caption">
-                        <span>We Are Perfect Staffs</span>
-                        <h2>Our Team Members</h2>
-                        <p>Unravel the intricate workings of our minds and fostering a deeper understanding of the biases that shape our perceptions and actions.</p>
-                        <div className="primary-button">
-                            <a href="#">Read More</a>
-                        </div>                        
-                    </div>                     
-                </div>
-            </li>
 
-            <li className="third-slide">
-                <div className="cd-full-width">
-                    <div className="tm-slide-content-div slide-caption">
-                        <span>Design is a hobby</span>
-                        <h2>Responsive Layout</h2>
-                        <p>Register an account with us today to join the community, learn more about unconscious bias and get access to resources!</p>
-                        <div className="primary-button">
-                            <a href="#">
-                              <button>Sign Up</button>
-                            </a>
-                        </div>                           
-                    </div>                         
-                </div>
-            </li>
-        </ul> 
-
-        <div className="cd-slider-nav">
-            <nav>
-                <span className="cd-marker item-1"></span>
-                
-                <ul>
-                    <li className="selected"><a href="#0"></a></li>
-                    <li><a href="#0"></a></li>
-                    <li><a href="#0"></a></li>                        
-                </ul>
-            </nav> 
-        </div> 
-        
-     </ul>
-              </ul>
-           </section>
            
 
 
 
-           <div className='register text-center bg-light' style={{ overflow:' hidden'}}>
+           {/* <div className='register text-center bg-light' style={{ overflow:' hidden'}}> */}
           
 
-            <div className='intro row mt-3'>
+            {/* <div className='intro row mt-3'>
                 <section className="col" style={{backgroundColor: "#eee;"}}>
                     <div className="row d-flex justify-content-center align-items-center">
                       <div className="col col-lg-9 col-xl-7">
@@ -146,8 +119,8 @@ const HomePage = () => {
                     </div>
                   
                 </section>
-            </div>
-            
+            </div> */}
+{/*             
             <div id="about" className="page-section">
                 <div className="container">
                     <div className="row">
@@ -189,37 +162,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div id="what-we-do">
-        <div className="container">
-            <div className="row">
-                <div className="col-md-6">
-                    <div className="left-text">
-                        <h4>New offers just arrived,<br/>Get it now and take profit.</h4>
-                        <p>Gochujang pitchfork post-ironic hammock kombucha fanny pack cronut. Raw denim chicharrones semiotics af truffaut pinterest. Distillery letterpress authentic adaptogen. Meditation schlitz humblebrag photo booth celiac cliche chartreuse.<br/><br/>Pinterest 90's wolf celiac dreamcatcher listicle deep v semiotics. Intelligentsia literally meggings trust fund put a bird on it. Shoreditch crucifix artisan pug shaman twee. Health goth bicycle rights retro iPhone.</p>
-                        <ul>
-                            <li>
-                                <div className="white-button">
-                                    <a href="#" className="scroll-link" data-id="portfolio">Discover More</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="primary-button">
-                                    <a href="#">Purchase Now</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="right-image">
-                        <img src="../assets/what-we-do-right-image.png" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-            </div>
+            </div> */}
 
             {/* <div id="contact" className="page-section">
                 <div className="container">
@@ -363,7 +306,7 @@ Unconscious biases are malleable-one can take steps to minimize the impact of un
 A substantial amount of research has been published demonstrating impact of unconscious bias in various domains including the criminal justice system, education, and health/health care (Kirwan Institute, 2014). Bias may have an impact on: hiring, and mentoring and may contribute to healthcare disparities. */}
               {/* </div>
             </div>         */}
-      <div className='row'>
+      {/* <div className='row'>
         <div className='col w-50 text-center' data-aos="fade-down"
                     data-aos-easing="linear"
                     data-aos-duration="1000">
@@ -373,10 +316,11 @@ A substantial amount of research has been published demonstrating impact of unco
               As we embark on this journey of uncovering unconscious bias, let us remember that awareness is the catalyst for transformation. By acknowledging our biases, engaging in self-reflection, and embracing diversity, we can cultivate an environment that values the worth and contributions of every individual. Let us work together to challenge unconscious bias, foster inclusivity, and build a world where fairness and equity thrive.
             </p>
         </div>
-      </div>
+      </div> */}
          {/* </div> */} 
            <Footer/>
-      </div>
+           </div>
+          {/* </div> */}
       </div>
     )
 }

@@ -5,8 +5,8 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx';
 import NavigationBar from '../components/NavBar.tsx';
-import background  from '../assets/login_bg.png'
-import { url } from 'inspector';
+import background  from '../assets/loginBg.jpg'
+
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -86,19 +86,10 @@ const LoginPage = () => {
     
  
     return(
-        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden'}}>    
+        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>    
             <NavigationBar/>
-            <div className='mb-5 text-center' style={{}}>          
-                    {/* <h1> Perception Pause </h1>    */}
-                    {/* <div className="row m-2" style={{height: '10%'}}> */}
-                        {/* <div className='col' style={{ alignSelf:'start'}} > */}
-                        
-                        {/* <NavLink to="/" style={{textAlign: 'left'}}>
-                            <img src={logo} style={{width: '8%'}} className=''/>
-                        </NavLink> */}
-                        {/* </div> */}
-                        
-                    {/* </div>       */}
+            <div className='mb-5 text-center'>          
+       
                     
                      <div className='desc text-center' style={{marginTop: '18vh'}}>
                         <h3 className='text-dark'>Welcome to Perception Pause</h3>
@@ -130,15 +121,11 @@ const LoginPage = () => {
                         </div>
                         <br/>
                         <div className='row'>
-                            <div className='col text-right'>
-                                <hr></hr>
-                            </div>
+                            
                             <div className='col lead w-25 text-center'>
-                                <small className=''>OR</small> 
+                                <small className=''>- OR -</small> 
                             </div>
-                            <div className='col text-left'>
-                                <hr></hr>
-                            </div>
+                           
                         </div>
                         <br/>
                         <div className="row text-center">

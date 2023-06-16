@@ -4,10 +4,10 @@ import {  createUserWithEmailAndPassword  } from 'firebase/auth';
 import { auth } from '../firebase/firebase.js';
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx'
-import background from '../assets/background.png'
+import background from '../assets/signup2Bg.jpg'
 import NavigationBar from '../components/NavBar.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import signUpbackground  from '../assets/loginBg.jpg'
 
 const SignupPage = () => {
     const navigate = useNavigate();
@@ -59,24 +59,25 @@ const SignupPage = () => {
 
   return (
     <div style={{
-        overflow: 'hidden'
-    }} className="container-fluid bg-light p-0">   
+        overflow: 'hidden', backgroundImage: `url(${signUpbackground})`, backgroundSize: 'cover'
+    }} className="container-fluid bg-light p-0"
+    >   
 
         <NavigationBar/>
-        <div className='mb-5 p-0'> 
-        <div className='row p-0' style={{marginTop: '18vh'}}>
-            <p className='text-center display-6 font-weight-light p-3'>Discover your potentially hidden side today.</p>
-        </div> 
+      
+        <div className='' style={{marginTop: '9vh'}}>
+          
+        
 
         <div className="row">   
-            <div className='m-2 col text-center'>
-                <img src={background} className='img-fluid'/>
+            <div className='col text-center' style={{height: '100vh', backgroundImage: `url(${background})`}}>
+                
             </div>    
 
-                <div className='col' style={{float: 'left'}}>                  
+                <div className='col-7 p-0' style={{float: 'left', height: '100vh'}}>                  
                     {/* <h1> Perception Pause </h1>    */}
-                                                                                            
-                    <form className='p-3 text-center bg-light' style={{backgroundColor: 'grey'}}>
+                    <h3 className='mt-5 text-center font-weight-light p-3'>Discover your potentially hidden side today.</h3>                                           
+                    <form className='p-3 text-center' style={{}}>
                         <div className="row">
                             <div className='col p-0'>
                 
@@ -112,25 +113,7 @@ const SignupPage = () => {
         
                         <br/>
                         {/* <div className='row'> */}
-                        <label htmlFor='gender' className='lead'>
-                            Gender
-                        </label>
-                        <br/>
-
-                            
-                            <FontAwesomeIcon icon={['fa', 'female']} />
-
-                            <input type="radio" id="female" name="gender" value="female"/>
-                            <label for="female" style={{display: 'inline'}}>&nbsp;&nbsp;Female</label> 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                            <input type="radio" id="male" name="gender" value="male"/>
-                            <label for="male">&nbsp;&nbsp;Male</label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                            <input type="radio" id="unknown" name="gender" value="unknown"/>
-                            <label for="unknown">&nbsp;&nbsp;Prefer not to disclose</label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     
                         {/* </div> */}
                         <div className='row'>
                             <label htmlFor="username" className='lead'>
@@ -189,10 +172,11 @@ const SignupPage = () => {
                              
                 </div>
             
+            </div> 
+            <Footer></Footer>   
         </div> 
-    
-        </div>
-        <Footer></Footer>   
+       
+        
     </div>
   )
 }

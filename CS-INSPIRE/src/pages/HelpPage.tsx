@@ -40,22 +40,21 @@ function HelpPage() {
 
 
     return (
-        <div className="container-fluid p-0" style={{backgroundImage: `url(${background})`}}>
+        <div className="container-fluid p-0" style={{backgroundColor: ''}}>
             <Chatbot/>  
             <NavigationBar/>
-            <section style={{marginTop: '18vh'}} className="section">
-        
+            <section style={{marginTop: '9vh'}} className="section">
             <div className="row">
                  <div className="col-lx-12 p-0">
-                    <div className="card" style={{border: 'none'}}>
+                    <div className="card" style={{border: 'none', backgroundColor: ''}}>
                         <div className="card-body mb-5">
                             <div className="row justify-content-center mt-4">
                                 <div className="col-xl-5 col-lg-8">
                                     <div className="text-center">
-                                        <h3 className="text-dark">Frequently Asked Questions</h3>
+                                        <h3 className="mt-5 text-dark">Frequently Asked Questions</h3>
                                         <p className="text-muted">Check out some of the FAQs below that are commonly answered</p>
                                         <div>
-                                            <button type="button" className="btn btn-primary me-2" onClick={sendEmail}>Email Us</button>
+                                            <button type="button" className="btn btn-dark me-2" onClick={sendEmail}>Email Us</button>
                                             {/* <button type="button" className="btn btn-success">Send us a tweet</button> */}
                                         </div>
                                         <small className="mt-2 text-muted">You can utilise the chatbot on the bottom right of the page to ask some questions as well.</small>
