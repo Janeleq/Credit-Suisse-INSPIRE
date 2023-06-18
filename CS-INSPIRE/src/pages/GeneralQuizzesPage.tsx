@@ -6,6 +6,11 @@ import Chatbot from "../components/Chatbot.tsx"
 import Footer from "../components/Footer.tsx";
 import useSound from "use-sound"
 import bgSound from "../assets/bg_music.mp3"
+import { FaMusic, FaStop } from "react-icons/fa";
+import { FaVolumeMute } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+
+
 
 function GeneralQuiz() {
 
@@ -91,9 +96,10 @@ function GeneralQuiz() {
       <Chatbot/>
     {start ? (
         <div className="Quiz text-center text-dark" style={{marginTop: '18vh'}}>
-        <h1 className="text-uppercase  mb-2">Unconscious Bias Quiz</h1>
-        <button onClick={handlePlay}>Play</button>
-        <button onClick={handleStop}> Stop</button>
+        <h1 className="mb-2">Unconscious Bias Quiz</h1>
+        
+        <button onClick={handlePlay} className="" style={{backgroundColor: 'transparent', borderRadius: '50%'}}><FaPlay style={{color: 'black'}}/></button>
+        <button onClick={handleStop} style={{backgroundColor: 'transparent', borderRadius: '50%'}}><FaStop style={{color: 'black'}}/></button>
         <div className="card tab-content">
         
         <div className="card tab-content">
@@ -112,32 +118,32 @@ function GeneralQuiz() {
                                         </div>
                                       ) : ("")}
                 <div className="tab-pane card-block active" id="ONE" style={{background: `url()`, height: "560px", paddingBottom: "5px", overflow:"hidden"}}>
-                    
-                    <div className="col-md-4">
-                        <div className="card bg-faded">
-                            <div className="card-block">
-                                <h2 id="score">Score: {score}</h2>
-                                <div className="progress" style={{}}>
-                                    <div className="progress-bar" style={{width: "75%"}}>
-                                        <br/>
-                                    </div>
-                        
-                                </div>
-
-                            </div>
+                    <div className="row">
+                      <div className="col-md-4">
+                          <div className="card bg-faded">
+                              <div className="card-block">
+                                  <h2 id="score">Score: {score}</h2>
+                                  <div className="progress" style={{}}>
+                                      <div className="progress-bar" style={{backgroundColor: 'grey', width: "75%"}}>
+                                          <br/>
+                                      </div>
                           
-                        </div>
-                    </div>
-                    <div className="col-8">
-                      <div className="question-card" style={{height: '8vh'}}>
-                                          {/* Current Question  */}
-                                          <small style={{float: 'left', marginBottom: '5px'}}>
-                                            Question: {currentQuestion + 1} out of {questions.length}
-                                          </small><hr/>
-                                        
-                        </div>
-                    </div>
-                  
+                                  </div>
+
+                              </div>
+                            
+                          </div>
+                      </div>
+                      <div className="col-8">
+                        <div className="question-card" style={{height: '8vh'}}>
+                              {/* Current Question  */}
+                              <p style={{marginBottom: '5px'}}>
+                                Question: {currentQuestion + 1} out of {questions.length}
+                              </p>
+                                          
+                          </div>
+                      </div>
+                  </div>
                 
                 </div>
               

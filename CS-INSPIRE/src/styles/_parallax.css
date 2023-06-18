@@ -13,6 +13,7 @@ body {
 }
 
 .parallaxContainer {
+  overflow-x: hidden;
   text-align: center;
   color: var(--color);
   width: 100vw;
@@ -34,8 +35,7 @@ body {
   font-size: 3rem;
 }
 
-.parallax p {
-  max-width: 52ch;
+.parallax p { 
   line-height: 1.5;
   padding: 1em;
 }

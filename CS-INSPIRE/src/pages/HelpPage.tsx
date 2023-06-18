@@ -9,7 +9,7 @@ import Chatbot from "../components/Chatbot"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useNavigate } from "react-router-dom";
-import background from "../assets/footerBg.jpg"
+import background from '../assets/faqBg.jpg'
 
 function HelpPage() {
     const navigate = useNavigate()
@@ -40,14 +40,14 @@ function HelpPage() {
 
 
     return (
-        <div className="container-fluid p-0" style={{backgroundColor: ''}}>
+        <div className="container-fluid p-0" style={{overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
             <Chatbot/>  
             <NavigationBar/>
-            <section style={{marginTop: '9vh'}} className="section">
+            <section style={{marginTop: '9vh',  height: '80vh'}} className="section">
             <div className="row">
                  <div className="col-lx-12 p-0">
-                    <div className="card" style={{border: 'none', backgroundColor: ''}}>
-                        <div className="card-body mb-5">
+                    <div className="card" style={{border: 'none'}}>
+                        <div className="card-body" style={{ backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>
                             <div className="row justify-content-center mt-4">
                                 <div className="col-xl-5 col-lg-8">
                                     <div className="text-center">

@@ -12,6 +12,7 @@ import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../styles/_homepagelogin.css'
 import '../styles/_parallax.css'
+import '../styles/_main.scss'
 
 const HomePage = () => {
 
@@ -39,38 +40,47 @@ const HomePage = () => {
             <NavigationBar/>
             <Chatbot/>
             <div className="parallaxContainer m-0 parallax" style={{}}>
-                <h1 style={{marginTop: '-15px'}}>Perception Pause</h1>
-                <p>Discover your unconscious biases today.</p>
+                <h1 style={{marginTop: '-50px'}}>Perception Pause</h1>
+                <p className='lead'>Discover your unconscious biases today.</p>
                 <a href="/register">Learn more</a>
             </div>
 
 
-          <div className="parallaxContainer m-0">
+          <div className="parallaxContainer m-0" style={{position: 'absolute'}}>
             <p className='text-white bg-black'>Heylo</p>
-            <div className="item bg-light">
-              <div className="img img-first"></div>
-              <div className="card">
-                <h3>Rock climbing</h3>
-                <p>The goal is to reach the summit of a formation or the endpoint of a usually pre-defined route without falling</p>
-                <a href="#">Learn more</a>
+            <div class="imgLoader"></div>
+
+<div class="container">
+
+
+  <div class="book">
+    <div class="gap"></div>
+    <div class="pages">
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+    </div>
+    <div class="flips">
+      <div class="flip flip1">
+        <div class="flip flip2">
+          <div class="flip flip3">
+            <div class="flip flip4">
+              <div class="flip flip5">
+                <div class="flip flip6">
+                  <div class="flip flip7"></div>
+                </div>
               </div>
             </div>
-            <div className="item bg-light">
-              <div className="img img-second"></div>
-              <div className="card">
-                <h3>Caving</h3>
-                <p>Exploring underground through networks of tunnels and passageways, which can be natural or artificial.</p>
-                <a href="#">Learn more</a>
-              </div>
-            </div>
-            <div className="item">
-              <div className="img img-third"></div>
-              <div className="card">
-                <h3>Parachuting</h3>
-                <p>Jumping from an aeroplane and falling through the air before opening your parachute.</p>
-                <a href="#">Learn more</a>
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
 
 

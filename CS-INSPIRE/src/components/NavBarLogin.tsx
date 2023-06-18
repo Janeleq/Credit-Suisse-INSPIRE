@@ -81,7 +81,7 @@ function NavigationBarLogin() {
 
     return ( 
       <>
-        <Navbar className="p-0 mb-5" style={{zIndex: '', height: 'auto'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
+        <Navbar className="p-0 mb-5 bg-light" style={{zIndex: '', height: 'auto'}} collapseOnSelect fixed="top" bg="light" variant="light" expand="md">
           {/* <Container className="m-0 p-0 h-25"> */}
             <Navbar.Brand onClick = {goHome}><img className='' src={logo} style={{width: '40%', marginLeft: '8px'}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" style={{height: '15%'}} />

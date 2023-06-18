@@ -4,7 +4,7 @@ import Navbar from '../components/NavBarLogin.tsx'
 import Footer from '../components/Footer.tsx';
 import Logo from '../assets/PerceptionPause_logo.png'
 import Chatbot from '../components/Chatbot.tsx'
-import footerBg from '../assets/footerBg.jpg'
+import footerBg from '../assets/profileBg.avif'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -65,11 +65,22 @@ function Profile() {
               console.log("Sign-in provider: " + profile.providerId);
               console.log("  Provider-specific UID: " + profile.uid);
               console.log("  Name: " + profile.displayName);
-              setName(profile.displayName)
+              if (profile.displayName) {
+              setName(profile.displayName) }
+
+              else {
+                setName('-')
+              }
               console.log("  Email: " + profile.email);
               setEmail(profile.email)
               console.log("  Photo URL: " + profile.photoURL);
-              setPhoto(profile.photoURL)
+              if (profile.photoURL) {
+                setPhoto(profile.photoURL)
+              }
+              else {
+                setPhoto("https://icon-library.com/images/user-png-icon/user-png-icon-6.jpg")
+              }
+              
               setId(profile.uid)
             
             });
@@ -96,19 +107,20 @@ function Profile() {
 
 
     return (
-        <div className='container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${footerBg})`}}>
+        <div className='container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${footerBg})`, backgroundSize: 'cover'}}>
             <Navbar></Navbar>       
             <Chatbot></Chatbot>    
-            <section className="section" id="about" style={{marginTop: '9vh', height: '80vh', backgroundImage: `url(${footerBg})`}}>
-                <div className='row text-center'>
-                    <div className='col lead'>
+            <section className="section" id="about" style={{marginTop: '18vh', height: '100vh'}}>
+                <div className='row'>
+                    <div className='col-lg-4'></div>
+                    <div className='col lead' style={{float: 'left'}}>
                      Last Login: {login}
                     </div>
                 </div>
                 <div className="row align-items-center ">
                     <div className="col-lg-4">
                         <div className="about-avatar text-center">
-                            <img src={photo} title="" style={{width: '200px', height: '200px'}} alt="Profile Pic"/><br/><br/>
+                            <img src={photo} title="" style={{width: '250px', height: '250px'}} alt="Profile Pic"/><br/><br/>
                             <button className=' text-center' onClick={signout}>Log out</button>
                         </div>
                     </div>
@@ -117,7 +129,7 @@ function Profile() {
                         
                         <div className="about-text go-to">
                             <h3 className="">Name</h3>
-                            <div className='' dangerouslySetInnerHTML={{'__html': output}   }></div>
+                        
                 
                             <div className="row about-list">
                                 <div className="col-md-6">
@@ -145,14 +157,11 @@ function Profile() {
                 
                 
                 </div>
+               
                 <div className="counter">
+                    
                     <div className="row mt-4">
-                        <div className="col-6 col-lg-3">
-                            <div className="count-data text-center">
-                                <h6 className="count h2" data-to="500" data-speed="500">incomplete</h6>
-                                <p className="m-0px font-w-600">Bias Reality Check</p>
-                            </div>
-                        </div>
+                        <div className='col'></div>
                         <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="150" data-speed="150">0/4</h6>

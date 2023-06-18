@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx';
 import NavigationBar from '../components/NavBar.tsx';
-import background  from '../assets/loginBg.jpg'
+import background  from '../assets/loginBg.png'
 
 
 const LoginPage = () => {
@@ -86,9 +86,9 @@ const LoginPage = () => {
     
  
     return(
-        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>    
+        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>    
             <NavigationBar/>
-            <div className='mb-5 text-center'>          
+            <div className='mb-5 text-center' style={{height: '100vh'}}>          
        
                     
                      <div className='desc text-center' style={{marginTop: '18vh'}}>
@@ -114,7 +114,7 @@ const LoginPage = () => {
                         <br/><br/>
                         <div className='row'>
                             <div className='col text-center'>
-                                <button className="btn btn-outline-dark" style={{textTransform:"none"}} onClick={signInWithGoogle}>
+                                <button className="btn btn-outline-dark bg-dark text-light" style={{textTransform:"none"}} onClick={signInWithGoogle}>
                                     <img width="20px" style={{marginBottom:'3px', marginRight: '5px'}} alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" /> Continue with Google
                                 </button>      
                             </div>
@@ -143,7 +143,8 @@ const LoginPage = () => {
                                         onChange={(e) => setEmail(e.target.value)}  
                                         required                                    
                                         placeholder=""    
-                                        className='text-dark shadow bg-light p-0 text-center lead small w-25'                                
+                                        className='text-dark  p-0 text-center lead small'  
+                                        style={{width: '25vw', border: 'none', backgroundColor: 'none', background: 'transparent', borderBottom: '1px solid black'}}                              
                                     />
                             </div>
                         </div>
@@ -161,9 +162,9 @@ const LoginPage = () => {
                                     onChange={(e) => setPassword(e.target.value)} 
                                     required                                 
                                     placeholder="" 
-                                    className='text-dark shadow bg-light p-0 text-center lead small w-25'               
+                                    className='text-dark p-0 text-center lead small'               
                                     style={{
-                                    
+                                        width: '25vw', border: 'none', backgroundColor: 'none', background: 'transparent', borderBottom: '1px solid black'
                                     }}
                                 />
                             </div>

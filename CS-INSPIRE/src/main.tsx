@@ -12,7 +12,6 @@ import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
 import HelpPage  from './pages/HelpPage.tsx'
 import PodcastPage from './pages/PodcastPage.tsx'
-import CommunityPage from './pages/CommunityPage.tsx'
 import ContactPage from './pages/ContactPage.tsx'
 
 // Halo Effect Pages
@@ -58,7 +57,9 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
 
-// import ''
+// Community Pages
+import CommunityPage from './pages/CommunityPage.tsx'
+import UpcomingEventsPage from './pages/UpcomingEventsPage.tsx'
 
 import {
   createBrowserRouter,
@@ -185,6 +186,10 @@ const router = createBrowserRouter([
   {
     path: "/community",
     element: <CommunityPage/>
+  },
+  {
+    path: "/community/upcomingevents",
+    element: <UpcomingEventsPage/>
   },
   {
     path: "/bias/gender/facts",
