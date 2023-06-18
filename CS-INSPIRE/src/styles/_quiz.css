@@ -40,10 +40,16 @@
   li {
     
   }
+
+  .question-card {
+    border-radius: 4px;
+    font-size: larger;
+  }
   
   .question-text {
     font-size: 18px;
     font-weight: bold;
+    border-radius: 4px;
   }
 
   .card-text {
@@ -77,6 +83,9 @@
   background-color: rgb(235, 231, 235);
 }
 
+.card-block {
+
+}
 #score {
   /* display: none; */
 }
