@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "../styles/_quiz.css";
-import questions from "../javascript/questions.js";
+import questions from "../Javascript/questions.js";
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Chatbot from "../components/Chatbot.tsx";
 import Footer from "../components/Footer.tsx";
@@ -18,6 +18,8 @@ function GeneralQuiz() {
   const [start, setStart] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [explanation, setExplanation] = useState("")
+  const [emoji, setEmoji] = useState("")
   const [isLoading, setLoading] = useState(true);
   const [pauseStatus, setPauseStatus] = useState(false);
   const [play, { stop }] = useSound(bgSound, {
@@ -52,6 +54,7 @@ function GeneralQuiz() {
 
   useEffect(() => {
     console.log(pauseStatus);
+    
     if (pauseStatus === false) {
       // play();
     } else {
@@ -63,9 +66,14 @@ function GeneralQuiz() {
 
   /* A possible answer was clicked */
   const optionClicked = (isCorrect) => {
+    setExplanation(questions[currentQuestion].explanation)
     // Increment the score
     if (isCorrect) {
       setScore(score + 1);
+      setEmoji("✔️")
+    }
+    else {
+      setEmoji("❌")
     }
 
     if (currentQuestion + 1 < questions.length) {
@@ -78,6 +86,7 @@ function GeneralQuiz() {
   /* Resets the game back to default */
   const restartGame = () => {
     setScore(0);
+    setEmoji("");
     setCurrentQuestion(0);
     setShowResults(false);
   };
@@ -111,38 +120,37 @@ function GeneralQuiz() {
           >
             <FaStop style={{ color: "black" }} />
           </button>
-          <div className="card tab-content">
+          <div className="card tab-content" style={{border: 'none'}}>
             <div className="card tab-content">
-              <div className="card tab-content bg-dark">
+              <div className="card tab-content">
                 {showResults ? (
                   /* 4. Final Results */
                   <div className="final-results">
                     <h1>Final Results</h1>
-                    <h2>
+                    <h2 style={{border: 'none'}}>
                       {score} out of {questions.length} correct - (
                       {(score / questions.length) * 100}%)
                     </h2>
                     <button onClick={() => restartGame()}>Restart Quiz</button>
                   </div>
                 ) : (
-                  ""
-                )}
-                <div
-                  className="tab-pane card-block active"
-                  id="ONE"
-                  style={{
-                    background: `url(${question1})`,
-                    backgroundSize: 'cover',
-                    height: "500px",
-                    paddingBottom: "5px",
-                    overflow: "hidden",
-                  }}
-                >
-                  <div className="row" style={{height: "8vh"}}>
-                    <div className="col-md-4">
+                  
+                // <div
+                //   className="tab-pane card-block active"
+                //   id="ONE"
+                //   style={{
+                //     background: `url(${question1})`,
+                //     backgroundSize: 'cover',
+                //     height: "500px",
+                //     paddingBottom: "5px",
+                //     overflow: "hidden",
+                //   }}
+                // >
+                  <div className="row" style={{height: ""}}>
+                    <div className="col-md-4 p-0" style={{ height: "5vh"}}>
                       <div className="card bg-faded">
                         <div className="card-block">
-                          <h2 id="score">Score: {score}</h2>
+                          <h2 id="score" style={{borderRadius: '0px', marginBottom: '5px'}}>Score: {score} {emoji}</h2>
                           <div className="progress" style={{}}>
                             <div
                               className="progress-bar"
@@ -154,55 +162,53 @@ function GeneralQuiz() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-md-8">
-                      <div className="question-card" style={{ height: "8vh" }}>
+                    <div className="col-md-8 p-0">
+                      <div className="p-0 question-card" style={{ height: "5vh", fontSize: '20px'}}>
                         {/* Current Question  */}
-                        <p style={{ marginBottom: "5px" }}>
+                        <p className="m-auto py-auto" style={{height: "5vh"}}>
                           Question: {currentQuestion + 1} out of{" "}
                           {questions.length}
                         </p>
                       </div>
                     </div>
-                  </div>
-                </div>
-
-                <div className="card card-inverse card-success">
-                  <h1
-                    className="card-block text-dark"
-                    style={{ textAlign: "center" }}
+                    <div className="card card-inverse card-success" style={{width: '100vw', borderRadius: 0, border: 'none', overflow: 'hidden'}}>
+                  <h5
+                    className="card-block text-dark mt-5 w-75 mx-auto bg-light"
+                    style={{ textAlign: "center", height: '50vh', fontSize: '30px', backgroundColor: ''}}
                   >
                     {questions[currentQuestion].text}
-                  </h1>
+                  </h5>
                 </div>
-
-                <ul>
+                {explanation}
+                <ul style={{ backgroundColor: 'aliceblue'}}>
                   {questions[currentQuestion].options.map((option) => {
                     return (
                       <li
-                        className="card-text m-2 w-50 mx-auto border"
-                        style={{ listStyleType: "none", backgroundColor: "" }}
+                        className="card-text m-2 w-50 mx-auto "
+                        style={{ border: '', listStyleType: "none", backgroundColor: "" }}
                         key={option.id}
                         onClick={() => optionClicked(option.isCorrect)}
                       >
                         {option.text}
                       </li>
+                      
                     );
                   })}
                 </ul>
+                  </div>
+              
+                )}
+       
               </div>
             </div>
           </div>
 
-          <p style={{ textAlign: "right" }}>
-            <a href="https://toyhou.se/Unicore" id="">
-              <i className="fas fa-code"></i>
-            </a>
-          </p>
+   
         </div>
       ) : (
         <div style={{ marginTop: "18vh", height: '90vh' }}>
           <h1 className="mb-2">Unconscious Bias Quiz</h1>
-
+          <p className="lead">Take this quiz to test your knowledge on unconscious bias</p>
           <button onClick={displayQuiz}>Start</button>
         </div>
       )}

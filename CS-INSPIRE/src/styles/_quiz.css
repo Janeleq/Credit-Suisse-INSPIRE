@@ -42,7 +42,7 @@
   }
 
   .question-card {
-    border-radius: 4px;
+    /* border-radius: 4px; */
     font-size: larger;
   }
   
@@ -84,8 +84,9 @@
 }
 
 .card-block {
-
+  font-size: 35px;
 }
+
 #score {
   /* display: none; */
 }
