@@ -49,7 +49,7 @@ function Quiz() {
       <NavigationBar/>
       <Chatbot/>
   
-      <div className="text-center" style={{marginTop: '9vh'}}>
+      <div className="text-center" style={{marginTop: ''}}>
         <h3></h3>
         <div className="row">
           <div className="col bias" style={{height: '100vh', opacity: '', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${biasRealityCheckBg})`}}>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/NavBarLogin.tsx'
 import Footer from '../components/Footer.tsx';
 import Chatbot from '../components/Chatbot.tsx'
-import footerBg from '../assets/profileBg.avif'
+import footerBg from '../assets/pastelGreyBg.png'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { getDatabase, ref, set } from "firebase/database";

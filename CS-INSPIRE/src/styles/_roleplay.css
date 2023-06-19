@@ -153,3 +153,7 @@ body{
 .last:hover .details{
   transition-delay: 0s;
 }
+
+#pills-general-tab .nav-link.active {
+  /* background-color: lightgrey; */
+}

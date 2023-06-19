@@ -45,7 +45,7 @@ function Community() {
   return (
     <div className="event container-fluid p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
-      <div className="mb-5 bg-white" style={{ marginTop: "8vh" }}>
+      <div className="mb-5 bg-white" style={{ marginTop: "" }}>
         <div
           className=""
           style={{

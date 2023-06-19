@@ -96,9 +96,9 @@ function AgeismThree() {
             
             <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
             {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-                <div style={{backgroundImage: `url(${candidateBg})`, height: '60vh', backgroundPositionY: '-100px'}}>
+                <div style={{backgroundImage: `url(${candidateBg})`, height: '60vh', backgroundPositionY: '-100px', backgroundPosition: 'center'}}>
                     <div style={{paddingTop: '25vh'}}>
-                        <h2 className='bg-light mx-auto' style={{width: 'fit-content', opacity: 0.7}}>It is time for you to choose the candidate</h2>
+                        <h2 className='bg-light mx-auto p-2' style={{borderRadius: '5px', width: 'fit-content', opacity: 0.7}}>It is time for you to choose the candidate</h2>
                     </div>
                 </div>
                 <h3 className='text-center mt-5'>Available Candidates</h3>
