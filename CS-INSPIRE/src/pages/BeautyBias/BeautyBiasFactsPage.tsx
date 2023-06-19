@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import NavigationBar from '../../components/NavBarLogin.tsx'
 import Footer from '../../components/Footer.tsx';
 import background from '../../assets/genderBackground.png'
+import qrcode from '../../assets/beautyBias/qrcode_platform.who.int.png'
 
 function BeautyBiasFacts() {
     const [isLoading, setLoading] = useState(true)
@@ -69,9 +70,10 @@ function BeautyBiasFacts() {
                     </figcaption>
                   </figure>
               </div>
-          
+            
               <div className="mt-5 row">
                 <div className='col-6 text-center'>
+                <img src={qrcode}/>
                   <h4>Do you ever associate a name to a specific gender?</h4>
                   <p>Enter a name that comes to your mind and the gender you associate it with (engilsh names only please!): &nbsp; 
                     <br/> Then, see if it is the same as to what you think!
