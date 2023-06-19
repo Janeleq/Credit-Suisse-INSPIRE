@@ -1,12 +1,11 @@
-// import React from 'react'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../components/NavBarLogin.tsx'
 import Footer from '../components/Footer.tsx';
-import Logo from '../assets/PerceptionPause_logo.png'
 import Chatbot from '../components/Chatbot.tsx'
 import footerBg from '../assets/profileBg.avif'
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { getDatabase, ref, set } from "firebase/database";
 
 function Profile() {
     const auth = getAuth();
@@ -21,6 +20,15 @@ function Profile() {
     const [login, setLoginTime] = useState('')
     console.log(user)
     const {state} = useLocation()
+
+    // function writeUserData(userId, name, email, imageUrl) {
+    // const db = getDatabase();
+    // set(ref(db, 'users/' + userId), {
+    //     username: name,
+    //     email: email,
+    //     profile_picture : imageUrl
+    // });
+    // }
 
     updateEmail(auth.currentUser, email).then(() => {
     // Email updated!
@@ -39,6 +47,8 @@ function Profile() {
     } 
   
     useEffect(() => {
+
+    //   writeUserData()
       someRequest().then(() => {
         const loaderElement = document.querySelector(".loader-container");
         if (loaderElement) {

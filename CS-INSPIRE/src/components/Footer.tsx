@@ -61,11 +61,6 @@ function Footer() {
                   Policy
                 </a>
               </li>
-              <li>
-                <a href="#!" className="" style={{ color: "#888888" }}>
-                  Link 2
-                </a>
-              </li>
             </ul>
           </div>
 

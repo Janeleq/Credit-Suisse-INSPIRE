@@ -51,7 +51,7 @@ function Community() {
           style={{
             height: "75vh",
             width: "100vw",
-            opacity: 0.8,
+            opacity: 0.9,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundImage: `url(${communityBg})`,
