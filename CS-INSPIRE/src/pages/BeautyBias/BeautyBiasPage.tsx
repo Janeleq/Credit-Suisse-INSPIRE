@@ -6,8 +6,7 @@ import background from "../../assets/beautyBias/beautyBias.webp";
 import actionIcon from "../../assets/action.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import outcomeIcon from "../../assets/outcomeIcon.png";
-import { NavLink, useNavigate } from "react-router-dom";
-import BeautyBiasRoleplay from "./BeautyBiasRoleplayPage";
+import { useNavigate } from "react-router-dom";
 
 function Beautybias() {
   const [isLoading, setLoading] = useState(true);
@@ -41,7 +40,7 @@ function Beautybias() {
   return (
     <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
-      <div className="row" style={{ marginTop: "9vh" }}>
+      <div className="row" style={{ marginTop: "5vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
@@ -58,7 +57,7 @@ function Beautybias() {
         >
           <div className="section-title mt-5">
             <h4>
-              Unconscious Bias: <mark>Beauty Bias</mark>
+              <mark>Beauty Bias</mark>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
               Beauty bias refers to the tendency to favor or attribute positive
@@ -119,7 +118,7 @@ function Beautybias() {
                         alt="outcome"
                         style={{ width: "20%" }}
                       />
-                      <br />4{" "}
+                      <br />
                       <small className="">
                         view the consequence of your action
                       </small>
@@ -149,7 +148,7 @@ function Beautybias() {
                 <div className="guide w-50 mx-auto">
                   <p>Get to know some statistics regarding Beauty Bias!</p>
                   <i className="fa fa-male" aria-hidden="true"></i>
-                  <button type="" onClick={beautyBiasRoleplay}>
+                  <button type="" onClick={beautyBiasFacts}>
                     View statistics
                   </button>
                 </div>

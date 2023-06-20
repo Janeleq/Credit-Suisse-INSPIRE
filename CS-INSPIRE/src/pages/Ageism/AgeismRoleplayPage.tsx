@@ -6,12 +6,9 @@ import Footer from "../../components/Footer";
 import actionIcon from "../../assets/action.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import background from "../../assets/ageism/ageism.jpg";
-import roleplay from "../../assets/roleplaying.jpg";
-import funfacts from "../../assets/funfacts.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import AgeismFacts from "./AgeismFactsPage";
 import outcomeIcon from "../../assets/outcomeIcon.png";
+import pastelGreyBg from "../../assets/pastelGreyBg.png";
 // import { FaPerson } from 'react-icons/fa';
 
 function Ageism() {
@@ -45,10 +42,10 @@ function Ageism() {
   }
 
   return (
-    <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
+    <div className="container-fluid p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
 
-      <div className="row" style={{ marginTop: "9vh" }}>
+      <div className="row" style={{ marginTop: "5vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
@@ -64,7 +61,7 @@ function Ageism() {
         >
           <div className="section-title mt-5">
             <h4 className="title mb-4">
-              Unconscious Bias: <mark>Ageism</mark>
+              <mark>Ageism</mark>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
               Ageism refers to the stereotypes, prejudices, and discrimination

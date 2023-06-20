@@ -6,7 +6,6 @@ import Chatbot from '../components/Chatbot.tsx'
 import affinityBias from '../assets/affinityBias.png'
 import haloBias from ''
 import ageismBias from '../assets/ageism.jpg'
-import sheryl from '../assets/sherylsandberg.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -242,29 +241,7 @@ const HomePage = () => {
                     </figure>
                     <br />
                     <br />
-                    <figure className="text-center mb-0">
-                      <blockquote className="blockquote">
-                        <img
-                          className="img-fluid w-50 h-50"
-                          style={{ borderRadius: "50%" }}
-                          src={sheryl}
-                          alt="sheryl"
-                        />
-                        <p className="pb-2">
-                          <i className="fas fa-quote-left fa-xs text-primary"></i>
-                          <span className="lead font-italic">
-                            {" "}
-                            "None of us is immune to biases, whether conscious
-                            or unconscious. But by acknowledging them, we can
-                            work to overcome them."
-                          </span>
-                          <i className="fas fa-quote-right fa-xs text-primary"></i>
-                        </p>
-                      </blockquote>
-                      <figcaption className="blockquote-footer mb-0">
-                        Sheryl Sandberg
-                      </figcaption>
-                    </figure>
+         
                   </div>
                 </div>
               </div>

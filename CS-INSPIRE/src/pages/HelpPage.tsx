@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import { useNavigate } from "react-router-dom";
 import background from "../assets/faqBg.png";
-import background2 from "../assets/pastelGreyBg.png"
+import background2 from "../assets/pastelGreyBg.png";
 
 function HelpPage() {
   const navigate = useNavigate();
@@ -44,11 +44,11 @@ function HelpPage() {
       <NavigationBar />
       <div
         style={{
-          height: "100vh",
+          height: "80vh",
           backgroundImage: `url(${background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          borderBottom: 'solid 1px lightgrey'
+          borderBottom: "solid 1px lightgrey",
         }}
       >
         <p
@@ -61,33 +61,53 @@ function HelpPage() {
           }}
         >
           <h3 style={{ fontSize: "90px", fontWeight: "800" }}>FAQ</h3>
-          <p className="">Check out some of the FAQs below that are commonly answered</p>
-          
-          <p className="mt-2 text-muted" style={{fontSize: '16px'}}>
-                        You can utilise the chatbot on the bottom right of the
-                        page to ask some questions as well.
-                      </p>
+          <p className="">
+            Check out some of the FAQs below that are commonly answered
+          </p>
 
-                      <button className= "p-3" onClick={sendEmail} style={{ fontSize: "20px", fontWeight: "500" }}>Email Us</button>
+          <p className="mt-2 text-muted" style={{ fontSize: "16px" }}>
+            You can utilise the chatbot on the bottom right of the page to ask
+            some questions as well.
+          </p>
+
+          <button
+            className="p-3"
+            onClick={sendEmail}
+            style={{ fontSize: "20px", fontWeight: "500" }}
+          >
+            Email Us
+          </button>
         </p>
-        
       </div>
-      <section style={{ marginTop: "", height: '90vh', width: '100vw', backgroundImage: `url(${background2})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center", }} className="section mx-auto">
+      <section
+        style={{
+          marginTop: "",
+          height: "70vh",
+          width: "100vw",
+          backgroundImage: `url(${background2})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="section mx-auto"
+      >
         <div className="row">
           <div className="col-sm-12 col-lx-12 p-0">
-            <div className="card" style={{ border: "none",    backgroundImage: `url(${background2})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    height: "90vh" }}>
+            <div
+              className="card"
+              style={{
+                border: "none",
+                backgroundImage: `url(${background2})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: "70vh",
+              }}
+            >
               <div
                 className="card-body"
-                style ={{
-                 width: '100vw'
+                style={{
+                  width: "100vw",
                 }}
               >
-          
                 <div className="m-3 row justify-content-center mt-5">
                   <div className="col-9">
                     <ul

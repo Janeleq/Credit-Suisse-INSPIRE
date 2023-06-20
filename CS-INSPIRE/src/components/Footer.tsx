@@ -57,7 +57,7 @@ function Footer() {
 
             <ul className="list-unstyled mb-0">
               <li>
-                <a href="#!" className="" style={{ color: "#888888" }}>
+                <a href="/policy" className="" style={{ color: "#888888" }}>
                   Policy
                 </a>
               </li>
@@ -74,12 +74,12 @@ function Footer() {
 
             <ul className="list-unstyled mb-0">
               <li>
-                <a href="#!" className="" style={{ color: "#888888" }}>
+                <a href="/community" className="" style={{ color: "#888888" }}>
                   Community
                 </a>
               </li>
               <li>
-                <a href="#!" className="" style={{ color: "#888888" }}>
+                <a href="/articles" className="" style={{ color: "#888888" }}>
                   News Room
                 </a>
               </li>

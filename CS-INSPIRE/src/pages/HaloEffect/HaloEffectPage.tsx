@@ -40,7 +40,7 @@ function HaloEffect() {
   return (
     <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
-      <div className="row" style={{ marginTop: "9vh" }}>
+      <div className="row" style={{ marginTop: "5vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
@@ -56,7 +56,7 @@ function HaloEffect() {
         >
           <div className="section-title mt-5">
             <h4>
-              Unconscious Bias: <mark>Halo Effect</mark>
+              <mark>Halo Effect</mark>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
               One common bias that can come into play is known as the 'halo

@@ -38,7 +38,7 @@ function Genderbias() {
     <div className="container-fluid p-0 w-100">
       <NavigationBar />
       <Chatbot />
-      <div className="row" style={{ marginTop: "9vh" }}>
+      <div className="row" style={{ marginTop: "5vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
@@ -54,7 +54,7 @@ function Genderbias() {
         >
           <div className="section-title mt-5">
             <h4 className="title mb-4">
-              Unconscious Bias: <mark>Gender Bias / Sexism</mark>
+              <mark>Gender Bias / Sexism</mark>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
               Gender Bias or also known as Sexism, is linked to beliefs around

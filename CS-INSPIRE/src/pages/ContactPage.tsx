@@ -102,7 +102,7 @@ const ContactForm = () => {
                   required
                 />
               </div>
-              <button className="btn btn-danger" type="submit">
+              <button className="btn btn-dark" type="submit">
                 {formStatus}
               </button>
             </form>
