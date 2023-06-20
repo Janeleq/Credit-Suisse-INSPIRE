@@ -1,12 +1,11 @@
-import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom/client'
 import HomePage from './pages/Homepage.tsx'
 import HomePageLogin from './pages/HomepageLogin.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
-import GenderBiasPage from './pages/GenderBiasPage.tsx'
-import GenderRoleplayPage from './pages/GenderRoleplayPage.tsx'
-import GenderFactsPage from './pages/GenderFactsPage.tsx'
+import GenderBiasPage from './pages/Sexism/GenderBiasPage.tsx'
+import GenderRoleplayPage from './pages/Sexism/GenderRoleplayPage.tsx'
+import GenderFactsPage from './pages/Sexism/GenderFactsPage.tsx'
 import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
@@ -39,7 +38,7 @@ import BeautyRoleplayContFour from './pages/BeautyBias/BeautyBiasPageFive.tsx'
 
 // General Quiz Page
 import QuizPage from './pages/QuizPage.tsx'
-import GeneralQuiz from './pages/GeneralQuizzesPage.tsx'
+import GeneralQuiz from './pages/Sexism/GeneralQuizzesPage.tsx'
 import BiasRealityCheckPage from './pages/BiasRealityCheckPage.tsx'
 
 
@@ -57,9 +56,9 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
 
-// Community Pages
+// Community Page
 import CommunityPage from './pages/CommunityPage.tsx'
-import UpcomingEventsPage from './pages/UpcomingEventsPage.tsx'
+
 
 import {
   createBrowserRouter,
@@ -186,10 +185,6 @@ const router = createBrowserRouter([
   {
     path: "/community",
     element: <CommunityPage/>
-  },
-  {
-    path: "/community/upcomingevents",
-    element: <UpcomingEventsPage/>
   },
   {
     path: "/bias/gender/facts",

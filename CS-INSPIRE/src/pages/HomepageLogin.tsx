@@ -13,7 +13,7 @@ import sheryl from "../assets/sherylsandberg.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import variousBias from '../assets/homepageLogin/variousBias.png'
+import variousBias from "../assets/homepageLogin/variousBias.png";
 
 export const HomePageLogin = () => {
   console.log("rendering lifecycle");
@@ -65,35 +65,104 @@ export const HomePageLogin = () => {
   };
 
   return (
-    <div className={`container-fluid p-0 h-100 w-100`} style={{}}>
+    <div
+      className={`container-fluid p-0 h-100 w-100`}
+      style={{ overflow: "hidden" }}
+    >
       <NavigationBarLogin />
       <Chatbot />
-      <div style={{marginTop: '5vh'}}>
-        
-        <div style={{backgroundImage: `url(${variousBias})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '80vh',  
-            width: "100vw",}}>
-            <h1 data-aos="fade-in" data-aos-delay="300" style={{paddingTop: '12vh', paddingLeft: '12vw', fontSize: '70px'}}><span>P</span>
-            <span data-aos="fade-in" data-aos-delay="400">e</span>
-            <span data-aos="fade-in" data-aos-delay="300">r</span>
-            <span data-aos="fade-in" data-aos-delay="400">c</span>
-            <span data-aos="fade-in" data-aos-delay="300">e</span>
-            <span data-aos="fade-in" data-aos-delay="400">p</span>
-            <span data-aos="fade-in" data-aos-delay="300">t</span>
-            <span data-aos="fade-in" data-aos-delay="400">i</span>
-            <span data-aos="fade-in" data-aos-delay="300">o</span>
-            <span data-aos="fade-in" data-aos-delay="400">n</span>
-            <br/></h1>
-            <h1 data-aos="fade-in" data-aos-delay="300" style={{ paddingLeft: '19vw', fontSize: '70px'}}>
-
-            <span data-aos="fade-in" data-aos-delay="300">P</span>
-            <span data-aos="fade-in" data-aos-delay="400">a</span>
-            <span data-aos="fade-in" data-aos-delay="300">u</span>
-            <span data-aos="fade-in" data-aos-delay="400">s</span>
-            <span data-aos="fade-in" data-aos-delay="300">e</span>
-           </h1>
-
-
-            
+      <div style={{ marginTop: "5vh" }}>
+        <div
+          style={{
+            backgroundImage: `url(${variousBias})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "80vh",
+            width: "100vw",
+          }}
+        >
+          <h1
+            style={{
+              paddingTop: "12vh",
+              paddingLeft: "12vw",
+              fontSize: "70px",
+            }}
+          >
+            <span>P</span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="600"
+              style={{ color: "gray" }}
+            >
+              e
+            </span>
+            <span data-aos="fade-in" data-aos-delay="300">
+              r
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="600"
+              style={{ color: "gray" }}
+            >
+              c
+            </span>
+            <span data-aos="fade-in" data-aos-delay="300">
+              e
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="600"
+              style={{ color: "gray" }}
+            >
+              p
+            </span>
+            <span data-aos="fade-in" data-aos-delay="300">
+              t
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="600"
+              style={{ color: "gray" }}
+            >
+              i
+            </span>
+            <span data-aos="fade-in" data-aos-delay="300">
+              o
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="600"
+              style={{ color: "gray" }}
+            >
+              n
+            </span>
+            <br />
+          </h1>
+          <h1 style={{ paddingLeft: "19vw", fontSize: "70px" }}>
+            <span data-aos="fade-in" data-aos-delay="600">
+              P
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="300"
+              style={{ color: "gray" }}
+            >
+              a
+            </span>
+            <span data-aos="fade-in" data-aos-delay="600">
+              u
+            </span>
+            <span
+              data-aos="fade-in"
+              data-aos-delay="300"
+              style={{ color: "gray" }}
+            >
+              s
+            </span>
+            <span data-aos="fade-in" data-aos-delay="600">
+              e
+            </span>
+          </h1>
         </div>
       </div>
       <Footer />

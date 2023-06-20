@@ -44,7 +44,7 @@ function HelpPage() {
       <NavigationBar />
       <div
         style={{
-          height: "80vh",
+          height: "100vh",
           backgroundImage: `url(${background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -67,10 +67,14 @@ function HelpPage() {
                         You can utilise the chatbot on the bottom right of the
                         page to ask some questions as well.
                       </p>
+
+                      <button className= "p-3" onClick={sendEmail} style={{ fontSize: "20px", fontWeight: "500" }}>Email Us</button>
         </p>
         
       </div>
-      <section style={{ marginTop: "", height: '90vh', width: '100vw' }} className="section">
+      <section style={{ marginTop: "", height: '90vh', width: '100vw', backgroundImage: `url(${background2})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center", }} className="section mx-auto">
         <div className="row">
           <div className="col-sm-12 col-lx-12 p-0">
             <div className="card" style={{ border: "none",    backgroundImage: `url(${background2})`,
@@ -80,19 +84,10 @@ function HelpPage() {
               <div
                 className="card-body"
                 style ={{
-                 
+                 width: '100vw'
                 }}
               >
-                <div className="row justify-content-center mt-4">
-                  <div className="col-xl-5 col-lg-8">
-                    <div className="text-center">
-                    <button className= "p-3" onClick={sendEmail} style={{ fontSize: "20px", fontWeight: "500" }}>Email Us</button>
-              
           
-         
-                    </div>
-                  </div>
-                </div>
                 <div className="m-3 row justify-content-center mt-5">
                   <div className="col-9">
                     <ul

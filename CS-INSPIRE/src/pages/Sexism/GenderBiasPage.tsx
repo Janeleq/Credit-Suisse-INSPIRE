@@ -1,20 +1,27 @@
-import "../../styles/_ageism.css";
-import React, { useState, useEffect } from "react";
-import NavigationBar from "../../components/NavBarLogin";
-import Footer from "../../components/Footer";
-import background from "../../assets/haloEffect/haloeffectBg.jpg";
-import actionIcon from "../../assets/action.png";
-import outcomeIcon from "../../assets/outcomeIcon.png";
-import reflectionIcon from "../../assets/reflectionIcon.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import Chatbot from "../../components/Chatbot.tsx";
+import NavigationBar from "../../components/NavBarLogin.tsx";
+import Footer from "../../components/Footer.tsx";
+import sexismBackground from "../../assets/sexism/sexismBg.jpg";
+import { useNavigate } from "react-router-dom";
 
-function HaloEffect() {
-  const [isLoading, setLoading] = useState(true);
+function Genderbias() {
   const navigate = useNavigate();
+  const [isLoading, setLoading] = useState(true);
 
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-    return new Promise((resolve) => setTimeout(() => resolve(), 1000));
+    return new Promise((resolve) => setTimeout(() => resolve(), 0));
+  }
+
+  function SexismRoleplay() {
+    console.log("Heading to roleplay page!");
+    navigate("/bias/gender/roleplay");
+  }
+
+  function SexismFacts() {
+    console.log("Heading to facts page");
+    navigate("/bias/gender/facts", { state: { email: email } });
   }
 
   useEffect(() => {
@@ -27,26 +34,17 @@ function HaloEffect() {
     });
   });
 
-  function HaloEffectRoleplay() {
-    console.log("Heading to roleplay page!");
-    navigate("/bias/haloEffectRoleplay");
-  }
-
-  function HaloEffectFacts() {
-    console.log("Heading to facts page");
-    navigate("/bias/haloEffectFacts", { state: { email: email } });
-  }
-
   return (
-    <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
+    <div className="container-fluid p-0 w-100">
       <NavigationBar />
+      <Chatbot />
       <div className="row" style={{ marginTop: "9vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
-            backgroundImage: `url(${background})`,
+            backgroundImage: `url(${sexismBackground})`,
             backgroundSize: "cover",
-            backgroundPosition:'center',
+            backgroundPosition: "center",
             height: "140vh",
           }}
         ></div>
@@ -55,20 +53,23 @@ function HaloEffect() {
           style={{ height: "140vh" }}
         >
           <div className="section-title mt-5">
-            <h4>
-              Unconscious Bias: <mark>Halo Effect</mark>
+            <h4 className="title mb-4">
+              Unconscious Bias: <mark>Gender Bias / Sexism</mark>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
-              One common bias that can come into play is known as the 'halo
-              effect.' It occurs when we attribute positive qualities or
-              attributes to someone or something based on an initial positive
-              impression.
+              Gender Bias or also known as Sexism, is linked to beliefs around
+              the fundamental nature of women and men and the roles they should
+              play in society. Sexist assumptions about women and men, which
+              manifest themselves as gender stereotypes, can rank one gender as
+              superior to another. Such hierarchical thinking can be conscious
+              and hostile, or it can be unconscious, manifesting itself as
+              unconscious bias.
               <br />
               <br />
-              In the context of our website, it means that you may be inclined
-              to view our articles more favorably or perceive them as more
-              valuable simply because you had a positive first encounter with
-              our website or one specific article.
+              Gender Bias / Sexism is harmful. It produces feelings of
+              worthlessness, self-censorship, changes in behaviour, and a
+              deterioration in health. It also lies at the root of gender
+              inequality.
             </p>
             <br />
             <br />
@@ -82,8 +83,8 @@ function HaloEffect() {
                 </p>
 
                 <p className="mb-0">
-                  Take up a roleplay to learn and explore more about Halo
-                  Effect!
+                  Take up a roleplay to learn and explore more about Gender Bias
+                  / Sexism!
                 </p>
 
                 <small className="">
@@ -91,31 +92,19 @@ function HaloEffect() {
                 </small>
 
                 <div className="guide mx-auto text-muted mt-3">
-                  <div className="row w-100">
-                    <div className="col w-50">
-                      <img
-                        src={actionIcon}
-                        alt="action"
-                        style={{ width: "20%" }}
-                      />
+                  <div className="row">
+                    <div className="col">
+                      <img src="" alt="action" style={{ width: "20%" }} />
                       <br />
                       <small className="">carry out an action</small>
                     </div>
-                    <div className="col w-50">
-                      <img
-                        src={reflectionIcon}
-                        alt="reflection"
-                        style={{ width: "20%" }}
-                      />
+                    <div className="col">
+                      <img src="" alt="reflection" style={{ width: "20%" }} />
                       <br />
                       <small className="">write down your thoughts</small>
                     </div>
-                    <div className="col w-50">
-                      <img
-                        src={outcomeIcon}
-                        alt="outcome"
-                        style={{ width: "20%" }}
-                      />
+                    <div className="col">
+                      <img src="" alt="outcome" style={{ width: "20%" }} />
                       <br />
                       <small className="">
                         view the consequence of your action
@@ -125,7 +114,7 @@ function HaloEffect() {
                   <br />
                   <button
                     className="mx-auto text-center"
-                    onClick={HaloEffectRoleplay}
+                    onClick={ SexismRoleplay }
                   >
                     Start Roleplay
                   </button>
@@ -144,9 +133,8 @@ function HaloEffect() {
                 </p>
 
                 <div className="guide w-50 mx-auto">
-                  <p>Get to know some statistics regarding Halo Effect!</p>
-                  <i className="fa fa-male" aria-hidden="true"></i>
-                  <button type="" onClick={HaloEffectFacts}>
+                  <p>Get to know some statistics regarding Gender Bias / Sexism!</p>
+                  <button type="" onClick={ SexismFacts }>
                     View statistics
                   </button>
                 </div>
@@ -160,4 +148,4 @@ function HaloEffect() {
   );
 }
 
-export default HaloEffect;
+export default Genderbias;

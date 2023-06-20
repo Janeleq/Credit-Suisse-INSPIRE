@@ -1,14 +1,18 @@
-import'../styles/_ageism.css'
-import React, {useState, useEffect} from 'react';
-import NavigationBar from '../components/NavBarLogin'
+import'../../styles/_ageism.css'
+import {useState, useEffect} from 'react';
+import NavigationBar from '../../components/NavBarLogin'
+import { useNavigate } from 'react-router-dom';
 
 function GenderRoleplay() {
+    const navigate = useNavigate();
     const [isLoading, setLoading] = useState(true);
   
   
     function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
       return new Promise(resolve => setTimeout(() => resolve(), 1000));
     } 
+
+    
 
     useEffect(() => {
       someRequest().then(() => {
@@ -21,7 +25,7 @@ function GenderRoleplay() {
     });
 
     return (
-        <div className="container-fluid bootdey">
+        <div className="container-fluid">
             <NavigationBar/>
             <div className="row" style={{marginTop: '18vh'}}>
                 <div className="col-12 text-center">

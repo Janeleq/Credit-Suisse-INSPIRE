@@ -95,7 +95,7 @@ function RoleplayPage() {
             className="lead w-50 float-left"
             style={{
               marginLeft: "44vw",
-              marginTop: "33vh",
+              marginTop: "35vh",
               fontSize: "28px",
               fontWeight: "300",
             }}
@@ -119,7 +119,7 @@ function RoleplayPage() {
             className="lead w-75 float-left text-uppercase"
             style={{
               marginLeft: "10vw",
-              marginTop: "20vh",
+              marginTop: "18vh",
               fontSize: "36px",
               fontWeight: "800",
               letterSpacing: "2px",
@@ -129,7 +129,7 @@ function RoleplayPage() {
           </p>
           <div
             className="container mb-5"
-            style={{ marginTop: "135vh", left: "-22vw" }}
+            style={{ marginTop: "125vh", left: "-22vw" }}
             data-aos="fade-up"
             data-aos-delay="400"
           >
