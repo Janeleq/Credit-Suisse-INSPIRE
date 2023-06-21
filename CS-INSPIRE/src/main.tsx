@@ -38,7 +38,7 @@ import BeautyRoleplayContFour from './pages/BeautyBias/BeautyBiasPageFive.tsx'
 
 // General Quiz Page
 import QuizPage from './pages/QuizPage.tsx'
-import GeneralQuiz from './pages/Sexism/GeneralQuizzesPage.tsx'
+import GeneralQuiz from './pages/GeneralQuizzesPage.tsx'
 import BiasRealityCheckPage from './pages/BiasRealityCheckPage.tsx'
 
 

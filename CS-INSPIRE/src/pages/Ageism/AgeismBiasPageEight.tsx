@@ -4,7 +4,7 @@ import NavigationBar from '../../components/NavBarLogin'
 import Footer from '../../components/Footer';
 import { useNavigate, useLocation } from 'react-router-dom'
 import endBg from "../../assets/ageismEnd.png"
-
+import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png"
 function AgeismSeven() {
     const {state} = useLocation();
     // const {reflection} = state.reflection;
@@ -68,24 +68,54 @@ function AgeismSeven() {
 
 
     return (
-        <div className='container-fluid p-0 bg-light' style={{overflow: 'hidden'}}>
+        <div className='container-fluid p-0 bg-light text-dark' style={{overflow: 'hidden'}}>
             <NavigationBar/>
-            
-            <div className="row bg-light mx-auto text-center" style={{marginTop: '15vh'}}>
-                {/* <NavLink to="/bias/ageismRolePlayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-
+            <div style={{marginTop: '5vh'}}>
+            <div
+          style={{
+            backgroundImage: `url(${mitigatingBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "85vh",
+            width: "100vw",
+          }}
+        >
+          <h1
+            style={{
+              paddingTop: "12vh",
+              paddingLeft: "12vw",
+              fontSize: "60px",
+              color: 'black'
+            }}
+          >
+            <span data-aos="fade-in" data-aos-delay="300">
+            The Role of Education and Continuous Learning
+            </span>
         
-              <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${endBg})`, backgroundSize: 'cover'}}>
-                  <h4>Congratulations for reaching the end of Ageism roleplay!</h4>
-                  <p className='w-50 mx-auto'>We hope through this roleplay you can get to see Ageism more objectively. </p>
-        
+          </h1>
+          <br />
+          <p
+            className="lead"
+            data-aos="fade-right"
+            data-aos-delay="300"
+            style={{ color: "grey", fontSize: "20px", paddingLeft: "12vw" }}
+          >
+            <div className="row" style={{ paddingLeft: "" }}>
+              <div className="col-sm-12 w-75">
+              Congratulations on reaching till the end of Ageism roleplay. We hope through the roleplay you are able to see ageism more objectively.
               </div>
-             
-                <button className='w-25 mx-auto' onClick={End}>Finish Roleplay</button>
-
-       
-          </div>
-            <Footer/>
+            </div>
+          </p>
+          <br />
+          {/* <p className="lead" style={{ color: "" , paddingLeft: "12vw" }}>
+          Foster a deeper understanding of the biases that shape
+                        our perceptions and actions.
+          </p> */}
+        </div>
+        <Footer/>
+        </div>
+    
+         
         </div>
     
     )

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 // import "../styles/_quiz.css";
-import questions from "../../Javascript/questions.js";
-import NavigationBar from "../../components/NavBarLogin.tsx";
-import Chatbot from "../../components/Chatbot.tsx";
-import Footer from "../../components/Footer.tsx";
+import questions from "../Javascript/questions.js";
+import NavigationBar from "../components/NavBarLogin.tsx";
+import Chatbot from "../components/Chatbot.tsx";
+import Footer from "../components/Footer.tsx";
 import useSound from "use-sound";
-import bgSound from "../../assets/bg_music.mp3";
+import bgSound from "../assets/bg_music.mp3";
 import { FaMusic, FaStop } from "react-icons/fa";
 import { FaVolumeMute } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import question1 from "../../assets/quiz/question1.avif"
+import question1 from "../assets/quiz/question1.avif"
 import { Height } from "@mui/icons-material";
 
 function GeneralQuiz() {
@@ -22,11 +22,12 @@ function GeneralQuiz() {
   const [emoji, setEmoji] = useState("")
   const [isLoading, setLoading] = useState(true);
   const [pauseStatus, setPauseStatus] = useState(false);
+  const [quizStatus, setquizstatus] = useState("incomplete")
   const [play, { stop }] = useSound(bgSound, {
     interrupt: true,
   });
 
-  const imagefolder = [question1]
+
   const handleStop = () => {
     setPauseStatus(true);
     stop();
@@ -54,7 +55,9 @@ function GeneralQuiz() {
 
   useEffect(() => {
     console.log(pauseStatus);
-    
+    if (showResults) {
+      setquizstatus("complete")
+    }
     if (pauseStatus === false) {
       // play();
     } else {
