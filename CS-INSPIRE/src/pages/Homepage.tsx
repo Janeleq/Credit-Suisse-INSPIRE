@@ -3,9 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import Footer from '../components/Footer.tsx';
 import Chatbot from '../components/Chatbot.tsx'
-import affinityBias from '../assets/affinityBias.png'
-import haloBias from ''
-import ageismBias from '../assets/ageism.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -310,12 +307,7 @@ const HomePage = () => {
               className="text-center w-50 mx-auto"
               style={{ display: "block", margin: "auto" }}
             >
-              There are various types of unconscious biases that we need to
-              examine and understand. These include, but are not limited to,
-              confirmation bias, affinity bias, halo effect, beauty bias,
-              ageism, and stereotypes. Each bias contributes to distorted
-              perceptions and can influence our attitudes and behaviors towards
-              individuals or groups.
+          
             </p>
             <br />
             <div
@@ -326,7 +318,7 @@ const HomePage = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="w-75 h-75 text-center">
                   Affinity bias
-                  <img src={affinityBias} className="w-75 h-75" />
+                  <img src="" className="w-75 h-75" />
                   <p className="w-75" style={{ marginLeft: "12%" }}>
                     The tendency to favor people who share similar interests,
                     backgrounds, and experiences with us
@@ -336,7 +328,7 @@ const HomePage = () => {
               <div className="col-sm-6 col-lg-4 mx-auto">
                 <div className="w-75 h-75 text-center">
                   Confirmation bias
-                  <img src={affinityBias} className="w-75 h-75" />
+                  <img src="" className="w-75 h-75" />
                   <p className="w-75" style={{ marginLeft: "12%" }}>
                     The tendency to cherry-pick information that confirms our
                     existing beliefs or ideas
@@ -365,7 +357,7 @@ const HomePage = () => {
               <div className="col col-sm-6 col-lg-4 text-center">
                 Gender bias <br />
                 <div className="w-75 h-75 text-center">
-                  <img src={affinityBias} className="w-75 h-75" />
+                  <img src="" className="w-75 h-75" />
                   <p className="w-75" style={{ marginLeft: "12%" }}>
                     The tendency to favor people who share similar interests,
                     backgrounds, and experiences with us
@@ -375,7 +367,7 @@ const HomePage = () => {
               <div className="col col-sm-6 col-lg-4">
                 Ageism
                 <div className="w-75 h-75 text-center">
-                  <img src={ageismBias} className="w-75 h-75" />
+                  <img src="" className="w-75 h-75" />
                   <p className="w-75" style={{ marginLeft: "12%" }}>
                     The tendency to favor people who share similar interests,
                     backgrounds, and experiences with us

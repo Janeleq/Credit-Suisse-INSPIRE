@@ -64,7 +64,13 @@ function AgeismTwo() {
           </p>
           <br />
           <button className="btn">
-            <NavLink className="bg-dark text-white p-3" style={{textDecoration: 'none', borderRadius: '5px'}} to="/bias/ageismRoleplayContOne">Proceed</NavLink>
+            <NavLink
+              className="bg-dark text-white p-3"
+              style={{ textDecoration: "none", borderRadius: "5px" }}
+              to="/bias/ageismRoleplayContOne"
+            >
+              Proceed
+            </NavLink>
           </button>
         </div>
       </div>

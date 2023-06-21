@@ -20,6 +20,8 @@ function AgeismFour() {
   const [candidate, setCandidate] = useState("");
   const [chosenDesc, setChosenDesc] = useState("");
   const [isLoading, setLoading] = useState(true);
+  const [noActionFavorable, setNoActionsFavorable] = useState(0);
+  // const [noActionFavorable, setNoActionsFavorable] = useState(0);
   const navigate = useNavigate();
 
   function someRequest() {
@@ -62,6 +64,10 @@ function AgeismFour() {
       );
       setFavorable("✔️ Favorable");
     }
+
+    if (favorable == "✔️ Favorable") {
+      setNoActionsFavorable(1);
+    }
   });
 
   const handleChoice = (event, param) => {
@@ -79,6 +85,7 @@ function AgeismFour() {
           outcome: outcome,
           action: action,
           candidate: candidate,
+          noFavorable: noActionFavorable,
         },
       });
     } else {
