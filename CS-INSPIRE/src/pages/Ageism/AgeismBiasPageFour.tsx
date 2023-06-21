@@ -4,10 +4,10 @@ import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
-import projectBg from "../../assets/workplaceDynamics.png";
+import teamDynamics from "../../assets/ageism/teamDynamics.jpg";
 import mediateIcon from "../../assets/mediate.png";
 import sideIcon from "../../assets/biasIcon.png";
-import ignoranceIcon from "../../assets/ignoranceIcon.png";
+import ignoranceIcon from "../../assets/ageism/ignoranceIcon.svg";
 import actionIcon from "../../assets/action.png";
 
 function AgeismFour() {
@@ -122,23 +122,24 @@ function AgeismFour() {
           className="mt-4 p-5"
           style={{
             height: "80vh",
-            backgroundImage: `url(${projectBg})`,
+            backgroundImage: `url(${teamDynamics})`,
             backgroundSize: "cover",
           }}
         >
           <div className="">
-            <h4>Act 2: Team Dynamics</h4>
-            <p className="w-50 mx-auto" style={{ padding: "10px" }}>
+            <h4 style={{fontSize: '1.6rem'}}>Act 2: Team Dynamics</h4>
+            <p className="w-50 mx-auto" style={{ padding: "10px", backgroundColor: "", borderRadius: '5px', fontSize: '1.2rem'}}>
               Now that the team leader has been chosen for the project, the
               project progresses. However as time passes, conflicts arise within
               the team.{" "}
             </p>
 
-            <p className="mt-5">
+            <p className="mt-5" style={{ fontSize: '1.2rem' }}>
               Emma and John have differing approaches due to their generational
-              differences.
+              differences. <br/><br/><br/>  
+              As the manager, what would you do?
             </p>
-            <p className="mb-5">As the manager, what would you do?</p>
+    
           </div>
         </div>
         <p className="lead mt-4">

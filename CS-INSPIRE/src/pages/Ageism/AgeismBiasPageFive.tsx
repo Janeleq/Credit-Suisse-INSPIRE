@@ -7,8 +7,8 @@ import outcomeIcon from "../../assets/outcomeIcon.png";
 
 import trainingBg from "../../assets/trainingAndDevelopmentBg.png";
 import importanceIcon from "../../assets/ageism/dismissImportanceIcon.png";
-import liaseIcon from "../../assets/ageism/liaseIcon.png";
-import trainingIcon from "../../assets/ageism/trainingYounger.png";
+import liaseIcon from "../../assets/ageism/liaseIcon.svg";
+import trainingIcon from "../../assets/ageism/trainingIcon.svg";
 
 function AgeismFive() {
   const { state } = useLocation();
@@ -117,22 +117,35 @@ function AgeismFive() {
             backgroundSize: "cover",
           }}
         >
-          <h4>Act 3: Training and Development</h4>
-          <p className="w-50 mx-auto">
+          <h4 style={{ fontSize: "1.6rem", marginBottom: "4vh" }}>
+            Act 3: Training and Development
+          </h4>
+          <p
+            className="w-50 mx-auto bg-light p-2"
+            style={{ fontSize: "1.2rem", borderRadius: "5px" }}
+          >
             It is now weeks past the project and you feel like the team could
             have some further training and development to further their
             skillsets to excel in the project. As such, you look to the various
             training programs offered by the company to enhance employee skills.{" "}
           </p>
 
-          <p className="mt-5 w-50 mx-auto">
+          <p
+            className="mt-5 w-50 mx-auto bg-light p-2"
+            style={{ fontSize: "1.2rem", borderRadius: "5px" }}
+          >
             After looking through quite some time, you found a unique training
             program that you think would suit the employees well. However, there
             is only two opportunity slot for this training program, but you
             realise you have 3 employees at hand.
           </p>
           <br />
-          <p className="mb-5">As the manager, what would you do?</p>
+          <p
+            className="mb-5 p-2 bg-light w-50 mx-auto"
+            style={{ fontSize: "1.2rem", borderRadius: "5px" }}
+          >
+            As the manager, what would you do?
+          </p>
         </div>
 
         <div

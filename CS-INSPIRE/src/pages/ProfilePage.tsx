@@ -18,6 +18,8 @@ function Profile() {
     const [photo, setPhoto] = useState('')
     const [id, setId] = useState('')
     const [login, setLoginTime] = useState('')
+    const [quizStatus, setquizstatus] = useState("incomplete")
+    const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete")
     console.log(user)
     const {state} = useLocation()
 
@@ -48,6 +50,13 @@ function Profile() {
   
     useEffect(() => {
 
+            if (state.quiz){
+                setquizstatus("complete")
+            }
+
+            if (state.biasCheck){
+                setbiasCheckStatus("complete")
+            }
     //   writeUserData()
       someRequest().then(() => {
         const loaderElement = document.querySelector(".loader-container");
@@ -138,7 +147,7 @@ function Profile() {
                     <div className="col-lg-6">
                         
                         <div className="about-text go-to">
-                            <h3 className="">Name</h3>
+                            <h2 className="">Name</h2>
                         
                 
                             <div className="row about-list">
@@ -147,7 +156,7 @@ function Profile() {
                                         {/* <label>Name: &nbsp;</label> */}
                                         <p>{ name }</p>
                                     </div><br/>
-                                    <h3 className="">Email <button className = "m-1 p-1" style={{fontSize: '16px'}} onClick={updateEmail}>Update</button></h3>
+                                    <h2 className="">Email <button className = "m-1 p-1" style={{fontSize: '16px'}} onClick={updateEmail}>Update</button></h2>
                                     <div className="media">
                                         {/* <label className=''>Email:&nbsp;</label> */}
                                         <p>{ email }</p>
@@ -155,7 +164,7 @@ function Profile() {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <h3 className="">User ID</h3>
+                                    <h2 className="">User ID</h2>
                                     <div className="media">
                                             {/* <label className=''>Email:&nbsp;</label> */}
                                             <p>{ id }</p>
@@ -176,19 +185,21 @@ function Profile() {
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="150" data-speed="150">0/4</h6>
                                 <p className="m-0px font-w-600">Paths Encountered</p>
-                                {ageismStatus}
+                                Ageism: {ageismStatus}
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="850" data-speed="850">850</h6>
-                                <p className="m-0px font-w-600">No of Quizzes Completed</p>
+                                <p className="m-0px font-w-600">Unconscious Bias Quiz</p>
+                                {quizStatus}
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="190" data-speed="190">190</h6>
-                                <p className="m-0px font-w-600">Talk Participated</p>
+                                <p className="m-0px font-w-600">Bias Reality Check</p>
+                                {biasCheckStatus}
                             </div>
                         </div>
                     </div>

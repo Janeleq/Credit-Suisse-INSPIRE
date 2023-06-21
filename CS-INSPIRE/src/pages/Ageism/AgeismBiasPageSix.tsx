@@ -4,7 +4,7 @@ import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
-import evaluationBg from "../../assets/evaluationBg.png";
+import evaluationBg from "../../assets/ageism/performanceEval.jpg";
 import contributionIcon from "../../assets/ageism/contributionIcon.png";
 import evaluationIcon from "../../assets/ageism/evaluationIcon.png";
 import energeticIcon from "../../assets/ageism/energeticIcon.png";
@@ -102,6 +102,7 @@ function AgeismSix() {
             height: "80vh",
             backgroundImage: `url(${evaluationBg})`,
             backgroundSize: "cover",
+            backgroundPosition: 'center',
           }}
         >
           <h4>Act 4: Performance Evaluation</h4>
