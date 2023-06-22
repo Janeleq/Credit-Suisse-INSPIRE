@@ -32,7 +32,7 @@ const HomePage = () => {
 
     return(
         <div className='container-fluid bg-light p-0 h-100 w-100' style={{overflow: 'hidden'}}>
-          <div className='' style={{marginTop: '9vh', width: '100vw'}}>
+          <div className='' style={{marginTop: '5vh', width: '100vw'}}>
             <NavigationBar/>
             <Chatbot/>
             <div className="parallaxContainer m-0 parallax" style={{}}>
@@ -133,11 +133,11 @@ const HomePage = () => {
                       </h1>
                       <h3 className="h2">Aliquip ex ea commodo consequat</h3>
                       <p>
-                        You are permitted to use this Zay CSS template for your
+                        {/* You are permitted to use this Zay CSS template for your
                         commercial websites. You are{" "}
                         <strong>not permitted</strong> to re-distribute the
                         template ZIP file in any kind of template collection
-                        websites.
+                        websites. */}
                       </p>
                     </div>
                   </div>

@@ -116,13 +116,6 @@ function NavigationBarLogin() {
               Community
             </Nav.Link>
 
-            <Nav.Link
-              className="m-3"
-              style={{ fontWeight: "500" }}
-              onClick={goHelp}
-            >
-              Help
-            </Nav.Link>
             <NavDropdown
               className="m-3 float-end"
               style={{ display: "block", fontWeight: "500" }}
@@ -135,6 +128,13 @@ function NavigationBarLogin() {
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={goQuizzes}>Quizzes</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link
+              className="m-3"
+              style={{ fontWeight: "500" }}
+              onClick={goHelp}
+            >
+              Contact Us
+            </Nav.Link>
             <NavDropdown
               className="m-3 float-end"
               style={{ display: "block" }}

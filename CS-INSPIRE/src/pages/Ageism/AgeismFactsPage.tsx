@@ -59,7 +59,7 @@ function AgeismFacts() {
     <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
 
-      <div className="row" style={{ marginTop: "8vh" }}>
+      <div className="row" style={{ marginTop: "5vh" }}>
         <div
           style={{ backgroundImage: `url(${pastelgreyBg})`, height: "80vh" }}
         >

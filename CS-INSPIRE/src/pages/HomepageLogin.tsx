@@ -333,7 +333,7 @@ export const HomePageLogin = () => {
             and stereotypes. Each bias contributes to distorted perceptions and
             can influence our attitudes and behaviors towards individuals or
             groups.<br/><br/><button data-aos="fade-up"
-            data-aos-delay="300"><NavLink style = {{textDecoration: 'none', color: 'white'}} to = "/roleplay">Roleplay</NavLink></button>
+            data-aos-delay="300"><NavLink style = {{textDecoration: 'none', color: 'white'}} to = "/explore">Roleplay</NavLink></button>
             <p className="text-muted mt-1" style={{fontSize: '15px'}}>explore the different unconscious biases through roleplay!</p>
           </p>  
           

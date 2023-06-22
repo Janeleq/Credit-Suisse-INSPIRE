@@ -182,7 +182,7 @@ function GeneralQuiz() {
                     {questions[currentQuestion].text}
                   </h5>
                 </div>
-                {explanation}
+                {/* {explanation} */}
                 <ul style={{ backgroundColor: 'aliceblue'}}>
                   {questions[currentQuestion].options.map((option) => {
                     return (
