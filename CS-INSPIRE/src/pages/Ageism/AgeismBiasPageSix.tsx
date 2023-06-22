@@ -98,7 +98,7 @@ function AgeismSix() {
             src={outcomeBg}
             style={{ width: "500px", height: "500px", float: "left" }}
           />
-          <h2 className="lead" style={{ marginTop: "20vh" }}>
+          <h3 className="" style={{ marginTop: "20vh" }}>
             {/* <p>{descOutcome[1]}</p> */}
             <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} />{" "}
             &nbsp; Outcome / Consequence of your action
@@ -106,8 +106,8 @@ function AgeismSix() {
             <span className="text-muted" style={{ marginLeft: "-2%" }}>
               {favorable}
             </span>
-          </h2>
-          <p>{descOutcome[2]}</p>
+          </h3>
+          <p style={{fontSize: '1.2rem'}}>{descOutcome[2]}</p>
         </div>
         <div
           className="p-5"

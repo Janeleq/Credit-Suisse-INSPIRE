@@ -112,15 +112,15 @@ function AgeismFive() {
       />
         {/* <NavLink to="/bias/ageismRolePlayContThree"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
-        <h2 className="lead" style={{ marginTop: "20vh" }}>
+        <h3 className="" style={{ marginTop: "20vh" }}>
           <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} /> &nbsp;
           Outcome / Consequence of your action
           <br />
           <span className="text-muted" style={{ marginLeft: "-2%" }}>
             {favorable}
           </span>
-        </h2>
-        <p>{descOutcome}</p>
+        </h3>
+        <p style={{fontSize: '1.2rem'}}>{descOutcome}</p>
       </div>
         <div
           className="p-5"

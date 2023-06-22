@@ -126,15 +126,15 @@ function AgeismFour() {
 
           {/* {reflection} */}
 
-          <h2 className="lead" style={{ marginTop: "20vh" }}>
+          <h3 className="" style={{ marginTop: "20vh" }}>
             <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} />{" "}
             &nbsp; Outcome / Consequence of your action <br />{" "}
             <span className="text-muted" style={{ marginLeft: "-2%" }}>
               {favorable}
             </span>
-          </h2>
+          </h3>
 
-          <p>{outcome}</p>
+          <p style={{fontSize: '1.2rem'}}>{outcome}</p>
         </div>
         <div
           className="p-5"

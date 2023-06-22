@@ -111,7 +111,7 @@ function AgeismSix() {
           />
           {/* <NavLink to="/bias/ageismRolePlayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
-          <h2 className="lead" style={{ marginTop: "20vh" }}>
+          <h3 className="" style={{ marginTop: "20vh" }}>
             {/* <p>{descOutcome[1]}</p> */}
             <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} />{" "}
             &nbsp; Outcome / Consequence of your action
@@ -119,8 +119,8 @@ function AgeismSix() {
             <span className="text-muted" style={{ marginLeft: "-2%" }}>
               {favorable}
             </span>
-          </h2>
-          <p>{descOutcome[2]}</p>
+          </h3>
+          <p className="mx-auto" style={{fontSize: '1.2rem'}}>{descOutcome[2]}</p>
         </div>
         <div
           className="p-5"
