@@ -15,7 +15,7 @@ import ContactPage from './pages/ContactPage.tsx'
 
 // Halo Effect Pages
 import HaloEffectPage from './pages/HaloEffect/HaloEffectPage.tsx'
-import HaloEffectQuizPage from './pages/HaloEffect/HaloEffectQuizPage.tsx'
+import HaloEffectFactsPage from './pages/HaloEffect/HaloEffectFactsPage.tsx'
 import HaloEffectRoleplayPage from './pages/HaloEffect/HaloEffectRoleplay.tsx'
 import HaloEffectRoleplayContOne from './pages/HaloEffect/HaloEffectPageTwo.tsx'
 import HaloEffectRoleplayContTwo from './pages/HaloEffect/HaloEffectPageThree.tsx'
@@ -51,7 +51,6 @@ import AgeismRoleplayContTwo from './pages/Ageism/AgeismBiasPageFour.tsx'
 import AgeismRoleplayContThree from './pages/Ageism/AgeismBiasPageFive.tsx'
 import AgeismRoleplayContFour from './pages/Ageism/AgeismBiasPageSix.tsx'
 import AgeismRoleplayContFive from './pages/Ageism/AgeismBiasPageSeven.tsx'
-import AgeismRoleplayContSix from './pages/Ageism/AgeismBiasPageEight.tsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js"
@@ -103,8 +102,8 @@ const router = createBrowserRouter([
     element: <HaloEffectPage/>  
   },
   {
-    path: "/bias/haloeffectQuiz",
-    element: <HaloEffectQuizPage/>
+    path: "/bias/haloEffectFacts",
+    element: <HaloEffectFactsPage/>
   },
   {
     path: "/bias/haloEffectRoleplay",
@@ -220,10 +219,6 @@ const router = createBrowserRouter([
   {
     path: "/bias/ageismRoleplayContFive",
     element: <AgeismRoleplayContFive/>
-  },
-  {
-    path: "/bias/ageismRoleplayContSix",
-    element: <AgeismRoleplayContSix/>
   },
   {
     path: "/quiz",

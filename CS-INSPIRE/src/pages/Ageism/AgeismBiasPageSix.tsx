@@ -8,6 +8,8 @@ import evaluationBg from "../../assets/ageism/performanceEval.jpg";
 import contributionIcon from "../../assets/ageism/contributionIcon.png";
 import evaluationIcon from "../../assets/ageism/evaluationIcon.png";
 import energeticIcon from "../../assets/ageism/energeticIcon.png";
+import pastelGreyBg from "../../assets/pastelGreyBg.png";
+import outcomeBg from "../../assets/outcomeBg.svg";
 
 function AgeismSix() {
   const { state } = useLocation();
@@ -39,7 +41,7 @@ function AgeismSix() {
     }
 
     if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(3);
+      setNoActionsFavorable(state.noFavorable + 1)
     }
 
     setCandidate(state.candidate);
@@ -83,26 +85,37 @@ function AgeismSix() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "15vh" }}
+        style={{ marginTop: "" }}
       >
-        <h2 className="lead">
-          {/* <p>{descOutcome[1]}</p> */}
-          <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} /> &nbsp;
-          Outcome / Consequence of your action
-          <br />
-          <span className="text-muted" style={{ marginLeft: "-2%" }}>
-            {favorable}
-          </span>
-        </h2>
-        <p>{descOutcome[2]}</p>
-
         <div
-          className="mt-4 p-5"
+          className=""
+          style={{
+            backgroundImage: `url(${pastelGreyBg})`,
+            borderBottom: "1px solid grey",
+          }}
+        >
+          <img
+            src={outcomeBg}
+            style={{ width: "500px", height: "500px", float: "left" }}
+          />
+          <h2 className="lead" style={{ marginTop: "20vh" }}>
+            {/* <p>{descOutcome[1]}</p> */}
+            <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} />{" "}
+            &nbsp; Outcome / Consequence of your action
+            <br />
+            <span className="text-muted" style={{ marginLeft: "-2%" }}>
+              {favorable}
+            </span>
+          </h2>
+          <p>{descOutcome[2]}</p>
+        </div>
+        <div
+          className="p-5"
           style={{
             height: "80vh",
             backgroundImage: `url(${evaluationBg})`,
             backgroundSize: "cover",
-            backgroundPosition: 'center',
+            backgroundPosition: "center",
           }}
         >
           <h4>Act 4: Performance Evaluation</h4>

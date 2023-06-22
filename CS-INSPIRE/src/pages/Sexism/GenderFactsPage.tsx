@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavBarLogin.tsx";
 import Footer from "../../components/Footer.tsx";
 import background from "../../assets/genderBackground.png";
+import pastelgreyBg from "../../assets/pastelGreyBg.png"
+import ageismIntroIcon from "../../assets/ageism/ageismFactsIntro.svg";
 
 function GenderFacts() {
   const [isLoading, setLoading] = useState(true);
@@ -49,10 +51,68 @@ function GenderFacts() {
 
   return (
     <div
-      className="container-fluid bootdey p-0"
+      className="container-fluid p-0"
       style={{ backgroundImage: `url(${background})`, overflow: "hidden" }}
     >
       <NavigationBar />
+
+      <div className="row" style={{ marginTop: "8vh" }}>
+        <div
+          style={{ backgroundImage: `url(${pastelgreyBg})`, height: "80vh" }}
+        >
+          <img
+            src={ageismIntroIcon}
+            style={{
+              float: "right",
+              width: "",
+              zIndex: 2,
+              marginTop: "20vh",
+              paddingRight: "2vw",
+            }}
+          />
+          {/* <h2 className="lead" style={{ marginTop: '20vh', paddingLeft:'5vw'}}>Some statistics and facts about Ageism!</h2> */}
+          <h3
+            style={{
+              marginTop: "18vh",
+              paddingLeft: "5vw",
+              fontSize: "90px",
+              fontWeight: "700",
+              fontFamily: "Concert One, cursive",
+            }}
+          >
+            Gender Bias / Sexism:
+            <br />
+            <span
+              className="lead"
+              style={{
+                fontFamily: "Concert One, cursive",
+                fontWeight: "200",
+                fontSize: "60px",
+              }}
+            >
+              statistics & facts
+            </span>
+          </h3>
+        </div>
+
+        {/* <figure className="text-center mb-0">
+          <blockquote className="blockquote">
+            <p className="pb-2">
+              <span className="lead font-italic">
+                Globally, the employment rate for men is 75%, while women stands
+                at around 50%.
+              </span>
+              <br />
+              <span style={{ fontSize: "0.875rem" }}>
+                Seems like some unconscious bias going on in the workforce?
+              </span>
+            </p>
+          </blockquote>
+          <figcaption className="blockquote-footer mb-0">
+            World Bank (2018)
+          </figcaption>
+        </figure> */}
+      </div>
 
       <div
         className=""

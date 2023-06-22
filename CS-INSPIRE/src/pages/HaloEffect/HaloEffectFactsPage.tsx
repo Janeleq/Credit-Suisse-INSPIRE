@@ -8,7 +8,7 @@ import statisticTwo from "../../assets/ageism/ageismStatsTwo.png"
 import pastelgreyBg from "../../assets/pastelGreyBg.png";
 import ageismIntroIcon from "../../assets/ageism/ageismFactsIntro.svg";
 
-function BeautyFacts() {
+function HaloEffectFacts() {
   const [isLoading, setLoading] = useState(true);
   const [isNewName, setNewName] = useState(false);
   const [name, setName] = useState("");
@@ -52,7 +52,7 @@ function BeautyFacts() {
   });
 
   return (
-    <div className="container-fluid bootdey p-0" style={{ overflow: "hidden" }}>
+    <div className="container-fluid p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
 
       <div className="row" style={{ marginTop: "8vh" }}>
@@ -79,7 +79,7 @@ function BeautyFacts() {
               fontFamily: "Concert One, cursive",
             }}
           >
-            Beauty Bias:
+            Halo Effect:
             <br />
             <span
               className="lead"
@@ -130,4 +130,4 @@ function BeautyFacts() {
   );
 }
 
-export default BeautyFacts;
+export default HaloEffectFacts;

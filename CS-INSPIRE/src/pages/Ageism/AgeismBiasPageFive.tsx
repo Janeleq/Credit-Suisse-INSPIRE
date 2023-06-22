@@ -9,6 +9,8 @@ import trainingBg from "../../assets/trainingAndDevelopmentBg.png";
 import importanceIcon from "../../assets/ageism/dismissImportanceIcon.png";
 import liaseIcon from "../../assets/ageism/liaseIcon.svg";
 import trainingIcon from "../../assets/ageism/trainingIcon.svg";
+import outcomeBg from "../../assets/outcomeBg.svg";
+import pastelGreyBg from "../../assets/pastelGreyBg.png";
 
 function AgeismFive() {
   const { state } = useLocation();
@@ -30,7 +32,7 @@ function AgeismFive() {
   }
 
   useEffect(() => {
-    setNoActionsFavorable(state.noFavorable);
+    // setNoActionsFavorable(state.noFavorable);
     setCandidate(state.candidate);
     setReflection(state.reflection);
     someRequest().then(() => {
@@ -61,7 +63,7 @@ function AgeismFive() {
       setFavorable("❌ Not favorable");
     }
     if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(2);
+      setNoActionsFavorable(state.noFavorable + 1)
     }
   });
 
@@ -95,22 +97,33 @@ function AgeismFive() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "15vh" }}
-      >
+        style={{ marginTop: "" }}
+      >        
+      <div
+      className=""
+      style={{
+        backgroundImage: `url(${pastelGreyBg})`,
+        borderBottom: "1px solid grey",
+      }}
+    >
+      <img
+        src={outcomeBg}
+        style={{ width: "500px", height: "500px", float: "left" }}
+      />
         {/* <NavLink to="/bias/ageismRolePlayContThree"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
 
-        <h2 className="lead">
+        <h2 className="lead" style={{ marginTop: "20vh" }}>
           <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} /> &nbsp;
           Outcome / Consequence of your action
-          <br /> {noActionFavorable}
+          <br />
           <span className="text-muted" style={{ marginLeft: "-2%" }}>
             {favorable}
           </span>
         </h2>
         <p>{descOutcome}</p>
-
+      </div>
         <div
-          className="mt-4 p-5"
+          className="p-5"
           style={{
             height: "80vh",
             backgroundImage: `url(${trainingBg})`,

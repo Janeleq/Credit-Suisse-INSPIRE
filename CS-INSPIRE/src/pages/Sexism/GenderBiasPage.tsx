@@ -21,7 +21,7 @@ function Genderbias() {
 
   function SexismFacts() {
     console.log("Heading to facts page");
-    navigate("/bias/gender/facts", { state: { email: email } });
+    navigate("/bias/gender/facts", { state: {  } });
   }
 
   useEffect(() => {

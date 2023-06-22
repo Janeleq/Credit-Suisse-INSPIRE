@@ -52,12 +52,12 @@ function Ageism() {
             backgroundImage: `url(${background})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "120vh",
+            height: "130vh",
           }}
         ></div>
         <div
           className="col-sm-12 col-md-8 col-lg-6 text-center bg-white"
-          style={{ height: "120vh" }}
+          style={{ height: "130vh" }}
         >
           <div className="section-title mt-5">
             <h4 className="title mb-4">

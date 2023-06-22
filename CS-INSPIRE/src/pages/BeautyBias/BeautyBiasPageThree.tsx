@@ -9,7 +9,7 @@ import mediateIcon from "../../assets/mediate.jpg"
 import sideIcon from "../../assets/sideIcon.png"
 import actionIcon from "../../assets/action.png"
 import resumeIcon from "../../assets/resumeIcon.jpg"
-import openEndedIcon from "../../assets/openEndedQuesIcoon.png"
+// import openEndedIcon from "../../assets/openEndedQuesIcoon.png"
 import interviewingBg from "../../assets/interviewingBg.jpeg"
 
 function BeautyBiasThree() {
@@ -97,7 +97,7 @@ function BeautyBiasThree() {
               </div>
                 <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [1, "You have chosen to make the effort to ask open-ended questions that allow applicants to showcase their interests, values, and experiences provides a holistic view of their character and potential."])}>
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
-                        <img src={openEndedIcon} style={{borderRadius: '50%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                        <img src="" style={{borderRadius: '50%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 1</h4>
                             <small className="text-muted">Asking open-ended questions that allow applicants to showcase their interests, values, and experiences provides a holistic view of their character and potential.<br/>

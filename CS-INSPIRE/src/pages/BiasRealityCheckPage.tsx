@@ -4,6 +4,7 @@ import questions from '../javascript/questions.js'
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Chatbot from "../components/Chatbot.tsx"
 import Footer from "../components/Footer.tsx";
+import biasBg from "../assets/biasrealitycheck/thinkingStylesInfo.png"
 
 function GeneralQuiz() {
 
@@ -56,6 +57,7 @@ function GeneralQuiz() {
     <div className="App container-fluid p-0" style={{overflow: 'hidden'}}>
       <NavigationBar/>
       <Chatbot/>
+      <img src={biasBg}/>
       <div className="row">
         <div className="col" style={{backgroundImage: ``}}>
             

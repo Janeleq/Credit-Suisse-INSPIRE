@@ -3,11 +3,11 @@ import Chatbot from "../components/Chatbot.tsx";
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Footer from "../components/Footer.tsx";
 import "../styles/_community.css";
-import valerie from "../assets/valerie.jpg";
-import anurag from "../assets/anurag.jpg";
-import jennifer from "../assets/jennifer.jpg";
-import tim from "../assets/tim.jfif";
-import communityBg from "../assets/communityBg.png";
+import valerie from "../assets/community/valerie.jpg";
+import anurag from "../assets/community/anurag.jpg";
+import jennifer from "../assets/community/jennifer.jpg";
+import tim from "../assets/community/tim.jfif";
+import communityBg from "../assets/community/communityBg.png";
 import { useLocation } from "react-router-dom";
 
 function Community() {

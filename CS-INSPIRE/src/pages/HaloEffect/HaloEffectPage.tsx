@@ -7,17 +7,22 @@ import actionIcon from "../../assets/action.png";
 import outcomeIcon from "../../assets/outcomeIcon.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function HaloEffect() {
   const [isLoading, setLoading] = useState(true);
+  // const [email, setEmail] = useState('')
   const navigate = useNavigate();
-
+  // const {state} = useLocation();
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
     return new Promise((resolve) => setTimeout(() => resolve(), 1000));
   }
 
   useEffect(() => {
+    // if (state.email) {
+    //   setEmail(state.email)
+    // }
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -34,7 +39,7 @@ function HaloEffect() {
 
   function HaloEffectFacts() {
     console.log("Heading to facts page");
-    navigate("/bias/haloEffectFacts", { state: { email: email } });
+    navigate("/bias/haloEffectFacts", { state: { } });
   }
 
   return (
@@ -145,7 +150,7 @@ function HaloEffect() {
 
                 <div className="guide w-50 mx-auto">
                   <p>Get to know some statistics regarding Halo Effect!</p>
-                  <i className="fa fa-male" aria-hidden="true"></i>
+
                   <button type="" onClick={HaloEffectFacts}>
                     View statistics
                   </button>

@@ -9,6 +9,8 @@ import mediateIcon from "../../assets/mediate.png";
 import sideIcon from "../../assets/biasIcon.png";
 import ignoranceIcon from "../../assets/ageism/ignoranceIcon.svg";
 import actionIcon from "../../assets/action.png";
+import outcomeBg from "../../assets/outcomeBg.svg";
+import pastelGreyBg from "../../assets/pastelGreyBg.png";
 
 function AgeismFour() {
   const { state } = useLocation();
@@ -48,6 +50,7 @@ function AgeismFour() {
   });
 
   useEffect(() => {
+    
     if (candidate == "Alex") {
       setOutcome(
         "😔 Selecting Alex solely based on experience may perpetuate age-related biases."
@@ -67,6 +70,10 @@ function AgeismFour() {
 
     if (favorable == "✔️ Favorable") {
       setNoActionsFavorable(1);
+    }
+
+    else {
+      setNoActionsFavorable(0);
     }
   });
 
@@ -102,24 +109,35 @@ function AgeismFour() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "15vh" }}
+        style={{ marginTop: "" }}
       >
-        {/* <NavLink to="/bias/ageismRoleplayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-
-        {/* {reflection} */}
-
-        <h2 className="lead">
-          <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} /> &nbsp;
-          Outcome / Consequence of your action <br />{" "}
-          <span className="text-muted" style={{ marginLeft: "-2%" }}>
-            {favorable}
-          </span>
-        </h2>
-
-        <p>{outcome}</p>
-
         <div
-          className="mt-4 p-5"
+          className=""
+          style={{
+            backgroundImage: `url(${pastelGreyBg})`,
+            borderBottom: "1px solid grey",
+          }}
+        >
+          <img
+            src={outcomeBg}
+            style={{ width: "500px", height: "500px", float: "left" }}
+          />
+          {/* <NavLink to="/bias/ageismRoleplayContTwo"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
+
+          {/* {reflection} */}
+
+          <h2 className="lead" style={{ marginTop: "20vh" }}>
+            <img src={outcomeIcon} alt="outcome" style={{ width: "3%" }} />{" "}
+            &nbsp; Outcome / Consequence of your action <br />{" "}
+            <span className="text-muted" style={{ marginLeft: "-2%" }}>
+              {favorable}
+            </span>
+          </h2>
+
+          <p>{outcome}</p>
+        </div>
+        <div
+          className="p-5"
           style={{
             height: "80vh",
             backgroundImage: `url(${teamDynamics})`,
@@ -127,19 +145,28 @@ function AgeismFour() {
           }}
         >
           <div className="">
-            <h4 style={{fontSize: '1.6rem'}}>Act 2: Team Dynamics</h4>
-            <p className="w-50 mx-auto" style={{ padding: "10px", backgroundColor: "", borderRadius: '5px', fontSize: '1.2rem'}}>
+            <h4 style={{ fontSize: "1.6rem" }}>Act 2: Team Dynamics</h4>
+            <p
+              className="w-50 mx-auto"
+              style={{
+                padding: "10px",
+                backgroundColor: "",
+                borderRadius: "5px",
+                fontSize: "1.2rem",
+              }}
+            >
               Now that the team leader has been chosen for the project, the
               project progresses. However as time passes, conflicts arise within
               the team.{" "}
             </p>
 
-            <p className="mt-5" style={{ fontSize: '1.2rem' }}>
+            <p className="mt-5" style={{ fontSize: "1.2rem" }}>
               Emma and John have differing approaches due to their generational
-              differences. <br/><br/><br/>  
+              differences. <br />
+              <br />
+              <br />
               As the manager, what would you do?
             </p>
-    
           </div>
         </div>
         <p className="lead mt-4">
