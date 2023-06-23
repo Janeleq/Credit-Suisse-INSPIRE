@@ -12,13 +12,14 @@ import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png";
 function AgeismSix() {
   const { state } = useLocation();
   // const {reflection} = state.reflection;
+  const [ageismStatus, setAgeismStatus] = useState("completed")
 
   const [candidate, setCandidate] = useState("");
   const [reflection, setReflection] = useState("");
   const [descOutcome, setDescOutcome] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
-  const [emoji, setEmoji] = useState("")
+  const [emoji, setEmoji] = useState("");
   const [noActionFavorable, setNoActionsFavorable] = useState(0);
   const [simulationResults, setSimulationResults] = useState("");
   const navigate = useNavigate();
@@ -29,19 +30,21 @@ function AgeismSix() {
   }
 
   useEffect(() => {
+    console.log("Running the end of ageism script")
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     setNoActionsFavorable(state.noFavorable);
     if (noActionFavorable < 2) {
-      setEmoji("😢")
+      setEmoji("😢");
       setSimulationResults(
         "You have selected options influenced by age bias, which hinders collaboration in the given scenario. You had rather conflicting perceptions and your actions have shown to be leaning more towards your unconscious bias."
       );
     } else if (noActionFavorable == 3) {
-      setEmoji("👍")
+      setEmoji("👍");
       setSimulationResults(
         "Great job right there! You are rather aware of your own unconscious bias and do not really let it affect you as much!"
       );
     } else {
-      setEmoji("😄")
+      setEmoji("😄");
       setSimulationResults(
         "Great job! You have selected options that challenge unconscious bias and promote inclusivity. Most importantly, you are clear and firm on your actions, considering the presence of unconscious bias."
       );
@@ -56,7 +59,7 @@ function AgeismSix() {
     }
 
     if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(state.noFavorable + 1)
+      setNoActionsFavorable(state.noFavorable + 1);
     }
 
     setCandidate(state.candidate);
@@ -70,7 +73,6 @@ function AgeismSix() {
     });
   });
 
-  console.log(descOutcome);
 
   const handleChoice = (event, param) => {
     console.log(event);
@@ -78,8 +80,11 @@ function AgeismSix() {
   };
 
   const Proceed = () => {
-    navigate("/bias/ageismRoleplayContSix", {
+
+    console.log(ageismStatus)
+    navigate("/profile", {
       state: {
+        ageismStatus: ageismStatus,
         outcome: descOutcome,
         candidate: candidate,
         reflection: reflection,
@@ -120,7 +125,9 @@ function AgeismSix() {
               {favorable}
             </span>
           </h3>
-          <p className="mx-auto" style={{fontSize: '1.2rem'}}>{descOutcome[2]}</p>
+          <p className="mx-auto" style={{ fontSize: "1.2rem" }}>
+            {descOutcome[2]}
+          </p>
         </div>
         <div
           className="p-5"
@@ -128,25 +135,24 @@ function AgeismSix() {
             height: "80vh",
             backgroundImage: `url(${pastelGreyBg})`,
             backgroundSize: "cover",
+            borderBottom: "1px solid grey",
           }}
         >
-          <h2 style={{ fontWeight: "bold", fontSize: '50px' }}>The End!</h2>
-          <p className="w-50 mx-auto" style={{fontSize: '1.2rem'}}>
+          <h2 style={{ fontWeight: "bold", fontSize: "50px" }}>The End!</h2>
+          <p className="w-50 mx-auto" style={{ fontSize: "1.2rem" }}>
             Congratulations on reaching till the end of Ageism roleplay. We hope
             through the roleplay you are able to see ageism more objectively.
             Based on the your choices, You had{" "}
-            <span style={{ fontWeight: "bold" }}>
-              {noActionFavorable}/4
-            </span>
-            &nbsp;favorable actions throughout this entire Ageism Roleplay. <br />
-            <br /><br /><br/>
-            <h3>
-              Overall Results:&nbsp;{emoji}
-            </h3> 
-       
-            {simulationResults}
+            <span style={{ fontWeight: "bold" }}>{noActionFavorable}/4</span>
+            &nbsp;favorable actions throughout this entire Ageism Roleplay.{" "}
+            <br />
+            <br />
+            <br />
             <br />
           </p>
+          <h3 className="">Overall Results:&nbsp;{emoji}</h3>
+            <span style={{width: '50vw'}} className="mx-auto">{simulationResults}</span> 
+            <br />
 
           {/* <p className='mt-5 w-50 mx-auto'>After looking through quite some time, you found a unique training program that you think would suit the employees well. However, there is only two opportunity slot for this training program, but you realise you have 3 employees at hand.</p> */}
           <br />
@@ -168,34 +174,36 @@ function AgeismSix() {
               color: "black",
             }}
           >
-            <span data-aos="fade-in" data-aos-delay="300">
-              The Role of Education and Continuous Learning
-            </span>
+            <h2 data-aos="fade-in" data-aos-delay="300">
+              <span style={{ fontWeight: "bold", fontSize: "50px" }}>
+              🏅 Continue Exploring and Learning
+              </span>
+            </h2>
           </h1>
           <br />
-          <p
+          <div
             className="lead"
             data-aos="fade-right"
             data-aos-delay="300"
-            style={{ color: "grey", fontSize: "20px", paddingLeft: "12vw" }}
+            style={{ color: "grey", fontSize: "20px", paddingLeft: "10vw" }}
           >
             <div className="row" style={{ paddingLeft: "" }}>
-              <div className="col-sm-12 w-75">
-                Congratulations on reaching till the end of Ageism roleplay. We
-                hope through the roleplay you are able to see ageism more
-                objectively.
+              <div className="col-sm-12 w-75" style={{paddingLeft: "10vw", textAlign: 'right'}}>
+               You have received a badge for completing this roleplay. Check
+                your profile to view the achievement badge.
+                <br/>
+                <button className="w-25 mx-auto mb-5" onClick={Proceed}>
+                View badge!
+              </button>
               </div>
             </div>
-          </p>
+          </div>
           <br />
           {/* <p className="lead" style={{ color: "" , paddingLeft: "12vw" }}>
           Foster a deeper understanding of the biases that shape
                         our perceptions and actions.
           </p> */}
         </div>
-        <button className="w-25 mx-auto mb-5" onClick={Proceed}>
-          Finish
-        </button>
       </div>
       <Footer />
     </div>

@@ -29,6 +29,7 @@ function AgeismSix() {
   }
 
   useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     setNoActionsFavorable(state.noFavorable);
     setDescOutcome(state.outcome);
     console.log(descOutcome[0]);
@@ -53,7 +54,7 @@ function AgeismSix() {
         setLoading(!isLoading);
       }
     });
-  });
+  }, []);
 
   const handleChoice = (event, param) => {
     console.log(event);

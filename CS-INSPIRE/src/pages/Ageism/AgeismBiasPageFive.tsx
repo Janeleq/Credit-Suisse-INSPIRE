@@ -32,6 +32,7 @@ function AgeismFive() {
   }
 
   useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     // setNoActionsFavorable(state.noFavorable);
     setCandidate(state.candidate);
     setReflection(state.reflection);
@@ -42,7 +43,7 @@ function AgeismFive() {
         setLoading(!isLoading);
       }
     });
-  });
+  }, []);
 
   useEffect(() => {
     if (action == 1) {

@@ -11,7 +11,6 @@ function Profile() {
     const auth = getAuth();
     const navigate = useNavigate();
     const user = auth.currentUser;
-    const [ageismStatus, setAgeismStatus] = useState('')
     const [email, setEmail] = useState('')
     const [output, setOutput] = useState('')
     const [name, setName] = useState('')
@@ -20,7 +19,7 @@ function Profile() {
     const [login, setLoginTime] = useState('')
     const [quizStatus, setquizstatus] = useState("incomplete")
     const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete")
-    console.log(user)
+    const [ageismStatus, setAgeismStatus] = useState("incomplete")
     const {state} = useLocation()
 
     // function writeUserData(userId, name, email, imageUrl) {
@@ -49,15 +48,20 @@ function Profile() {
     } 
   
     useEffect(() => {
+        console.log(state)
+        if (state.ageismStatus) {
+            setAgeismStatus(state.ageismStatus)
+        }
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 
-            if (state.quiz){
-                setquizstatus("complete")
-            }
+    //         if (state.quiz){
+    //             setquizstatus("complete")
+    //         }
 
-            if (state.biasCheck){
-                setbiasCheckStatus("complete")
-            }
-    //   writeUserData()
+    //         if (state.biasCheck){
+    //             setbiasCheckStatus("complete")
+    //         }
+
       someRequest().then(() => {
         const loaderElement = document.querySelector(".loader-container");
         if (loaderElement) {
@@ -69,7 +73,7 @@ function Profile() {
     );
 
     useEffect(() => {
-        setAgeismStatus(window.ageismStatus)
+
         if (ageismStatus == 'complete') {
             setOutput(`<div style=color: green>complete</div>`)
         }
@@ -185,7 +189,10 @@ function Profile() {
                             <div className="count-data text-center">
                                 <h6 className="count h2" data-to="150" data-speed="150">0/4</h6>
                                 <p className="m-0px font-w-600">Paths Encountered</p>
-                                Ageism: {ageismStatus}
+                                1. Ageism: {ageismStatus}<br/>
+                                2. Gender Bias / Sexism: <br/>
+                                3. Halo Effect: <br/>
+                                4. Beauty Bias: <br/>
                             </div>
                         </div>
                         <div className="col-6 col-lg-3">

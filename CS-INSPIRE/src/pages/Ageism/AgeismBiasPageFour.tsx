@@ -32,6 +32,7 @@ function AgeismFour() {
   }
 
   useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     if (state.reflection == "null") {
       setReflection("You did not enter any reflection");
     } else {
@@ -47,7 +48,7 @@ function AgeismFour() {
         setLoading(!isLoading);
       }
     });
-  });
+  }, []);
 
   useEffect(() => {
     
