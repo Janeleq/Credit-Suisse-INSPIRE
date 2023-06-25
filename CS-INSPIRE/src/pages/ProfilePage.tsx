@@ -8,7 +8,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { db } from "../firebase/firebase.js";
 import { uid } from "uid";
 import { get, ref, onValue } from "firebase/database";
-import { TodayOutlined } from "@mui/icons-material";
 
 function Profile() {
   const auth = getAuth();
@@ -27,20 +26,17 @@ function Profile() {
 
 
   //read statuses of roleplay from database
-  const getFromDatabase = () => {
-    const userId = auth.currentUser.uid;
-     onValue(ref(db), (snapshot) => {
-      const data = snapshot.val();
-      if (data!== null) {
-        Objec .values(data).map((status) => {
-            setAgeismStatus(())
-        }
-      }
-      // ...
-    }, {
-      onlyOnce: true
-    });
-  };
+//   const getFromDatabase = () => {
+//     const userId = auth.currentUser.uid;
+//      onValue(ref(db), (snapshot) => {
+//       const data = snapshot.val();
+//       if (data!== null) {
+//         Object.values(data).map(status) => {
+//             setStatuses(oldArray_ => [...oldArray, status])
+//         }
+//       }
+//      })
+//     }
   // function writeUserData(userId, name, email, imageUrl) {
   // const db = getDatabase();
   // set(ref(db, 'users/' + userId), {
@@ -70,7 +66,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    getFromDatabase()
+    // getFromDatabase()
 
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
@@ -193,7 +189,7 @@ function Profile() {
                     <button
                       className="m-1 p-1"
                       style={{ fontSize: "16px" }}
-                      onClick={getFromDatabase}
+                    //   onClick={getFromDatabase}
                     >
                       Update
                     </button>

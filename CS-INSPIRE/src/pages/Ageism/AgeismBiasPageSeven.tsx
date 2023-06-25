@@ -211,7 +211,7 @@ function AgeismSix() {
                You have received a badge for completing this roleplay. Check
                 your profile to view the achievement badge.
                 <br/>
-                <button className="w-25 mx-auto mb-5" onClick={Proceed}>
+                <button className="w-25 mx-auto mb-5" onClick={writeToDatabase}>
                 View badge!
               </button>
               </div>

@@ -13,11 +13,12 @@ import outcomeBg from "../../assets/outcomeBg.svg";
 
 function AgeismSix() {
   const { state } = useLocation();
+  const action = state.outcome[0]
   // const {reflection} = state.reflection;
   const [nextDesc, setNextChosenDesc] = useState(""); // data passed to the next page
   const [candidate, setCandidate] = useState("");
   const [reflection, setReflection] = useState("");
-  const [descOutcome, setDescOutcome] = useState("");
+  const [descOutcome, setDescOutcome] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
   const [noActionFavorable, setNoActionsFavorable] = useState(0);
@@ -31,11 +32,12 @@ function AgeismSix() {
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     setNoActionsFavorable(state.noFavorable);
+    console.log(state.outcome)
     setDescOutcome(state.outcome);
-    console.log(descOutcome[0]);
-    if (descOutcome[0] == 1) {
+    console.log(descOutcome);
+    if (action == 1) {
       setFavorable("✔️ Favorable");
-    } else if (descOutcome[0] == 2) {
+    } else if (action == 2) {
       setFavorable("❌ Not favorable");
     } else {
       setFavorable("❌ Not favorable");

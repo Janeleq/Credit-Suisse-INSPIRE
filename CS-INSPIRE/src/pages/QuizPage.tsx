@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Chatbot from "../components/Chatbot.tsx";
 import quizzesBg from "../assets/quiz/quizBg.svg";
+import greyBg from "../assets/pastelGreyBg.png";
 import biasRealityCheckBg from "../assets/biasrealitycheck/biasRealityCheckBg.svg";
 import Footer from "../components/Footer.tsx";
 import { useNavigate } from "react-router-dom";
@@ -45,52 +46,91 @@ function Quiz() {
     <div className="App container-fluid p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
       <Chatbot />
-      <div className="" style={{marginTop: '10vh'}}>
-        <h2>Take a general quiz to examine your unconscious bias or just a general quiz!</h2>
+      <div
+        className=""
+        style={{
+          marginTop: "6vh",
+          height: "80vh",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundImage: `url(${greyBg})`,
+        }}
+      >
+        <h3 style={{ left: "-20vw" }}>
+          Take a general quiz to examine your unconscious bias or just a general
+          quiz!
+        </h3>
+        <img src={quizzesBg} alt="quiz" style={{ height: "auto" }} />
+        <button
+          className="p-3"
+          style={{ marginTop: "50vh" }}
+          onClick={startQuiz}
+        >
+          General Quiz
+        </button>
       </div>
-      <div className="text-center" style={{ marginTop: "" }}>
-        <h3></h3>
-        <div className="row">
-          <div
-            className="col bias"
-            style={{
-              height: "100vh",
-              opacity: "",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundImage: `url(${biasRealityCheckBg})`,
-            }}
-          >
-            <button
-              className="mx-auto p-3"
-              style={{ marginTop: "50vh" }}
-              onClick={startBiasCheck}
-            >
-              Bias Reality Check!
-            </button>
+      <div
+        style={{
+          backgroundImage: `url(${greyBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "85vh",
+          width: "100vw",
+          borderBottom: "1px solid grey",
+        }}
+      >
+        <h1
+          style={{
+            paddingTop: "12vh",
+            paddingLeft: "12vw",
+            fontSize: "60px",
+          }}
+        >
+          <span data-aos="fade-in" data-aos-delay="300">
+            History and Science behind Unconscious Bias
+          </span>
+        </h1>
+        <img src={biasRealityCheckBg} alt="biasReality" />
+        <button
+          className="mx-auto p-3"
+          style={{ marginTop: "50vh" }}
+          onClick={startBiasCheck}
+        >
+          Bias Reality Check!
+        </button>
+        <br />
+        <p
+          className="lead"
+          data-aos="fade-right"
+          data-aos-delay="300"
+          style={{ color: "grey", fontSize: "20px", paddingLeft: "12vw" }}
+        >
+          <div className="row" style={{ paddingLeft: "" }}>
+            <div className="col-sm-12 w-75">
+              Over the last three decades, our understanding of unconscious bias
+              has evolved. The concept of unconscious bias emerged from the
+              field of social psychology in the 20th century. While early
+              theories of bias focused primarily on conscious and explicit
+              prejudices, researchers began to recognize the role of unconscious
+              processes in shaping human behavior. <br />
+              <br />
+              Psychologists such as Gordon Allport and Mahzarin Banaji made
+              significant contributions to the study of implicit biases and
+              their impact on individuals and society. The nature of unconscious
+              bias is now well understood, and an instrument (Implicit
+              Association Test or IAT) to assess unconscious bias has been
+              developed and rigorously tested globally.
+            </div>
           </div>
+        </p>
+        <br />
+        {/* <p className="lead" style={{ color: "" , paddingLeft: "12vw" }}>
+          Foster a deeper understanding of the biases that shape
+                        our perceptions and actions.
+          </p> */}
+      </div>
 
-          <div
-            className="col quiz"
-            style={{
-              height: "100vh",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundImage: `url(${quizzesBg})`,
-            }}
-          >
-            <button
-              className="p-3"
-              style={{ marginTop: "50vh" }}
-              onClick={startQuiz}
-            >
-              General Quiz
-            </button>
-          </div>
-        </div>
-      </div>
       <Footer />
     </div>
   );
