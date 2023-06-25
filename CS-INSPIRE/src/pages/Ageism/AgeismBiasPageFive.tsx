@@ -65,6 +65,7 @@ function AgeismFive() {
     }
     if (favorable == "✔️ Favorable") {
       setNoActionsFavorable(state.noFavorable + 1)
+      console.log(noActionFavorable)
     }
   });
 

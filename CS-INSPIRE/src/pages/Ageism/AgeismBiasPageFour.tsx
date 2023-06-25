@@ -76,6 +76,7 @@ function AgeismFour() {
     else {
       setNoActionsFavorable(0);
     }
+    console.log(noActionFavorable)
   });
 
   const handleChoice = (event, param) => {
