@@ -8,21 +8,26 @@ import projectBg from "../../assets/workplaceDynamics.jpg";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
 import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png";
+import { getAuth, updateEmail, signOut } from "firebase/auth";
+import { db } from "../../firebase/firebase.js";
+import { ref, set } from "firebase/database";
 
 function AgeismSix() {
   const { state } = useLocation();
   // const {reflection} = state.reflection;
-  const [ageismStatus, setAgeismStatus] = useState("completed")
-
+  const [ageismStatus, setAgeismStatus] = useState("incomplete")
   const [candidate, setCandidate] = useState("");
   const [reflection, setReflection] = useState("");
   const [descOutcome, setDescOutcome] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
   const [emoji, setEmoji] = useState("");
+  const [id, setId] = useState("");
   const [noActionFavorable, setNoActionsFavorable] = useState(0);
   const [simulationResults, setSimulationResults] = useState("");
   const navigate = useNavigate();
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -70,9 +75,22 @@ function AgeismSix() {
         loaderElement.remove();
         setLoading(!isLoading);
       }
+    
     });
+
+    if (user !== null) {
+      user.providerData.forEach((profile) => {
+      setId(user.uid);
+    })
+    }
   });
 
+  const writeToDatabase = () => {
+    console.log("writing to database..")
+        set(ref(db, id), {
+        ageismStatus
+    })
+  };
 
   const handleChoice = (event, param) => {
     console.log(event);
@@ -80,7 +98,8 @@ function AgeismSix() {
   };
 
   const Proceed = () => {
-
+    setAgeismStatus("completed")
+    writeToDatabase()
     console.log(ageismStatus)
     navigate("/profile", {
       state: {
