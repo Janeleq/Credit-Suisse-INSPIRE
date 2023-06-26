@@ -163,9 +163,9 @@ function Profile() {
       className="container-fluid p-0"
       style={{
         overflow: "hidden",
-        backgroundImage: `url(${pastelgreyBg})`,
+        backgroundImage: `url(${profileBgIcon})`,
         backgroundPosition: "left",
-        backgroundSize: "cover",
+        backgroundSize: "",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -176,7 +176,7 @@ function Profile() {
         id="about"
         style={{ marginTop: "18vh", height: "fit-content" }}
       >
-        <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/>
+        {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
         <div className="row">
           <div className="col-lg-4"></div>
           <div className="col lead" style={{ float: "right" }}>
