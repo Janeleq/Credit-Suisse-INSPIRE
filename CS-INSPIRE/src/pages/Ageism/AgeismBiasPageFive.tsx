@@ -67,6 +67,10 @@ function AgeismFive() {
       setNoActionsFavorable(state.noFavorable + 1)
       console.log(noActionFavorable)
     }
+
+    else {
+      setNoActionsFavorable(state.noFavorable)
+    }
   });
 
   const handleChoice = (event, param) => {

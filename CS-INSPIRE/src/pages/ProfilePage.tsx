@@ -5,58 +5,50 @@ import Chatbot from "../components/Chatbot.tsx";
 import footerBg from "../assets/pastelGreyBg.png";
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { db } from "../firebase/firebase.js";
-import { uid } from "uid";
-import { get, ref, onValue } from "firebase/database";
+import profileBgIcon from "../assets/profile/profileBgIcon.svg";
+import pastelgreyBg from "../assets/pastelGreyBg.png"
+import {
+  get,
+  ref,
+  child,
+  getDatabase,
+  onValue,
+  update,
+} from "firebase/database";
+import { FaMedal } from "react-icons/fa";
 
 function Profile() {
   const auth = getAuth();
   const navigate = useNavigate();
   const user = auth.currentUser;
   const [email, setEmail] = useState("");
-  const [output, setOutput] = useState("");
+  const [noPathsCompleted, setNoPathsCompleted] = useState(0);
+  const [styleObj, setStyle] = useState("");
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
   const [id, setId] = useState("");
   const [login, setLoginTime] = useState("");
-  const [quizStatus, setquizstatus] = useState("incomplete");
+  const [quizStatus, updateQuizStatus] = useState("incomplete");
+
   const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete");
-  const [ageismStatus, setAgeismStatus] = useState("incomplete");
+  const [ageismStatus, updateAgeismStatus] = useState("incomplete");
+  const [ageismMedal, updateAgeismMedal] = useState(null);
+  const [sexismStatus, updatesexismStatus] = useState("incomplete");
+  const [haloEffectStatus, updatehaloEffectStatus] = useState("incomplete");
+  const [beautyBiasStatus, updatebeautyBiasStatus] = useState("incomplete");
   const { state } = useLocation();
 
-
-  //read statuses of roleplay from database
-//   const getFromDatabase = () => {
-//     const userId = auth.currentUser.uid;
-//      onValue(ref(db), (snapshot) => {
-//       const data = snapshot.val();
-//       if (data!== null) {
-//         Object.values(data).map(status) => {
-//             setStatuses(oldArray_ => [...oldArray, status])
-//         }
-//       }
-//      })
-//     }
-  // function writeUserData(userId, name, email, imageUrl) {
-  // const db = getDatabase();
-  // set(ref(db, 'users/' + userId), {
-  //     username: name,
-  //     email: email,
-  //     profile_picture : imageUrl
-  // });
-  // }
-
-  updateEmail(auth.currentUser, email)
-    .then(() => {
-      // Email updated!
-      // ...
-    })
-    .catch((error) => {
-      // An error occurred
-      // ...
-      const errorMessage = error.message;
-      setError(errorMessage);
-    });
+  // updateEmail(auth.currentUser, email)
+  //   .then(() => {
+  //     // Email updated!
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     // An error occurred
+  //     // ...
+  //     const errorMessage = error.message;
+  //     setError(errorMessage);
+  //   });
 
   const [isLoading, setLoading] = useState(true);
 
@@ -66,11 +58,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    // getFromDatabase()
-
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
-
+    getFromDatabase();
 
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
@@ -79,19 +67,23 @@ function Profile() {
         setLoading(!isLoading);
       }
     });
-  });
+  }, []);
 
   useEffect(() => {
-    if (ageismStatus == "complete") {
-      setOutput(`<div style=color: green>complete</div>`);
+    // ageism
+    if (ageismStatus == "completed") {
+      updateAgeismMedal(<FaMedal />);
+      setStyle({ fontWeight: 500, color: "green" });
+      setNoPathsCompleted(1);
     } else {
-      setOutput(`<div style={{color: red}}>incomplete</div>`);
+      setStyle({ fontWeight: 500, color: "red" });
+      updateAgeismMedal("");
+      setNoPathsCompleted(0);
     }
-    console.log(ageismStatus);
+
+    // unconscious bias quiz
     if (user !== null) {
       user.providerData.forEach((profile) => {
-        console.log(user);
-
         console.log("Sign-in provider: " + profile.providerId);
         console.log("  Provider-specific UID: " + profile.uid);
         console.log("  Name: " + profile.displayName);
@@ -110,13 +102,45 @@ function Profile() {
             "https://icon-library.com/images/user-png-icon/user-png-icon-6.jpg"
           );
         }
-
-        setId(profile.uid);
+        console.log(user.uid);
+        setId(user.uid);
       });
+      console.log(user.metadata.lastSignInTime)
       setLoginTime(user.metadata.lastSignInTime);
-      setId(user.uid);
     }
-  });
+  }, []);
+
+  //read statuses of roleplay from database
+  function getFromDatabase() {
+    console.log("retrieving data from database...");
+
+    const db = getDatabase();
+    console.log(db);
+
+    // retrieving data for ageism
+    const ageismStatusRef = ref(db, `${id}/ageismStatus`);
+    console.log(ageismStatusRef);
+    onValue(ageismStatusRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updateAgeismStatus(data);
+      } else {
+        updateAgeismStatus("incomplete");
+      }
+    });
+
+    // retrieving data for unconscious bias quiz
+    const quizStatusRef = ref(db, `${id}/generalQuizStatus`);
+    console.log(quizStatusRef);
+    onValue(quizStatusRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updateQuizStatus(data);
+      } else {
+        updateQuizStatus("incomplete");
+      }
+    });
+  }
 
   // Sign out the user if log out button is clicked
   function signout() {
@@ -139,8 +163,10 @@ function Profile() {
       className="container-fluid p-0"
       style={{
         overflow: "hidden",
-        backgroundImage: `url(${footerBg})`,
+        backgroundImage: `url(${pastelgreyBg})`,
+        backgroundPosition: "left",
         backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Navbar></Navbar>
@@ -148,11 +174,12 @@ function Profile() {
       <section
         className="section"
         id="about"
-        style={{ marginTop: "18vh", height: "100vh" }}
+        style={{ marginTop: "18vh", height: "fit-content" }}
       >
+        <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/>
         <div className="row">
           <div className="col-lg-4"></div>
-          <div className="col lead" style={{ float: "left" }}>
+          <div className="col lead" style={{ float: "right" }}>
             Last Login: {login}
           </div>
         </div>
@@ -162,7 +189,7 @@ function Profile() {
               <img
                 src={photo}
                 title=""
-                style={{ width: "250px", height: "250px" }}
+                style={{ width: "200px", height: "200px" }}
                 alt="Profile Pic"
               />
               <br />
@@ -173,80 +200,94 @@ function Profile() {
             </div>
           </div>
 
-          <div className="col-lg-6">
-            <div className="about-text go-to">
-              <h2 className="">Name</h2>
+          <div className="col-lg-8">
+            <div className="row">
+              <h2>Particulars</h2>
+              <hr />
+            </div>
+            <div className="row about-text go-to">
+              <div className="col-md-4 p-2">
+                <h2 className="lead" style={{ fontSize: "25px" }}>
+                  Name
+                </h2>
+                <p>{name}</p>
+              </div>
 
-              <div className="row about-list">
-                <div className="col-md-6">
-                  <div className="media">
-                    {/* <label>Name: &nbsp;</label> */}
-                    <p>{name}</p>
-                  </div>
-                  <br />
-                  <h2 className="">
-                    Email{" "}
-                    <button
-                      className="m-1 p-1"
-                      style={{ fontSize: "16px" }}
-                    //   onClick={getFromDatabase}
-                    >
-                      Update
-                    </button>
-                  </h2>
-                  <div className="media">
-                    {/* <label className=''>Email:&nbsp;</label> */}
-                    <p>{email}</p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <h2 className="">User ID</h2>
-                  <div className="media">
-                    {/* <label className=''>Email:&nbsp;</label> */}
-                    <p>{id}</p>
-                  </div>
+              <div className="col-md-4 p-2">
+                <h2
+                  className="lead"
+                  style={{ fontSize: "25px", display: "inline-block" }}
+                >
+                  Email &nbsp;
+                </h2>
+                <button
+                  className="m-1 p-1"
+                  style={{ fontSize: "15px", display: "inline" }}
+                  //   onClick={getFromDatabase}
+                >
+                  Update
+                </button>
+                <p>{email}</p>
+              </div>
+
+              <div className="col-md-4 p-2">
+                <h2 className="lead" style={{ fontSize: "25px" }}>
+                  User ID
+                </h2>
+                <div className="media">
+                  {/* <label className=''>Email:&nbsp;</label> */}
+                  <p>{id}</p>
                 </div>
               </div>
             </div>
           </div>
           <br />
         </div>
-
-        <div className="counter">
-          <div className="row mt-4">
-            <div className="col"></div>
-            <div className="col-6 col-lg-3">
-              <div className="count-data text-center">
-                <h6 className="count h2" data-to="150" data-speed="150">
-                  0/4
-                </h6>
-                <p className="m-0px font-w-600">Paths Encountered</p>
-                1. Ageism: {ageismStatus}
-                <br />
-                2. Gender Bias / Sexism: <br />
-                3. Halo Effect: <br />
-                4. Beauty Bias: <br />
-              </div>
-            </div>
-            <div className="col-6 col-lg-3">
-              <div className="count-data text-center">
-                <h6 className="count h2" data-to="850" data-speed="850">
-                  850
-                </h6>
-                <p className="m-0px font-w-600">Unconscious Bias Quiz</p>
-                {quizStatus}
-              </div>
-            </div>
-            <div className="col-6 col-lg-3">
-              <div className="count-data text-center">
-                <h6 className="count h2" data-to="190" data-speed="190">
-                  190
-                </h6>
-                <p className="m-0px font-w-600">Bias Reality Check</p>
-                {biasCheckStatus}
-              </div>
+        <div className="row ">
+          <div className="col-4"></div>
+          <div className="col">
+            <h2>Statistics</h2>
+            <hr />
+          </div>
+        </div>
+        <div className="row mt-4">
+          <div className="col"></div>
+          <div className="col-md-4 col-lg-3">
+            <div className="count-data text-center">
+            <h2 className="m-0px font-w-600 lead" style={{ fontSize: "20px" }}>Paths Encountered</h2>
+              <h4 className="" data-to="150" data-speed="150">
+                {noPathsCompleted} /4
+              </h4>
+              
+              <hr />
+              Ageism:{" "}
+              <b>
+                {ageismMedal}&nbsp;{ageismStatus}
+              </b>
+              <br />
+              Gender Bias / Sexism: {sexismStatus}
+              <br />
+              Halo Effect: {haloEffectStatus} <br />
+              Beauty Bias: {beautyBiasStatus} <br />
             </div>
           </div>
+          <div className="col-md-4 col-lg-3">
+            <div className="count-data text-center">
+            <h2 className="lead m-0px font-w-600" style={{ fontSize: "20px" }}>Unconscious Bias Quiz</h2>
+              <h4 className="" data-to="850" data-speed="850">
+                {quizStatus}
+              </h4>
+            </div>
+          </div>
+          {/* <div className="col-6 col-lg-3">
+            <div className="count-data text-center">
+            <h2 className="lead m-0px font-w-600">Unconscious Bias Quiz</h2>
+              <h6 className="count h2" data-to="190" data-speed="190">
+                {biasCheckStatus}
+              </h6>
+              
+            </div>
+          </div> */}
         </div>
       </section>
       <Footer />

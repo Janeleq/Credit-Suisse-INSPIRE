@@ -9,8 +9,10 @@ import bgSound from "../assets/bg_music.mp3";
 import { FaMusic, FaStop } from "react-icons/fa";
 import { FaVolumeMute } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import question1 from "../assets/quiz/question1.avif"
-import { Height } from "@mui/icons-material";
+import bgIcon from "../assets/quiz/generalQuizIcon.svg"
+import pastelBg from "../assets/pastelGreyBg.png"
+import { getDatabase, ref, set, update } from "firebase/database";
+import { getAuth, updateEmail, signOut } from "firebase/auth";
 
 function GeneralQuiz() {
   // Properties
@@ -18,15 +20,18 @@ function GeneralQuiz() {
   const [start, setStart] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [id, setId] = useState("")
   const [explanation, setExplanation] = useState("")
   const [emoji, setEmoji] = useState("")
   const [isLoading, setLoading] = useState(true);
   const [pauseStatus, setPauseStatus] = useState(false);
-  const [quizStatus, setquizstatus] = useState("incomplete")
+  const [quizStatus, updateQuizStatus] = useState("completed")
   const [play, { stop }] = useSound(bgSound, {
     interrupt: true,
   });
 
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   const handleStop = () => {
     setPauseStatus(true);
@@ -54,10 +59,12 @@ function GeneralQuiz() {
   });
 
   useEffect(() => {
-    console.log(pauseStatus);
-    if (showResults) {
-      setquizstatus("complete")
+    if (user !== null) {
+      user.providerData.forEach((profile) => {
+        setId(user.uid);
+      });
     }
+
     if (pauseStatus === false) {
       // play();
     } else {
@@ -86,12 +93,23 @@ function GeneralQuiz() {
     }
   };
 
+  function writeToDatabase () {
+    console.log(quizStatus);
+    console.log("writing to database..");
+    const db = getDatabase()
+    console.log(db)
+    update(ref(db, id, "/generalQuizStatus/"), {
+      generalQuizStatus: quizStatus,
+    }).catch(alert);
+  }
   /* Resets the game back to default */
   const restartGame = () => {
     setScore(0);
     setEmoji("");
     setCurrentQuestion(0);
     setShowResults(false);
+    updateQuizStatus("completed")
+    writeToDatabase()
   };
 
   const displayQuiz = () => {
@@ -106,9 +124,11 @@ function GeneralQuiz() {
       {start ? (
         <div
           className="Quiz text-center text-dark"
-          style={{ marginTop: "18vh" }}
+          style={{ marginTop: "9vh", backgroundImage: `url(${pastelBg})`}}
         >
-          <h1 className="mb-2">Unconscious Bias Quiz</h1>
+          {/* <h2 className="pt-4 mb-2 text-start" style={{marginLeft: '2vw'}}>Unconscious Bias Quiz</h2> */}
+          
+          <img src={bgIcon} alt="quizBgIcon" style={{float: 'left'}}/>
 
           <button
             onClick={handlePlay}
@@ -153,7 +173,7 @@ function GeneralQuiz() {
                     <div className="col-md-4 p-0" style={{ height: "5vh"}}>
                       <div className="card bg-faded">
                         <div className="card-block">
-                          <h2 id="score" style={{borderRadius: '0px', marginBottom: '5px'}}>Score: {score} {emoji}</h2>
+                          <h4 id="score" style={{borderRadius: '0px', marginBottom: '5px'}}>Score: {score} {emoji}</h4>
                           <div className="progress" style={{}}>
                             <div
                               className="progress-bar"
@@ -166,7 +186,7 @@ function GeneralQuiz() {
                       </div>
                     </div>
                     <div className="col-md-8 p-0">
-                      <div className="p-0 question-card" style={{ height: "5vh", fontSize: '20px'}}>
+                      <div className="p-0 question-card" style={{ height: "10vh", fontSize: '20px'}}>
                         {/* Current Question  */}
                         <p className="m-auto py-auto" style={{height: "5vh"}}>
                           Question: {currentQuestion + 1} out of{" "}
@@ -177,7 +197,7 @@ function GeneralQuiz() {
                     <div className="card card-inverse card-success" style={{width: '100vw', borderRadius: 0, border: 'none', overflow: 'hidden'}}>
                   <h5
                     className="card-block text-dark mt-5 w-75 mx-auto bg-light"
-                    style={{ textAlign: "center", height: '50vh', fontSize: '30px', backgroundColor: ''}}
+                    style={{ textAlign: "center", height: '20vh', fontSize: '30px', backgroundColor: ''}}
                   >
                     {questions[currentQuestion].text}
                   </h5>

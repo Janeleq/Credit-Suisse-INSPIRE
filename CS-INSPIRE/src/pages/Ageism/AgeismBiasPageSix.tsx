@@ -31,7 +31,7 @@ function AgeismSix() {
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    setNoActionsFavorable(state.noFavorable);
+    
     console.log(state.outcome)
     setDescOutcome(state.outcome);
     console.log(descOutcome);
@@ -46,6 +46,10 @@ function AgeismSix() {
     if (favorable == "✔️ Favorable") {
       setNoActionsFavorable(state.noFavorable + 1)
       console.log(noActionFavorable)
+    }
+
+    else  {
+      setNoActionsFavorable(state.noFavorable);
     }
 
     setCandidate(state.candidate);

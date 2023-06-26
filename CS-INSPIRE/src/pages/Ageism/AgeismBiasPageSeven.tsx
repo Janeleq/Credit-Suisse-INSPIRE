@@ -4,18 +4,17 @@ import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
-import projectBg from "../../assets/workplaceDynamics.jpg";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
 import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png";
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { db } from "../../firebase/firebase.js";
-import { ref, set } from "firebase/database";
+import { getDatabase, ref, set, update } from "firebase/database";
 
 function AgeismSix() {
   const { state } = useLocation();
   // const {reflection} = state.reflection;
-  const [ageismStatus, setAgeismStatus] = useState("incomplete")
+  const [ageismStatus, setAgeismStatus] = useState("completed");
   const [candidate, setCandidate] = useState("");
   const [reflection, setReflection] = useState("");
   const [descOutcome, setDescOutcome] = useState("");
@@ -35,13 +34,26 @@ function AgeismSix() {
   }
 
   useEffect(() => {
-    console.log("Running the end of ageism script")
+    console.log("Running the end of ageism script");
+    someRequest().then(() => {
+      const loaderElement = document.querySelector(".loader-container");
+      if (loaderElement) {
+        loaderElement.remove();
+        setLoading(!isLoading);
+      }
+    });
+
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    setNoActionsFavorable(state.noFavorable);
+
     if (noActionFavorable < 2) {
       setEmoji("😢");
       setSimulationResults(
         "You have selected options influenced by age bias, which hinders collaboration in the given scenario. You had rather conflicting perceptions and your actions have shown to be leaning more towards your unconscious bias."
+      );
+    } else if (noActionFavorable == 2) {
+      setEmoji("🙂");
+      setSimulationResults(
+        "Not bad! You have displayed certain unconscious bias here and there. But with more knowledge and awareness of it, we believe you will be more firm in your choices!"
       );
     } else if (noActionFavorable == 3) {
       setEmoji("👍");
@@ -65,42 +77,30 @@ function AgeismSix() {
 
     if (favorable == "✔️ Favorable") {
       setNoActionsFavorable(state.noFavorable + 1);
+    } else {
+      setNoActionsFavorable(state.noFavorable);
     }
 
     setCandidate(state.candidate);
     setReflection(state.reflection);
-    someRequest().then(() => {
-      const loaderElement = document.querySelector(".loader-container");
-      if (loaderElement) {
-        loaderElement.remove();
-        setLoading(!isLoading);
-      }
-    
-    });
 
     if (user !== null) {
       user.providerData.forEach((profile) => {
-      setId(user.uid);
-    })
+        setId(user.uid);
+      });
     }
   });
 
-  const writeToDatabase = () => {
-    console.log("writing to database..")
-        set(ref(db, id), {
-        ageismStatus
-    })
-  };
+  function writeToDatabase () {
+    console.log(ageismStatus);
+    console.log("writing to database..");
+    const db = getDatabase()
+    console.log(db)
+    update(ref(db, id, '/ageismStatus/'), {
+      ageismStatus: ageismStatus,
+    }).catch(alert);
 
-  const handleChoice = (event, param) => {
-    console.log(event);
-    console.log(param);
-  };
-
-  const Proceed = () => {
-    setAgeismStatus("completed")
-    writeToDatabase()
-    console.log(ageismStatus)
+    console.log(ageismStatus);
     navigate("/profile", {
       state: {
         ageismStatus: ageismStatus,
@@ -109,6 +109,11 @@ function AgeismSix() {
         reflection: reflection,
       },
     });
+  };
+
+  const handleChoice = (event, param) => {
+    console.log(event);
+    console.log(param);
   };
 
   return (
@@ -170,8 +175,10 @@ function AgeismSix() {
             <br />
           </p>
           <h3 className="">Overall Results:&nbsp;{emoji}</h3>
-            <span style={{width: '50vw'}} className="mx-auto">{simulationResults}</span> 
-            <br />
+          <span style={{ width: "" }} className="mx-auto w-50">
+            {simulationResults}
+          </span>
+          <br />
 
           {/* <p className='mt-5 w-50 mx-auto'>After looking through quite some time, you found a unique training program that you think would suit the employees well. However, there is only two opportunity slot for this training program, but you realise you have 3 employees at hand.</p> */}
           <br />
@@ -195,7 +202,7 @@ function AgeismSix() {
           >
             <h2 data-aos="fade-in" data-aos-delay="300">
               <span style={{ fontWeight: "bold", fontSize: "50px" }}>
-              🏅 Continue Exploring and Learning
+                🏅 Continue Exploring and Learning
               </span>
             </h2>
           </h1>
@@ -207,13 +214,16 @@ function AgeismSix() {
             style={{ color: "grey", fontSize: "20px", paddingLeft: "10vw" }}
           >
             <div className="row" style={{ paddingLeft: "" }}>
-              <div className="col-sm-12 w-75" style={{paddingLeft: "10vw", textAlign: 'right'}}>
-               You have received a badge for completing this roleplay. Check
+              <div
+                className="col-sm-12 w-75"
+                style={{ paddingLeft: "10vw", textAlign: "right" }}
+              >
+                You have received a badge for completing this roleplay. Check
                 your profile to view the achievement badge.
-                <br/>
+                <br />
                 <button className="w-25 mx-auto mb-5" onClick={writeToDatabase}>
-                View badge!
-              </button>
+                  View badge!
+                </button>
               </div>
             </div>
           </div>
