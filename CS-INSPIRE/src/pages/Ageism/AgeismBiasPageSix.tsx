@@ -43,14 +43,24 @@ function AgeismSix() {
       setFavorable("❌ Not favorable");
     }
 
+    // var noActionFavorable = state.noFavorable;
+
+    // if (favorable == "✔️ Favorable") {
+    //    noActionFavorable = (state.noFavorable + 1)
+    // }
     if (favorable == "✔️ Favorable") {
       setNoActionsFavorable(state.noFavorable + 1)
       console.log(noActionFavorable)
     }
 
-    else  {
-      setNoActionsFavorable(state.noFavorable);
+    else {
+      setNoActionsFavorable(state.noFavorable)
     }
+
+    
+
+
+    console.log(noActionFavorable)
 
     setCandidate(state.candidate);
     setReflection(state.reflection);

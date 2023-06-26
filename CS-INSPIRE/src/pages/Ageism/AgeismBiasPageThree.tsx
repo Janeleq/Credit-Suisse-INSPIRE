@@ -100,7 +100,7 @@ function AgeismThree() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "8vh" }}
+        style={{ marginTop: "5vh" }}
       >
         {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
         <div

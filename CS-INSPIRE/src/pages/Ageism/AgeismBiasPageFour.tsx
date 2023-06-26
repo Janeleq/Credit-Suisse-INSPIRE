@@ -73,9 +73,6 @@ function AgeismFour() {
       setNoActionsFavorable(1);
     }
 
-    else {
-      setNoActionsFavorable(0);
-    }
     console.log(noActionFavorable)
   });
 

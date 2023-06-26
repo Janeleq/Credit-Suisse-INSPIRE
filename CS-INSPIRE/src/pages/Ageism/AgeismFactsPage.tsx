@@ -5,6 +5,7 @@ import NavigationBar from "../../components/NavBarLogin.tsx";
 import Footer from "../../components/Footer.tsx";
 import statisticOne from "../../assets/ageism/ageismStats.png";
 import statisticTwo from "../../assets/ageism/ageismStatsTwo.png"
+import statisticThree from "../../assets/ageism/ageismStatsThree.png"
 import pastelgreyBg from "../../assets/pastelGreyBg.png";
 import ageismIntroIcon from "../../assets/ageism/ageismFactsIntro.svg";
 import ageismIconOne from "../../assets/ageism/ageismIcon1.png"
@@ -141,6 +142,12 @@ function AgeismFacts() {
         <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh'}}>
           <img src={statisticTwo} alt="Statistic Two" style={{width: '100vw', height: '95vh'}} />
           <span className="text-center mx-auto" style={{width: '100vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits:  National Poll of Healthy Aging</span>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh'}}>
+          <img src={statisticThree} alt="Statistic Three" style={{width: '100vw', height: '70vh'}} />
+          <span className="text-center mx-auto" style={{width: '80vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits: Zippia</span>
         </div>
       </div>
 

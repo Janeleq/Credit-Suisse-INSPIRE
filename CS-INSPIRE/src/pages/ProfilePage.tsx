@@ -67,20 +67,9 @@ function Profile() {
         setLoading(!isLoading);
       }
     });
-  }, []);
+  });
 
   useEffect(() => {
-    // ageism
-    if (ageismStatus == "completed") {
-      updateAgeismMedal(<FaMedal />);
-      setStyle({ fontWeight: 500, color: "green" });
-      setNoPathsCompleted(1);
-    } else {
-      setStyle({ fontWeight: 500, color: "red" });
-      updateAgeismMedal("");
-      setNoPathsCompleted(0);
-    }
-
     // unconscious bias quiz
     if (user !== null) {
       user.providerData.forEach((profile) => {
@@ -116,8 +105,9 @@ function Profile() {
 
     const db = getDatabase();
     console.log(db);
-
-    // retrieving data for ageism
+      
+    
+      // retrieving data for ageism
     const ageismStatusRef = ref(db, `${id}/ageismStatus`);
     console.log(ageismStatusRef);
     onValue(ageismStatusRef, (snapshot) => {
@@ -128,6 +118,17 @@ function Profile() {
         updateAgeismStatus("incomplete");
       }
     });
+
+        if (ageismStatus == "completed") {
+          updateAgeismMedal(<FaMedal />);
+          setStyle({ fontWeight: 500, color: "green" });
+          setNoPathsCompleted(1);
+        } else {
+          setStyle({ fontWeight: 500, color: "red" });
+          updateAgeismMedal("");
+          setNoPathsCompleted(0);
+        }
+
 
     // retrieving data for unconscious bias quiz
     const quizStatusRef = ref(db, `${id}/generalQuizStatus`);
@@ -174,7 +175,7 @@ function Profile() {
       <section
         className="section"
         id="about"
-        style={{ marginTop: "18vh", height: "fit-content" }}
+        style={{ paddingTop: "15vh", height: "100vh" }}
       >
         {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
         <div className="row">
@@ -258,8 +259,7 @@ function Profile() {
               <h4 className="" data-to="150" data-speed="150">
                 {noPathsCompleted} /4
               </h4>
-              
-              <hr />
+
               Ageism:{" "}
               <b>
                 {ageismMedal}&nbsp;{ageismStatus}
