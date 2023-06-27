@@ -11,6 +11,8 @@ import action from "../../assets/action.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import { useNavigate, Link } from "react-router-dom";
 import candidateBg from "../../assets/ageism/candidatesBg.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function AgeismThree() {
   const [showReflection, setShowReflection] = useState(false);
@@ -29,6 +31,7 @@ function AgeismThree() {
   }
 
   useEffect(() => {
+    AOS.init()
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -106,14 +109,15 @@ function AgeismThree() {
         <div
           style={{
             backgroundImage: `url(${candidateBg})`,
-            height: "60vh",
+            height: "70vh",
             backgroundPositionY: "-100px",
             backgroundPosition: "center",
+            backgroundSize: 'cover'
           }}
         >
-          <div style={{ paddingTop: "25vh" }}>
+          <div style={{ paddingTop: "25vh" }} data-aos="zoom-in">
             <h2
-              className="bg-light mx-auto p-2"
+              className="bg-dark text-light mx-auto p-2"
               style={{
                 borderRadius: "5px",
                 width: "fit-content",

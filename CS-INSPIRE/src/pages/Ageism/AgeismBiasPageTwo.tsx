@@ -4,6 +4,8 @@ import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
 import workplaceDynamics from "../../assets/ageism/workplaceDynamics.jpg";
 import { useNavigate, NavLink } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function AgeismTwo() {
   const [isLoading, setLoading] = useState(true);
@@ -22,6 +24,7 @@ function AgeismTwo() {
   }
 
   useEffect(() => {
+    AOS.init()
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
@@ -47,11 +50,11 @@ function AgeismTwo() {
           backgroundSize: "cover",
         }}
       >
-        <div className="p-5 roleplayDesc text-center w-75 mx-auto">
-          <h2 className="text-center mt-5" style={{fontSize: '2rem'}}>Scenario: Workplace Dynamics</h2>
+        <div className="p-4 roleplayDesc text-center w-75 mx-auto bg-dark text-light" data-aos="zoom-in" style={{opacity: 0.75}} >
+          <h2 className="text-center mt-5 text-light" style={{fontSize: '2rem'}}>Scenario: Workplace Dynamics</h2>
           <p
             className="w-50 mx-auto text-dark"
-            style={{ borderRadius: "5px", padding: "10px", backgroundColor: 'lightgrey', fontSize: '1.2rem' }}
+            style={{ borderRadius: "5px", padding: "15px", backgroundColor: 'lightgrey', fontSize: '1.2rem', opacity: 1 }}
           >
             You will assume the role of Sarah, a mid-level manager in a large
             corporation. The goal is to navigate various workplace scenarios and
@@ -60,10 +63,10 @@ function AgeismTwo() {
           </p>
           <br />
           <br />
-          <h4 style={{fontSize: '1.6rem'}}>Act 1: Team Assignment</h4>
+          <h4 className="text-light" style={{fontSize: '1.6rem'}}>Act 1: Team Assignment</h4>
           <p
-            className="w-50 text-center mx-auto my-auto"
-            style={{ borderRadius: "5px", padding: "10px", backgroundColor: 'lightgray', fontSize: '1.2rem' }}
+            className="w-50 mx-auto text-dark"
+            style={{ borderRadius: "5px", padding: "10px", backgroundColor: 'lightgray', fontSize: '1.2rem', opacity: 1 }}
           >
       
             You are tasked with building a new project team and you required a

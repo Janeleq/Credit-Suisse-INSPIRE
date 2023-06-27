@@ -61,9 +61,7 @@ function Ageism() {
           style={{ height: "130vh" }}
         >
           <div className="section-title mt-5">
-            <h4 className="title mb-4">
-              <mark>Ageism</mark>
-            </h4>
+              <h2 className="text-dark p-2 mb-4" style={{borderRadius: "5px", fontWeight: 800}}>Ageism</h2>
             <p className="text-muted para-desc mx-auto mb-0">
               Ageism refers to the stereotypes, prejudices, and discrimination
               based on a person's age. It can manifest in various ways, such as
@@ -78,7 +76,7 @@ function Ageism() {
             </p>
             <br />
             <br />
-            <div className="row">
+            <div className="row mt-4">
               <div className="col">
                 <p
                   className="lead bg-light w-25 mx-auto"
@@ -139,7 +137,7 @@ function Ageism() {
             </div>
             <br />
             <br />
-            <div className="row">
+            <div className="row mt-5">
               <div className="col">
                 <p
                   className="lead bg-light w-25 mx-auto"
