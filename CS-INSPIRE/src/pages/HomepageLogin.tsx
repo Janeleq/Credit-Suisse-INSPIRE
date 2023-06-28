@@ -9,7 +9,7 @@ import Footer from "../components/Footer.tsx";
 import affinityBias from "../assets/affinityBias.png";
 import haloBias from "../assets/haloBias.png";
 import ageismBias from "../assets/ageism.jpg";
-import sheryl from "../assets/homepageLogin/sherylsandberg.png";
+import sheryl from "../assets/homepageLogin/sherylSandberg.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -197,7 +197,7 @@ export const HomePageLogin = () => {
             backgroundImage: `url(${pastelBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "100vh",
+            height: "fit-content",
             width: "100vw",
             borderBottom: "1px solid grey",
           }}
@@ -234,10 +234,10 @@ export const HomePageLogin = () => {
                 </p>
               </blockquote>
             </figure>
-            <h1 style={{ fontSize: "55px", marginTop: '15vh' }}>
+            <h2 style={{ marginTop: '15vh', marginBottom: '2vh' }}>
               Unconscious Bias
-            </h1>
-            <p className="w-50 mx-auto" style={{fontSize: '21px', color: 'grey'}}>
+            </h2>
+            <p className="w-50 mx-auto" style={{fontSize: '19px', color: 'grey'}}>
               Unconscious bias, often referred to as implicit bias, is a natural
               and inherent tendency of the human mind. It operates beyond our
               conscious awareness, shaping our perceptions, judgments, and
@@ -259,7 +259,7 @@ export const HomePageLogin = () => {
             backgroundImage: `url(${historyScienceBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "85vh",
+            height: "100vh",
             width: "100vw",
             borderBottom: "1px solid grey",
           }}
@@ -268,28 +268,25 @@ export const HomePageLogin = () => {
             style={{
               paddingTop: "12vh",
               paddingLeft: "12vw",
-              fontSize: "60px",
+              fontSize: "55px",
+              float: 'left'
             }}
           >
-            <span data-aos="fade-in" data-aos-delay="300">
+            <span data-aos="fade-in" data-aos-delay="300"> 
             History and Science behind Unconscious Bias
             </span>
         
           </h1>
           <br />
           <p
-            className="lead"
+            className="lead w-75"
             data-aos="fade-right"
             data-aos-delay="300"
-            style={{ color: "grey", fontSize: "20px", paddingLeft: "12vw" }}
+            style={{ float: 'right', color: "grey", fontSize: "18px", paddingLeft: "13vw" }}
           >
-            <div className="row" style={{ paddingLeft: "" }}>
-              <div className="col-sm-12 w-75">
               
               Over the last three decades, our understanding of unconscious bias has evolved. The concept of unconscious bias emerged from the field of social psychology in the 20th century. While early theories of bias focused primarily on conscious and explicit prejudices, researchers began to recognize the role of unconscious processes in shaping human behavior. <br/><br/>Psychologists such as Gordon Allport and Mahzarin Banaji made significant contributions to the study of implicit biases and their impact on individuals and society.
               The nature of unconscious bias is now well understood, and an instrument (Implicit Association Test or IAT) to assess unconscious bias has been developed and rigorously tested globally.
-              </div>
-            </div>
           </p>
           <br />
           {/* <p className="lead" style={{ color: "" , paddingLeft: "12vw" }}>
@@ -302,7 +299,7 @@ export const HomePageLogin = () => {
             backgroundImage: `url(${variousBias})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "80vh",
+            height: "fit-content",
             width: "100vw",
             borderBottom: "1px solid grey",
           }}
@@ -310,14 +307,14 @@ export const HomePageLogin = () => {
           <h1
             style={{
               paddingTop: "10vh",
-              paddingLeft: "23vw",
+              // paddingLeft: "25vw",
               paddingRight: '8vw',
-              fontSize: "60px",
-              textAlign: 'center',
+              fontSize: "55px",
+              float: 'right',
               marginBottom: '3vh'
             }}
           >
-            <span data-aos="fade-in" data-aos-delay="300">
+            <span data-aos="fade-in" data-aos-delay="300" style={{float: 'right'}}>
               Common Types of Unconscious Biases
             </span>
           </h1>
@@ -361,12 +358,12 @@ export const HomePageLogin = () => {
                       <blockquote className="blockquote">
                         <img
                           className="img-fluid h-25 w-25"
-                          style={{ float: 'right', height: '', width: '50vw'}}
+                          style={{ float: 'right', height: 'fit-content', width: '50vw'}}
                           src={sheryl}
                           alt="sheryl"
                         />
                         <p className="pb-2" style={{ marginTop: '5vh', textAlign: 'center'}}>
-                          <span className="lead text-dark font-italic" style={{fontSize: '40px', marginTop: '5vh'}}>
+                          <span className="lead text-dark font-italic" style={{fontSize: '35px', marginTop: '5vh'}}>
                          
                             "None of us is immune to biases, whether conscious
                             or unconscious. But by acknowledging them, we can
@@ -395,7 +392,7 @@ export const HomePageLogin = () => {
             style={{
               paddingTop: "12vh",
               paddingLeft: "12vw",
-              fontSize: "60px",
+              fontSize: "55px",
             }}
           >
             <span data-aos="fade-in" data-aos-delay="300">
@@ -440,7 +437,7 @@ export const HomePageLogin = () => {
             style={{
               paddingTop: "12vh",
               paddingLeft: "12vw",
-              fontSize: "60px",
+              fontSize: "55px",
             }}
           >
             <span data-aos="fade-in" data-aos-delay="300">

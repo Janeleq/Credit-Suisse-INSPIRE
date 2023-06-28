@@ -16,6 +16,7 @@ import {
   update,
 } from "firebase/database";
 import { FaMedal } from "react-icons/fa";
+import { faMedal } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
   const auth = getAuth();
@@ -29,7 +30,7 @@ function Profile() {
   const [id, setId] = useState("");
   const [login, setLoginTime] = useState("");
   const [quizStatus, updateQuizStatus] = useState("incomplete");
-
+  const [quizScore, updateQuizScore] = useState(0)
   const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete");
   const [ageismStatus, updateAgeismStatus] = useState("incomplete");
   const [ageismMedal, updateAgeismMedal] = useState(null);
@@ -104,8 +105,7 @@ function Profile() {
     console.log("retrieving data from database...");
 
     const db = getDatabase();
-    console.log(db);
-      
+   
     
       // retrieving data for ageism
     const ageismStatusRef = ref(db, `${id}/ageismStatus`);
@@ -132,13 +132,23 @@ function Profile() {
 
     // retrieving data for unconscious bias quiz
     const quizStatusRef = ref(db, `${id}/generalQuizStatus`);
-    console.log(quizStatusRef);
     onValue(quizStatusRef, (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
         updateQuizStatus(data);
       } else {
         updateQuizStatus("incomplete");
+      }
+    });
+
+    // get recent score for quiz
+    const quizScoreRef = ref(db, `${id}/score`);
+    onValue(quizScoreRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updateQuizScore(data);
+      } else {
+        updateQuizScore("-");
       }
     });
   }
@@ -226,7 +236,7 @@ function Profile() {
                   style={{ fontSize: "15px", display: "inline" }}
                   //   onClick={getFromDatabase}
                 >
-                  Update
+                  Update 
                 </button>
                 <p>{email}</p>
               </div>
@@ -277,6 +287,7 @@ function Profile() {
               <h4 className="" data-to="850" data-speed="850">
                 {quizStatus}
               </h4>
+              <h6 className="text-muted" style={{fontWeight: 300  }}>Recent Score: {quizScore}</h6>
             </div>
           </div>
           {/* <div className="col-6 col-lg-3">

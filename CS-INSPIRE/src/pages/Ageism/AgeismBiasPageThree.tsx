@@ -11,8 +11,11 @@ import action from "../../assets/action.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import { useNavigate, Link } from "react-router-dom";
 import candidateBg from "../../assets/ageism/candidatesBg.jpg";
+import greyBg from "../../assets/pastelGreyBg.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
+import reviewCandidateIcon from "../../assets/ageism/reviewCandidatesIcon.svg"
+import { FaFolderOpen } from "react-icons/fa";
 
 function AgeismThree() {
   const [showReflection, setShowReflection] = useState(false);
@@ -103,7 +106,7 @@ function AgeismThree() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "5vh" }}
+        style={{ marginTop: "5vh", backgroundImage: `url(${greyBg})` }}
       >
         {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
         <div
@@ -116,18 +119,24 @@ function AgeismThree() {
           }}
         >
           <div style={{ paddingTop: "25vh" }} data-aos="zoom-in">
-            <h2
-              className="bg-dark text-light mx-auto p-2"
+            <h3
+              className="w-50 bg-dark text-light mx-auto p-2"
               style={{
                 borderRadius: "5px",
-                width: "fit-content",
+                width: "",
                 opacity: 0.7,
+                fontWeight: '300',
+                lineHeight: 1.5,
+                fontSize: '1.2rem'
               }}
             >
-              It is time for you to choose the candidate
-            </h2>
+              <i className="p-1" style={{fontSize: '50px', float: 'left'}}><FaFolderOpen/></i> 
+              You receive the various candidate applications through google forms. <br/>
+              Now, it is time for you to review the different candidates' background and choose the most ideal candidate in your mind.
+            </h3>
           </div>
         </div>
+        {/* <div style={{backgroundImage: `url(${greyBg})`}}></div> */}
         <h3 className="text-center mt-5">Available Candidates</h3>
         <p className="">
           Below are 3 candidates in the company with different traits.
@@ -138,7 +147,8 @@ function AgeismThree() {
           &nbsp;Choose the candidate of your choosing.
         </p>
         <hr />
-        <div
+          <div
+          style={{backgroundImage: `url(${greyBg})`}}
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleCandidate(event, [

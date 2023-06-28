@@ -108,7 +108,7 @@ function AgeismFour() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "" }}
+        style={{ marginTop: "", backgroundImage: `url(${pastelGreyBg})`}}
       >
         <div
           className=""
@@ -143,10 +143,11 @@ function AgeismFour() {
             backgroundSize: "cover",
           }}
         >
-          <div className="">
-            <h4 style={{ fontSize: "1.6rem" }}>Act 2: Team Dynamics</h4>
+          <div className="p-2 bg-dark w-50 mx-auto text-light" style={{ borderRadius: "5px", padding: "10px", backgroundColor: '', fontWeight: '300', fontSize: '1.15rem', opacity: 0.8 }}>
+            <h4 className="text-light" style={{ fontSize: "1.6rem", fontWeight: 'lighter'}}>Act 2: Team Dynamics</h4>
+            <hr/>
             <p
-              className="w-50 mx-auto"
+              className="mx-auto"
               style={{
                 padding: "10px",
                 backgroundColor: "",
@@ -156,7 +157,7 @@ function AgeismFour() {
             >
               Now that the team leader has been chosen for the project, the
               project progresses. However as time passes, conflicts arise within
-              the team.{" "}
+              the team.
             </p>
 
             <p className="mt-5" style={{ fontSize: "1.2rem" }}>

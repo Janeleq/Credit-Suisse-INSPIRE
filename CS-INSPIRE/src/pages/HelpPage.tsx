@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-// import emailjs from '@emailjs/browser';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
 import NavigationBar from "../components/NavBarLogin";
 import Chatbot from "../components/Chatbot";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import { useNavigate } from "react-router-dom";
@@ -150,7 +148,7 @@ function HelpPage() {
                   <div
                     className="col-lg-9"
                     data-aos="flip-up"
-                    data-aos-delay="300"
+                    data-aos-delay="200"
                   >
                     <div className="tab-content pt-3" id="pills-tabContent">
                       <div
@@ -177,7 +175,7 @@ function HelpPage() {
                               potentially counter them.
                             </p>
                           </div>
-                          <div className="col-lg-6">
+                          {/* <div className="col-lg-6">
                             <h5 className="text-dark">
                               Where does it come from ?
                             </h5>
@@ -186,7 +184,7 @@ function HelpPage() {
                           <div className="col-lg-6">
                             <h5 className="text-dark">Where can I get some?</h5>
                             <p className="lg-base">- </p>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
 
@@ -197,10 +195,10 @@ function HelpPage() {
                         aria-labelledby="pills-privacy_policy-tab"
                       >
                         <div className="row g-4 mt-2">
-                          <div className="col-lg-6">
+                          {/* <div className="col-lg-6">
                             <h5>Where does it come from ?</h5>
                             <p className="lg-base">-</p>
-                          </div>
+                          </div> */}
                           <div className="col-lg-6">
                             <h5>What is Perception Pause privacy policy</h5>
                             <p className="lg-base">

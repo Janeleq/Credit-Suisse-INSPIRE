@@ -6,6 +6,9 @@ import workplaceDynamics from "../../assets/ageism/workplaceDynamics.jpg";
 import { useNavigate, NavLink } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaCaretRight } from "react-icons/fa";
+import femaleAvatar from "../../assets/ageism/femaleAvatar.svg"
+
 
 function AgeismTwo() {
   const [isLoading, setLoading] = useState(true);
@@ -50,28 +53,31 @@ function AgeismTwo() {
           backgroundSize: "cover",
         }}
       >
-        <div className="p-4 roleplayDesc text-center w-75 mx-auto bg-dark text-light" data-aos="zoom-in" style={{opacity: 0.75}} >
+        <div className="p-2 roleplayDesc text-center w-75 mx-auto bg-dark text-light" data-aos="zoom-in" style={{opacity: 0.80}} >
           <h2 className="text-center mt-5 text-light" style={{fontSize: '2rem'}}>Scenario: Workplace Dynamics</h2>
+        
           <p
-            className="w-50 mx-auto text-dark"
-            style={{ borderRadius: "5px", padding: "15px", backgroundColor: 'lightgrey', fontSize: '1.2rem', opacity: 1 }}
+            className="w-75 mx-auto text-light"
+            style={{ borderRadius: "5px", padding: "5px", backgroundColor: '', fontWeight: '300', fontSize: '1.1rem', opacity: 1 }}
           >
+            <img src= {femaleAvatar} alt="sarah" style={{width: '250px', height: '250px', float: 'left'}}/>
             You will assume the role of Sarah, a mid-level manager in a large
-            corporation. The goal is to navigate various workplace scenarios and
+            corporation. <br/><br/>The goal is to navigate various workplace scenarios and
             address unconscious bias related to ageism. Your actions will shape
             the outcome of the simulation.
           </p>
           <br />
           <br />
-          <h4 className="text-light" style={{fontSize: '1.6rem'}}>Act 1: Team Assignment</h4>
+          <h4 className="text-light" style={{fontSize: '1.6rem', fontWeight: 'lighter'}}>Act 1: Team Assignment</h4>
+          <hr/>
           <p
-            className="w-50 mx-auto text-dark"
-            style={{ borderRadius: "5px", padding: "10px", backgroundColor: 'lightgray', fontSize: '1.2rem', opacity: 1 }}
+            className="w-50 mx-auto text-light"
+            style={{ borderRadius: "5px", padding: "10  px", backgroundColor: '', fontWeight: '300', fontSize: '1.15rem', opacity: 1 }}
           >
       
             You are tasked with building a new project team and you required a
             leader to lead the project. You have a few available candidates for
-            choosing:
+            choosing. Proceed on to the next screen to view the candidates.
             <br />
             <br />
           </p>
@@ -82,7 +88,7 @@ function AgeismTwo() {
               style={{ textDecoration: "none", borderRadius: "5px" }}
               to="/bias/ageismRoleplayContOne"
             >
-              Proceed
+              Proceed <FaCaretRight/>
             </NavLink>
           </button>
         </div>

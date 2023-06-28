@@ -10,10 +10,10 @@ import evaluationIcon from "../../assets/ageism/evaluationIcon.png";
 import energeticIcon from "../../assets/ageism/energeticIcon.png";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
-
+import actionIcon from "../../assets/action.png"
 function AgeismSix() {
   const { state } = useLocation();
-  const action = state.outcome[0]
+  const action = state.outcome[0];
   // const {reflection} = state.reflection;
   const [nextDesc, setNextChosenDesc] = useState(""); // data passed to the next page
   const [candidate, setCandidate] = useState("");
@@ -30,9 +30,9 @@ function AgeismSix() {
   }
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    
-    console.log(state.outcome)
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+    console.log(state.outcome);
     setDescOutcome(state.outcome);
     console.log(descOutcome);
     if (action == 1) {
@@ -49,18 +49,13 @@ function AgeismSix() {
     //    noActionFavorable = (state.noFavorable + 1)
     // }
     if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(state.noFavorable + 1)
-      console.log(noActionFavorable)
+      setNoActionsFavorable(state.noFavorable + 1);
+      console.log(noActionFavorable);
+    } else {
+      setNoActionsFavorable(state.noFavorable);
     }
 
-    else {
-      setNoActionsFavorable(state.noFavorable)
-    }
-
-    
-
-
-    console.log(noActionFavorable)
+    console.log(noActionFavorable);
 
     setCandidate(state.candidate);
     setReflection(state.reflection);
@@ -103,7 +98,7 @@ function AgeismSix() {
 
       <div
         className="row bg-light mx-auto text-center"
-        style={{ marginTop: "" }}
+        style={{ marginTop: "", backgroundImage: `url(${pastelGreyBg})`}}
       >
         <div
           className=""
@@ -125,7 +120,7 @@ function AgeismSix() {
               {favorable}
             </span>
           </h3>
-          <p style={{fontSize: '1.2rem'}}>{descOutcome[2]}</p>
+          <p style={{ fontSize: "1.2rem" }}>{descOutcome[2]}</p>
         </div>
         <div
           className="p-5"
@@ -136,16 +131,33 @@ function AgeismSix() {
             backgroundPosition: "center",
           }}
         >
-          <h4>Act 4: Performance Evaluation</h4>
-          <p className="w-50 mx-auto">
-            It's time for the annual performance evaluations. You must assess
-            each team member objectively.{" "}
-          </p>
+          <div
+            className="bg-dark text-light"
+            style={{
+              borderRadius: "5px",
+              padding: "10px",
+              backgroundColor: "",
+              fontWeight: "300",
+              fontSize: "1.15rem",
+              opacity: 0.8,
+            }}
+          >
+            <h4 className="text-light mb-2" style={{fontWeight: 'lighter'}}>Act 4: Performance Evaluation</h4>
+            <hr/>
+            <p className="w-50 mx-auto">
+              It's time for the annual performance evaluations where you must assess
+              each team member.
+            </p>
 
-          {/* <p className='mt-5 w-50 mx-auto'>After looking through quite some time, you found a unique training program that you think would suit the employees well. However, there is only two opportunity slot for this training program, but you realise you have 3 employees at hand.</p> */}
-          <br />
-          <p className="mb-5">As the manager, what would you do?</p>
+            {/* <p className='mt-5 w-50 mx-auto'>After looking through quite some time, you found a unique training program that you think would suit the employees well. However, there is only two opportunity slot for this training program, but you realise you have 3 employees at hand.</p> */}
+            <br />
+            <p className="mb-5">As the manager, what would you do?</p>
+          </div>
         </div>
+        <p className="lead mt-4">
+          <img src={actionIcon} alt="action" style={{ width: "3%" }} />
+          &nbsp;Choose your next action.
+        </p>
         <div
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>

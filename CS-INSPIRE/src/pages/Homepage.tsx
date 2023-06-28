@@ -94,9 +94,9 @@ const HomePage = () => {
                           Breaking Barriers. Unveiling Biases. Dismantling
                           Prejudice.
                         </p>
-                        <h1 className="h1">
+                        <h3 className="h3 lead mt-2">
                           Unravel the intricate workings of our minds
-                        </h1>
+                        </h3>
                     
                         <p>
                           {/* You are permitted to use this Zay CSS template for your
@@ -131,11 +131,11 @@ const HomePage = () => {
                     </div>
                     <div className="col-lg-6 mb-0 d-flex align-items-center">
                       <div className="text-align-right">
-                        <h1 className="h1">
+                        <h3 className="h3">
                           Explore and engage in meaningful discussions that will
                           help dismantle bias and create a brighter future for
                           all.
-                        </h1>
+                        </h3>
                         <p>
                           Foster a deeper understanding of the biases that shape
                           our perceptions and actions.
@@ -150,7 +150,7 @@ const HomePage = () => {
                 className="carousel-item"
                 style={{
                   height: "80vh",
-                  backgroundImage: `url(${slideOne})`,
+                  backgroundImage: `url($)`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}

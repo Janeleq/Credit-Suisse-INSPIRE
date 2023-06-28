@@ -1,32 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavigationBar from "../components/NavBarLogin";
 import Footer from "../components/Footer";
 import background from "../assets/contactBg.png";
 import { FaPhone, FaEnvelope, FaMapMarker } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [formStatus, setFormStatus] = React.useState("Send");
+  const [styleObj, setStyleObj] = useState({})
   const [isLoading, setLoading] = useState(true);
-
+  const emailForm = useRef();
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
     return new Promise((resolve) => setTimeout(() => resolve(), 0));
   }
 
-  const onSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setFormStatus("Submitting...");
-    const { name, email, message } = e.target.elements;
-    let conFom = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    console.log(conFom);
+    setFormStatus("Submitting...")
+    setStyleObj({backgroundColor: 'black', border: 'none'})
+    emailjs
+      .sendForm(
+        "service_vj2tf9o",
+        "template_ddaufwb",
+        e.target,
+        "UZT5fyPbvAt7Isz-U"
+      )
+      .then(
+        (result) => {
+          setFormStatus("Submitted!")
+          setStyleObj({backgroundColor: 'green', border: 'none'})
+          console.log(result.text);
+        },
+        (error) => {
+          setFormStatus("Failed!")
+          setStyleObj({backgroundColor: 'red', border: 'none'})
+          console.log(error.text);
+        }
+      );
   };
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -34,6 +49,7 @@ const ContactForm = () => {
         setLoading(!isLoading);
       }
     });
+    
   });
 
   return (
@@ -57,7 +73,7 @@ const ContactForm = () => {
             </p>
             <br />
             <div className="contact-details text-center text-muted">
-              <FaPhone /> +65 9835 3213 &nbsp;&nbsp;&nbsp;&nbsp;
+              <FaPhone /> +65 1234 5678 &nbsp;&nbsp;&nbsp;&nbsp;
               <FaEnvelope /> perceptionpause@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;
               <FaMapMarker /> Singapore
             </div>
@@ -65,7 +81,8 @@ const ContactForm = () => {
             <br />
 
             <form
-              onSubmit={onSubmit}
+              ref={emailForm}
+              onSubmit={sendEmail}
               className="w-25 mx-auto"
               style={{ height: "70vh" }}
             >
@@ -75,6 +92,7 @@ const ContactForm = () => {
                 </label>
                 <input
                   className="form-control"
+                  name="user_name"
                   type="text"
                   id="name"
                   required
@@ -86,6 +104,7 @@ const ContactForm = () => {
                 </label>
                 <input
                   className="form-control"
+                  name="user_email"
                   type="email"
                   id="email"
                   required
@@ -97,13 +116,14 @@ const ContactForm = () => {
                 </label>
                 <textarea
                   className="form-control"
+                  name="message"
                   id="message"
                   rows={5}
                   maxLength={250}
                   required
                 />
               </div>
-              <button className="btn btn-dark" type="submit">
+              <button className="btn btn-dark" type="submit" style={styleObj}>
                 {formStatus}
               </button>
             </form>

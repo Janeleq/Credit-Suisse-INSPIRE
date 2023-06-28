@@ -9,6 +9,7 @@ import { createRoot, ReactDOM } from 'react-dom/client'
 
 const url = 'https://newsapi.org/v2/everything?' +
 'q=bias&' +
+// 'q=bias&' + 
 'from=2023-06-01&' +
 'sortBy=publishedAt&' +
 'apiKey=01d127c2f33a483c939e689920e7bab9&' +

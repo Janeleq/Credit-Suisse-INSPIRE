@@ -94,13 +94,18 @@ function GeneralQuiz() {
   };
 
   function writeToDatabase () {
-    console.log(quizStatus);
     console.log("writing to database..");
     const db = getDatabase()
-    console.log(db)
-    update(ref(db, id, "/generalQuizStatus/"), {
+    update(ref(db, id, "/qujz/generalQuizStatus/"), {
       generalQuizStatus: quizStatus,
     }).catch(alert);
+
+    if (showResults) {
+      const db = getDatabase()
+      update(ref(db, id, "/quiz/score/"), {
+        score: score,
+      }).catch(alert);
+    }
   }
   /* Resets the game back to default */
   const restartGame = () => {

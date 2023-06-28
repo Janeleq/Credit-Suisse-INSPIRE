@@ -6,10 +6,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
+import ageismEndIcon from "../../assets/ageism/ageismEndIcon.svg";
 import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png";
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { db } from "../../firebase/firebase.js";
 import { getDatabase, ref, set, update } from "firebase/database";
+import ageismEndIcon2 from "../../assets/ageism/ageismIcon2.svg"
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaMedal } from "react-icons/fa";
 
 function AgeismSix() {
   const { state } = useLocation();
@@ -35,6 +40,7 @@ function AgeismSix() {
 
   useEffect(() => {
     console.log("Running the end of ageism script");
+    AOS.init()
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -156,7 +162,7 @@ function AgeismSix() {
         <div
           className="p-5"
           style={{
-            height: "80vh",
+            height: "fit-content",
             backgroundImage: `url(${pastelGreyBg})`,
             backgroundSize: "cover",
             borderBottom: "1px solid grey",
@@ -174,8 +180,9 @@ function AgeismSix() {
             <br />
             <br />
           </p>
+          <img src={ageismEndIcon} alt="ending" style={{width: '350px', height: '350px', float: 'right'}}/>
           <h3 className="">Overall Results:&nbsp;{emoji}</h3>
-          <span style={{ width: "" }} className="mx-auto w-50">
+          <span style={{ width: "", fontSize: '20px' }} className="mx-auto w-50">
             {simulationResults}
           </span>
           <br />
@@ -185,13 +192,15 @@ function AgeismSix() {
         </div>
         <div
           style={{
-            backgroundImage: `url(${mitigatingBg})`,
+            backgroundImage: `url(${pastelGreyBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "85vh",
+            backgroundRepeat: 'no-repeat',
+            height: "fit-content",
             width: "100vw",
           }}
         >
+          <img src={ageismEndIcon2} alt="Exploration" style={{float: 'left'}}/>
           <h1
             style={{
               paddingTop: "12vh",
@@ -201,8 +210,8 @@ function AgeismSix() {
             }}
           >
             <h2 data-aos="fade-in" data-aos-delay="300">
-              <span style={{ fontWeight: "bold", fontSize: "50px" }}>
-                🏅 Continue Exploring and Learning
+              <span style={{ fontWeight: "bold", fontSize: "50px", textAlign: 'center' }}>
+                <FaMedal/> &nbsp;Continue Exploring and Learning
               </span>
             </h2>
           </h1>
@@ -216,13 +225,13 @@ function AgeismSix() {
             <div className="row" style={{ paddingLeft: "" }}>
               <div
                 className="col-sm-12 w-75"
-                style={{ paddingLeft: "10vw", textAlign: "right" }}
+                style={{ paddingLeft: "10vw", textAlign: "" }}
               >
                 You have received a badge for completing this roleplay. Check
                 your profile to view the achievement badge.
                 <br />
-                <button className="w-25 mx-auto mb-5" onClick={writeToDatabase}>
-                  View badge!
+                <button className="mt-2 mx-auto mb-5" onClick={writeToDatabase}>
+                  View badge
                 </button>
               </div>
             </div>
