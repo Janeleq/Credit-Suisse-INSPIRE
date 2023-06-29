@@ -10,12 +10,17 @@
       name="Perception Pause"
       content="A platform that raise awareness regarding unconscious bias"
     />
-    
+
     <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -46,90 +51,124 @@
 
       .loader-container {
         top: 0px;
-      
       }
-      
+
       .container {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
 
-.item {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-}
+      .item {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
 
-.item-1 {
-  background-color: black;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  animation: item-1_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
-}
+      .item-1 {
+        background-color: black;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        animation: item-1_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+      }
 
-.item-2 {
-  background-color: grey;
-  top: 0;
-  right: 0;
-  animation: item-2_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
-}
+      .item-2 {
+        background-color: grey;
+        top: 0;
+        right: 0;
+        animation: item-2_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+      }
 
-.item-3 {
-  background-color: black;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  animation: item-3_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
-}
+      .item-3 {
+        background-color: black;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        animation: item-3_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+      }
 
-.item-4 {
-  background-color: grey;
-  bottom: 0;
-  left: 0;
-  animation: item-4_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
-}
+      .item-4 {
+        background-color: grey;
+        bottom: 0;
+        left: 0;
+        animation: item-4_move 1.8s cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
+      }
 
-@keyframes item-1_move {
-  0%, 100% {transform: translate(0, 0)} 
-  25% {transform: translate(0, 100px)} 
-  50% {transform: translate(100px, 100px)} 
-  75% {transform: translate(100px, 0)} 
-}
+      @keyframes item-1_move {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(0, 100px);
+        }
+        50% {
+          transform: translate(100px, 100px);
+        }
+        75% {
+          transform: translate(100px, 0);
+        }
+      }
 
-@keyframes item-2_move {
-  0%, 100% {transform: translate(0, 0)} 
-  25% {transform: translate(-100px, 0)} 
-  50% {transform: translate(-100px, 100px)} 
-  75% {transform: translate(0, 100px)} 
-}
+      @keyframes item-2_move {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(-100px, 0);
+        }
+        50% {
+          transform: translate(-100px, 100px);
+        }
+        75% {
+          transform: translate(0, 100px);
+        }
+      }
 
-@keyframes item-3_move {
-  0%, 100% {transform: translate(0, 0)} 
-  25% {transform: translate(0, -100px)} 
-  50% {transform: translate(-100px, -100px)} 
-  75% {transform: translate(-100px, 0)} 
-}
+      @keyframes item-3_move {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(0, -100px);
+        }
+        50% {
+          transform: translate(-100px, -100px);
+        }
+        75% {
+          transform: translate(-100px, 0);
+        }
+      }
 
-@keyframes item-4_move {
-  0%, 100% {transform: translate(0, 0)} 
-  25% {transform: translate(100px, 0)} 
-  50% {transform: translate(100px, -100px)} 
-  75% {transform: translate(0, -100px)} 
-}
-      </style>
-
+      @keyframes item-4_move {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(100px, 0);
+        }
+        50% {
+          transform: translate(100px, -100px);
+        }
+        75% {
+          transform: translate(0, -100px);
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <div id="root" style="width: 100%; height: 100%; align-items: center;"></div>
+    <div id="root" style="width: 100%; height: 100%; align-items: center"></div>
 
     <!-- Loading Spinner Div -->
 

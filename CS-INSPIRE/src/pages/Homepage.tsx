@@ -12,6 +12,7 @@ import "../styles/_main.scss";
 import slideOne from "../assets/homepage/slideOne.svg";
 import slideTwo from "../assets/homepage/slideTwo.svg";
 import slideThree from "../assets/homepage/slideThree.svg";
+import introIcon from "../assets/homepage/homepageIntroIcon.svg";
 
 const HomePage = () => {
   const [isLoading, setLoading] = useState(true);
@@ -40,7 +41,8 @@ const HomePage = () => {
       <NavigationBar />
       <Chatbot />
       <div className="parallaxContainer m-0 parallax" style={{}}>
-        <h1 style={{ marginTop: "-50px" }}>Perception Pause</h1>
+        <img className="h-50" src={introIcon} alt="Intro Background" style={{float: 'left'}} />
+        <h1 className="mt-4" style={{ marginTop: "" }}>Perception Pause</h1>
         <p className="lead">Discover your unconscious biases today.</p>
         <a href="/register">Learn more</a>
       </div>
@@ -82,7 +84,7 @@ const HomePage = () => {
                 <div className="container">
                   <div className="row p-5">
                     <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                      <img className="img-fluid" src={slideTwo} alt="" />
+                      <img className="img-fluid" src="" alt="" />
                     </div>
                     <div className="col-lg-6 mb-0 d-flex align-items-center">
                       <div className="text-align-left">
@@ -97,7 +99,7 @@ const HomePage = () => {
                         <h3 className="h3 lead mt-2">
                           Unravel the intricate workings of our minds
                         </h3>
-                    
+
                         <p>
                           {/* You are permitted to use this Zay CSS template for your
                         commercial websites. You are{" "}
@@ -131,7 +133,7 @@ const HomePage = () => {
                     </div>
                     <div className="col-lg-6 mb-0 d-flex align-items-center">
                       <div className="text-align-right">
-                        <h3 className="h3">
+                        <h3 className="h3" style={{fontWeight: '500'}}>
                           Explore and engage in meaningful discussions that will
                           help dismantle bias and create a brighter future for
                           all.
@@ -158,15 +160,11 @@ const HomePage = () => {
                 <div className="container">
                   <div className="row p-5">
                     <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                      <img
-                        className="img-fluid"
-                        src={slideThree}
-                        alt=""
-                      />
+                      <img className="img-fluid" src={slideThree} alt="" />
                     </div>
                     <div className="col-lg-6 mb-0 d-flex align-items-center">
                       <div className="text-align-right">
-                        <h1 className="h1">
+                        <h1 className="h1" style={{fontWeight: '500'}}>
                           Explore and engage in meaningful discussions that will
                           help dismantle bias and create a brighter future for
                           all.
@@ -269,7 +267,7 @@ const HomePage = () => {
             </div>
           </div> */}
 
-          <div className="row">
+          {/* <div className="row">
             <div className="col">
               <h4
                 className="text-uppercase"
@@ -427,7 +425,7 @@ const HomePage = () => {
               </p>
             </div>
           </div>
-          <br />
+          <br /> */}
           {/* <div className='row'>
               <div className='col'> */}
           {/* <blockquote>History and Science behind Unconscious Bias</blockquote>

@@ -37,6 +37,7 @@ function Profile() {
   const [sexismStatus, updatesexismStatus] = useState("incomplete");
   const [haloEffectStatus, updatehaloEffectStatus] = useState("incomplete");
   const [beautyBiasStatus, updatebeautyBiasStatus] = useState("incomplete");
+  const [status, setStatus] = useState(true)
   const { state } = useLocation();
 
   // updateEmail(auth.currentUser, email)
@@ -58,8 +59,8 @@ function Profile() {
     return new Promise((resolve) => setTimeout(() => resolve(), 0));
   }
 
+
   useEffect(() => {
-    getFromDatabase();
 
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
@@ -68,9 +69,10 @@ function Profile() {
         setLoading(!isLoading);
       }
     });
-  });
-
-  useEffect(() => {
+    if (status) {
+      getFromDatabase();
+      // setStatus(false)
+    }
     // unconscious bias quiz
     if (user !== null) {
       user.providerData.forEach((profile) => {
@@ -98,7 +100,7 @@ function Profile() {
       console.log(user.metadata.lastSignInTime)
       setLoginTime(user.metadata.lastSignInTime);
     }
-  }, []);
+  });
 
   //read statuses of roleplay from database
   function getFromDatabase() {
