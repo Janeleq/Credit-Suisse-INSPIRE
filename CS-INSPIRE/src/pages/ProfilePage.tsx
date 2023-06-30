@@ -176,10 +176,7 @@ function Profile() {
       className="container-fluid p-0"
       style={{
         overflow: "hidden",
-        backgroundImage: `url(${profileBgIcon})`,
-        backgroundPosition: "left",
-        backgroundSize: "",
-        backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${pastelgreyBg})`,
       }}
     >
       <Navbar></Navbar>
@@ -187,7 +184,11 @@ function Profile() {
       <section
         className="section"
         id="about"
-        style={{ paddingTop: "15vh", height: "100vh" }}
+        style={{ paddingTop: "15vh", height: "100vh",
+        backgroundImage: `url(${profileBgIcon})`,
+        backgroundPosition: "left",
+        backgroundSize: "",
+        backgroundRepeat: "no-repeat", }}
       >
         {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
         <div className="row">

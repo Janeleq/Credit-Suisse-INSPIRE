@@ -27,7 +27,7 @@ function AgeismSix() {
   const [favorable, setFavorable] = useState("");
   const [emoji, setEmoji] = useState("");
   const [id, setId] = useState("");
-  const [noActionFavorable, setNoActionsFavorable] = useState(0);
+  const [noActionFavorable, setNoActionsFavorable] = useState(0)
   const [simulationResults, setSimulationResults] = useState("");
   const navigate = useNavigate();
   const auth = getAuth();
@@ -73,22 +73,21 @@ function AgeismSix() {
       );
     }
     setDescOutcome(state.outcome);
-    if (descOutcome[0] == 1) {
+    if (descOutcome[0] === "1") {
       setFavorable("✔️ Favorable");
-    } else if (descOutcome[0] == 2) {
+    } else if (descOutcome[0] === "2") {
       setFavorable("❌ Not favorable");
     } else {
       setFavorable("❌ Not favorable");
     }
 
-    if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(state.noFavorable + 1);
-    } else {
-      setNoActionsFavorable(state.noFavorable);
-    }
+    if (favorable === "✔️ Favorable") {
+      setNoActionsFavorable(state.noFavorable + 1)
+    } 
 
-    setCandidate(state.candidate);
-    setReflection(state.reflection);
+    else {
+      setNoActionsFavorable(state.noFavorable)
+    }
 
     if (user !== null) {
       user.providerData.forEach((profile) => {

@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavBarLogin.tsx";
 import Footer from "../../components/Footer.tsx";
 import statisticOne from "../../assets/ageism/ageismStats.png";
-import statisticTwo from "../../assets/ageism/ageismStatsTwo.png"
-import statisticThree from "../../assets/ageism/ageismStatsThree.png"
+import statisticTwo from "../../assets/ageism/ageismStatsTwo.png";
+import statisticThree from "../../assets/ageism/ageismStatsThree.png";
 import pastelgreyBg from "../../assets/pastelGreyBg.png";
 import ageismIntroIcon from "../../assets/ageism/ageismFactsIntro.svg";
-import ageismIconOne from "../../assets/ageism/ageismIcon1.png"
+import ageismIconOne from "../../assets/ageism/ageismIcon1.png";
+// import "../../styles/_ageismFacts.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -46,8 +47,8 @@ function AgeismFacts() {
   }
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    AOS.init()
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    AOS.init();
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -77,7 +78,8 @@ function AgeismFacts() {
           />
           {/* <h2 className="lead" style={{ marginTop: '20vh', paddingLeft:'5vw'}}>Some statistics and facts about Ageism!</h2> */}
           <h3
-            data-aos="fade-in" data-aos-delay="300"
+            data-aos="fade-in"
+            data-aos-delay="300"
             style={{
               marginTop: "18vh",
               paddingLeft: "5vw",
@@ -89,7 +91,8 @@ function AgeismFacts() {
             Ageism:
             <br />
             <span
-              data-aos="fade-in" data-aos-delay="300"
+              data-aos="fade-in"
+              data-aos-delay="300"
               className="lead"
               style={{
                 fontFamily: "Concert One, cursive",
@@ -120,34 +123,145 @@ function AgeismFacts() {
           </figcaption>
         </figure> */}
       </div>
-      
+
       <div className="row">
-        <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh'}}>
-          <img src={statisticOne} alt="Statistic One" style={{width: '100vw', height: '95vh'}} />
-          <span className="text-center mx-auto" style={{width: '100vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits:  National Poll of Healthy Aging</span>
+        <div
+          className="col-12 mx-auto text-center bg-light"
+          style={{ height: "100vh" }}
+        >
+          <img
+            src={statisticOne}
+            alt="Statistic One"
+            style={{ width: "100vw", height: "95vh" }}
+          />
+          <span
+            className="text-center mx-auto"
+            style={{
+              width: "100vw",
+              height: "5vh",
+              backgroundColor: "lightgray",
+            }}
+          >
+            Credits: National Poll of Healthy Aging
+          </span>
         </div>
       </div>
       <div className="row">
-        <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh', backgroundImage: `url(${pastelgreyBg})`}}>
-          <img src={ageismIconOne} alt="Statistic One" style={{float: "left", marginTop: '10vh', width: '40vw', height: '50vh'}} />
-          <br/><br/>
-          <p>Age is one of the first things we notice about other people. However, age is often used to categorize and divide people in ways that lead to harm, disadvantage and injustice and erode solidarity across generations. 
-<br/><br/>
-   Ageism can be found within institutions, in interactions between people and within ourselves. Globally, 1 in 2 people are ageist against older people and in Europe, younger people report more perceived ageism than other age groups.
-</p>
-          <span className="text-center mx-auto" style={{width: '100vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits:  World Health Organisation (WHO)</span>
+        <div
+          className="col-12 mx-auto text-center bg-light"
+          style={{ height: "100vh", backgroundImage: `url(${pastelgreyBg})` }}
+        >
+          <img
+            src={ageismIconOne}
+            alt="Statistic One"
+            style={{
+              float: "left",
+              marginTop: "10vh",
+              width: "40vw",
+              height: "50vh",
+            }}
+          />
+          <br />
+          <br />
+          <p className="w-75 mx-auto">
+            Age is one of the first things we notice about other people.
+            However, age is often used to categorize and divide people in ways
+            that lead to harm, disadvantage and injustice and erode solidarity
+            across generations.
+            <br />
+            <br />
+            Ageism can be found within institutions, in interactions between
+            people and within ourselves. Globally, 1 in 2 people are ageist
+            against older people and in Europe, younger people report more
+            perceived ageism than other age groups.
+          </p>
+          <span
+            className="text-center mx-auto"
+            style={{
+              width: "100vw",
+              height: "5vh",
+              backgroundColor: "lightgray",
+            }}
+          >
+            Credits: World Health Organisation (WHO)
+          </span>
         </div>
       </div>
       <div className="row">
-        <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh'}}>
-          <img src={statisticTwo} alt="Statistic Two" style={{width: '100vw', height: '95vh'}} />
-          <span className="text-center mx-auto" style={{width: '100vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits:  National Poll of Healthy Aging</span>
+        <div
+          className="col-12 mx-auto text-center bg-light"
+          style={{ height: "100vh" }}
+        >
+          <img
+            src={statisticTwo}
+            alt="Statistic Two"
+            style={{ width: "100vw", height: "95vh" }}
+          />
+          <span
+            className="text-center mx-auto"
+            style={{
+              width: "100vw",
+              height: "5vh",
+              backgroundColor: "lightgray",
+            }}
+          >
+            Credits: National Poll of Healthy Aging
+          </span>
         </div>
       </div>
       <div className="row">
-        <div className="col-12 mx-auto text-center bg-light" style={{height: '100vh'}}>
-          <img src={statisticThree} alt="Statistic Three" style={{width: '100vw', height: '70vh'}} />
-          <span className="text-center mx-auto" style={{width: '80vw', height: '5vh', backgroundColor: 'lightgray'}}>Credits: Zippia</span>
+        <div
+          className="col-12 mx-auto text-center bg-light"
+          style={{ height: "100vh" }}
+        >
+          <img
+            src={statisticThree}
+            alt="Statistic Three"
+            style={{ width: "100vw", height: "70vh" }}
+          />
+          <span
+            className="text-center mx-auto"
+            style={{
+              width: "80vw",
+              height: "5vh",
+              backgroundColor: "lightgray",
+            }}
+          >
+            Credits: Zippia
+          </span>
+        </div>
+      </div>
+      <div className="row" style={{ backgroundColor: "lightgray" }}>
+        <div className="col-12">
+          <figure>
+            <figcaption>HE</figcaption>
+            <svg viewBox="0 0 63.6619772368 63.6619772368">
+              <circle
+                className="pie1"
+                cx="31.8309886184"
+                cy="31.8309886184"
+                r="15.9154943092"
+              />
+              <circle
+                className="pie2"
+                cx="31.8309886184"
+                cy="31.8309886184"
+                r="15.9154943092"
+              />
+              <circle
+                className="pie3"
+                cx="31.8309886184"
+                cy="31.8309886184"
+                r="15.9154943092"
+              />
+              <circle
+                className="pie4"
+                cx="31.8309886184"
+                cy="31.8309886184"
+                r="15.9154943092"
+              />
+            </svg>
+          </figure>
         </div>
       </div>
 

@@ -24,8 +24,8 @@ function AgeismFive() {
   const [nextDesc, setNextChosenDesc] = useState(""); // data passed to the next page
   const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
-  const [noActionFavorable, setNoActionsFavorable] = useState(0);
   const navigate = useNavigate();
+  const [noActionFavorable, setNoActionsFavorable] = useState(0)
 
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -34,9 +34,6 @@ function AgeismFive() {
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    // setNoActionsFavorable(state.noFavorable);
-    setCandidate(state.candidate);
-    setReflection(state.reflection);
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -47,31 +44,35 @@ function AgeismFive() {
   }, []);
 
   useEffect(() => {
-    if (action == 1) {
+    console.log(state.action)
+    if (state.action === "1") {
       setDescOutcome(
         "😊 Mediating and encouraging open dialogue fosters understanding and collaboration."
       );
       setFavorable("✔️ Favorable");
       // noActionFavorable += 1
-    } else if (action == 2) {
+    } 
+    else if (state.action === "2") {
       setDescOutcome(
         "😔 Siding with one team member based on personal bias exacerbates age-related conflicts."
       );
       setFavorable("❌ Not favorable");
-    } else {
+    } 
+    else {
       setDescOutcome(
         "😔 Ignoring the conflict allows it to escalate and negatively impact team dynamics."
       );
       setFavorable("❌ Not favorable");
     }
-    if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(state.noFavorable + 1)
-      console.log(noActionFavorable)
+    if (favorable === "✔️ Favorable") {
+       setNoActionsFavorable(state.noFavorable + 1)
+      
     }
 
     else {
       setNoActionsFavorable(state.noFavorable)
     }
+    console.log(noActionFavorable)
   });
 
   const handleChoice = (event, param) => {
@@ -81,7 +82,7 @@ function AgeismFive() {
   };
 
   const Proceed = () => {
-    if (nextDesc) {
+    if (action) {
       navigate("/bias/ageismRoleplayContFour", {
         state: {
           outcome: nextDesc,
@@ -171,7 +172,7 @@ function AgeismFive() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              1,
+              "1",
               "You have chosen to made the effort to liase with the top management to open more slots for the training program and encourage all team members to attend the training sessions.",
               "Encouraging all team members to attend training promotes equality and growth.",
             ])
@@ -201,7 +202,7 @@ function AgeismFive() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              2,
+              "2",
               "You have chosen to suggest training only to the younger team members.",
               "Suggesting training only to younger team members perpetuates age-related biases.",
             ])
@@ -229,7 +230,7 @@ function AgeismFive() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              3,
+              "3",
               "You have chosen to take the easy way out and dismiss the importance of training for the team.",
               "Dismissing the importance of training hinders personal and professional development.",
             ])

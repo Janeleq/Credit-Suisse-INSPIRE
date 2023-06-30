@@ -5,7 +5,9 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../assets/PerceptionPause_newlogo.png'
 import Footer from '../components/Footer.tsx';
 import NavigationBar from '../components/NavBar.tsx';
-import background  from '../assets/loginBg.png'
+import loginIcon  from '../assets/login/loginIcon.png'
+import greyBg from "../assets/pastelGreyBg.png"
+
 
 
 const LoginPage = () => {
@@ -86,7 +88,7 @@ const LoginPage = () => {
     
  
     return(
-        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>    
+        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${greyBg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>    
             <NavigationBar/>
             <div className='mb-5 text-center' style={{height: '100vh'}}>          
        
@@ -99,8 +101,8 @@ const LoginPage = () => {
                      <br/>
               
 
-
-                    <div className='row text-center' style={{fontSize:"28px"}}>
+<div className='mx-auto p-3 ' style={{backgroundImage: `url(${loginIcon})`, backgroundSize: '', backgroundRepeat: 'no-repeat', backgroundPosition: 'left', width: '', borderRadius: '5px', boxShadow: '5px grey', opacity: '0.95'}}>
+                    <div className='row text-center' style={{fontSize:"28px", backgroundColor: ''}}>
                             <div className="col p-0"></div>
                             <div className='col p-0'>
                                 <div className='row form'>
@@ -179,11 +181,10 @@ const LoginPage = () => {
                         </div>
                         <br/><br/>
                         <div className='row text-center'>
-                                <div className='col p-0'>
+                                <div className='w-50 col p-0'>
                                     <button
                                     type="submit" 
                                     onClick={onLogin}
-                                    className='w-25'
                                     style={{width: '200px', height:'auto', alignSelf:'center'}}   
                                 >  
                                     Log In                            
@@ -200,6 +201,7 @@ const LoginPage = () => {
                         </p>
                     <p className="text-center" style={{color:"red"}}>{error}</p>
                     {/* <p className="text-center" style={{color:"green"}}>{success}</p>           */}
+                    </div>
                 </div>  
             <Footer></Footer>   
         </div>

@@ -21,7 +21,7 @@ function AgeismSix() {
   const [descOutcome, setDescOutcome] = useState([]);
   const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
-  const [noActionFavorable, setNoActionsFavorable] = useState(0);
+  const [noActionFavorable, setNoActionsFavorable] = useState(0)
   const navigate = useNavigate();
 
   function someRequest() {
@@ -31,34 +31,29 @@ function AgeismSix() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
-    console.log(state.outcome);
-    setDescOutcome(state.outcome);
-    console.log(descOutcome);
-    if (action == 1) {
+    console.log(state.outcome[0])
+    console.log(state)
+    setDescOutcome(state.outcome)
+    if (state.outcome[0] == "1") {
       setFavorable("✔️ Favorable");
-    } else if (action == 2) {
+    } else if (state.outcome[0] == "2") {
       setFavorable("❌ Not favorable");
     } else {
       setFavorable("❌ Not favorable");
     }
 
-    // var noActionFavorable = state.noFavorable;
+    if (favorable === "✔️ Favorable") {
+      setNoActionsFavorable(state.noFavorable + 1)
 
-    // if (favorable == "✔️ Favorable") {
-    //    noActionFavorable = (state.noFavorable + 1)
-    // }
-    if (favorable == "✔️ Favorable") {
-      setNoActionsFavorable(state.noFavorable + 1);
-      console.log(noActionFavorable);
-    } else {
-      setNoActionsFavorable(state.noFavorable);
+    }
+
+    else {
+      setNoActionsFavorable(state.noFavorable)
     }
 
     console.log(noActionFavorable);
 
-    setCandidate(state.candidate);
-    setReflection(state.reflection);
+
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -162,7 +157,7 @@ function AgeismSix() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              1,
+              "1",
               "You have chosen to evaulate each team member equally, based on their individual contributions and achievements.",
               "Evaluating each team member objectively based on their individual contributions is fair.",
             ])
@@ -192,7 +187,7 @@ function AgeismSix() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              2,
+              "2",
               "You have chosen to downplay Alex's contributions due to assumption of his age.",
               "Downplaying Alex's contributions due to assumptions about age is essentially encouraging ageism.",
             ])
@@ -220,7 +215,7 @@ function AgeismSix() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              3,
+              "3",
               "You have chosen to give Emma higher ratings based on assumptions about youth and energy.",
               "Giving Emma higher ratings based solely based on assumptions about youth and energy is unfair.",
             ])

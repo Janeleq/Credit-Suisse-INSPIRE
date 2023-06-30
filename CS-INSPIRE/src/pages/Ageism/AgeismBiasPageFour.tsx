@@ -33,12 +33,6 @@ function AgeismFour() {
 
   useEffect(() => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    if (state.reflection == "null") {
-      setReflection("You did not enter any reflection");
-    } else {
-      setReflection(state.reflection);
-      // console.log(reflection)
-    }
 
     setCandidate(state.candidate);
     someRequest().then(() => {
@@ -52,12 +46,12 @@ function AgeismFour() {
 
   useEffect(() => {
     
-    if (candidate == "Alex") {
+    if (candidate === "Alex") {
       setOutcome(
         "😔 Selecting Alex solely based on experience may perpetuate age-related biases."
       );
       setFavorable("❌ Not favorable");
-    } else if (candidate == "Emma") {
+    } else if (candidate === "Emma") {
       setOutcome(
         "😔 Selecting Emma solely based on youth may overlook the value of experience."
       );
@@ -69,10 +63,13 @@ function AgeismFour() {
       setFavorable("✔️ Favorable");
     }
 
-    if (favorable == "✔️ Favorable") {
+    if (favorable === "✔️ Favorable") {
       setNoActionsFavorable(1);
     }
 
+    else {
+      setNoActionsFavorable(0)
+    }
     console.log(noActionFavorable)
   });
 
@@ -178,7 +175,7 @@ function AgeismFour() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              1,
+              "1",
               "You have chosen to mediate between Emma and John, encouraging open dialogue between them, and getting rid of potential bias.",
             ])
           }
@@ -205,7 +202,7 @@ function AgeismFour() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              2,
+              "2",
               "You have chosen to side with one team member based on personal bias.",
             ])
           }
@@ -232,7 +229,7 @@ function AgeismFour() {
           className="col-lg-4 col-md-6 col-12 mt-4 pt-2"
           onClick={(event) =>
             handleChoice(event, [
-              3,
+              "3",
               "You have chosen to ignore the conflict between both Emma and John, and hope it resolves itself.",
             ])
           }
