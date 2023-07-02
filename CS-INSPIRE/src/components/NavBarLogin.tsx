@@ -30,7 +30,7 @@ function NavigationBarLogin() {
         console.log("  Photo URL: " + profile.photoURL);
       });
     }
-  });
+  }, []);
 
   function goHome() {
     console.log("Heading to home page!");

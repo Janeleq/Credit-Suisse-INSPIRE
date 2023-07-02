@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Navbar from "../components/NavBarLogin.tsx";
 import Footer from "../components/Footer.tsx";
 import Chatbot from "../components/Chatbot.tsx";
@@ -6,7 +6,7 @@ import footerBg from "../assets/pastelGreyBg.png";
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import profileBgIcon from "../assets/profile/profileBgIcon.svg";
-import pastelgreyBg from "../assets/pastelGreyBg.png"
+import pastelgreyBg from "../assets/pastelGreyBg.png";
 import {
   get,
   ref,
@@ -24,20 +24,25 @@ function Profile() {
   const user = auth.currentUser;
   const [email, setEmail] = useState("");
   const [noPathsCompleted, setNoPathsCompleted] = useState(0);
-  const [styleObj, setStyle] = useState("");
+  const [ageismstyleObj, setAgeismStyle] = useState({});
+  const [sexismstyleObj, setSexismStyle] = useState({});
+  const [beautystyleObj, setBeautyStyle] = useState({});
+  const [halostyleObj, setHaloStyle] = useState({});
+  const [haloeffectMedal, updatehaloeffectMedal] = useState(null);
+  const [quizStyleObj, setQuizStyle] = useState({});
   const [name, setName] = useState("");
   const [photo, setPhoto] = useState("");
   const [id, setId] = useState("");
   const [login, setLoginTime] = useState("");
   const [quizStatus, updateQuizStatus] = useState("incomplete");
-  const [quizScore, updateQuizScore] = useState(0)
+  const [quizScore, updateQuizScore] = useState(0);
   const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete");
   const [ageismStatus, updateAgeismStatus] = useState("incomplete");
   const [ageismMedal, updateAgeismMedal] = useState(null);
   const [sexismStatus, updatesexismStatus] = useState("incomplete");
   const [haloEffectStatus, updatehaloEffectStatus] = useState("incomplete");
   const [beautyBiasStatus, updatebeautyBiasStatus] = useState("incomplete");
-  const [status, setStatus] = useState(true)
+  const [status, setStatus] = useState(true);
   const { state } = useLocation();
 
   // updateEmail(auth.currentUser, email)
@@ -59,9 +64,7 @@ function Profile() {
     return new Promise((resolve) => setTimeout(() => resolve(), 0));
   }
 
-
   useEffect(() => {
-
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -73,6 +76,7 @@ function Profile() {
       getFromDatabase();
       // setStatus(false)
     }
+
     // unconscious bias quiz
     if (user !== null) {
       user.providerData.forEach((profile) => {
@@ -97,7 +101,7 @@ function Profile() {
         console.log(user.uid);
         setId(user.uid);
       });
-      console.log(user.metadata.lastSignInTime)
+      console.log(user.metadata.lastSignInTime);
       setLoginTime(user.metadata.lastSignInTime);
     }
   });
@@ -107,9 +111,10 @@ function Profile() {
     console.log("retrieving data from database...");
 
     const db = getDatabase();
-   
-    
-      // retrieving data for ageism
+
+    // retrieving data for ageism
+
+    var nopathsArray = []; // to keep track of paths completed
     const ageismStatusRef = ref(db, `${id}/ageismStatus`);
     console.log(ageismStatusRef);
     onValue(ageismStatusRef, (snapshot) => {
@@ -121,25 +126,93 @@ function Profile() {
       }
     });
 
-        if (ageismStatus == "completed") {
-          updateAgeismMedal(<FaMedal />);
-          setStyle({ fontWeight: 500, color: "green" });
-          setNoPathsCompleted(1);
-        } else {
-          setStyle({ fontWeight: 500, color: "red" });
-          updateAgeismMedal("");
-          setNoPathsCompleted(0);
-        }
+    if (ageismStatus == "completed") {
+      nopathsArray.push(1);
+      updateAgeismMedal(<FaMedal />);
+      setAgeismStyle({
+        fontSize: "0.95rem",
+        fontWeight: "700",
+        color: "green",
+        borderRadius: "5px",
+        padding: "2px",
+      });
+    } else {
+      setAgeismStyle({
+        fontSize: "0.95rem",
+        fontWeight: "700",
+        color: "red",
+        borderRadius: "5px",
+        padding: "2px",
+      });
+      updateAgeismMedal("");
+    }
 
+    // retrieving data for sexism
+    // const sexismStatusRef = ref(db, `${id}/sexismStatus`);
+    // console.log(sexismStatusRef);
+    // onValue(sexismStatusRef, (snapshot) => {
+    //   if (snapshot.exists()) {
+    //     const data = snapshot.val();
+    //     updatesexismStatus(data);
+    //   } else {
+    //     updatesexismStatus("incomplete");
+    //   }
+    // });
 
+    // if (ageismStatus == "completed") {
+    //   updateAgeismMedal(<FaMedal />);
+    //   setAgeismStyle({ fontSize: '0.85rem', fontWeight: '700', backgroundColor: "green", borderRadius: '5px', padding: '2px'});
+    //   setNoPathsCompleted(1);
+    // } else {
+    //   setAgeismStyle({ fontSize: '0.85rem', fontWeight: '700', backgroundColor: "red", borderRadius: '5px', padding: '2px' });
+    //   updateAgeismMedal("");
+    //   setNoPathsCompleted(0);
+    // }
+
+    // retrieving data for halo effect
+    const haloeffectStatus = ref(db, `${id}/haloeffectStatus`);
+    console.log(haloeffectStatus);
+    onValue(haloeffectStatus, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updatehaloEffectStatus(data);
+      } else {
+        updatehaloEffectStatus("incomplete");
+      }
+    });
+
+    if (haloEffectStatus == "completed") {
+      nopathsArray.push(1);
+      updatehaloeffectMedal(<FaMedal />);
+      setHaloStyle({
+        fontSize: "0.95rem",
+        fontWeight: "700",
+        color: "green",
+        borderRadius: "5px",
+        padding: "2px",
+      });
+    } else {
+      setHaloStyle({
+        fontSize: "0.95rem",
+        fontWeight: "700",
+        color: "red",
+        borderRadius: "5px",
+        padding: "2px",
+      });
+      updatehaloeffectMedal("");
+    }
+
+    setNoPathsCompleted(nopathsArray.length);
     // retrieving data for unconscious bias quiz
     const quizStatusRef = ref(db, `${id}/generalQuizStatus`);
     onValue(quizStatusRef, (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
         updateQuizStatus(data);
+        setQuizStyle({ color: "green" });
       } else {
         updateQuizStatus("incomplete");
+        setQuizStyle({ color: "red" });
       }
     });
 
@@ -184,11 +257,14 @@ function Profile() {
       <section
         className="section"
         id="about"
-        style={{ paddingTop: "15vh", height: "100vh",
-        backgroundImage: `url(${profileBgIcon})`,
-        backgroundPosition: "left",
-        backgroundSize: "",
-        backgroundRepeat: "no-repeat", }}
+        style={{
+          paddingTop: "12vh",
+          height: "fit-content",
+          backgroundImage: `url(${profileBgIcon})`,
+          backgroundPosition: "left",
+          backgroundSize: "",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
         <div className="row">
@@ -221,36 +297,36 @@ function Profile() {
             </div>
             <div className="row about-text go-to">
               <div className="col-md-4 p-2">
-                <h2 className="lead" style={{ fontSize: "25px" }}>
+                <h2 className="lead" style={{ fontSize: "25px", fontWeight: '400' }}>
                   Name
                 </h2>
-                <p>{name}</p>
+                <p className="" style={{fontWeight: '300'}}>{name}</p>
               </div>
 
               <div className="col-md-4 p-2">
                 <h2
                   className="lead"
-                  style={{ fontSize: "25px", display: "inline-block" }}
+                  style={{ fontSize: "25px", display: "inline-block", fontWeight: '400' }}
                 >
                   Email &nbsp;
                 </h2>
-                <button
+                {/* <button
                   className="m-1 p-1"
                   style={{ fontSize: "15px", display: "inline" }}
                   //   onClick={getFromDatabase}
                 >
-                  Update 
-                </button>
-                <p>{email}</p>
+                  Update
+                </button> */}
+                <p style={{fontWeight: '300'}}>{email}</p>
               </div>
 
               <div className="col-md-4 p-2">
-                <h2 className="lead" style={{ fontSize: "25px" }}>
+                <h2 className="lead" style={{ fontSize: "25px",  fontWeight: '400' }}>
                   User ID
                 </h2>
                 <div className="media">
                   {/* <label className=''>Email:&nbsp;</label> */}
-                  <p>{id}</p>
+                  <p style={{fontWeight: '300'}}>{id}</p>
                 </div>
               </div>
             </div>
@@ -260,48 +336,86 @@ function Profile() {
         <div className="row ">
           <div className="col-4"></div>
           <div className="col">
-            <h2>Statistics</h2>
+            <h2 style={{}}>Statistics</h2>
             <hr />
           </div>
         </div>
-        <div className="row mt-4">
-          <div className="col"></div>
-          <div className="col-md-4 col-lg-3">
-            <div className="count-data text-center">
-            <h2 className="m-0px font-w-600 lead" style={{ fontSize: "20px" }}>Paths Encountered</h2>
-              <h4 className="" data-to="150" data-speed="150">
+        <div className="row mt-4" style={{}}>
+          <div className="col-md-4"></div>
+          <div className="col">
+            <div className="count-data">
+              <h2
+                className="m-0px font-w-600 lead"
+                style={{ fontSize: "20px", fontWeight: '400'  }}
+              >
+                Paths Encountered
+              </h2>
+              <h4 className="" data-to="150" data-speed="150" style={{fontWeight: 'bold'}}>
                 {noPathsCompleted} /4
               </h4>
-
-              Ageism:{" "}
-              <b>
-                {ageismMedal}&nbsp;{ageismStatus}
-              </b>
-              <br />
-              Gender Bias / Sexism: {sexismStatus}
-              <br />
-              Halo Effect: {haloEffectStatus} <br />
-              Beauty Bias: {beautyBiasStatus} <br />
+              <br/>
+              <div className="row text-center" style={{marginLeft: '0.5px'}}>
+                <div className="col-3 mb-2 p-0">
+                  <span className="p-1 text-dark" style={{}}>
+                    Ageism
+                    <br />
+                  </span>
+                  <b>
+                    {ageismMedal}&nbsp;
+                    <span style={ageismstyleObj}>{ageismStatus}</span>
+                  </b>
+                </div>
+            
+                <div className="col-3 mb-2 p-0">
+                  <span className="text-muted">
+                    Gender Bias / Sexism
+                    <br />
+                  </span>
+                  <span style={sexismstyleObj}>{sexismStatus}</span>
+                </div>
+                <div className="col-3 mb-2 p-0">
+                  <span className="text-muted">
+                    Halo Effect
+                    <br />
+                  </span>
+                  {ageismMedal}&nbsp;
+                  <span style={halostyleObj}>{haloEffectStatus}</span>
+                </div>
+                <div className="col-3 mb-2 p-0">
+                  <span className="text-muted">
+                    Beauty Bias
+                    <br />
+                  </span>
+                  <span style={beautystyleObj}>{beautyBiasStatus}</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-md-4 col-lg-3">
-            <div className="count-data text-center">
-            <h2 className="lead m-0px font-w-600" style={{ fontSize: "20px" }}>Unconscious Bias Quiz</h2>
-              <h4 className="" data-to="850" data-speed="850">
+        </div>
+        <br/>
+        <div className="row">
+          <div className="col-4"></div>
+        <div className="col col-lg-3">
+            <div className="count-data">
+              <h2
+                className="lead mt-3 font-w-600"
+                style={{ fontSize: "20px", fontWeight: '400' }}
+              >
+                Unconscious Bias Quiz
+              </h2>
+              <h4
+                className=""
+                data-to="850"
+                data-speed="850"
+                style={quizStyleObj}
+              >
                 {quizStatus}
               </h4>
-              <h6 className="text-muted" style={{fontWeight: 300  }}>Recent Score: {quizScore}</h6>
+              <h6 className="text-muted" style={{ fontWeight: 300 }}>
+                Recent Score: {quizScore}
+              </h6>
             </div>
           </div>
-          {/* <div className="col-6 col-lg-3">
-            <div className="count-data text-center">
-            <h2 className="lead m-0px font-w-600">Unconscious Bias Quiz</h2>
-              <h6 className="count h2" data-to="190" data-speed="190">
-                {biasCheckStatus}
-              </h6>
-              
-            </div>
-          </div> */}
         </div>
       </section>
       <Footer />

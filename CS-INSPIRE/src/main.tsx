@@ -21,9 +21,9 @@ import HaloEffectRoleplayContOne from './pages/HaloEffect/HaloEffectPageTwo.tsx'
 import HaloEffectRoleplayContTwo from './pages/HaloEffect/HaloEffectPageThree.tsx'
 import HaloEffectRoleplayContThree from './pages/HaloEffect/HaloEffectPageFour.tsx'
 import HaloEffectRoleplayContFour from './pages/HaloEffect/HaloEffectPageFive.tsx'
-import HaloEffectRoleplayContFive from './pages/HaloEffect/HaloEffectPageSix.tsx'
-import HaloEffectRoleplayContSix from './pages/HaloEffect/HaloEffectPageSix.tsx'
-import HaloEffectRoleplayContSeven from './pages/HaloEffect/HaloEffectPageSeven.tsx'
+// import HaloEffectRoleplayContFive from './pages/HaloEffect/HaloEffectPageSix.tsx'
+// import HaloEffectRoleplayContSix from './pages/HaloEffect/HaloEffectPageSix.tsx'
+// import HaloEffectRoleplayContSeven from './pages/HaloEffect/HaloEffectPageSeven.tsx'
 
 
 // Beauty Pages
@@ -37,7 +37,7 @@ import BeautyRoleplayContFour from './pages/BeautyBias/BeautyBiasPageFive.tsx'
 
 
 // General Quiz Page
-import QuizPage from './pages/QuizPage.tsx'
+// import QuizPage from './pages/QuizPage.tsx'
 import GeneralQuiz from './pages/GeneralQuizzesPage.tsx'
 import BiasRealityCheckPage from './pages/BiasRealityCheckPage.tsx'
 
@@ -125,18 +125,18 @@ const router = createBrowserRouter([
     path: "/bias/HaloEffectRoleplayContFour",
     element: <HaloEffectRoleplayContFour/>
   },
-  {
-    path: "/bias/HaloEffectRoleplayContFive",
-    element: <HaloEffectRoleplayContFive/>
-  },
-  {
-    path: "/bias/HaloEffectRoleplayContSix",
-    element: <HaloEffectRoleplayContSix/>
-  },
-  {
-    path: "/bias/HaloEffectRoleplayContSeven",
-    element: <HaloEffectRoleplayContSeven/>
-  },
+  // {
+  //   path: "/bias/HaloEffectRoleplayContFive",
+  //   element: <HaloEffectRoleplayContFive/>
+  // },
+  // {
+  //   path: "/bias/HaloEffectRoleplayContSix",
+  //   element: <HaloEffectRoleplayContSix/>
+  // },
+  // {
+  //   path: "/bias/HaloEffectRoleplayContSeven",
+  //   element: <HaloEffectRoleplayContSeven/>
+  // },
   {
     path: "/bias/beauty",
     element: <BeautyBiasPage/>
@@ -222,16 +222,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/quiz",
-    element: <QuizPage/>
-  },
-  {
-    path: "/quiz/generalQuiz",
     element: <GeneralQuiz/>
   },
-  {
-    path: "/quiz/biasRealityCheck",
-    element: <BiasRealityCheckPage/>
-  },
+  // {
+  //   path: "/quiz/biasRealityCheck",
+  //   element: <BiasRealityCheckPage/>
+  // },
   {
     path: "/contact",
     element: <ContactPage/>

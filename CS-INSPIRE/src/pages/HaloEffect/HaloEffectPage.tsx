@@ -2,12 +2,13 @@ import "../../styles/_ageism.css";
 import React, { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
-import background from "../../assets/haloEffect/haloeffectBg.jpg";
+import background from "../../assets/haloEffect/haloeffectBg.png";
 import actionIcon from "../../assets/action.png";
 import outcomeIcon from "../../assets/outcomeIcon.png";
 import reflectionIcon from "../../assets/reflectionIcon.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import pastelGreyBg from "../../assets/pastelGreyBg.png"
 
 function HaloEffect() {
   const [isLoading, setLoading] = useState(true);
@@ -20,9 +21,7 @@ function HaloEffect() {
   }
 
   useEffect(() => {
-    // if (state.email) {
-    //   setEmail(state.email)
-    // }
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -60,9 +59,7 @@ function HaloEffect() {
           style={{ height: "140vh" }}
         >
           <div className="section-title mt-5">
-            <h4>
-              <mark>Halo Effect</mark>
-            </h4>
+          <h2 className="text-dark p-2 mb-4" style={{borderRadius: "5px", fontWeight: 800}}>Halo Effect</h2>
             <p className="text-muted para-desc mx-auto mb-0">
               One common bias that can come into play is known as the 'halo
               effect.' It occurs when we attribute positive qualities or
@@ -77,6 +74,7 @@ function HaloEffect() {
             </p>
             <br />
             <br />
+            <br/>
             <div className="row">
               <div className="col">
                 <p
@@ -139,6 +137,7 @@ function HaloEffect() {
             </div>
             <br />
             <br />
+            <br/><br/>
             <div className="row">
               <div className="col">
                 <p

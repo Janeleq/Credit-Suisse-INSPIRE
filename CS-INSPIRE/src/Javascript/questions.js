@@ -5,7 +5,7 @@ const questions = [
         { id: 0, text: "True", isCorrect: true },
         { id: 1, text: "False", isCorrect: false },
       ],
-      explanation: "More than 99% - The brain gets 11 million bits of information every minute and can deal with 40. The remaining 99.999996% of information is processed unconsciously."
+      explanation: "Everybody undoubtedly carry some sort of unconscious bias."
     },
     {
       text: "Which of the below is not a unconscious bias?",
@@ -15,7 +15,7 @@ const questions = [
         { id: 2, text: "Jealousy", isCorrect: true },
         { id: 3, text: "Sexism", isCorrect: false },
       ],
-      explanation: "More than 99% - The brain gets 11 million bits of information every minute and can deal with 40. The remaining 99.999996% of information is processed unconsciously."
+      explanation: "Jealousy can be felt due to a certain cirumstance, unlike unconscious bias which is unknowingly displayed."
     },
     {
       text: "Asking the same interview questions for all candidates increases the chances that unconscious bias will play a role in what is being asked.",
@@ -23,7 +23,7 @@ const questions = [
         { id: 0, text: "True", isCorrect: false },
         { id: 1, text: "False", isCorrect: true}
       ],
-      explanation: "More than 99% - The brain gets 11 million bits of information every minute and can deal with 40. The remaining 99.999996% of information is processed unconsciously."
+      explanation: "Asking the same interview questions for all candidates promotes equality."
     },
     {
       text: "Experts suggest that _________________ is the first step to unraveling unconscious bias.",

@@ -60,7 +60,7 @@ const SignupPage = () => {
         overflow: "hidden",
         backgroundImage: `url(${greyBg})`,
         backgroundSize: "cover",
-        height: 'fit-content'
+        height: '100vh'
       }}
       className="container-fluid bg-light p-0"
     >

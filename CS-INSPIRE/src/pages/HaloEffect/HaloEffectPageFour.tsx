@@ -66,7 +66,7 @@ function HaloEffectFour() {
 
 
     const Proceed = () => {
-      navigate("/bias/ageismRoleplayContThree", {state: {reflection: reflection, outcome: chosenDesc, action: action, candidate: candidate}})
+      navigate("/bias/HaloEffectRoleplayContFour", {state: {reflection: reflection, outcome: chosenDesc, action: action, candidate: candidate}})
   }
 
 
@@ -106,7 +106,7 @@ function HaloEffectFour() {
                 </div>
                 <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => handleChoice(event, [2, "You have chosen to primarily look on their GPA and make your final decision."])}>
                     <div className="team text-center rounded p-3 py-4">
-                        <img src={sideIcon} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                        <img src="" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
                             <h4 className="title mb-0">Action 2</h4>
                             <small className="text-muted">Rely heavily on GPA and standardized test scores as the primary factors for admission.<br/>

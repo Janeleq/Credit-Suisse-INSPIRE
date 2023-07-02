@@ -10,7 +10,7 @@ import sideIcon from "../../assets/sideIcon.png"
 import actionIcon from "../../assets/action.png"
 import resumeIcon from "../../assets/resumeIcon.jpg"
 // import openEndedIcon from "../../assets/openEndedQuesIcoon.png"
-import interviewingBg from "../../assets/interviewingBg.jpeg"
+import interviewingBg from "../../assets/haloEffect/interviewingBg.svg"
 
 function AgeismFour() {
     const {state} = useLocation();

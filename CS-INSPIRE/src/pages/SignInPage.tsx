@@ -88,12 +88,12 @@ const LoginPage = () => {
     
  
     return(
-        <div data-aos=""  className='bg-light container-fluid p-0' style={{overflow: 'hidden', backgroundImage: `url(${greyBg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>    
+        <div data-aos=""  className='bg-light container-fluid p-0' style={{height: '100vh', overflow: 'hidden', backgroundImage: `url(${greyBg})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>    
             <NavigationBar/>
-            <div className='mb-5 text-center' style={{height: '100vh'}}>          
+            <div className='text-center' style={{height: '', backgroundImage: `url(${loginIcon})`, backgroundSize: '', backgroundRepeat: 'no-repeat', backgroundPosition: 'left',}}>          
        
                     
-                     <div className='desc text-center' style={{marginTop: '18vh'}}>
+                     <div className='desc text-center' style={{marginTop: '15vh'}}>
                         <h3 className='text-dark'>Welcome to Perception Pause</h3>
                          <text className='lead'>To get started, please sign in</text>         
                      </div>
@@ -101,7 +101,7 @@ const LoginPage = () => {
                      <br/>
               
 
-<div className='mx-auto p-3 ' style={{backgroundImage: `url(${loginIcon})`, backgroundSize: '', backgroundRepeat: 'no-repeat', backgroundPosition: 'left', width: '', borderRadius: '5px', boxShadow: '5px grey', opacity: '0.95'}}>
+<div className='mx-auto p-3 ' style={{borderRadius: '5px', boxShadow: '5px grey', opacity: '0.95'}}>
                     <div className='row text-center' style={{fontSize:"28px", backgroundColor: ''}}>
                             <div className="col p-0"></div>
                             <div className='col p-0'>

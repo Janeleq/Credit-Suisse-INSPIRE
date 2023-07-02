@@ -89,7 +89,7 @@ function Footer() {
       </section>
 
       <p
-        className="mt-3 p-3 text-light"
+        className="mt-1 p-2 text-light"
         style={{ backgroundColor: "#404041", fontSize: "small", margin: "0" }}
       >
         &copy;&nbsp;2023 Perception Pause. All rights reserved.

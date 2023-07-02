@@ -9,8 +9,12 @@ import bgSound from "../assets/bg_music.mp3";
 import { FaMusic, FaStop } from "react-icons/fa";
 import { FaVolumeMute } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import bgIcon from "../assets/quiz/generalQuizIcon.svg"
-import pastelBg from "../assets/pastelGreyBg.png"
+import bgIcon from "../assets/quiz/generalQuizIcon.png";
+import faqIcon from "../assets/quiz/faqIcon.svg";
+import pastelBg from "../assets/pastelGreyBg.png";
+import quizzesBg from "../assets/quiz/quizBg.svg";
+import greyBg from "../assets/pastelGreyBg.png";
+import "../styles/_quiz.css";
 import { getDatabase, ref, set, update } from "firebase/database";
 import { getAuth, updateEmail, signOut } from "firebase/auth";
 
@@ -20,12 +24,13 @@ function GeneralQuiz() {
   const [start, setStart] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [id, setId] = useState("")
-  const [explanation, setExplanation] = useState("")
-  const [emoji, setEmoji] = useState("")
+  const [id, setId] = useState("");
+  const [explanation, setExplanation] = useState("");
+  const [emoji, setEmoji] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [pauseStatus, setPauseStatus] = useState(false);
-  const [quizStatus, updateQuizStatus] = useState("completed")
+  const [quizStatus, updateQuizStatus] = useState("completed");
+  const [scorewidth, setScoreWidth] = useState(0);
   const [play, { stop }] = useSound(bgSound, {
     interrupt: true,
   });
@@ -76,14 +81,15 @@ function GeneralQuiz() {
 
   /* A possible answer was clicked */
   const optionClicked = (isCorrect) => {
-    setExplanation(questions[currentQuestion].explanation)
+    setExplanation(questions[currentQuestion].explanation);
+    console.log((score / questions.length) * 100);
+    setScoreWidth((score / questions.length) * 100);
     // Increment the score
     if (isCorrect) {
       setScore(score + 1);
-      setEmoji("✔️")
-    }
-    else {
-      setEmoji("❌")
+      setEmoji("✔️");
+    } else {
+      setEmoji("❌");
     }
 
     if (currentQuestion + 1 < questions.length) {
@@ -91,17 +97,20 @@ function GeneralQuiz() {
     } else {
       setShowResults(true);
     }
+    console.log(questions.length);
+
+
   };
 
-  function writeToDatabase () {
+  function writeToDatabase() {
     console.log("writing to database..");
-    const db = getDatabase()
-    update(ref(db, id, "/qujz/generalQuizStatus/"), {
+    const db = getDatabase();
+    update(ref(db, id, "/quiz/generalQuizStatus/"), {
       generalQuizStatus: quizStatus,
     }).catch(alert);
 
     if (showResults) {
-      const db = getDatabase()
+      const db = getDatabase();
       update(ref(db, id, "/quiz/score/"), {
         score: score,
       }).catch(alert);
@@ -109,12 +118,14 @@ function GeneralQuiz() {
   }
   /* Resets the game back to default */
   const restartGame = () => {
+    setExplanation("");
     setScore(0);
+    setScoreWidth(0);
     setEmoji("");
     setCurrentQuestion(0);
     setShowResults(false);
-    updateQuizStatus("completed")
-    writeToDatabase()
+    updateQuizStatus("completed");
+    writeToDatabase();
   };
 
   const displayQuiz = () => {
@@ -129,11 +140,17 @@ function GeneralQuiz() {
       {start ? (
         <div
           className="Quiz text-center text-dark"
-          style={{ marginTop: "9vh", backgroundImage: `url(${pastelBg})`}}
+          style={{
+            marginTop: "6vh",
+            height: "100vh",
+            backgroundImage: `url(${faqIcon})`,
+            backgroundSize: "cover",
+            backgroundPosition: "left",
+          }}
         >
           {/* <h2 className="pt-4 mb-2 text-start" style={{marginLeft: '2vw'}}>Unconscious Bias Quiz</h2> */}
-          
-          <img src={bgIcon} alt="quizBgIcon" style={{float: 'left'}}/>
+
+          {/* <img src={bgIcon} alt="quizBgIcon" style={{float: '', height: ''}}/> */}
 
           <button
             onClick={handlePlay}
@@ -148,96 +165,175 @@ function GeneralQuiz() {
           >
             <FaStop style={{ color: "black" }} />
           </button>
-          <div className="card tab-content" style={{border: 'none'}}>
+          <div className="card tab-content" style={{ border: "none" }}>
             <div className="card tab-content">
               <div className="card tab-content">
                 {showResults ? (
                   /* 4. Final Results */
                   <div className="final-results">
                     <h1>Final Results</h1>
-                    <h2 style={{border: 'none'}}>
+                    <h2 style={{ border: "none" }}>
                       {score} out of {questions.length} correct - (
                       {(score / questions.length) * 100}%)
                     </h2>
                     <button onClick={() => restartGame()}>Restart Quiz</button>
                   </div>
                 ) : (
-                  
-                // <div
-                //   className="tab-pane card-block active"
-                //   id="ONE"
-                //   style={{
-                //     background: `url(${question1})`,
-                //     backgroundSize: 'cover',
-                //     height: "500px",
-                //     paddingBottom: "5px",
-                //     overflow: "hidden",
-                //   }}
-                // >
-                  <div className="row" style={{height: ""}}>
-                    <div className="col-md-4 p-0" style={{ height: "5vh"}}>
-                      <div className="card bg-faded">
-                        <div className="card-block">
-                          <h4 id="score" style={{borderRadius: '0px', marginBottom: '5px'}}>Score: {score} {emoji}</h4>
-                          <div className="progress" style={{}}>
-                            <div
-                              className="progress-bar"
-                              style={{ backgroundColor: "grey", width: "75%" }}
+                  <div
+                    className="tab-pane card-block active"
+                    id="ONE"
+                    style={{
+                      boxShadow: "1px solid black",
+                      overflow: "hidden",
+                      float: "right",
+                      display: "flex",
+                      alignItems: "center",
+         
+                    }}
+                  >
+                    <div className="row" style={{ height: "80vh" }}>
+                      <div className="col-md-4 p-0" style={{ height: "5vh" }}>
+                        <div className="card bg-faded">
+                          <div className="card-block">
+                            <h4
+                              id="score"
+                              style={{
+                                borderRadius: "0px",
+                                marginBottom: "5px",
+                              }}
                             >
-                              <br />
+                              Score: {score} {emoji}
+                            </h4>
+
+                            <div className="progress" style={{}}>
+                              <div
+                                className="progress-bar"
+                                style={{
+                                  backgroundColor: "lightgreen",
+                                  width: `${scorewidth}%`,
+                                }}
+                              >
+                                <br />
+                              </div>
                             </div>
+                            <span
+                              style={{ fontSize: "0.9rem", fontWeight: "300" }}
+                            >
+                              {explanation}
+                            </span>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-md-8 p-0">
-                      <div className="p-0 question-card" style={{ height: "10vh", fontSize: '20px'}}>
-                        {/* Current Question  */}
-                        <p className="m-auto py-auto" style={{height: "5vh"}}>
-                          Question: {currentQuestion + 1} out of{" "}
-                          {questions.length}
-                        </p>
+                      <div className="col-md-8 p-0">
+                        <div
+                          className="p-0 question-card"
+                          style={{ height: "10vh", fontSize: "20px" }}
+                        >
+                          {/* Current Question  */}
+                          <p
+                            className="m-auto py-auto"
+                            style={{ height: "5vh" }}
+                          >
+                            Question: {currentQuestion + 1} out of{" "}
+                            {questions.length}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="card card-inverse card-success" style={{width: '100vw', borderRadius: 0, border: 'none', overflow: 'hidden'}}>
-                  <h5
-                    className="card-block text-dark mt-5 w-75 mx-auto bg-light"
-                    style={{ textAlign: "center", height: '20vh', fontSize: '30px', backgroundColor: ''}}
-                  >
-                    {questions[currentQuestion].text}
-                  </h5>
-                </div>
-                {/* {explanation} */}
-                <ul style={{ backgroundColor: 'aliceblue'}}>
-                  {questions[currentQuestion].options.map((option) => {
-                    return (
-                      <li
-                        className="card-text m-2 w-50 mx-auto "
-                        style={{ border: '', listStyleType: "none", backgroundColor: "" }}
-                        key={option.id}
-                        onClick={() => optionClicked(option.isCorrect)}
+                      <div
+                        className="card card-inverse card-success p-0"
+                        style={{
+                          width: "100vw",
+                          borderRadius: 0,
+                          border: "none",
+                          overflow: "hidden",
+                          height: "fit-content",
+                        }}
                       >
-                        {option.text}
-                      </li>
-                      
-                    );
-                  })}
-                </ul>
+                        <h5
+                          className="card-block text-dark w-75 my-auto mx-auto bg-light"
+                          style={{
+                            textAlign: "center",
+                            height: "fit-content",
+                            fontSize: "40px",
+                            backgroundColor: "",
+                            padding: "15px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          {questions[currentQuestion].text}
+                        </h5>
+                      </div>
+
+                      <ul
+                        style={{
+                          backgroundColor: "",
+                          height: "fit-content",
+                          alignItems: "center",
+                        }}
+                      >
+                        <div className="row m-0">
+                          {questions[currentQuestion].options.map((option) => {
+                            return (
+                              <div className="col">
+                                <li
+                                  className="quiz-card-text p-2 m-3 text-dark mx-auto w-75 my-auto"
+                                  style={{
+                                    border: "solid 1px",
+                                    borderRadius: "5px",
+                                    listStyleType: "none",
+                                  }}
+                                  key={option.id}
+                                  onClick={() =>
+                                    optionClicked(option.isCorrect)
+                                  }
+                                >
+                                  {option.text}
+                                </li>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </ul>
+                    </div>
                   </div>
-              
                 )}
-       
               </div>
             </div>
           </div>
-
-   
         </div>
       ) : (
-        <div style={{ marginTop: "18vh", height: '90vh' }}>
-          <h1 className="mb-2">Unconscious Bias Quiz</h1>
-          <p className="lead">Take this quiz to test your knowledge on unconscious bias</p>
-          <button onClick={displayQuiz}>Start</button>
+        <div
+          className="text-center"
+          style={{
+         
+          }}
+        >
+  
+          <h3
+            data-aos="fade-in"
+            data-aos-delay="350"
+            style={{ paddingTop: "15vh" }}
+          >
+            Wondering how your knowledge on unconscious bias fare?
+          </h3>
+          <span
+            className="text-muted"
+            data-aos="fade-in"
+            data-aos-delay="400"
+            style={{ left: "", marginTop: "5vh" }}
+          >
+            Take a general quiz to see your understanding on general quiz!
+          </span>
+          <br />
+          <button
+            className="p-3"
+            style={{ marginTop: "10vh" }}
+            onClick={displayQuiz}
+          >
+            Start Quiz
+          </button>
         </div>
       )}
 

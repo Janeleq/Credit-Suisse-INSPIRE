@@ -9,6 +9,7 @@ import jennifer from "../assets/community/jennifer.jpg";
 import tim from "../assets/community/tim.jfif";
 import communityBg from "../assets/community/communityBg.png";
 import { useLocation } from "react-router-dom";
+import { FaClock } from "react-icons/fa";
 
 function Community() {
   const [isLoading, setLoading] = useState(true);
@@ -159,7 +160,7 @@ function Community() {
                           className=""
                         >
                           <br />
-                          <li>9.30 AM - 10.30 AM (SGT)</li>
+                          <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
                         </ul>
                         <h2 className="text-dark">
                           How to Outsmart Your Own Unconscious Bias
@@ -223,7 +224,7 @@ function Community() {
                           className=""
                         >
                           <br />
-                          <li>9.30 AM - 10.30 AM (SGT)</li>
+                          <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
                         </ul>
                         <h2 className="text-dark">
                           What we can save by breaking unconscious bias
@@ -286,7 +287,7 @@ function Community() {
                             Toa Payoh
                           </li>
                           <li>
-                            <i className="far fa-clock"></i> 9.30 - 10.30 AM
+                            <i className="far fa-clock"></i> <FaClock/>&nbsp;9.30 - 10.30 AM (SGT)
                           </li>
                         </ul>
                         <h2 className="text-dark">
@@ -419,7 +420,8 @@ function Community() {
                           <br />
 
                           <li>
-                            <i className="far fa-clock"></i> 9.30 AM - 10.30 AM
+                            
+                            <i className="far fa-clock">Date: TBC<br/></i> <FaClock/>&nbsp;9.30 AM - 10.30 AM
                             (SGT)
                           </li>
                         </ul>

@@ -40,9 +40,20 @@ const HomePage = () => {
     >
       <NavigationBar />
       <Chatbot />
-      <div className="parallaxContainer m-0 parallax" style={{}}>
-        <img className="h-50" src={introIcon} alt="Intro Background" style={{float: 'left'}} />
-        <h1 className="mt-4" style={{ marginTop: "" }}>Perception Pause</h1>
+      <div
+        className="parallaxContainer m-0 parallax"
+        style={{ overflowX: "hidden" }}
+      >
+        <h1 className="mt-4 mb-5" style={{ marginTop: "" }}>
+          Perception Pause
+        </h1>
+
+        <img
+          className="h-50"
+          src={introIcon}
+          alt="Intro Background"
+          style={{ float: "left" }}
+        />
         <p className="lead">Discover your unconscious biases today.</p>
         <a href="/register">Learn more</a>
       </div>
@@ -86,7 +97,7 @@ const HomePage = () => {
                     <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
                       <img className="img-fluid" src="" alt="" />
                     </div>
-                    <div className="col-lg-6 mb-0 d-flex align-items-center">
+                    <div className="col-lg-12 mb-0 d-flex align-items-center">
                       <div className="text-align-left">
                         <h1 className="h1 text-dark">
                           <b>Perception</b> Pause
@@ -131,9 +142,12 @@ const HomePage = () => {
                         alt=""
                       />
                     </div>
-                    <div className="col-lg-6 mb-0 d-flex align-items-center">
+                    <div className="col-lg-9 mb-0 d-flex align-items-center">
                       <div className="text-align-right">
-                        <h3 className="h3" style={{fontWeight: '500'}}>
+                        <h3
+                          className="h3 bg-light p-4"
+                          style={{ fontWeight: "500", borderRadius: "5px" }}
+                        >
                           Explore and engage in meaningful discussions that will
                           help dismantle bias and create a brighter future for
                           all.
@@ -152,7 +166,7 @@ const HomePage = () => {
                 className="carousel-item"
                 style={{
                   height: "80vh",
-                  backgroundImage: `url($)`,
+                  backgroundImage: `url(${slideTwo})`,
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
@@ -160,18 +174,17 @@ const HomePage = () => {
                 <div className="container">
                   <div className="row p-5">
                     <div className="mx-auto col-md-8 col-lg-6 order-lg-last">
-                      <img className="img-fluid" src={slideThree} alt="" />
+                      {/* <img className="img-fluid" src={slideThree} alt="" /> */}
                     </div>
-                    <div className="col-lg-6 mb-0 d-flex align-items-center">
+                    <div className="col-lg-9 mb-0 d-flex align-items-center">
                       <div className="text-align-right">
-                        <h1 className="h1" style={{fontWeight: '500'}}>
-                          Explore and engage in meaningful discussions that will
-                          help dismantle bias and create a brighter future for
-                          all.
+                        <h1 className="h1" style={{ fontWeight: "500" }}>
+                          Awareness is the catalyst for transformation
                         </h1>
                         <p>
-                          Foster a deeper understanding of the biases that shape
-                          our perceptions and actions.
+                          Let us work together to challenge unconscious bias,
+                          foster inclusivity, and build a world where fairness
+                          and equity thrive.
                         </p>
                       </div>
                     </div>
