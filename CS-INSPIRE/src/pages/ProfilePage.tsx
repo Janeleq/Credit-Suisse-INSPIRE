@@ -7,7 +7,7 @@ import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import profileBgIcon from "../assets/profile/profileBgIcon.svg";
 import pastelgreyBg from "../assets/pastelGreyBg.png";
-import "../styles/_profile.css"
+import "../styles/_profile.css";
 import {
   get,
   ref,
@@ -29,6 +29,8 @@ function Profile() {
   const [sexismstyleObj, setSexismStyle] = useState({});
   const [beautystyleObj, setBeautyStyle] = useState({});
   const [halostyleObj, setHaloStyle] = useState({});
+  const [sexismMedal, updateSexismMedal] = useState(null);
+  const [beautyMedal, updateBeautyMedal] = useState(null);
   const [haloeffectMedal, updatehaloeffectMedal] = useState(null);
   const [quizStyleObj, setQuizStyle] = useState({});
   const [name, setName] = useState("");
@@ -37,7 +39,7 @@ function Profile() {
   const [login, setLoginTime] = useState("");
   const [quizStatus, updateQuizStatus] = useState("incomplete");
   const [quizScore, updateQuizScore] = useState(0);
-  const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete");
+  // const [biasCheckStatus, setbiasCheckStatus] = useState("incomplete");
   const [ageismStatus, updateAgeismStatus] = useState("incomplete");
   const [ageismMedal, updateAgeismMedal] = useState(null);
   const [sexismStatus, updatesexismStatus] = useState("incomplete");
@@ -105,7 +107,7 @@ function Profile() {
       console.log(user.metadata.lastSignInTime);
       setLoginTime(user.metadata.lastSignInTime);
     }
-  });
+  }, []);
 
   //read statuses of roleplay from database
   function getFromDatabase() {
@@ -131,21 +133,23 @@ function Profile() {
       nopathsArray.push(1);
       updateAgeismMedal(<FaMedal />);
       setAgeismStyle({
-        fontFamily: 'Oleo Script',
-        fontSize: "0.95rem",
-        fontWeight: "700",
-        color: "green",
-        borderRadius: "5px",
-        padding: "2px",
+        backgroundColor: "green",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
       });
     } else {
       setAgeismStyle({
-        fontFamily: 'Oleo Script',
-        fontSize: "0.95rem",
-        fontWeight: "700",
-        color: "red",
-        borderRadius: "5px",
-        padding: "2px",
+        backgroundColor: "red",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
       });
       updateAgeismMedal("");
     }
@@ -188,23 +192,104 @@ function Profile() {
       nopathsArray.push(1);
       updatehaloeffectMedal(<FaMedal />);
       setHaloStyle({
-        fontFamily: 'Oleo Script',
-        fontSize: "0.95rem",
-        fontWeight: "700",
-        color: "green",
-        borderRadius: "5px",
-        padding: "2px",
+        // fontFamily: "Oleo Script",
+        backgroundColor: "green",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
       });
     } else {
       setHaloStyle({
-        fontFamily: 'Oleo Script',
-        fontSize: "0.95rem",
-        fontWeight: "700",
-        color: "red",
-        borderRadius: "5px",
-        padding: "2px",
+        // fontFamily: "Oleo Script",
+        backgroundColor: "red",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
       });
       updatehaloeffectMedal("");
+    }
+
+    // retrieving data for sexism
+    const sexismStatusRef = ref(db, `${id}/sexismStatus`);
+    console.log(sexismStatusRef);
+    onValue(sexismStatusRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updatesexismStatus(data);
+      } else {
+        updatesexismStatus("incomplete");
+      }
+    });
+
+    if (sexismStatusRef == "completed") {
+      nopathsArray.push(1);
+      updateSexismMedal(<FaMedal />);
+      setSexismStyle({
+        // fontFamily: "Oleo Script",
+        backgroundColor: "green",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
+      });
+    } else {
+      setSexismStyle({
+        // fontFamily: "Oleo Script",
+        backgroundColor: "red",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
+      });
+      updateSexismMedal("");
+    }
+
+    // retrieving data for beauty bias
+    const beautyBiasRef = ref(db, `${id}/beautyBiasStatus`);
+    console.log(beautyBiasRef);
+    onValue(beautyBiasRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        updatebeautyBiasStatus(data);
+      } else {
+        updatebeautyBiasStatus("incomplete");
+      }
+    });
+
+    if (beautyBiasRef == "completed") {
+      nopathsArray.push(1);
+      updateBeautyMedal(<FaMedal />);
+      setBeautyStyle({
+        // fontFamily: "Oleo Script",
+        backgroundColor: "green",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
+      });
+    } else {
+      setBeautyStyle({
+        backgroundColor: "red",
+        paddingTop: "10%",
+        textAlign: "center",
+        border: "1px solid grey",
+        height: "120px",
+        width: "120px",
+        borderRadius: "50%",
+      });
+      updateBeautyMedal("");
     }
 
     setNoPathsCompleted(nopathsArray.length);
@@ -216,7 +301,7 @@ function Profile() {
         updateQuizStatus(data);
         setQuizStyle({ color: "green" });
       } else {
-        updateQuizStatus("incomplete");
+        updateQuizStatus("incomplete ❌");
         setQuizStyle({ color: "red" });
       }
     });
@@ -254,7 +339,7 @@ function Profile() {
       className="container-fluid p-0"
       style={{
         overflow: "hidden",
-        backgroundImage: `url(${pastelgreyBg})`,
+        backgroundImage: `url(${pastelgreyBg})`
       }}
     >
       <Navbar></Navbar>
@@ -264,12 +349,11 @@ function Profile() {
         id="about"
         style={{
           paddingTop: "12vh",
-          height: "fit-content",
+          height: '100vhh',
           backgroundImage: `url()`,
           backgroundPosition: "left",
           backgroundSize: "",
           backgroundRepeat: "no-repeat",
-    
         }}
       >
         {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
@@ -298,21 +382,30 @@ function Profile() {
 
           <div className="col-lg-8">
             <div className="row">
-              <h2 style={{fontFamily: 'Kosugi Maru, sans-serif'}}>Particulars</h2>
+              <h2 style={{ letterSpacing: 2.5 }}>Particulars</h2>
               <hr />
             </div>
             <div className="row about-text go-to">
               <div className="col-md-4 p-2">
-                <h2 className="lead" style={{ fontSize: "25px", fontWeight: '400' }}>
+                <h2
+                  className="lead"
+                  style={{ fontSize: "25px", fontWeight: "400" }}
+                >
                   Name
                 </h2>
-                <p className="" style={{fontWeight: '300'}}>{name}</p>
+                <p className="" style={{ fontWeight: "300" }}>
+                  {name}
+                </p>
               </div>
 
               <div className="col-md-4 p-2">
                 <h2
                   className="lead"
-                  style={{ fontSize: "25px", display: "inline-block", fontWeight: '400' }}
+                  style={{
+                    fontSize: "25px",
+                    display: "inline-block",
+                    fontWeight: "400",
+                  }}
                 >
                   Email &nbsp;
                 </h2>
@@ -323,16 +416,19 @@ function Profile() {
                 >
                   Update
                 </button> */}
-                <p style={{fontWeight: '300'}}>{email}</p>
+                <p style={{ fontWeight: "300" }}>{email}</p>
               </div>
 
               <div className="col-md-4 p-2">
-                <h2 className="lead" style={{ fontSize: "25px",  fontWeight: '400' }}>
+                <h2
+                  className="lead"
+                  style={{ fontSize: "25px", fontWeight: "400" }}
+                >
                   User ID
                 </h2>
                 <div className="media">
                   {/* <label className=''>Email:&nbsp;</label> */}
-                  <p style={{fontWeight: '300'}}>{id}</p>
+                  <p style={{ fontWeight: "300" }}>{id}</p>
                 </div>
               </div>
             </div>
@@ -342,7 +438,7 @@ function Profile() {
         <div className="row ">
           <div className="col-4"></div>
           <div className="col">
-            <h2 style={{}}>Statistics</h2>
+            <h2 style={{ letterSpacing: 2.5 }}>Statistics</h2>
             <hr />
           </div>
         </div>
@@ -352,60 +448,91 @@ function Profile() {
             <div className="count-data">
               <h2
                 className="m-0px font-w-600 lead"
-                style={{ fontSize: "20px", fontWeight: '400'  }}
+                style={{ fontSize: "20px", fontWeight: "400" }}
               >
                 Paths Encountered
               </h2>
-              <h4 className="" data-to="150" data-speed="150" style={{fontWeight: 'bold'}}>
+              <h4
+                className=""
+                data-to="150"
+                data-speed="150"
+                style={{ fontWeight: "bold" }}
+              >
                 {noPathsCompleted} /4
               </h4>
-              <br/>
-              <div className="row text-center" style={{marginLeft: '0.5px'}}>
-                <div className="col-3 mb-2 p-0">
-                  <span className="p-1 text-dark" style={{}}>
-                    Ageism
-                    <br />
+              <br />
+              <div
+                className="row text-start p-1"
+                style={{ marginLeft: "0.5px" }}
+              >
+                <div className="col-3 mb-2 p-0" style={{}}>
+                  <span style={{ fontWeight: "500", fontSize: "1.25rem" }}>
+                    Path 1
                   </span>
-                  <b>
+                  <br />
+                  <div className="my-auto" style={ageismstyleObj}>
+                    <span className="text-muted" style={{}}>
+                      Ageism
+                      <br />
+                    </span>
                     {ageismMedal}&nbsp;
-                    <span style={ageismstyleObj}>{ageismStatus}</span>
-                  </b>
+                    <span>{ageismStatus}</span>
+                  </div>
                 </div>
-            
-                <div className="col-3 mb-2 p-0">
-                  <span className="text-muted">
-                    Gender Bias / Sexism
-                    <br />
+                <div className="col-3 mb-2 p-0" style={{}}>
+                  <span style={{ fontWeight: "500", fontSize: "1.25rem" }}>
+                    Path 2
                   </span>
-                  <span style={sexismstyleObj}>{sexismStatus}</span>
+                  <br />
+                  <div className="my-auto" style={sexismstyleObj}>
+                    <span className="text-muted" style={{}}>
+                      Gender Bias / Sexism
+                      <br />
+                    </span>
+                    {sexismMedal}&nbsp;
+                    <span>{sexismStatus}</span>
+                  </div>
                 </div>
-                <div className="col-3 mb-2 p-0">
-                  <span className="text-muted">
-                    Halo Effect
-                    <br />
+                <div className="col-3 mb-2 p-0" style={{}}>
+                  <span style={{ fontWeight: "500", fontSize: "1.25rem" }}>
+                    Path 3
                   </span>
-                  {ageismMedal}&nbsp;
-                  <span style={halostyleObj}>{haloEffectStatus}</span>
+                  <br />
+                  <div className="my-auto" style={halostyleObj}>
+                    <span className="text-muted" style={{}}>
+                      Halo Effect
+                      <br />
+                    </span>
+                    {haloeffectMedal}&nbsp;
+                    <span>{haloEffectStatus}</span>
+                  </div>
                 </div>
-                <div className="col-3 mb-2 p-0">
-                  <span className="text-muted">
-                    Beauty Bias
-                    <br />
+                <div className="col-3 mb-2 p-0" style={{}}>
+                  <span style={{ fontWeight: "500", fontSize: "1.25rem" }}>
+                    Path 4
                   </span>
-                  <span style={beautystyleObj}>{beautyBiasStatus}</span>
+                  <br />
+                  <div className="my-auto" style={beautystyleObj}>
+                    <span className="text-muted" style={{}}>
+                      Beauty Bias
+                      <br />
+                    </span>
+                    {beautyMedal}&nbsp;
+                    <span>{beautyBiasStatus}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <br/>
+        <br />
         <div className="row">
           <div className="col-4"></div>
-        <div className="col col-lg-3">
+          <div className="col col-lg-3">
             <div className="count-data">
               <h2
                 className="lead mt-3 font-w-600"
-                style={{ fontSize: "20px", fontWeight: '400' }}
+                style={{ fontSize: "20px", fontWeight: "400" }}
               >
                 Unconscious Bias Quiz
               </h2>
@@ -415,11 +542,14 @@ function Profile() {
                 data-speed="850"
                 style={quizStyleObj}
               >
-                {quizStatus}
+                {quizStatus} &nbsp;
+                <span
+                  className="text-muted"
+                  style={{ fontWeight: 300, fontSize: "1rem" }}
+                >
+                  ( Recent Score: {quizScore} / 5 )
+                </span>
               </h4>
-              <h6 className="text-muted" style={{ fontWeight: 300 }}>
-                Recent Score: {quizScore} / 5
-              </h6>
             </div>
           </div>
         </div>

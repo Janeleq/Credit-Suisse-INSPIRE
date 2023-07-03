@@ -200,8 +200,8 @@ function HelpPage() {
                             <h5>Where does it come from ?</h5>
                             <p className="lg-base">-</p>
                           </div> */}
-                          <div className="col-lg-6">
-                            <h5>What is Perception Pause privacy policy</h5>
+                          <div className="col-lg-6" id="policy-tab">
+                            <h5>What is Perception Pause privacy policy?</h5>
                             <p className="lg-base text-muted">
                               Perception Pause do not hold any data and all user
                               records remains strictly confidential.
