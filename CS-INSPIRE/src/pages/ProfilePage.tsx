@@ -7,6 +7,7 @@ import { getAuth, updateEmail, signOut } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import profileBgIcon from "../assets/profile/profileBgIcon.svg";
 import pastelgreyBg from "../assets/pastelGreyBg.png";
+import "../styles/_profile.css"
 import {
   get,
   ref,
@@ -130,6 +131,7 @@ function Profile() {
       nopathsArray.push(1);
       updateAgeismMedal(<FaMedal />);
       setAgeismStyle({
+        fontFamily: 'Oleo Script',
         fontSize: "0.95rem",
         fontWeight: "700",
         color: "green",
@@ -138,6 +140,7 @@ function Profile() {
       });
     } else {
       setAgeismStyle({
+        fontFamily: 'Oleo Script',
         fontSize: "0.95rem",
         fontWeight: "700",
         color: "red",
@@ -185,6 +188,7 @@ function Profile() {
       nopathsArray.push(1);
       updatehaloeffectMedal(<FaMedal />);
       setHaloStyle({
+        fontFamily: 'Oleo Script',
         fontSize: "0.95rem",
         fontWeight: "700",
         color: "green",
@@ -193,6 +197,7 @@ function Profile() {
       });
     } else {
       setHaloStyle({
+        fontFamily: 'Oleo Script',
         fontSize: "0.95rem",
         fontWeight: "700",
         color: "red",
@@ -260,10 +265,11 @@ function Profile() {
         style={{
           paddingTop: "12vh",
           height: "fit-content",
-          backgroundImage: `url(${profileBgIcon})`,
+          backgroundImage: `url()`,
           backgroundPosition: "left",
           backgroundSize: "",
           backgroundRepeat: "no-repeat",
+    
         }}
       >
         {/* <img className="" src={profileBgIcon} alt="profileIcon" style={{float: 'right'}}/> */}
@@ -292,7 +298,7 @@ function Profile() {
 
           <div className="col-lg-8">
             <div className="row">
-              <h2>Particulars</h2>
+              <h2 style={{fontFamily: 'Kosugi Maru, sans-serif'}}>Particulars</h2>
               <hr />
             </div>
             <div className="row about-text go-to">
@@ -412,7 +418,7 @@ function Profile() {
                 {quizStatus}
               </h4>
               <h6 className="text-muted" style={{ fontWeight: 300 }}>
-                Recent Score: {quizScore}
+                Recent Score: {quizScore} / 5
               </h6>
             </div>
           </div>

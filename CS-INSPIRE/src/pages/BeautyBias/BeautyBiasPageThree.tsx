@@ -70,7 +70,7 @@ function BeautyBiasThree() {
 
 
     const Proceed = () => {
-      navigate("/bias/HaloEffectRoleplayContThree", {state: {reflection: reflection, outcome: chosenDesc, action: action, candidate: candidate}})
+      navigate("/bias/beautyBiasRoleplayContThree", {state: {reflection: reflection, outcome: chosenDesc, action: action, candidate: candidate}})
   }
 
 
@@ -89,7 +89,7 @@ function BeautyBiasThree() {
                 <p>{outcome}</p>
                 
               <div className='mt-4 p-5' style={{height: '80vh', backgroundImage: `url(${interviewingBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center  ' }}>
-                  <h4>Act 2: Interviewing Applicants</h4>
+                  <h4>Act 2: Social Gathering (Conversation Partners)</h4>
                   <p className='w-50 mx-auto'>After reviewing the stack of applications, you selected a few of them and have the opportunity to interview the selected applicants to learn more about them. </p>
                   <br/> 
 
@@ -99,8 +99,8 @@ function BeautyBiasThree() {
                     <div className="team text-center rounded p-3 py-4 w-75 h-75 mx-auto">
                         <img src="" style={{borderRadius: '50%'}} className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
                         <div className="content mt-3">
-                            <h4 className="title mb-0">Action 1</h4>
-                            <small className="text-muted">Asking open-ended questions that allow applicants to showcase their interests, values, and experiences provides a holistic view of their character and potential.<br/>
+                            <h4 className="title mb-0">Action 2</h4>
+                            <small className="text-muted">Engage<br/>
                             </small>
                             <br/><br/>
                         </div>

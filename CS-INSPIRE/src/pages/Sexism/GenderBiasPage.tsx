@@ -4,6 +4,9 @@ import NavigationBar from "../../components/NavBarLogin.tsx";
 import Footer from "../../components/Footer.tsx";
 import sexismBackground from "../../assets/sexism/sexismBg.jpg";
 import { useNavigate } from "react-router-dom";
+import actionIcon from "../../assets/action.png";
+import outcomeIcon from "../../assets/outcomeIcon.png";
+import reflectionIcon from "../../assets/reflectionIcon.png";
 
 function Genderbias() {
   const navigate = useNavigate();
@@ -54,7 +57,7 @@ function Genderbias() {
         >
           <div className="section-title mt-5">
             <h4 className="title mb-4">
-              <mark>Gender Bias / Sexism</mark>
+            <h2 className="text-dark p-2 mb-4" style={{borderRadius: "5px", fontWeight: 800}}>Gender Bias / Sexism</h2>
             </h4>
             <p className="text-muted para-desc mx-auto mb-0">
               Gender Bias or also known as Sexism, is linked to beliefs around
@@ -94,17 +97,17 @@ function Genderbias() {
                 <div className="guide mx-auto text-muted mt-3">
                   <div className="row">
                     <div className="col">
-                      <img src="" alt="action" style={{ width: "20%" }} />
+                      <img src={actionIcon} alt="action" style={{ width: "20%" }} />
                       <br />
                       <small className="">carry out an action</small>
                     </div>
                     <div className="col">
-                      <img src="" alt="reflection" style={{ width: "20%" }} />
+                      <img src={reflectionIcon} alt="reflection" style={{ width: "20%" }} />
                       <br />
                       <small className="">write down your thoughts</small>
                     </div>
                     <div className="col">
-                      <img src="" alt="outcome" style={{ width: "20%" }} />
+                      <img src={outcomeIcon} alt="outcome" style={{ width: "20%" }} />
                       <br />
                       <small className="">
                         view the consequence of your action

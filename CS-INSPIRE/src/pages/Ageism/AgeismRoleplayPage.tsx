@@ -46,7 +46,7 @@ function Ageism() {
     <div className="container-fluid p-0" style={{ overflow: "hidden" }}>
       <NavigationBar />
 
-      <div className="row" style={{ marginTop: "5vh" }}>
+      <div className="row bg-white" style={{ marginTop: "5vh" }}>
         <div
           className="col-sm-12 col-md-4 col-lg-6"
           style={{
@@ -57,8 +57,8 @@ function Ageism() {
           }}
         ></div>
         <div
-          className="col-sm-12 col-md-8 col-lg-6 text-center bg-white"
-          style={{ height: "130vh" }}
+          className="col-sm-12 col-md-8 col-lg-6 text-center bg-white mb-3"
+          style={{ height: "fit-content" }}
         >
           <div className="section-title mt-5">
               <h2 className="text-dark p-2 mb-4" style={{borderRadius: "5px", fontWeight: 800}}>Ageism</h2>

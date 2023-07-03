@@ -1,0 +1,8 @@
+#email-address {
+    transition: 0.3s;
+}
+
+#email-address:hover {
+    text-shadow: 1cm grey;
+    background-color: black ;
+}

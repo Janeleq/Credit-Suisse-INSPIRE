@@ -24,13 +24,6 @@ function BeautyBiasRoleplay() {
       return new Promise(resolve => setTimeout(() => resolve(), 1000));
     } 
 
-    function goNext() {
-        navigate("/bias/ageismRoleplayCont", {state: {reflection: showReflection}})
-    }
-
-
-
-
 
     return (
         <div className="container-fluid bootdey p-0 bg-light" style={{overflow: 'hidden'}}>
@@ -44,9 +37,9 @@ function BeautyBiasRoleplay() {
                 <p className='w-50 mx-auto' style={{borderRadius: '5px', padding: '10px'}}>You will assume the role of Alex, a young adult navigating various social interactions. The goal is to recognize and challenge the unconscious bias of beauty bias in everyday life.</p>
                 <br/><br/>
                 <h4>Act 1: Social Gathering</h4>
-                <p className='w-50 text-center mx-auto' style={{borderRadius: '5px', padding: '10px'}}> You are attending a social gathering with friends and acquaintances.<br/><br/>     
+                <p className='w-50 text-center mx-auto' style={{borderRadius: '5px', padding: '10px'}}> You are attending a social gathering with friends and acquaintances and you must decide how to present yourself. <br/>     
                 </p><br/>
-                    <NavLink to= "/bias/ageismRoleplayContOne">Proceed</NavLink>
+                    <NavLink to= "/bias/beautyBiasRoleplayContOne">Proceed</NavLink>
             </div>
         </div>
            

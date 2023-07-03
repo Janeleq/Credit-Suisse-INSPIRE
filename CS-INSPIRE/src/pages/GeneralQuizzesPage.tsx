@@ -98,8 +98,6 @@ function GeneralQuiz() {
       setShowResults(true);
     }
     console.log(questions.length);
-
-
   };
 
   function writeToDatabase() {
@@ -143,28 +141,10 @@ function GeneralQuiz() {
           style={{
             marginTop: "6vh",
             height: "100vh",
-            backgroundImage: `url(${faqIcon})`,
-            backgroundSize: "cover",
-            backgroundPosition: "left",
+            backgroundImage: `url(${greyBg})`,
+            width: "",
           }}
         >
-          {/* <h2 className="pt-4 mb-2 text-start" style={{marginLeft: '2vw'}}>Unconscious Bias Quiz</h2> */}
-
-          {/* <img src={bgIcon} alt="quizBgIcon" style={{float: '', height: ''}}/> */}
-
-          <button
-            onClick={handlePlay}
-            className=""
-            style={{ backgroundColor: "transparent", borderRadius: "50%" }}
-          >
-            <FaPlay style={{ color: "black" }} />
-          </button>
-          <button
-            onClick={handleStop}
-            style={{ backgroundColor: "transparent", borderRadius: "50%" }}
-          >
-            <FaStop style={{ color: "black" }} />
-          </button>
           <div className="card tab-content" style={{ border: "none" }}>
             <div className="card tab-content">
               <div className="card tab-content">
@@ -185,21 +165,30 @@ function GeneralQuiz() {
                     style={{
                       boxShadow: "1px solid black",
                       overflow: "hidden",
-                      float: "right",
                       display: "flex",
                       alignItems: "center",
-         
+                      background: `url(${pastelBg})`,
+                      backgroundRepeat: "no-repeat",
+                      height: "fit-content",
                     }}
                   >
-                    <div className="row" style={{ height: "80vh" }}>
-                      <div className="col-md-4 p-0" style={{ height: "5vh" }}>
+                    {/* <img src={faqIcon} style={{float: 'left'}}/> */}
+                    <div
+                      className="row mt-4"
+                      style={{ float: "right", height: "80vh" }}
+                    >
+                      <div
+                        className="col-md-4 p-0 border"
+                        style={{ height: "5vh" }}
+                      >
                         <div className="card bg-faded">
                           <div className="card-block">
                             <h4
                               id="score"
                               style={{
                                 borderRadius: "0px",
-                                marginBottom: "5px",
+                                marginBottom: "0",
+                                backgroundColor: `lightgray`,
                               }}
                             >
                               Score: {score} {emoji}
@@ -217,17 +206,26 @@ function GeneralQuiz() {
                               </div>
                             </div>
                             <span
-                              style={{ fontSize: "0.9rem", fontWeight: "300" }}
+                              style={{
+                                fontSize: "0.9rem",
+                                fontWeight: "300",
+                                lineHeight: "",
+                              }}
                             >
                               {explanation}
                             </span>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-8 p-0">
+                      <div className="col-md-4 p-0">
                         <div
-                          className="p-0 question-card"
-                          style={{ height: "10vh", fontSize: "20px" }}
+                          className="p-0 question-card my-auto"
+                          style={{
+                            height: "10vh",
+                            fontSize: "20px",
+                            display: "flex",
+                            alignItems: "center",
+                          }}
                         >
                           {/* Current Question  */}
                           <p
@@ -239,6 +237,32 @@ function GeneralQuiz() {
                           </p>
                         </div>
                       </div>
+                      <div
+                        className="col-md-4 p-0"
+                        style={{ height: "10vh", fontSize: "20px" }}
+                      >
+                        Music:
+                        <button
+                          onClick={handlePlay}
+                          className=""
+                          style={{
+                            backgroundColor: "transparent",
+                            borderRadius: "50%",
+                          }}
+                        >
+                          <FaPlay style={{ color: "black" }} />
+                        </button>
+                        <button
+                          onClick={handleStop}
+                          style={{
+                            backgroundColor: "transparent",
+                            borderRadius: "50%",
+                          }}
+                        >
+                          <FaStop style={{ color: "black" }} />
+                        </button>
+                      </div>
+
                       <div
                         className="card card-inverse card-success p-0"
                         style={{
@@ -260,6 +284,8 @@ function GeneralQuiz() {
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",
+                            fontWeight: "400",
+                            lineHeight: "1.5",
                           }}
                         >
                           {questions[currentQuestion].text}
@@ -271,6 +297,7 @@ function GeneralQuiz() {
                           backgroundColor: "",
                           height: "fit-content",
                           alignItems: "center",
+                          boxShadow: "1px black",
                         }}
                       >
                         <div className="row m-0">
@@ -278,9 +305,9 @@ function GeneralQuiz() {
                             return (
                               <div className="col">
                                 <li
-                                  className="quiz-card-text p-2 m-3 text-dark mx-auto w-75 my-auto"
+                                  className="quiz-card-text p-2 m-3 mx-auto w-75 my-auto"
                                   style={{
-                                    border: "solid 1px",
+                                    // border: "solid 1px white",
                                     borderRadius: "5px",
                                     listStyleType: "none",
                                   }}
@@ -306,25 +333,20 @@ function GeneralQuiz() {
       ) : (
         <div
           className="text-center"
-          style={{
-         
-          }}
+          data-aos="fade-in"
+          data-aos-delay="350"
+          style={{ height: "100vh", backgroundImage: `url(${pastelBg})` }}
         >
-  
-          <h3
-            data-aos="fade-in"
-            data-aos-delay="350"
-            style={{ paddingTop: "15vh" }}
-          >
+          <img src={quizzesBg} style={{ float: "left", height: "95vh" }} />
+          <h3 style={{ paddingTop: "20vh" }}>
             Wondering how your knowledge on unconscious bias fare?
           </h3>
-          <span
-            className="text-muted"
-            data-aos="fade-in"
-            data-aos-delay="400"
-            style={{ left: "", marginTop: "5vh" }}
-          >
-            Take a general quiz to see your understanding on general quiz!
+          <span style={{ left: "", marginTop: "5vh" }}>
+            Take this general quiz to see your understanding!
+          </span>
+          <br />
+          <span className="text-muted" style={{ fontSize: "0.7rem" }}>
+            * Fret not, the questions will be light-hearted *
           </span>
           <br />
           <button

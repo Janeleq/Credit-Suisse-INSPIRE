@@ -26,7 +26,7 @@ const questions = [
       explanation: "Asking the same interview questions for all candidates promotes equality."
     },
     {
-      text: "Experts suggest that _________________ is the first step to unraveling unconscious bias.",
+      text: "Experts suggest that ? is the first step to unraveling unconscious bias.",
       options: [
         { id: 0, text: "Internal Audit", isCorrect: false },
         { id: 1, text: "Awareness Training", isCorrect: true },

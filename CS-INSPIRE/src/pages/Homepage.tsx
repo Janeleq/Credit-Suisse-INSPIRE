@@ -44,7 +44,7 @@ const HomePage = () => {
         className="parallaxContainer m-0 parallax"
         style={{ overflowX: "hidden" }}
       >
-        <h1 className="mt-4 mb-5" style={{ marginTop: "" }}>
+        <h1 className="mb-5" style={{ marginTop: "15vh" }}>
           Perception Pause
         </h1>
 

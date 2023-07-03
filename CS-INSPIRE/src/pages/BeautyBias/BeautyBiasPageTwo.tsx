@@ -72,7 +72,7 @@ function BeautyBiasTwo() {
 
     const handleReflectionChange = () => {
         setReflection(ref.current.value)
-        navigate("/bias/HaloEffectRoleplayContTwo", {state: {reflection: reflection, action: candidate, chosenDesc: chosenDesc}})
+        navigate("/bias/beautyBiasRoleplayContTwo", {state: {reflection: reflection, action: candidate, chosenDesc: chosenDesc}})
     }
 
 
@@ -84,18 +84,30 @@ function BeautyBiasTwo() {
             
             <div className="row bg-light mx-auto text-center" style={{marginTop: '8vh'}}>
             {/* <NavLink to="/bias/ageismRolePlay"><img src={backArrow} alt="back" style={{float: 'left', marginTop: '2%', marginLeft: '3%', width: '3%'}}/></NavLink> */}
-                <h3 className='text-center mt-3'>Action 1: Initial Impressions</h3>
+                <h3 className='text-center mt-3'>Action 1: Personal Style</h3>
                 <p className=''>Below are 2 actions you can carry out.</p>
                 <br/>
-                <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;View and choose which candidate you would like to pick.</p>
+                <p className='lead mt-4'><img src={action} alt="action" style={{width: '3%'}}/>&nbsp;Choose an action that is ideal to you.</p>
                 
+                   
+                <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Action 2', 'You have chosen to make do with the applications, by glancing at the names and making quick judgements.']))}>
+                    <div className="team text-center rounded p-3 py-4">
+                        {/* <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/> */}
+                        <div className="content mt-3">
+                            <h4 className="title mb-0"> Prioritize selecting trendy and fashionable attire to fit societal beauty standards.</h4>
+                            <small className="text-muted">Employee 2<br/>
+                            Age: 23 years old
+                            </small>
                 
+                        </div>
+                    </div>
+                </div>
             
                 <div className="col-lg-6 col-md-6 col-12 mt-4 pt-2" onClick={event => (handleCandidate(event, ['Action 2', 'You have chosen to make do with the applications, by glancing at the names and making quick judgements.']))}>
                     <div className="team text-center rounded p-3 py-4">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/>
+                        {/* <img src="https://bootdey.com/img/Content/avatar/avatar8.png" className="img-fluid avatar avatar-medium shadow rounded-pill" alt=""/> */}
                         <div className="content mt-3">
-                            <h4 className="title mb-0">Glance at the names and make quick judgments based on reputation or popularity.</h4>
+                            <h4 className="title mb-0">Choose clothing and accessories that make you feel confident and comfortable.</h4>
                             <small className="text-muted">Employee 2<br/>
                             Age: 23 years old
                             </small>
