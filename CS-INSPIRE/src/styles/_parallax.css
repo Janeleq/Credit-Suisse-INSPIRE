@@ -6,10 +6,11 @@
 
 body {
   font-family: 'Red Hat Text', sans-serif;
+  width: 100vw;
 }
 
 .parallaxContainer {
-  overflow-x: hidden;
+  overflow: hidden;
   text-align: center;
   color: var(--color);
   width: 100vw;
@@ -51,8 +52,9 @@ body {
 
 
 .second {
-  background-image:url();
+  background-image:url('../assets/pastelGreyBg.png');
   background-attachment: fixed;
+
   /* height: 100vh; */
 }
 

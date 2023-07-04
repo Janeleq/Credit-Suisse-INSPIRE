@@ -46,7 +46,7 @@ function AgeismThree() {
   },[]);
 
   const Reflection = () => (
-    <div className="reflection text-center">
+    <div className="reflection text-cente" style={{backgroundImage: `url(${greyBg})`}}>
       <div className="reflectiontitle mb-2">
         <p className="text-muted">{chosenDesc}</p>
         <img style={{ width: "2%" }} src={reflectionIcon} alt="Reflection" />
@@ -130,8 +130,8 @@ function AgeismThree() {
                 fontSize: '1.2rem'
               }}
             >
-              <i className="p-1" style={{fontSize: '50px', float: 'left'}}><FaFolderOpen/></i> 
-              You receive the various candidate applications through google forms. <br/>
+         <FaFolderOpen/>&nbsp;
+              You receive the various candidate applications through google forms. <br/><br/>
               Now, it is time for you to review the different candidates' background and choose the most ideal candidate in your mind.
             </h3>
           </div>
@@ -181,11 +181,6 @@ function AgeismThree() {
                 <li className="list-inline-item">
                   <a href="javascript:void(0)" className="rounded">
                     <img src={perspective} alt="perspective" />
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="javascript:void(0)" className="rounded">
-                    <i className="mdi mdi-instagram" title="Instagram"></i>
                   </a>
                 </li>
               </ul>

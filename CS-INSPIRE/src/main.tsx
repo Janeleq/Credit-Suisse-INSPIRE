@@ -3,9 +3,18 @@ import HomePage from './pages/Homepage.tsx'
 import HomePageLogin from './pages/HomepageLogin.tsx'
 import ArticlesPage from './pages/ArticlesPage.tsx'
 import RoleplayPage from './pages/RoleplayPage.tsx'
+
+
+// Sexism Pages
 import GenderBiasPage from './pages/Sexism/GenderBiasPage.tsx'
+import GenderRoleplayContTwo from './pages/Sexism/GenderBiasPageTwo.tsx'
+import GenderRoleplayContThree from './pages/Sexism/GenderBiasPageThree.tsx'
+import GenderRoleplayContFour from './pages/Sexism/GenderBiasPageFour.tsx'
+import GenderRoleplayContFive from './pages/Sexism/GenderBiasPageFive.tsx'
 import GenderRoleplayPage from './pages/Sexism/GenderRoleplayPage.tsx'
 import GenderFactsPage from './pages/Sexism/GenderFactsPage.tsx'
+
+
 import LoginPage from './pages/SignInPage.tsx'
 import RegisterPage from './pages/RegisterPage.tsx'
 import ProfilePage from './pages/ProfilePage.tsx'
@@ -92,6 +101,22 @@ const router = createBrowserRouter([
   {
     path: "/bias/gender",
     element: <GenderBiasPage/>
+  },
+  {
+    path: "/bias/sexismRoleplayContOne",
+    element: <GenderRoleplayContTwo/>
+  },
+  {
+    path: "/bias/sexismRoleplayContTwo",
+    element: <GenderRoleplayContThree/>
+  },
+  {
+    path: "/bias/sexismRoleplayContThree",
+    element: <GenderRoleplayContFour/>
+  },
+  {
+    path: "/bias/sexismRoleplayContFour",
+    element: <GenderRoleplayContFive/>
   },
   {
     path: "/bias/ageism",

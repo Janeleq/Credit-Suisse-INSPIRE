@@ -15,6 +15,7 @@ import interviewingBg from "../../assets/haloEffect/interviewingBg.svg"
 function AgeismFour() {
     const {state} = useLocation();
     // const {reflection} = state.reflection;
+    const [favorable, setFavorable] = useState("");
     const [outcome, setOutcome] = useState('')
     const [emoji, setEmoji] = useState('')
     const [action, setAction] = useState(0)

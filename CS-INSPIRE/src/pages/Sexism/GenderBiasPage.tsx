@@ -28,6 +28,7 @@ function Genderbias() {
   }
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -38,7 +39,7 @@ function Genderbias() {
   });
 
   return (
-    <div className="container-fluid p-0 w-100">
+    <div className="container-fluid p-0 w-100" style={{overflow: 'hidden'}}>
       <NavigationBar />
       <Chatbot />
       <div className="row" style={{ marginTop: "5vh" }}>

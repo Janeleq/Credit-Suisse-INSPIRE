@@ -1,36 +1,37 @@
 import "../../styles/_ageism.css";
-import React, { useRef, useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavBarLogin";
 import Footer from "../../components/Footer";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
 import ageismEndIcon from "../../assets/ageism/ageismEndIcon.svg";
-import ageismEndIcon2 from "../../assets/ageism/ageismIcon2.svg";
+import mitigatingBg from "../../assets/homepageLogin/mitigatingBias.png";
+import { getAuth, updateEmail, signOut } from "firebase/auth";
+import { db } from "../../firebase/firebase.js";
 import { getDatabase, ref, set, update } from "firebase/database";
-import { getAuth } from "firebase/auth";
+import ageismEndIcon2 from "../../assets/ageism/ageismIcon2.svg"
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FaMedal } from "react-icons/fa";
 
-function HaloEffectFive() {
+function AgeismSix() {
   const { state } = useLocation();
   // const {reflection} = state.reflection;
-
-  const action = state.action;
+  const [sexismStatus, setsexismStatus] = useState("completed");
   const [candidate, setCandidate] = useState("");
   const [reflection, setReflection] = useState("");
+  const [descOutcome, setDescOutcome] = useState("");
+  const [isLoading, setLoading] = useState(true);
   const [favorable, setFavorable] = useState("");
-  const [haloeffectStatus, sethaloeffectStatus] = useState("completed");
-  const [noActionFavorable, setNoActionsFavorable] = useState(0);
-  const [simulationResults, setSimulationResults] = useState("");
   const [emoji, setEmoji] = useState("");
   const [id, setId] = useState("");
-  const [descOutcome, setDescOutcome] = useState("");
-  const [nextDesc, setNextChosenDesc] = useState(""); // data passed to the next page
-  const [isLoading, setLoading] = useState(true);
+  const [noActionFavorable, setNoActionsFavorable] = useState(0)
+  const [simulationResults, setSimulationResults] = useState("");
+  const navigate = useNavigate();
   const auth = getAuth();
   const user = auth.currentUser;
-  const navigate = useNavigate();
 
   function someRequest() {
     //Simulates a request; makes a "promise" that'll run for 2.5 seconds
@@ -38,8 +39,8 @@ function HaloEffectFive() {
   }
 
   useEffect(() => {
-    setCandidate(state.candidate);
-    setReflection(state.reflection);
+    console.log("Running the end of ageism script");
+    AOS.init()
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -47,6 +48,47 @@ function HaloEffectFive() {
         setLoading(!isLoading);
       }
     });
+
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+    if (noActionFavorable < 2) {
+      setEmoji("😢");
+      setSimulationResults(
+        "You have selected options influenced by age bias, which hinders collaboration in the given scenario. You had rather conflicting perceptions and your actions have shown to be leaning more towards your unconscious bias."
+      );
+    } else if (noActionFavorable == 2) {
+      setEmoji("🙂");
+      setSimulationResults(
+        "Not bad! You have displayed certain unconscious bias here and there. But with more knowledge and awareness of it, we believe you will be more firm in your choices!"
+      );
+    } else if (noActionFavorable == 3) {
+      setEmoji("👍");
+      setSimulationResults(
+        "Great job right there! You are rather aware of your own unconscious bias and do not really let it affect you as much!"
+      );
+    } else {
+      setEmoji("😄");
+      setSimulationResults(
+        "Great job! You have selected options that challenge unconscious bias and promote inclusivity. Most importantly, you are clear and firm on your actions, considering the presence of unconscious bias."
+      );
+    }
+    setDescOutcome(state.outcome);
+    if (descOutcome[0] === "1") {
+      setFavorable("✔️ Favorable");
+    } else if (descOutcome[0] === "2") {
+      setFavorable("❌ Not favorable");
+    } else {
+      setFavorable("❌ Not favorable");
+    }
+
+    if (favorable === "✔️ Favorable") {
+      setNoActionsFavorable(state.noFavorable + 1)
+    } 
+
+    else {
+      setNoActionsFavorable(state.noFavorable)
+    }
+
     if (user !== null) {
       user.providerData.forEach((profile) => {
         setId(user.uid);
@@ -54,51 +96,29 @@ function HaloEffectFive() {
     }
   });
 
-  useEffect(() => {
-    if (action == 1) {
-      setDescOutcome(
-        "Evaluating each applicant holistically, considering multiple aspects of their profile, helps overcome the halo effect bias and ensures a fair and comprehensive evaluation."
-      );
-    } else if (action == 2) {
-      setDescOutcome(
-        "Relying heavily on GPA and standardized test scores as the primary factors for admission perpetuates the halo effect bias, as it prioritizes quantifiable measures and may overlook other valuable qualities and potential."
-      );
-    }
-  });
-
-  const handleChoice = (event, param) => {
-    console.log(event);
-    console.log(param);
-    setNextChosenDesc(param);
-  };
-
-  function writeToDatabase() {
+  function writeToDatabase () {
+    console.log(sexismStatus);
     console.log("writing to database..");
-    const db = getDatabase();
-    console.log(db);
-    update(ref(db, id, "/haloEffectStatus/"), {
-      haloeffectStatus: haloeffectStatus,
+    const db = getDatabase()
+    console.log(db)
+    update(ref(db, id, '/sexismStatus/'), {
+      sexismStatus: sexismStatus,
     }).catch(alert);
 
-    console.log(haloeffectStatus);
+    console.log(sexismStatus);
     navigate("/profile", {
       state: {
-        haloeffectStatus: haloeffectStatus,
+        sexismStatus: sexismStatus,
         outcome: descOutcome,
         candidate: candidate,
         reflection: reflection,
       },
     });
-  }
+  };
 
-  const Proceed = () => {
-    navigate("/bias/ageismRoleplayContFour", {
-      state: {
-        outcome: nextDesc,
-        candidate: candidate,
-        reflection: reflection,
-      },
-    });
+  const handleChoice = (event, param) => {
+    console.log(event);
+    console.log(param);
   };
 
   return (
@@ -159,16 +179,9 @@ function HaloEffectFive() {
             <br />
             <br />
           </p>
-          <img
-            src={ageismEndIcon}
-            alt="ending"
-            style={{ width: "350px", height: "350px", float: "right" }}
-          />
+          <img src={ageismEndIcon} alt="ending" style={{width: '350px', height: '350px', float: 'right'}}/>
           <h3 className="">Overall Results:&nbsp;{emoji}</h3>
-          <span
-            style={{ width: "", fontSize: "20px" }}
-            className="mx-auto w-50"
-          >
+          <span style={{ width: "", fontSize: '20px' }} className="mx-auto w-50">
             {simulationResults}
           </span>
           <br />
@@ -181,16 +194,12 @@ function HaloEffectFive() {
             backgroundImage: `url(${pastelGreyBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
+            backgroundRepeat: 'no-repeat',
             height: "fit-content",
             width: "100vw",
           }}
         >
-          <img
-            src={ageismEndIcon2}
-            alt="Exploration"
-            style={{ float: "left" }}
-          />
+          <img src={ageismEndIcon2} alt="Exploration" style={{float: 'left'}}/>
           <h1
             style={{
               paddingTop: "12vh",
@@ -200,14 +209,8 @@ function HaloEffectFive() {
             }}
           >
             <h2 data-aos="fade-in" data-aos-delay="300">
-              <span
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "50px",
-                  textAlign: "center",
-                }}
-              >
-                <FaMedal /> &nbsp;Continue Exploring and Learning
+              <span style={{ fontWeight: "bold", fontSize: "50px", textAlign: 'center' }}>
+                <FaMedal/> &nbsp;Continue Exploring and Learning
               </span>
             </h2>
           </h1>
@@ -244,4 +247,4 @@ function HaloEffectFive() {
   );
 }
 
-export default HaloEffectFive;
+export default AgeismSix;

@@ -18,6 +18,7 @@ function Beautybias() {
   }
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -56,9 +57,12 @@ function Beautybias() {
           style={{ height: "160vh" }}
         >
           <div className="section-title mt-5">
-            <h4>
-              <mark>Beauty Bias</mark>
-            </h4>
+            <h2
+              className="text-dark p-2 mb-4"
+              style={{ borderRadius: "5px", fontWeight: 800 }}
+            >
+              Halo Effect
+            </h2>
             <p className="text-muted para-desc mx-auto mb-0">
               Beauty bias refers to the tendency to favor or attribute positive
               qualities to individuals based on their physical appearance. It's

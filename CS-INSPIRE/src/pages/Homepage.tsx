@@ -35,13 +35,13 @@ const HomePage = () => {
 
   return (
     <div
-      className="container-fluid bg-light p-0 h-100 w-100"
-      style={{ overflow: "hidden" }}
+      className="container-fluid bg-light p-0 h-100"
+      style={{ overflow: "hidden", width: '100vw' }}
     >
       <NavigationBar />
       <Chatbot />
       <div
-        className="parallaxContainer m-0 parallax"
+        className="parallaxContainer second m-0 parallax"
         style={{ overflowX: "hidden" }}
       >
         <h1 className="mb-5" style={{ marginTop: "15vh" }}>
@@ -58,7 +58,7 @@ const HomePage = () => {
         <a href="/register">Learn more</a>
       </div>
 
-      <div className="parallaxContainer m-0" style={{ position: "absolute" }}>
+      <div className="parallaxContainer " style={{ height: 'fit-content', paddingTop: '20vh', position: "absolute" }}>
         <div className="register text-center" style={{ overflow: " hidden" }}>
           {/* <!-- Start Banner Hero --> */}
           <div
@@ -66,19 +66,21 @@ const HomePage = () => {
             className="carousel slide"
             data-bs-ride="carousel"
           >
-            <ol className="carousel-indicators">
+            <ol className="carousel-indicators mx-auto bg-dark" style={{width: 'fit-content'}}>
               <li
                 data-bs-target="#template-mo-zay-hero-carousel"
                 data-bs-slide-to="0"
-                className="active"
+                className="active bg-light"
               ></li>
               <li
                 data-bs-target="#template-mo-zay-hero-carousel"
                 data-bs-slide-to="1"
+                className="bg-light"
               ></li>
               <li
                 data-bs-target="#template-mo-zay-hero-carousel"
                 data-bs-slide-to="2"
+                className="bg-light"
               ></li>
             </ol>
 
@@ -457,26 +459,28 @@ A substantial amount of research has been published demonstrating impact of unco
               className="col w-50 text-center"
               data-aos="fade-down"
               data-aos-easing="linear"
-              data-aos-duration="1000"
+              data-aos-duration="700"
             >
               <h4
                 className="text-uppercase"
-                style={{ fontWeight: "bolder", marginTop: "10%" }}
+                style={{ fontWeight: "bolder", marginTop: "8%" }}
               >
-                Food for thought
+                Awareness for a better future
               </h4>
-              <p className="w-50 text-center mx-auto">
+              <p className="w-75 p-3 text-center mx-auto">
                 As we embark on this journey of uncovering unconscious bias, let
                 us remember that awareness is the catalyst for transformation.
                 By acknowledging our biases, engaging in self-reflection, and
                 embracing diversity, we can cultivate an environment that values
-                the worth and contributions of every individual. Let us work
+                the worth and contributions of every individual. <br/><br/>Let us work
                 together to challenge unconscious bias, foster inclusivity, and
                 build a world where fairness and equity thrive.
               </p>
             </div>
           </div>
         </div>
+        <Footer />
+
       </div>
 
       {/* <div className='register text-center bg-light' style={{ overflow:' hidden'}}> */}
@@ -718,8 +722,7 @@ A substantial amount of research has been published demonstrating impact of unco
         </div>
       </div> */}
       {/* </div> */}
-      <Footer />
-
+     
       {/* </div> */}
     </div>
   );

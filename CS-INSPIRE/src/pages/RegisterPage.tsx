@@ -24,6 +24,7 @@ const SignupPage = () => {
   }
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -73,8 +74,9 @@ const SignupPage = () => {
           marginTop: "18vh",
           backgroundImage: `url(${registerIcon})`,
           backgroundRepeat: 'no-repeat', 
-          backgroundPosition: 'right', 
-          backgroundSize: '50%'
+          backgroundPosition: 'bottom 0 right', 
+          backgroundPositionY: '27vh',
+          backgroundSize: '50vw'
         }}
       >
         <div className="" style={{  }}>
@@ -114,7 +116,7 @@ const SignupPage = () => {
                     background: "transparent",
                     borderBottom: "1px solid black",
                   }}
-                  className="w-50 p-0 text-center lead small"
+                  className="w-50 p-0 text-center lead small text-dark"
                 />
               </div>
             </div>
@@ -140,7 +142,7 @@ const SignupPage = () => {
                     background: "transparent",
                     borderBottom: "1px solid black",
                   }}
-                  className="w-50 p-0 text-center lead small"
+                  className="w-50 p-0 text-center lead small text-dark"
                 />
               </div>
             </div>
@@ -164,7 +166,7 @@ const SignupPage = () => {
                     background: "transparent",
                     borderBottom: "1px solid black",
                   }}
-                  className="w-50 p-0 text-center lead small"
+                  className="w-50 p-0 text-center lead small text-dark"
                 />
               </div>
             </div>

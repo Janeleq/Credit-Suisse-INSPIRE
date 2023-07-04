@@ -24,6 +24,7 @@ const LoginPage = () => {
   }
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -98,10 +99,10 @@ const LoginPage = () => {
         style={{
           height: "",
           backgroundImage: `url(${loginIcon})`,
-          backgroundPositionX: "-3vw",
-          backgroundPositionY: "19vh",
+          // backgroundPositionX: "-3vw",
+          backgroundPositionY: "20vh",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "left",
+          backgroundPosition: "bottom 0 left 0",
         }}
       >
         <div className="desc text-center" style={{ marginTop: "15vh" }}>

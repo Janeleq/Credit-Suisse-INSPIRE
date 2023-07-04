@@ -20,6 +20,7 @@ function HelpPage() {
   }
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     AOS.init();
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
@@ -42,7 +43,7 @@ function HelpPage() {
       <NavigationBar />
       <div
         style={{
-          height: "80vh",
+          height: "100vh",
           backgroundImage: `url(${background})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -85,6 +86,9 @@ function HelpPage() {
           backgroundImage: `url(${background2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}
         className="section mx-auto"
       >
@@ -107,7 +111,7 @@ function HelpPage() {
                   height: 'fit-content'
                 }}
               >
-                <div className="m-3 row justify-content-center mt-5">
+                <div className="m-3 mx-auto row justify-content-center mt-5">
                   <div className="col-9">
                     <ul
                       className="nav nav-tabs  nav-tabs-custom nav-justified justify-content-center faq-tab-box"

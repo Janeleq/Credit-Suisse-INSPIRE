@@ -40,7 +40,7 @@ function AgeismTwo() {
 
   return (
     <div
-      className="container-fluid bootdey p-0 bg-light"
+      className="container-fluid p-0 bg-light"
       style={{ overflow: "hidden" }}
     >
       <NavigationBar />
