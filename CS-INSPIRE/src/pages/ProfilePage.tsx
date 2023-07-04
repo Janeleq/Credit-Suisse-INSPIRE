@@ -133,20 +133,20 @@ function Profile() {
       nopathsArray.push(1);
       updateAgeismMedal(<FaMedal />);
       setAgeismStyle({
-        backgroundColor: "lightgreen",
+        backgroundColor: "#8FBC8F",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
       });
     } else {
       setAgeismStyle({
-        backgroundColor: "#ff726f",
+        backgroundColor: "indianred",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
@@ -170,10 +170,10 @@ function Profile() {
       nopathsArray.push(1);
       updateSexismMedal(<FaMedal />);
       setSexismStyle({ 
-        backgroundColor: "lightgreen",
+        backgroundColor: "#8FBC8F",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
@@ -181,10 +181,10 @@ function Profile() {
       
     } else {
       setSexismStyle({    
-      backgroundColor: "#ff726f",
+      backgroundColor: "indianred",
       paddingTop: "10%",
       textAlign: "center",
-      border: "1px solid grey",
+      border: "2px solid black",
       height: "120px",
       width: "120px",
       borderRadius: "50%"
@@ -210,10 +210,10 @@ function Profile() {
       updatehaloeffectMedal(<FaMedal />);
       setHaloStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "lightgreen",
+        backgroundColor: "#8FBC8F",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
@@ -221,10 +221,10 @@ function Profile() {
     } else {
       setHaloStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "#ff726f",
+        backgroundColor: "indianred",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
@@ -250,20 +250,20 @@ function Profile() {
       updateBeautyMedal(<FaMedal />);
       setBeautyStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "lightgreen",
+        backgroundColor: "#8FBC8F",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
       });
     } else {
       setBeautyStyle({
-        backgroundColor: "#ff726f",
+        backgroundColor: "indianred",
         paddingTop: "10%",
         textAlign: "center",
-        border: "1px solid grey",
+        border: "2px solid black",
         height: "120px",
         width: "120px",
         borderRadius: "50%",
@@ -450,7 +450,7 @@ function Profile() {
               <span
                 className=""
                 style={{
-                  backgroundColor: "lightgreen",
+                  backgroundColor: "#8FBC8F",
                   fontSize: "20px",
                   border: "none",
                   color: "black",
@@ -470,7 +470,7 @@ function Profile() {
               <span
                 className=""
                 style={{
-                  backgroundColor: "#ff726f",
+                  backgroundColor: "indianred",
                   fontSize: "20px",
                   border: "none",
                   color: "black",
