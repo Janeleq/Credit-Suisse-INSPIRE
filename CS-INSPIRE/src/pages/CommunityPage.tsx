@@ -160,6 +160,10 @@ function Community() {
                           className=""
                         >
                           <br />
+                          <li>
+                            <i className="fas fa-map-marker-alt"></i> Singapore,
+                           Bukit Panjang
+                          </li>
                           <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
                         </ul>
                         <h2 className="text-dark">
@@ -224,6 +228,10 @@ function Community() {
                           className=""
                         >
                           <br />
+                          <li>
+                            <i className="fas fa-map-marker-alt"></i> Singapore,
+                           Choa Chu Kang
+                          </li>
                           <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
                         </ul>
                         <h2 className="text-dark">

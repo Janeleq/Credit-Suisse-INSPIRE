@@ -231,39 +231,6 @@ function AgeismFacts() {
           </span>
         </div>
       </div>
-      <div className="row" style={{ backgroundColor: "lightgray" }}>
-        <div className="col-12">
-          <figure>
-            <figcaption>HE</figcaption>
-            <svg viewBox="0 0 63.6619772368 63.6619772368">
-              <circle
-                className="pie1"
-                cx="31.8309886184"
-                cy="31.8309886184"
-                r="15.9154943092"
-              />
-              <circle
-                className="pie2"
-                cx="31.8309886184"
-                cy="31.8309886184"
-                r="15.9154943092"
-              />
-              <circle
-                className="pie3"
-                cx="31.8309886184"
-                cy="31.8309886184"
-                r="15.9154943092"
-              />
-              <circle
-                className="pie4"
-                cx="31.8309886184"
-                cy="31.8309886184"
-                r="15.9154943092"
-              />
-            </svg>
-          </figure>
-        </div>
-      </div>
 
       <Footer />
     </div>

@@ -146,9 +146,9 @@ function AgeismFive() {
           <hr/>
           <p
             className="w-50 mx-auto text-light p-2"
-            style={{ fontSize: "1.2rem", borderRadius: "5px" }}
+            style={{ fontSize: "1.2rem", borderRadius: "5px", lineHeight: '1.7' }}
           >
-            It is now weeks past the project and you feel like the team could
+            In the midst of the project, you realised that the team could
             have some further training and development to further their
             skillsets to excel in the project. As such, you look to the various
             training programs offered by the company to enhance employee skills.{" "}
@@ -156,7 +156,7 @@ function AgeismFive() {
             <FaBookReader/>&nbsp;
             After looking through quite some time, you found a unique training
             program that you think would suit the employees well. However, there
-            is only two opportunity slots for this training program, but you
+            is only 2 opportunity slots for this training program, but you
             realise that you have 3 employees at hand.
             <br/><br/>  
             As the manager, what would you do?

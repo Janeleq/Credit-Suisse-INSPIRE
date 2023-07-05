@@ -132,25 +132,9 @@ function Profile() {
     if (ageismStatus == "completed") {
       nopathsArray.push(1);
       updateAgeismMedal(<FaMedal />);
-      setAgeismStyle({
-        backgroundColor: "#8FBC8F",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
-      });
+      setAgeismStyle({});
     } else {
-      setAgeismStyle({
-        backgroundColor: "indianred",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
-      });
+      setAgeismStyle({});
       updateAgeismMedal(<FaQuestion />);
     }
 
@@ -169,28 +153,10 @@ function Profile() {
     if (sexismStatus == "completed") {
       nopathsArray.push(1);
       updateSexismMedal(<FaMedal />);
-      setSexismStyle({ 
-        backgroundColor: "#8FBC8F",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
-      });
-      
+      setSexismStyle({});
     } else {
-      setSexismStyle({    
-      backgroundColor: "indianred",
-      paddingTop: "10%",
-      textAlign: "center",
-      border: "2px solid black",
-      height: "120px",
-      width: "120px",
-      borderRadius: "50%"
-    });
-      updateSexismMedal(<FaQuestion/>);
- 
+      setSexismStyle({});
+      updateSexismMedal(<FaQuestion />);
     }
 
     // retrieving data for halo effect
@@ -210,28 +176,13 @@ function Profile() {
       updatehaloeffectMedal(<FaMedal />);
       setHaloStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "#8FBC8F",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
       });
     } else {
       setHaloStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "indianred",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
       });
       updatehaloeffectMedal(<FaQuestion />);
     }
-
 
     // retrieving data for beauty bias
     const beautyBiasRef = ref(db, `${id}/beautyBiasStatus`);
@@ -250,24 +201,9 @@ function Profile() {
       updateBeautyMedal(<FaMedal />);
       setBeautyStyle({
         // fontFamily: "Oleo Script",
-        backgroundColor: "#8FBC8F",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
       });
     } else {
-      setBeautyStyle({
-        backgroundColor: "indianred",
-        paddingTop: "10%",
-        textAlign: "center",
-        border: "2px solid black",
-        height: "120px",
-        width: "120px",
-        borderRadius: "50%",
-      });
+      setBeautyStyle({});
       updateBeautyMedal(<FaQuestion />);
     }
 
@@ -277,7 +213,7 @@ function Profile() {
     onValue(quizStatusRef, (snapshot) => {
       if (snapshot.exists()) {
         const data = snapshot.val();
-        updateQuizStatus(data);
+        updateQuizStatus("completed ✔️");
         setQuizStyle({ color: "green" });
       } else {
         updateQuizStatus("incomplete ❌");
@@ -435,19 +371,19 @@ function Profile() {
             <div className="count-data">
               <h2
                 className="m-0px font-w-600 lead"
-                style={{ fontSize: "20px", fontWeight: "400" }}
+                style={{ fontSize: "25px", fontWeight: "400" }}
               >
                 Paths Encountered
                 <h4
-                  className="mt-2 mx-1"
+                  className="mt-2 mx-1 lead"
                   data-to="150"
                   data-speed="150"
-                  style={{ fontWeight: "bold" }}
+                  style={{ fontWeight: "" }}
                 >
                   {noPathsCompleted} /4
                 </h4>
               </h2>
-              <span
+              {/* <span
                 className=""
                 style={{
                   backgroundColor: "#8FBC8F",
@@ -485,90 +421,65 @@ function Profile() {
                 }}
               ></span>
               &nbsp;
-              <span style={{ fontSize: "0.8rem" }}>Incomplete</span>
+              <span style={{ fontSize: "0.8rem" }}>Incomplete</span> */}
               <br />
               <div
                 className="row text-start p-1"
                 style={{ marginTop: "1vh", marginLeft: "0.5px" }}
               >
-                <div className="col-3 mb-2 p-0" style={{}}>
-                  <span
-                    style={{
-                      paddingLeft: "1vw",
-                      fontWeight: "300",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    Path 1
+                <div className="col-3 mb-2 p-0 text-center" style={{}}>
+                  <span style={ageismstyleObj} className="lead">
+                    Ageism
                   </span>
                   <br />
-                  <div className="my-auto" style={ageismstyleObj}>
-                    <span className="" style={{}}>
+                  <div className="my-auto">
+                    {/* <span className="" style={{}}>
                       Ageism
                       <br />
-                    </span>
+                    </span> */}
                     <span style={{ fontSize: "2rem" }}>{ageismMedal}</span>
 
                     {/* <span>{ageismStatus}</span> */}
                   </div>
                 </div>
-                <div className="col-3 mb-2 p-0" style={{}}>
-                  <span
-                    style={{
-                      paddingLeft: "1vw",
-                      fontWeight: "300",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    Path 2
+                <div className="col-3 mb-2 p-0 text-center">
+                  <span className="lead" style={sexismstyleObj}>
+                    Gender Bias / Sexism
                   </span>
                   <br />
-                  <div className="my-auto" style={sexismstyleObj}>
-                    <span className="" style={{}}>
+                  <div className="my-auto">
+                    {/* <span className="" style={{}}>
                       Sexism
                       <br />
-                    </span>
+                    </span> */}
                     <span style={{ fontSize: "2rem" }}>{sexismMedal}</span>
                     {/* <span>{sexismStatus}</span> */}
                   </div>
                 </div>
-                <div className="col-3 mb-2 p-0" style={{}}>
-                  <span
-                    style={{
-                      paddingLeft: "1vw",
-                      fontWeight: "300",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    Path 3
+                <div className="col-3 mb-2 p-0 text-center" style={{}}>
+                  <span className="lead" style={halostyleObj}>
+                    Halo Effect
                   </span>
                   <br />
-                  <div className="my-auto" style={halostyleObj}>
-                    <span className="" style={{}}>
+                  <div className="my-auto text-center">
+                    {/* <span className="" style={{}}>
                       Halo Effect
                       <br />
-                    </span>
+                    </span> */}
                     <span style={{ fontSize: "2rem" }}>{haloeffectMedal}</span>
                     {/* <span>{haloEffectStatus}</span> */}
                   </div>
                 </div>
-                <div className="col-3 mb-2 p-0" style={{}}>
-                  <span
-                    className="mx-auto"
-                    style={{
-                      paddingLeft: "1vw",
-                      fontWeight: "300",
-                      fontSize: "1.25rem",
-                    }}
-                  >
-                    Path 4
+                <div className="col-3 mb-2 p-0 text-center" style={{}}>
+                  <span className="mx-auto lead" style={beautystyleObj}>
+                    Beauty Bias
                   </span>
                   <br />
-                  <div className="my-auto" style={beautystyleObj}>
-                    <span className="" style={{}}>
+                  <div className="my-auto text-center">
+                    {/* <span className="" style={{}}>
                       Beauty Bias
                       <br />
-                    </span>
+                    </span> */}
                     <span style={{ fontSize: "2rem" }}>{beautyMedal}</span>
                     {/* <span>{beautyBiasStatus}</span> */}
                   </div>
@@ -585,7 +496,7 @@ function Profile() {
             <div className="count-data">
               <h2
                 className="lead mt-3 font-w-600"
-                style={{ fontSize: "20px", fontWeight: "400" }}
+                style={{ fontSize: "25px", fontWeight: "400" }}
               >
                 Unconscious Bias Quiz
               </h2>

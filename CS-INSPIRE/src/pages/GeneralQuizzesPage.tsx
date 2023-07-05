@@ -82,18 +82,21 @@ function GeneralQuiz() {
   /* A possible answer was clicked */
   const optionClicked = (isCorrect) => {
     setExplanation(questions[currentQuestion].explanation);
-;
+
     // Increment the score
     if (isCorrect) {
+     console.log(score)
       setScore(score + 1);
+      console.log(score)
       setEmoji("✔️");
-      setScoreWidth((score / questions.length) * 100)
+    
     } else {
       // setScore(score)
-      setScoreWidth(scorewidth)
+      setScore(score)
       setEmoji("❌");
     }
-
+    setScoreWidth((score / questions.length) * 100)
+console.log(score)
     if (currentQuestion + 1 < questions.length) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
@@ -146,13 +149,13 @@ function GeneralQuiz() {
             width: "",
           }}
         >
-          <div className="card tab-content" style={{ border: "none" }}>
+          <div className="card tab-content" style={{ border: "none", height: '100VH' }}>
             <div className="card tab-content">
               <div className="card tab-content">
                 {showResults ? (
                   /* 4. Final Results */
-                  <div className="final-results">
-                    <h1>Final Results</h1>
+                  <div className="final-results" style={{height: '50vh', alignItems: 'center'}}>
+                    <h1 className="mt-5">Final Results</h1>
                     <h2 style={{ border: "none" }}>
                       {score} out of {questions.length} correct - (
                       {(score / questions.length) * 100}%)
@@ -195,7 +198,7 @@ function GeneralQuiz() {
                               Score: {score} {emoji}
                             </h4>
 
-                            <div className="progress" style={{}}>
+                            {/* <div className="progress" style={{}}>
                               <div
                                 className="progress-bar"
                                 style={{
@@ -205,8 +208,9 @@ function GeneralQuiz() {
                               >
                                 <br />
                               </div>
-                            </div>
+                            </div> */}
                             <span
+                            className=""
                               style={{
                                 fontSize: "0.9rem",
                                 fontWeight: "300",

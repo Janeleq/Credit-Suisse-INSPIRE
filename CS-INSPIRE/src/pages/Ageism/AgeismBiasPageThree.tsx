@@ -131,7 +131,7 @@ function AgeismThree() {
               }}
             >
          <FaFolderOpen/>&nbsp;
-              You receive the various candidate applications through google forms. <br/><br/>
+              You receive the applications of the various candidate through google forms. <br/><br/>
               Now, it is time for you to review the different candidates' background and choose the most ideal candidate in your mind.
             </h3>
           </div>

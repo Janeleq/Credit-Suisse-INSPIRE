@@ -5,9 +5,9 @@ import Footer from "../../components/Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import outcomeIcon from "../../assets/outcomeIcon.png";
 import evaluationBg from "../../assets/ageism/performanceEval.jpg";
-import contributionIcon from "../../assets/ageism/contributionIcon.png";
-import evaluationIcon from "../../assets/ageism/evaluationIcon.png";
-import energeticIcon from "../../assets/ageism/energeticIcon.png";
+import contributionIcon from "../../assets/ageism/contributionIcon.svg";
+import evaluationIcon from "../../assets/ageism/evaluationIcon.svg";
+import energeticIcon from "../../assets/ageism/energeticIcon.svg";
 import pastelGreyBg from "../../assets/pastelGreyBg.png";
 import outcomeBg from "../../assets/outcomeBg.svg";
 import actionIcon from "../../assets/action.png"
@@ -140,7 +140,7 @@ function AgeismSix() {
             <h4 className="text-light mb-2" style={{fontWeight: 'lighter'}}>Act 4: Performance Evaluation</h4>
             <hr/>
             <p className="w-50 mx-auto">
-              It's time for the annual performance evaluations where you must assess
+              After settling the training programs, it's time for the annual performance evaluations where you must assess
               each team member.
             </p>
 
