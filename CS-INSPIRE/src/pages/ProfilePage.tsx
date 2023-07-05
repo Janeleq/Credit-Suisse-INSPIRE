@@ -60,7 +60,7 @@ function Profile() {
     updateEmail(auth.currentUser, newEmail)
       .then(() => {
         console.log(user);
-        window.reload();
+        window.location.reload(false)
       })
       .catch((error) => {
         console.log(error);
@@ -75,6 +75,11 @@ function Profile() {
   }
 
   useEffect(() => {
+    getFromDatabase();
+  },[])
+
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     someRequest().then(() => {
       const loaderElement = document.querySelector(".loader-container");
       if (loaderElement) {
@@ -82,10 +87,6 @@ function Profile() {
         setLoading(!isLoading);
       }
     });
-    if (status) {
-      getFromDatabase();
-      // setStatus(false)
-    }
 
     // unconscious bias quiz
     if (user !== null) {
@@ -107,7 +108,7 @@ function Profile() {
       });
       setLoginTime(user.metadata.lastSignInTime);
     }
-  });
+  }, []);
 
   //read statuses of roleplay from database
   function getFromDatabase() {

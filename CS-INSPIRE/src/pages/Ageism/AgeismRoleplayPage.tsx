@@ -53,7 +53,7 @@ function Ageism() {
             backgroundImage: `url(${background})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            height: "130vh",
+            height: "150vh",
           }}
         ></div>
         <div

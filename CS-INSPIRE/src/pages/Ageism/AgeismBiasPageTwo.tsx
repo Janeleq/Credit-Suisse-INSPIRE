@@ -60,7 +60,7 @@ function AgeismTwo() {
             className="w-75 mx-auto text-light"
             style={{ borderRadius: "5px", padding: "5px", backgroundColor: '', fontWeight: '300', fontSize: '1.1rem', opacity: 1 }}
           >
-            <img src= {femaleAvatar} alt="sarah" style={{width: '250px', height: '250px', float: 'left'}}/>
+            <img className="p-3" src= {femaleAvatar} alt="sarah" style={{width: '250px', height: '250px', float: 'left'}}/>
             You will assume the role of Sarah, a mid-level manager in a large
             corporation. <br/><br/>The goal is to navigate various workplace scenarios and
             address unconscious bias related to ageism. Your actions will shape
@@ -75,9 +75,9 @@ function AgeismTwo() {
             style={{ borderRadius: "5px", padding: "10  px", backgroundColor: '', fontWeight: '300', fontSize: '1.15rem', opacity: 1 }}
           >
       
-            You are tasked with building a new project team and you required a
+            You are tasked with building a new project team and you require a
             leader to lead the project. You have a few available candidates for
-            choosing. Proceed on to the next screen to view the candidates.
+            choosing. <br/><br/>Proceed on to the next screen to view the candidates.
             <br />
             <br />
           </p>

@@ -133,7 +133,7 @@ function AgeismFive() {
         <div
           className="p-5"
           style={{
-            height: "80vh",
+            height: "fit-content",
             backgroundImage: `url(${trainingBg})`,
             backgroundSize: "cover",
             

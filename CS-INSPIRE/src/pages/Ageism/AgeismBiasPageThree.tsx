@@ -46,7 +46,7 @@ function AgeismThree() {
   },[]);
 
   const Reflection = () => (
-    <div className="reflection text-cente" style={{backgroundImage: `url(${greyBg})`}}>
+    <div className="reflection text-center" style={{backgroundImage: `url(${greyBg})`}}>
       <div className="reflectiontitle mb-2">
         <p className="text-muted">{chosenDesc}</p>
         <img style={{ width: "2%" }} src={reflectionIcon} alt="Reflection" />
@@ -101,7 +101,7 @@ function AgeismThree() {
   };
 
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid p-0" style={{overflow: 'hidden'}}>
       <NavigationBar />
 
       <div
@@ -131,8 +131,8 @@ function AgeismThree() {
               }}
             >
          <FaFolderOpen/>&nbsp;
-              You receive the applications of the various candidate through google forms. <br/><br/>
-              Now, it is time for you to review the different candidates' background and choose the most ideal candidate in your mind.
+              You receive records of the background of 3 different employees. <br/><br/> Now,
+              it is time for you to review the different candidates' background and choose the most ideal candidate in your mind.
             </h3>
           </div>
         </div>
@@ -276,7 +276,7 @@ function AgeismThree() {
           </div>
         </div>
 
-        <p className="lead bg-light mt-4">
+        <p className="lead bg-light mt-4 p-0">
           {showReflection ? <Reflection /> : null}
           {showReflectionError ? <showReflectionError /> : null}
         </p>
