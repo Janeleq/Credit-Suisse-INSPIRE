@@ -2,7 +2,7 @@ import "../../styles/_ageism.css";
 import { useState, useEffect } from "react";
 import NavigationBar from "../../components/NavBarLogin.tsx";
 import Footer from "../../components/Footer.tsx";
-import background from "../../assets/genderBackground.png";
+import background from "../../assets/genderBackground.jpg";
 import pastelgreyBg from "../../assets/pastelGreyBg.png"
 import ageismIntroIcon from "../../assets/ageism/ageismFactsIntro.svg";
 

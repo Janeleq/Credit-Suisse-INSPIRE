@@ -82,13 +82,15 @@ function GeneralQuiz() {
   /* A possible answer was clicked */
   const optionClicked = (isCorrect) => {
     setExplanation(questions[currentQuestion].explanation);
-    console.log((score / questions.length) * 100);
-    setScoreWidth((score / questions.length) * 100);
+;
     // Increment the score
     if (isCorrect) {
       setScore(score + 1);
       setEmoji("✔️");
+      setScoreWidth((score / questions.length) * 100)
     } else {
+      // setScore(score)
+      setScoreWidth(scorewidth)
       setEmoji("❌");
     }
 
@@ -97,7 +99,6 @@ function GeneralQuiz() {
     } else {
       setShowResults(true);
     }
-    console.log(questions.length);
   };
 
   function writeToDatabase() {

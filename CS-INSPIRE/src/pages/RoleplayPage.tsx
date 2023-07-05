@@ -3,7 +3,7 @@ import Navbar from "../components/NavBarLogin.tsx";
 import "../styles/_roleplay.css";
 import ageism from "../assets/ageism.jpg";
 import haloeffect from "../assets/haloeffect.jpg";
-import sexism from "../assets/genderBackground.png";
+import sexism from "../assets/genderBackground.jpg";
 import beautybias from "../assets/beauty-bias.jpg";
 import Chatbot from "../components/Chatbot.tsx";
 import Footer from "../components/Footer.tsx";
