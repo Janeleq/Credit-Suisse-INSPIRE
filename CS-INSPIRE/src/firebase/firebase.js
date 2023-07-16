@@ -5,7 +5,7 @@ import { getDatabase } from "firebase/database"
 import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAfy2v7pFukhGMjVddjsIT4QvrG_bNHghw",
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
   authDomain: "perception-pause.firebaseapp.com",
   databaseURL: "https://perception-pause-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "perception-pause",

@@ -32,7 +32,7 @@ function Community() {
   }
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     console.log(state);
     console.log(upcomingEvents);
     someRequest().then(() => {
@@ -61,7 +61,7 @@ function Community() {
         >
           <h4
             className="text-center text-white lead"
-            style={{ paddingTop: "250px", fontSize: '35px'}}
+            style={{ paddingTop: "250px", fontSize: "35px" }}
           >
             See what is happening in the community!
           </h4>
@@ -162,9 +162,12 @@ function Community() {
                           <br />
                           <li>
                             <i className="fas fa-map-marker-alt"></i> Singapore,
-                           Bukit Panjang
+                            Bukit Panjang
                           </li>
-                          <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
+                          <li>
+                            <FaClock />
+                            &nbsp;9.30 AM - 10.30 AM (SGT)
+                          </li>
                         </ul>
                         <h2 className="text-dark">
                           How to Outsmart Your Own Unconscious Bias
@@ -230,9 +233,12 @@ function Community() {
                           <br />
                           <li>
                             <i className="fas fa-map-marker-alt"></i> Singapore,
-                           Choa Chu Kang
+                            Choa Chu Kang
                           </li>
-                          <li><FaClock/>&nbsp;9.30 AM - 10.30 AM (SGT)</li>
+                          <li>
+                            <FaClock />
+                            &nbsp;9.30 AM - 10.30 AM (SGT)
+                          </li>
                         </ul>
                         <h2 className="text-dark">
                           What we can save by breaking unconscious bias
@@ -295,7 +301,8 @@ function Community() {
                             Toa Payoh
                           </li>
                           <li>
-                            <i className="far fa-clock"></i> <FaClock/>&nbsp;9.30 - 10.30 AM (SGT)
+                            <i className="far fa-clock"></i> <FaClock />
+                            &nbsp;9.30 - 10.30 AM (SGT)
                           </li>
                         </ul>
                         <h2 className="text-dark">
@@ -428,9 +435,12 @@ function Community() {
                           <br />
 
                           <li>
-                            
-                            <i className="far fa-clock">Date: TBC<br/></i> <FaClock/>&nbsp;9.30 AM - 10.30 AM
-                            (SGT)
+                            <i className="far fa-clock">
+                              Date: TBC
+                              <br />
+                            </i>{" "}
+                            <FaClock />
+                            &nbsp;9.30 AM - 10.30 AM (SGT)
                           </li>
                         </ul>
                         <h2 className="text-dark">

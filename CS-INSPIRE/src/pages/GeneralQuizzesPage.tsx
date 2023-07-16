@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "../styles/_quiz.css";
-import questions from "../Javascript/questions.js";
+import questions from "../javascript/questions.js";
 import NavigationBar from "../components/NavBarLogin.tsx";
 import Chatbot from "../components/Chatbot.tsx";
 import Footer from "../components/Footer.tsx";

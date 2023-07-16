@@ -6,7 +6,7 @@ import "../styles/_articles.css";
 import background from "../assets/articlesBg.png";
 
 const articles_api_key = import.meta.env.VITE_APP_ARTICLES_API_KEY;
-console.log(import.meta.env.VITE_APP_ARTICLES_API_KEY)
+
 const url =
 `https://newsapi.org/v2/everything?q=bias&from=2023-06-19&sortBy=publishedAt&apiKey=${articles_api_key}&pageSize=25`;
 
