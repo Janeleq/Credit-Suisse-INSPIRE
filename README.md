@@ -1,14 +1,14 @@
 # Credit Suisse - INSPIRE
 
 ## Frontend
-ReactJS ![image](https://skillicons.dev/icons?i=react&perline=3)
-Vite ![image](https://skillicons.dev/icons?i=vite&perline=3)
-Bootstrap (Styling) ![image](https://skillicons.dev/icons?i=bootstrap&perline=3)
+ReactJS ![image](https://skillicons.dev/icons?i=react&perline=3) &nbsp; &nbsp;
+Vite ![image](https://skillicons.dev/icons?i=vite&perline=3) &nbsp; &nbsp;
+Bootstrap (Styling) ![image](https://skillicons.dev/icons?i=bootstrap&perline=3) &nbsp; &nbsp;
 
 ## Backend 
-Firebase ![image](https://skillicons.dev/icons?i=firebase&perline=3)
-NodeJS ![image](https://skillicons.dev/icons?i=node&perline=3)
-Typescript ![image](https://skillicons.dev/icons?i=typescript&perline=3)
+Firebase ![image](https://skillicons.dev/icons?i=firebase&perline=3) &nbsp; &nbsp;
+NodeJS ![image](https://skillicons.dev/icons?i=nodejs&perline=3) &nbsp; &nbsp;
+Typescript ![image](https://skillicons.dev/icons?i=typescript&perline=3) &nbsp; &nbsp;
 
 ## APIs
 *Gender Bias*: https://genderize.io/
