@@ -5,16 +5,12 @@ import Chatbot from "../components/Chatbot.tsx";
 import "../styles/_articles.css";
 import background from "../assets/articlesBg.png";
 
-console.log(import.meta.env.VITE_APP_ARTICLES_API_KEY);
-
+const articles_api_key = import.meta.env.VITE_APP_ARTICLES_API_KEY;
+console.log(import.meta.env.VITE_APP_ARTICLES_API_KEY)
 const url =
-  "https://newsapi.org/v2/everything?" +
-  "q=bias&" +
-  // 'q=bias&' +
-  "from=2023-06-17&" +
-  "sortBy=publishedAt&" +
-  "apiKey=01d127c2f33a483c939e689920e7bab9&" +
-  "pageSize=25";
+`https://newsapi.org/v2/everything?q=bias&from=2023-06-19&sortBy=publishedAt&apiKey=${articles_api_key}&pageSize=25`;
+
+  console.log(url)
 
 const fetchArticles = async () => {
   const response = await fetch(url);
