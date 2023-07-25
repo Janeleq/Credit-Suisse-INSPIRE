@@ -84,6 +84,5 @@ There are various errors identified in the typescript syntax code.
 
    
 ## More Information 
-General Prototyping and Timeline:<br/>
-https://docs.google.com/document/d/1GyoZXcYR7g0M2GArhYVMxnJq-hQ2qGAJP1kCDCEmKxA/edit?usp=sharing
+[Documentation of development journey / General prototyping and timeline](https://docs.google.com/document/d/1GyoZXcYR7g0M2GArhYVMxnJq-hQ2qGAJP1kCDCEmKxA/edit?usp=sharing)
 
